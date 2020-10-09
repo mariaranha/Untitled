@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQM-Fr-zVN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="EZO-AQ-h2h">
+            <objects>
+                <viewController id="AQM-Fr-zVN" customClass="GameViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bQ-PV-gl2" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_background" translatesAutoresizingMaskIntoConstraints="NO" id="jTS-cf-1vI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_progress" translatesAutoresizingMaskIntoConstraints="NO" id="maT-84-tln">
+                                <rect key="frame" x="247" y="76" width="135" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="maT-84-tln" secondAttribute="height" multiplier="2.5:1" id="WV7-xR-kfh"/>
+                                    <constraint firstAttribute="height" constant="54" id="hg8-ZS-TOd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZk-VD-qTd">
+                                <rect key="frame" x="32" y="76" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QZk-VD-qTd" secondAttribute="height" multiplier="1:1" id="vkA-Ij-QGc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="65V-k9-RGN">
+                                <rect key="frame" x="32" y="76" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_life" translatesAutoresizingMaskIntoConstraints="NO" id="b4D-3s-Zf0">
+                                <rect key="frame" x="32" y="764" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b4D-3s-Zf0" secondAttribute="height" id="oHj-Pm-MIn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_energy" translatesAutoresizingMaskIntoConstraints="NO" id="e0j-Iq-vBI">
+                                <rect key="frame" x="316" y="764" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="e0j-Iq-vBI" secondAttribute="height" multiplier="1:1" id="Qop-Zc-mId"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_player" translatesAutoresizingMaskIntoConstraints="NO" id="Z3P-hX-kxY">
+                                <rect key="frame" x="188" y="764" width="38.5" height="66"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_book" translatesAutoresizingMaskIntoConstraints="NO" id="xdS-Mx-Cey">
+                                <rect key="frame" x="142.5" y="146" width="129" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="JjL-L5-wqp"/>
+                                    <constraint firstAttribute="width" secondItem="xdS-Mx-Cey" secondAttribute="height" multiplier="1.5:1" id="SKM-Ug-3oy"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="ahH-5D-Y5u" customClass="SKView">
+                                <rect key="frame" x="32" y="240" width="350" height="516"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="safeArea" id="13D-pj-UNP"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="65V-k9-RGN" firstAttribute="height" secondItem="QZk-VD-qTd" secondAttribute="height" id="6cf-cH-aXP"/>
+                            <constraint firstItem="xdS-Mx-Cey" firstAttribute="top" secondItem="maT-84-tln" secondAttribute="bottom" constant="16" id="9Zq-SN-6bM"/>
+                            <constraint firstItem="65V-k9-RGN" firstAttribute="centerX" secondItem="QZk-VD-qTd" secondAttribute="centerX" id="B8z-nV-o9b"/>
+                            <constraint firstItem="b4D-3s-Zf0" firstAttribute="leading" secondItem="R1v-pZ-5wt" secondAttribute="leading" constant="32" id="CTi-Eo-FVD"/>
+                            <constraint firstItem="jTS-cf-1vI" firstAttribute="trailing" secondItem="R1v-pZ-5wt" secondAttribute="trailing" id="EkS-x5-pwo"/>
+                            <constraint firstItem="65V-k9-RGN" firstAttribute="centerY" secondItem="QZk-VD-qTd" secondAttribute="centerY" id="F3j-nC-hTo"/>
+                            <constraint firstItem="maT-84-tln" firstAttribute="trailing" secondItem="R1v-pZ-5wt" secondAttribute="trailing" constant="-32" id="IYB-vp-RN6"/>
+                            <constraint firstItem="jTS-cf-1vI" firstAttribute="top" secondItem="2bQ-PV-gl2" secondAttribute="top" id="Iz5-L8-AkB"/>
+                            <constraint firstItem="xdS-Mx-Cey" firstAttribute="centerX" secondItem="R1v-pZ-5wt" secondAttribute="centerX" id="JUs-lD-5Qx"/>
+                            <constraint firstItem="maT-84-tln" firstAttribute="top" secondItem="R1v-pZ-5wt" secondAttribute="top" constant="32" id="Mdc-2z-5Rr"/>
+                            <constraint firstItem="Z3P-hX-kxY" firstAttribute="height" secondItem="b4D-3s-Zf0" secondAttribute="height" id="QdM-rs-uaO"/>
+                            <constraint firstItem="R1v-pZ-5wt" firstAttribute="bottom" secondItem="Z3P-hX-kxY" secondAttribute="bottom" constant="32" id="S7R-Ib-AKz"/>
+                            <constraint firstItem="QZk-VD-qTd" firstAttribute="height" secondItem="maT-84-tln" secondAttribute="height" id="SlQ-XK-7Hn"/>
+                            <constraint firstAttribute="trailing" secondItem="e0j-Iq-vBI" secondAttribute="trailing" constant="32" id="UXe-bn-XnW"/>
+                            <constraint firstItem="jTS-cf-1vI" firstAttribute="leading" secondItem="R1v-pZ-5wt" secondAttribute="leading" id="bg0-IF-1Lf"/>
+                            <constraint firstItem="65V-k9-RGN" firstAttribute="width" secondItem="QZk-VD-qTd" secondAttribute="width" id="dD2-Xh-1ga"/>
+                            <constraint firstAttribute="bottom" secondItem="jTS-cf-1vI" secondAttribute="bottom" id="dNb-5S-aQ3"/>
+                            <constraint firstItem="ahH-5D-Y5u" firstAttribute="top" secondItem="xdS-Mx-Cey" secondAttribute="bottom" constant="8" id="hPD-qU-F9i"/>
+                            <constraint firstItem="b4D-3s-Zf0" firstAttribute="bottom" secondItem="R1v-pZ-5wt" secondAttribute="bottom" constant="-32" id="jiY-jl-Jd1"/>
+                            <constraint firstItem="e0j-Iq-vBI" firstAttribute="bottom" secondItem="R1v-pZ-5wt" secondAttribute="bottom" constant="-32" id="onc-j4-JeB"/>
+                            <constraint firstItem="Z3P-hX-kxY" firstAttribute="centerX" secondItem="R1v-pZ-5wt" secondAttribute="centerX" id="pZa-lV-jca"/>
+                            <constraint firstItem="QZk-VD-qTd" firstAttribute="top" secondItem="R1v-pZ-5wt" secondAttribute="top" constant="32" id="tuZ-0S-0bP"/>
+                            <constraint firstItem="QZk-VD-qTd" firstAttribute="leading" secondItem="R1v-pZ-5wt" secondAttribute="leading" constant="32" id="vVr-Ur-ubz"/>
+                            <constraint firstItem="b4D-3s-Zf0" firstAttribute="top" secondItem="ahH-5D-Y5u" secondAttribute="bottom" constant="8" id="x0A-Xp-kox"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R1v-pZ-5wt"/>
+                    </view>
+                    <connections>
+                        <outlet property="book" destination="xdS-Mx-Cey" id="JjY-Bo-sjR"/>
+                        <outlet property="cardBoard" destination="ahH-5D-Y5u" id="EK0-jw-6nZ"/>
+                        <outlet property="energy" destination="e0j-Iq-vBI" id="2JG-as-C27"/>
+                        <outlet property="life" destination="b4D-3s-Zf0" id="Ci0-yu-TrW"/>
+                        <outlet property="playerCard" destination="Z3P-hX-kxY" id="2Rm-di-iga"/>
+                        <outlet property="progress" destination="maT-84-tln" id="Nke-Yz-WAO"/>
+                        <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400.00000000000006" y="-296.65178571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="board_background" width="414" height="896"/>
+        <image name="board_book" width="142" height="85"/>
+        <image name="board_energy" width="64" height="66"/>
+        <image name="board_life" width="66" height="66"/>
+        <image name="board_progress" width="137" height="54"/>
+        <image name="card_player" width="38.5" height="66"/>
+    </resources>
+</document>
