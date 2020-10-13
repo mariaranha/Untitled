@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQM-Fr-zVN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQM-Fr-zVN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +33,7 @@
                                     <constraint firstAttribute="width" secondItem="QZk-VD-qTd" secondAttribute="height" multiplier="1:1" id="vkA-Ij-QGc"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="65V-k9-RGN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="65V-k9-RGN">
                                 <rect key="frame" x="32" y="76" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,11 +64,12 @@
                             <view contentMode="scaleToFill" id="ahH-5D-Y5u" customClass="SKView">
                                 <rect key="frame" x="32" y="240" width="350" height="516"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="safeArea" id="13D-pj-UNP"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R1v-pZ-5wt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="65V-k9-RGN" firstAttribute="height" secondItem="QZk-VD-qTd" secondAttribute="height" id="6cf-cH-aXP"/>
                             <constraint firstItem="xdS-Mx-Cey" firstAttribute="top" secondItem="maT-84-tln" secondAttribute="bottom" constant="16" id="9Zq-SN-6bM"/>
@@ -93,7 +96,6 @@
                             <constraint firstItem="QZk-VD-qTd" firstAttribute="leading" secondItem="R1v-pZ-5wt" secondAttribute="leading" constant="32" id="vVr-Ur-ubz"/>
                             <constraint firstItem="b4D-3s-Zf0" firstAttribute="top" secondItem="ahH-5D-Y5u" secondAttribute="bottom" constant="8" id="x0A-Xp-kox"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="R1v-pZ-5wt"/>
                     </view>
                     <connections>
                         <outlet property="book" destination="xdS-Mx-Cey" id="JjY-Bo-sjR"/>
@@ -103,11 +105,43 @@
                         <outlet property="playerCard" destination="Z3P-hX-kxY" id="2Rm-di-iga"/>
                         <outlet property="progress" destination="maT-84-tln" id="Nke-Yz-WAO"/>
                         <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
+                        <segue destination="dIf-6x-vIW" kind="show" identifier="testLifeBar" id="thD-aB-MV6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400.00000000000006" y="-296.65178571428572"/>
+            <point key="canvasLocation" x="-309" y="-308"/>
+        </scene>
+        <!--Life Bar View Controller-->
+        <scene sceneID="Nqo-jW-GQH">
+            <objects>
+                <viewController id="dIf-6x-vIW" customClass="LifeBarViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5kv-Cb-sYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A3R-TL-D90" customClass="ProgressBar" customModule="Untitled" customModuleProvider="target">
+                                <rect key="frame" x="36" y="247" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.98039215686274506" green="0.72941176470588232" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZsJ-Hi-eYP"/>
+                        <color key="backgroundColor" systemColor="systemFillColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ffO-xH-VEd"/>
+                    <connections>
+                        <outlet property="progressBar" destination="A3R-TL-D90" id="Tan-Bo-efb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOg-Gu-6LT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634.78260869565224" y="-297.32142857142856"/>
         </scene>
     </scenes>
     <resources>
@@ -117,5 +151,11 @@
         <image name="board_life" width="66" height="66"/>
         <image name="board_progress" width="137" height="54"/>
         <image name="card_player" width="38.5" height="66"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

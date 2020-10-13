@@ -30,6 +30,10 @@ class GameViewController: UIViewController {
         let skView = cardBoard!
         skView.isMultipleTouchEnabled = false
         
+        //TEST LIFE BAR--------------------
+        life.isUserInteractionEnabled = true
+        life.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.imageTap)))
+        
         //OBS: Create a singleton to verify the user level and pass here
         level = Level(filename: "Level_1")
         
@@ -42,6 +46,7 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
 
         beginGame()
+        
     }
     
     func beginGame() {
@@ -60,4 +65,12 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    //TEST LIFE BAR--------------
+    @objc func imageTap() {
+        // present modally
+        performSegue(withIdentifier: "testLifeBar", sender: "")
+    }
+    
+    
 }
