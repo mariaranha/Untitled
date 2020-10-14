@@ -48,31 +48,12 @@ class Level {
         for row in 0..<numRows {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
-                    
-                    //DELETE THIS AFTER TAP IMPLEMENTED
-                    if row == 0 && column == 1 {
-                        let cardType = CardType.character
-                        
-                        let card = Card(column: column, row: row, cardType: cardType)
-                        cards[column, row] = card
+                    let cardType = CardType.random()
 
-                        set.insert(card)
-                    } else {
-                        let cardType = CardType.random()
-                        
-                        let card = Card(column: column, row: row, cardType: cardType)
-                        cards[column, row] = card
+                    let card = Card(column: column, row: row, cardType: cardType)
+                    cards[column, row] = card
 
-                        set.insert(card)
-                    }
-                    //UNTIL HERE AND UNCOMMENT THE BELLOW CODE
-                    
-//                    let cardType = CardType.random()
-//
-//                    let card = Card(column: column, row: row, cardType: cardType)
-//                    cards[column, row] = card
-//
-//                    set.insert(card)
+                    set.insert(card)
                 }
             }
         }
@@ -87,12 +68,15 @@ class Level {
         return cards[column, row]
     }
     
+    func performFirstMove(_ move: FirstMove) {
+        cards[move.toCard.column, move.toCard.row] = move.characterCard
+        move.characterCard.column = move.toCard.column
+        move.characterCard.row = move.toCard.row
+    }
+    
     func performMove(_ move: MoveCard) {
-//        cards[positionA.column, positionA.row] = move.cardB
         cards[move.cardA.column, move.cardA.row] = move.newCard
-//        move.cardB.column = positionA.column
-//        move.cardB.row = positionA.row
-//
+        
         cards[move.cardB.column, move.cardB.row] = move.cardA
         move.cardA.column = move.cardB.column
         move.cardA.row = move.cardB.row

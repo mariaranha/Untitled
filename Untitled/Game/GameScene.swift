@@ -21,12 +21,14 @@ class GameScene: SKScene {
     var level: Level!
     
     var moveHandler: ((MoveCard) -> Void)?
+    var firstMoveHandler: ((FirstMove) -> Void)?
     
     enum Moves {
         case up
         case down
         case right
         case left
+        case first
     }
   
     required init?(coder aDecoder: NSCoder) {
@@ -100,7 +102,10 @@ class GameScene: SKScene {
         touchLocation.y += (tileHeight * CGFloat(level.numRows) - view!.frame.height)/2
         touchLocation.x += (tileWidth * CGFloat(level.numColumns) - view!.frame.width)/2
         
-        guard let characterPosition = getCharacterPosition() else { return }
+        guard let characterPosition = getCharacterPosition() else {
+            tryFirstMove(touchLocation)
+            return
+        }
         
         let cardUp = (point: pointFor(column: characterPosition.column,
                                       row: characterPosition.row + 1),
@@ -124,9 +129,30 @@ class GameScene: SKScene {
             
             if cardFrame.contains(touchLocation) {
                 tryMove(move: card.move)
+                break
             }
         }
-        
+    }
+    
+    fileprivate func tryFirstMove(_ touchLocation: CGPoint) {
+        for column in 0..<level.numColumns {
+            let point = pointFor(column: column, row: 0)
+            let cardFrame = CGRect(x: point.x-tileWidth/2,
+                                   y: point.y-tileHeight/2,
+                                   width: tileWidth,
+                                   height: tileHeight)
+            
+            if cardFrame.contains(touchLocation) {
+                guard let toCard = level.card(atColumn: column, row: 0) else { return }
+                
+                if let handler = firstMoveHandler {
+                    let characterCard = Card(column: column, row: 0, cardType: .character)
+                    let move = FirstMove(toCard: toCard, characterCard: characterCard)
+                    handler(move)
+                }
+                break
+            }
+        }
     }
     
     // MARK: Swipe Gestures
@@ -164,6 +190,8 @@ class GameScene: SKScene {
             moveTo?.column += 1
         case .left:
             moveTo?.column -= 1
+        case .first:
+            break
         }
         
         guard let toCard = level.card(atColumn: moveTo!.column,
@@ -224,6 +252,16 @@ class GameScene: SKScene {
     }
     
     // MARK: Animate Move
+    func animateFirstMove(_ move: FirstMove) {
+        let toSprite = move.toCard.sprite!
+        
+        let removeCard = SKAction.removeFromParent()
+        toSprite.run(removeCard)
+        
+        setSprite(move.characterCard)
+    }
+    
+    
     func animateMove(_ move: MoveCard, completion: @escaping () -> Void) {
         let spriteA = move.cardA.sprite!
         let spriteB = move.cardB.sprite!

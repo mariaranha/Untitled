@@ -38,6 +38,7 @@ class GameViewController: UIViewController {
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
         scene.moveHandler = handleMove
+        scene.firstMoveHandler = handleFirstMove
 
         // Present the scene.
         skView.presentScene(scene)
@@ -48,6 +49,15 @@ class GameViewController: UIViewController {
     func beginGame() {
         let newCards = level.createInitialCards()
         scene.addInitialSprites(for: newCards)
+    }
+    
+    func handleFirstMove(_ move: FirstMove) {
+        view.isUserInteractionEnabled = false
+        
+        playerCard.removeFromSuperview()
+        level.performFirstMove(move)
+        scene.animateFirstMove(move)
+        self.view.isUserInteractionEnabled = true
     }
     
     func handleMove(_ move: MoveCard) {

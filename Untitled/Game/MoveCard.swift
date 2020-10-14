@@ -20,3 +20,17 @@ struct MoveCard: CustomStringConvertible {
         return "Move \(cardA) to \(cardB) position. Add \(newCard)"
     }
 }
+
+struct FirstMove: CustomStringConvertible {
+    let toCard: Card
+    let characterCard: Card
+    
+    init(toCard: Card, characterCard: Card) {
+        self.toCard = toCard
+        self.characterCard = characterCard
+    }
+    
+    var description: String {
+        return "First move \(characterCard) to \(toCard) position"
+    }
+}
