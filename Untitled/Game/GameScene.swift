@@ -10,14 +10,24 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    var titleWidth = CGFloat()
-    var titleHeight = CGFloat()
-    let cardSpace: CGFloat = 6.0
+    var tileWidth = CGFloat()
+    var tileHeight = CGFloat()
+    var cardSpace: CGFloat = 6.0
+    var aspectRatio = CGFloat()
 
     let gameLayer = SKNode()
     let cardsLayer = SKNode()
     
     var level: Level!
+    
+    var moveHandler: ((MoveCard) -> Void)?
+    
+    enum Moves {
+        case up
+        case down
+        case right
+        case left
+    }
   
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
@@ -31,32 +41,206 @@ class GameScene: SKScene {
 
         addChild(gameLayer)
         
-        titleWidth = size.width / CGFloat(level.numColumns)
-        titleHeight = size.height / CGFloat(level.numRows)
-
+        // Fit the rows and columns without distortion
+        let playerCard = UIImage(named: "card_character")
+        guard let cardHeight = playerCard?.size.height else { return }
+        guard let cardWidth = playerCard?.size.width else { return }
+        
+        aspectRatio = cardHeight/cardWidth
+        tileWidth = size.width / CGFloat(level.numColumns)
+        
+        if aspectRatio * tileWidth * CGFloat(level.numRows) > size.height {
+            tileHeight = size.height / CGFloat(level.numRows)
+            tileWidth = tileHeight / aspectRatio
+        } else {
+            tileHeight = tileWidth * aspectRatio
+        }
+        
+        // Set cardsLayer in center
         let layerPosition = CGPoint(
-            x: -titleWidth * CGFloat(level.numColumns) / 2,
-            y: -titleHeight * CGFloat(level.numRows) / 2)
+            x: -tileWidth * CGFloat(level.numColumns) / 2,
+            y: -tileHeight * CGFloat(level.numRows) / 2)
 
         cardsLayer.position = layerPosition
         gameLayer.addChild(cardsLayer)
 
     }
-  
-    func addSprites(for cards: Set<Card>) {
+    
+    override func didMove(to view: SKView) {
+        addGestures(view)
+    }
+    
+    func addInitialSprites(for cards: Set<Card>) {
         for card in cards {
-          let sprite = SKSpriteNode(imageNamed: card.cardType.spriteName)
-          sprite.size = CGSize(width: titleWidth - cardSpace, height: titleHeight - cardSpace)
-          sprite.position = pointFor(column: card.column, row: card.row)
-          cardsLayer.addChild(sprite)
-          card.sprite = sprite
+          setSprite(card)
         }
+    }
+    
+    // Add sprite to cards layer
+    fileprivate func setSprite(_ card: Card) {
+        let sprite = SKSpriteNode(imageNamed: card.cardType.spriteName)
+        sprite.size = CGSize(width: tileWidth - cardSpace, height: tileHeight - cardSpace)
+        sprite.position = pointFor(column: card.column, row: card.row)
+        cardsLayer.addChild(sprite)
+        card.sprite = sprite
     }
 
     private func pointFor(column: Int, row: Int) -> CGPoint {
         return CGPoint(
-          x: CGFloat(column) * titleWidth + titleWidth / 2,
-          y: CGFloat(row) * titleHeight + titleHeight / 2)
+          x: CGFloat(column) * tileWidth + tileWidth / 2,
+          y: CGFloat(row) * tileHeight + tileHeight / 2)
+    }
+    
+    // MARK: Tap Gesture
+    @objc func tap(sender: UITapGestureRecognizer) {
+        var touchLocation = sender.location(ofTouch: 0, in: view)
+        //Invert y coordinate
+        touchLocation.y = (view!.frame.height - touchLocation.y)
+        //Translate view coordinate
+        touchLocation.y += (tileHeight * CGFloat(level.numRows) - view!.frame.height)/2
+        touchLocation.x += (tileWidth * CGFloat(level.numColumns) - view!.frame.width)/2
+        
+        guard let characterPosition = getCharacterPosition() else { return }
+        
+        let cardUp = (point: pointFor(column: characterPosition.column,
+                                      row: characterPosition.row + 1),
+                      move: Moves.up)
+        let cardDown = (point: pointFor(column: characterPosition.column,
+                                        row: characterPosition.row - 1),
+                        move: Moves.down)
+        let cardRight = (point: pointFor(column: characterPosition.column + 1,
+                                         row: characterPosition.row),
+                         move: Moves.right)
+        let cardLeft = (point: pointFor(column: characterPosition.column - 1,
+                                         row: characterPosition.row),
+                        move: Moves.left)
+        let possibleCards = [cardUp, cardDown, cardRight, cardLeft]
+        
+        for card in possibleCards {
+            let cardFrame = CGRect(x: card.point.x-tileWidth/2,
+                                   y: card.point.y-tileHeight/2,
+                                   width: tileWidth,
+                                   height: tileHeight)
+            
+            if cardFrame.contains(touchLocation) {
+                tryMove(move: card.move)
+            }
+        }
+        
+    }
+    
+    // MARK: Swipe Gestures
+    @objc func swipeRight(sender: UISwipeGestureRecognizer) {
+        tryMove(move: .right)
+    }
+    
+    @objc func swipeLeft(sender: UISwipeGestureRecognizer) {
+        tryMove(move: .left)
+    }
+    
+    @objc func swipeUp(sender: UISwipeGestureRecognizer) {
+        tryMove(move: .up)
+    }
+    
+    @objc func swipeDown(sender: UISwipeGestureRecognizer) {
+        tryMove(move: .down)
+    }
+    
+    // MARK: Move
+    func tryMove(move: Moves) {
+        let moveFrom = getCharacterPosition()
+        guard moveFrom != nil else { return }
+        guard let fromCard = level.card(atColumn: moveFrom!.column,
+                                        row: moveFrom!.row) else { return }
+        
+        var moveTo = moveFrom
+
+        switch move {
+        case .up:
+            moveTo?.row += 1
+        case .down:
+            moveTo?.row -= 1
+        case .right:
+            moveTo?.column += 1
+        case .left:
+            moveTo?.column -= 1
+        }
+        
+        guard let toCard = level.card(atColumn: moveTo!.column,
+                                      row: moveTo!.row) else { return }
+        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random())
+        
+        if let handler = moveHandler {
+            let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+            handler(move)
+        }
+    }
+    
+    fileprivate func getCharacterPosition() -> (column: Int, row: Int)? {
+        var position = (column: 0, row: 0)
+        let numColumns = level.numColumns
+        let numRows = level.numRows
+        
+        for row in 0..<numRows {
+            for column in 0..<numColumns {
+                let card = level.card(atColumn: column, row: row)
+                if card?.cardType == CardType.character {
+                    position.column = column
+                    position.row = row
+                    
+                    return position
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    fileprivate func addGestures(_ view: SKView) {
+        let swipeRight = UISwipeGestureRecognizer(target: self,
+                                                  action: #selector(GameScene.swipeRight(sender:)))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(GameScene.swipeLeft(sender:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self,
+                                               action: #selector(GameScene.swipeUp(sender:)))
+        swipeUp.direction = .up
+        view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(GameScene.swipeDown(sender:)))
+        swipeDown.direction = .down
+        view.addGestureRecognizer(swipeDown)
+        
+        
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(GameScene.tap(sender:)))
+        view.addGestureRecognizer(tap)
+    }
+    
+    // MARK: Animate Move
+    func animateMove(_ move: MoveCard, completion: @escaping () -> Void) {
+        let spriteA = move.cardA.sprite!
+        let spriteB = move.cardB.sprite!
+        
+        spriteA.zPosition = 100
+        
+        let duration: TimeInterval = 0.5
+
+        let moveA = SKAction.move(to: spriteB.position, duration: duration)
+        moveA.timingMode = .easeOut
+        spriteA.run(moveA, completion: completion)
+
+        let removeB = SKAction.removeFromParent()
+        removeB.timingMode = .easeOut
+        spriteB.run(removeB)
+        
+        setSprite(move.newCard)
     }
 
 }

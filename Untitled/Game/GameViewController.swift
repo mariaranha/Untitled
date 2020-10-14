@@ -37,6 +37,7 @@ class GameViewController: UIViewController {
         scene = GameScene(size: skView.bounds.size, level: level)
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
+        scene.moveHandler = handleMove
 
         // Present the scene.
         skView.presentScene(scene)
@@ -46,7 +47,17 @@ class GameViewController: UIViewController {
     
     func beginGame() {
         let newCards = level.createInitialCards()
-        scene.addSprites(for: newCards)
+        scene.addInitialSprites(for: newCards)
+    }
+    
+    func handleMove(_ move: MoveCard) {
+        view.isUserInteractionEnabled = false
+        
+        level.performMove(move)
+        scene.animateMove(move) {
+            self.view.isUserInteractionEnabled = true
+        }
+        
     }
 
     override var shouldAutorotate: Bool {
