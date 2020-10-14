@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
     //Scene draws the sprites and handles swipes
     var scene: GameScene!
     var level: Level!
-    
+
     @IBOutlet weak var progress: UIImageView!
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var life: UIImageView!
