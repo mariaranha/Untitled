@@ -7,18 +7,32 @@
 
 import Foundation
 
+enum LifeType{
+    case city
+    case character
+}
+
 class Life {
     
+    var type: LifeType
     private var lifeValue: Float
     
     //MARK: Initialization
-     
-    init() {
-        self.lifeValue = 5.0
+    
+    init(type: LifeType) {
+        self.type = type
+        
+        if type == LifeType.city{
+            lifeValue = 0.0
+        } else{
+            lifeValue = 5.0
+        }
+        
     }
     
-    init(lifeValue: Float) {
+    init(type: LifeType, lifeValue: Float) {
         self.lifeValue = lifeValue
+        self.type = type
     }
     
     //MARK: Actions
