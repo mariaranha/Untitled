@@ -13,9 +13,7 @@ class GameScene: SKScene {
     var tileWidth = CGFloat()
     var tileHeight = CGFloat()
     var cardSpace: CGFloat = 6.0
-    var aspectRatio = CGFloat()
 
-    let gameLayer = SKNode()
     let cardsLayer = SKNode()
     
     var level: Level!
@@ -35,28 +33,13 @@ class GameScene: SKScene {
         fatalError("init(coder) is not used in this app")
     }
   
-    init(size: CGSize, level: Level) {
+    init(size: CGSize, level: Level, tileSize: CGSize) {
         self.level = level
         super.init(size: size)
-        
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
-
-        addChild(gameLayer)
         
-        // Fit the rows and columns without distortion
-        let playerCard = UIImage(named: "card_character")
-        guard let cardHeight = playerCard?.size.height else { return }
-        guard let cardWidth = playerCard?.size.width else { return }
-        
-        aspectRatio = cardHeight/cardWidth
-        tileWidth = size.width / CGFloat(level.numColumns)
-        
-        if aspectRatio * tileWidth * CGFloat(level.numRows) > size.height {
-            tileHeight = size.height / CGFloat(level.numRows)
-            tileWidth = tileHeight / aspectRatio
-        } else {
-            tileHeight = tileWidth * aspectRatio
-        }
+        tileHeight = tileSize.height
+        tileWidth = tileSize.width
         
         // Set cardsLayer in center
         let layerPosition = CGPoint(
@@ -64,8 +47,7 @@ class GameScene: SKScene {
             y: -tileHeight * CGFloat(level.numRows) / 2)
 
         cardsLayer.position = layerPosition
-        gameLayer.addChild(cardsLayer)
-
+        addChild(cardsLayer)
     }
     
     override func didMove(to view: SKView) {
@@ -94,13 +76,17 @@ class GameScene: SKScene {
     }
     
     // MARK: Tap Gesture
-    @objc func tap(sender: UITapGestureRecognizer) {
-        var touchLocation = sender.location(ofTouch: 0, in: view)
+    fileprivate func convertTouchCoordinate(_ touchLocation: inout CGPoint) {
         //Invert y coordinate
         touchLocation.y = (view!.frame.height - touchLocation.y)
         //Translate view coordinate
-        touchLocation.y += (tileHeight * CGFloat(level.numRows) - view!.frame.height)/2
-        touchLocation.x += (tileWidth * CGFloat(level.numColumns) - view!.frame.width)/2
+        touchLocation.y += -(tileHeight * CGFloat(level.numRows) - view!.frame.height)/2
+        touchLocation.x += -(tileWidth * CGFloat(level.numColumns) - view!.frame.width)/2
+    }
+    
+    @objc func tap(sender: UITapGestureRecognizer) {
+        var touchLocation = sender.location(ofTouch: 0, in: view)
+        convertTouchCoordinate(&touchLocation)
         
         guard let characterPosition = getCharacterPosition() else {
             tryFirstMove(touchLocation)

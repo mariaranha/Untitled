@@ -13,13 +13,11 @@ enum AppColor {
     case lightBackground
     case intermediateBackground
     
-    case darkPrimaryText
-    case lightPrimaryText
-    case highlightPrimaryText
-    
-    case darkSecundaryText
-    case lightSecundaryText
-    case highlightSecundaryText
+    case darkText
+    case lightText
+    case intermediateLightText
+    case intermediateDarkText
+    case highlightText
     
     case darkBorder
     case lightBorder
@@ -33,25 +31,21 @@ extension AppColor {
         
         switch self {
         case .darkBackground:
-            instanceColor = #colorLiteral(red: 0.4274509804, green: 0.3568627451, blue: 0.3568627451, alpha: 1)
+            instanceColor = #colorLiteral(red: 0.1568627451, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
         case .lightBackground:
             instanceColor = #colorLiteral(red: 0.9607843137, green: 0.9098039216, blue: 0.8392156863, alpha: 1)
         case .intermediateBackground:
             instanceColor = #colorLiteral(red: 0.3058823529, green: 0.1960784314, blue: 0.6588235294, alpha: 1)
             
-        case .darkPrimaryText:
-            instanceColor = #colorLiteral(red: 0.3058823529, green: 0.1960784314, blue: 0.6588235294, alpha: 1)
-        case .lightPrimaryText:
-            instanceColor = #colorLiteral(red: 0.9607843137, green: 0.9098039216, blue: 0.8392156863, alpha: 1)
-        case .highlightPrimaryText:
-            instanceColor = #colorLiteral(red: 0.9882352941, green: 0.7921568627, blue: 0.431372549, alpha: 1)
-        
-            
-        case .darkSecundaryText:
+        case .darkText:
             instanceColor = #colorLiteral(red: 0.1568627451, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
-        case .lightSecundaryText:
+        case .lightText:
+            instanceColor = #colorLiteral(red: 0.9607843137, green: 0.9098039216, blue: 0.8392156863, alpha: 1)
+        case .intermediateLightText:
+            instanceColor = #colorLiteral(red: 0.3058823529, green: 0.1960784314, blue: 0.6588235294, alpha: 1)
+        case .intermediateDarkText:
             instanceColor = #colorLiteral(red: 0.4274509804, green: 0.3568627451, blue: 0.3568627451, alpha: 1)
-        case .highlightSecundaryText:
+        case .highlightText:
             instanceColor = #colorLiteral(red: 0.9882352941, green: 0.7921568627, blue: 0.431372549, alpha: 1)
             
         case .darkBorder:
