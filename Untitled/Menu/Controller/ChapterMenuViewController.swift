@@ -33,6 +33,7 @@ class ChapterMenuViewController: UIViewController {
         startButton.setTitle("Entrar", for: .normal)
         
         //Set Chapters
+        view.layoutIfNeeded()
         chapters = createChapters()
         setupSlideScrollView(chapters: chapters)
         
@@ -43,6 +44,7 @@ class ChapterMenuViewController: UIViewController {
                                      left: cellWidth * 2,
                                      bottom: 0,
                                      right: 0)
+
     
     }
     
@@ -54,16 +56,16 @@ class ChapterMenuViewController: UIViewController {
             chapter.chapterSubtitle.textColor = AppColor.lightText.value
             chapter.photoDescription.textColor = AppColor.intermediateLightText.value
             chapter.photoDate.textColor = AppColor.darkText.value
-    
+
             chapter.backgroundColor = AppColor.lightBackground.value
             chapter.chapterBackground.backgroundColor = AppColor.intermediateBackground.value
             chapter.photoFrame.backgroundColor = AppColor.lightBackground.value
             chapter.photoBackground.backgroundColor = AppColor.intermediateBackground.value
             chapter.photoBackground.image = UIImage(named: "chapterBackground_\(chapterNumber+1)")
             chapter.photoFront.image = UIImage(named: "chapterFront_\(chapterNumber+1)")
-            
+
             chapter.photoFrame.rotate(angle: -2.0)
-            
+
             
             switch chapterNumber {
             case 0:
@@ -92,11 +94,14 @@ class ChapterMenuViewController: UIViewController {
     }
     
     func setupSlideScrollView(chapters: [ChapterView]) {
-
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(chapters.count), height: view.frame.height)
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        
+        scrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        scrollView.contentSize = CGSize(width: screenWidth * CGFloat(chapters.count), height: screenHeight)
         scrollView.isPagingEnabled = true
-
+        
+        view.layoutSubviews()
         for i in 0 ..< chapters.count {
             chapters[i].frame = CGRect(x: chapterView.frame.width * CGFloat(i),
                                        y: chapterView.frame.minY,
@@ -168,6 +173,7 @@ extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UIColle
     func getCellWidth() -> CGFloat {
         var cellWidth: CGFloat
         let numCellPerPage: CGFloat = 5.0
+        
         
         cellWidth = chapterView.frame.width / numCellPerPage
         
