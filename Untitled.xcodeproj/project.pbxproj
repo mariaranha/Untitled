@@ -23,6 +23,7 @@
 		9CA59E39252E07D700DCD349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA59E37252E07D700DCD349 /* Main.storyboard */; };
 		9CA59E46252E07DA00DCD349 /* UntitledTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E45252E07DA00DCD349 /* UntitledTests.swift */; };
 		9CA59E51252E07DA00DCD349 /* UntitledUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E50252E07DA00DCD349 /* UntitledUITests.swift */; };
+		9CAC2610253B6C17004F16EE /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAC260F253B6C17004F16EE /* Life.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		9CA59E4C252E07DA00DCD349 /* UntitledUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UntitledUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA59E50252E07DA00DCD349 /* UntitledUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntitledUITests.swift; sourceTree = "<group>"; };
 		9CA59E52252E07DA00DCD349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CAC260F253B6C17004F16EE /* Life.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		0BE1E5B0252F4F1B00DD36C6 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				9CAC260E253B6C0D004F16EE /* Model */,
 				0BE1E5AD252F44E700DD36C6 /* Board.storyboard */,
 				9CA59E33252E07D700DCD349 /* GameScene.swift */,
 				9CA59E35252E07D700DCD349 /* GameViewController.swift */,
@@ -166,6 +169,14 @@
 				9CA59E52252E07DA00DCD349 /* Info.plist */,
 			);
 			path = UntitledUITests;
+			sourceTree = "<group>";
+		};
+		9CAC260E253B6C0D004F16EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CAC260F253B6C17004F16EE /* Life.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 				0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */,
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
+				9CAC2610253B6C17004F16EE /* Life.swift in Sources */,
 				9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */,
 				0BE1E5B8252F502900DD36C6 /* Array2D.swift in Sources */,
 			);
