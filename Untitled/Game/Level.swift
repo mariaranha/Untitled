@@ -41,19 +41,15 @@ class Level {
             }
         }
     }
-    
+
     func createInitialCards() -> Set<Card> {
         var set: Set<Card> = []
 
         for row in 0..<numRows {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
-                    var cardType = CardType.random()
-                    
-                    while cardType == .character {
-                        cardType = CardType.random()
-                    }
-                    
+                    let cardType = CardType.random()
+
                     let card = Card(column: column, row: row, cardType: cardType)
                     cards[column, row] = card
 
@@ -65,4 +61,24 @@ class Level {
         return set
     }
     
+    func card(atColumn column: Int, row: Int) -> Card? {
+        guard (column >= 0 && column < numColumns) else { return nil}
+        guard (row >= 0 && row < numRows) else { return nil }
+        
+        return cards[column, row]
+    }
+    
+    func performFirstMove(_ move: FirstMove) {
+        cards[move.toCard.column, move.toCard.row] = move.characterCard
+        move.characterCard.column = move.toCard.column
+        move.characterCard.row = move.toCard.row
+    }
+    
+    func performMove(_ move: MoveCard) {
+        cards[move.cardA.column, move.cardA.row] = move.newCard
+        
+        cards[move.cardB.column, move.cardB.row] = move.cardA
+        move.cardA.column = move.cardB.column
+        move.cardA.row = move.cardB.row
+    }
 }

@@ -24,7 +24,13 @@ enum CardType: Int {
   }
   
   static func random() -> CardType {
-    return CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
+    var type = CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
+    
+    while type == .character {
+        type = CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
+    }
+    
+    return type
   }
 }
 
