@@ -47,8 +47,8 @@ class Level {
         
         guard let levelData = LevelData.loadFrom(file: filename) else { return set }
         
-        let photoRow = levelData.photoRow
-        let photoColumn = levelData.photoColumn
+        let photoRow = levelData.photoPosition["row"]!
+        let photoColumn = levelData.photoPosition["column"]!
         
         let photo = Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 8)!)
         cards[photoColumn, photoRow] = photo

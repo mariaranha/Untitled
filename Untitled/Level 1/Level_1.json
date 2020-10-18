@@ -5,7 +5,5 @@
               [1, 1, 1, 1, 1 ],
               [1, 1, 1, 1, 1 ],],
   
-  "photoRow" : 1,
-  
-  "photoColumn" : 1
+  "photoPosition": {"row" : 3, "column": 3}
 }
