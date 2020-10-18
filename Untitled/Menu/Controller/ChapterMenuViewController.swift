@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChapterMenuViewController: UIViewController {
+class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var settingsButton: UIButton!
@@ -15,11 +15,17 @@ class ChapterMenuViewController: UIViewController {
     @IBOutlet weak var chapterView: ChapterView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var chapterNumCollection: UICollectionView!
-    var numChapters: Int = 3
+    
+    var numChapters: Int = 5
     var chapters: [ChapterView] = []
+    let numCellPerPage: CGFloat = 5.0
+    var pageIndex: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.delegate = self
+        chapterNumCollection.delegate = self
         
         //Set view
         self.view.backgroundColor = AppColor.lightBackground.value
@@ -35,7 +41,7 @@ class ChapterMenuViewController: UIViewController {
         //Set Chapters
         view.layoutIfNeeded()
         chapters = createChapters()
-        setupSlideScrollView(chapters: chapters)
+        setupChapterScrollView(chapters: chapters)
         
         //Set chapter number cell
         let cellWidth = getCellWidth()
@@ -84,7 +90,7 @@ class ChapterMenuViewController: UIViewController {
                 chapter.photoDescription.text = "quando lutamos pelo carnaval"
                 chapter.photoDate.text = "12 de fevereiro"
             default:
-                break
+                chapter.chapterTitle.text = "capítulo \(chapterNumber + 1)"
             }
             
             chapters.append(chapter)
@@ -93,12 +99,12 @@ class ChapterMenuViewController: UIViewController {
         return chapters
     }
     
-    func setupSlideScrollView(chapters: [ChapterView]) {
+    func setupChapterScrollView(chapters: [ChapterView]) {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         
         scrollView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        scrollView.contentSize = CGSize(width: screenWidth * CGFloat(chapters.count), height: screenHeight)
+        scrollView.contentSize = CGSize(width: screenWidth * CGFloat(numChapters), height: screenHeight)
         scrollView.isPagingEnabled = true
         
         view.layoutSubviews()
@@ -111,43 +117,26 @@ class ChapterMenuViewController: UIViewController {
         }
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-//        pageControl.currentPage = Int(pageIndex)
-//
-//        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-//        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-//
-//        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-//        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-//
-//        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-//        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-//
-//        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-//
-//        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-//
-//            chapters[0].photoFrame.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-//            chapters[1].photoFrame.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
-//
-//        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-//            chapters[1].photoFrame.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-//            chapters[2].photoFrame.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
-//
-//        } else if(percentOffset.x > 0.50 && percentOffset.x <= 0.75) {
-//            chapters[2].photoFrame.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-//            chapters[3].photoFrame.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
-//
-//        } else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-//            chapters[3].photoFrame.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-//            chapters[4].photoFrame.transform = CGAffineTransform(scaleX: percentOffset.x, y: percentOffset.x)
-//        }
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollPageIndex = floor(scrollView.contentOffset.x/view.frame.width)
+        
+        let direction = scrollView.panGestureRecognizer.translation(in: scrollView.superview).x
+        
+        // Scroll chapter number
+        if scrollPageIndex == 0 && pageIndex == 1 && direction > 0 {
+            pageIndex = scrollPageIndex
+            let indexPath = IndexPath(row: 0, section: 0)
+            chapterNumCollection.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        } else if pageIndex != scrollPageIndex && scrollPageIndex > 0 {
+            pageIndex = scrollPageIndex
+            let indexPath = IndexPath(row: Int(pageIndex), section: 0)
+            chapterNumCollection.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
     
 }
 
-extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numChapters + 2
     }
@@ -161,10 +150,14 @@ extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UIColle
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = .clear
         
-        if numChapters < 10 {
+        if indexPath.row < 9 {
             cell.number.text = "0\(indexPath.row + 1)"
         } else {
             cell.number.text = "\(indexPath.row + 1)"
+        }
+        
+        if indexPath.row > numChapters - 1 {
+            cell.number.text = ""
         }
         
         return cell
@@ -172,8 +165,6 @@ extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UIColle
 
     func getCellWidth() -> CGFloat {
         var cellWidth: CGFloat
-        let numCellPerPage: CGFloat = 5.0
-        
         
         cellWidth = chapterView.frame.width / numCellPerPage
         
@@ -193,8 +184,6 @@ extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UIColle
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
-    
-    
 }
 
 extension UIView {
