@@ -12,6 +12,7 @@
 		0B8E749B2537548000B45F0C /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E749A2537548000B45F0C /* ChapterView.swift */; };
 		0B8E749D2537548C00B45F0C /* ChapterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E749C2537548C00B45F0C /* ChapterView.xib */; };
 		0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E74A02539D83200B45F0C /* ChapterNumCell.swift */; };
+		0B8E74AC253CA00100B45F0C /* UserDefaultsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E74AB253CA00100B45F0C /* UserDefaultsStruct.swift */; };
 		0B9DB3172530AE31006B601D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9DB3162530AE31006B601D /* Launch Screen.storyboard */; };
 		0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DB3182535F9D8006B601D /* MoveCard.swift */; };
 		0B9DB31B25373355006B601D /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DB31A25373355006B601D /* DesignSystem.swift */; };
@@ -55,6 +56,7 @@
 		0B8E749A2537548000B45F0C /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		0B8E749C2537548C00B45F0C /* ChapterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChapterView.xib; sourceTree = "<group>"; };
 		0B8E74A02539D83200B45F0C /* ChapterNumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterNumCell.swift; sourceTree = "<group>"; };
+		0B8E74AB253CA00100B45F0C /* UserDefaultsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStruct.swift; sourceTree = "<group>"; };
 		0B9DB3162530AE31006B601D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B9DB3182535F9D8006B601D /* MoveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCard.swift; sourceTree = "<group>"; };
 		0B9DB31A25373355006B601D /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
@@ -109,8 +111,7 @@
 		0B8E74932537441600B45F0C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0B8E74A9253AB27900B45F0C /* View */,
-				0B8E74AA253AB28200B45F0C /* Controller */,
+				0B8E74AD253CACA100B45F0C /* Chapters */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -172,6 +173,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0B8E74AD253CACA100B45F0C /* Chapters */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E74A9253AB27900B45F0C /* View */,
+				0B8E74AA253AB28200B45F0C /* Controller */,
+			);
+			path = Chapters;
+			sourceTree = "<group>";
+		};
 		0BE1E5AF252F4EDA00DD36C6 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +228,7 @@
 				0BE1E5AF252F4EDA00DD36C6 /* Levels */,
 				0B8E74A7253AB1E200B45F0C /* Auxiliary */,
 				9CA59E2D252E07D700DCD349 /* AppDelegate.swift */,
+				0B8E74AB253CA00100B45F0C /* UserDefaultsStruct.swift */,
 				9CA59E31252E07D700DCD349 /* Actions.sks */,
 				9CA59E37252E07D700DCD349 /* Main.storyboard */,
 				0B9DB3162530AE31006B601D /* Launch Screen.storyboard */,
@@ -392,6 +403,7 @@
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */,
 				9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */,
+				0B8E74AC253CA00100B45F0C /* UserDefaultsStruct.swift in Sources */,
 				0BE1E5B8252F502900DD36C6 /* Array2D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
