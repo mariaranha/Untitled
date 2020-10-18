@@ -42,18 +42,31 @@ class Level {
         }
     }
 
-    func createInitialCards() -> Set<Card> {
+    func createInitialCards(filename: String) -> Set<Card> {
         var set: Set<Card> = []
+        
+        guard let levelData = LevelData.loadFrom(file: filename) else { return set }
+        
+        let photoRow = levelData.photoRow
+        let photoColumn = levelData.photoColumn
+        
+        let photo = Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 8)!)
+        cards[photoColumn, photoRow] = photo
+
+        set.insert(photo)
+        
 
         for row in 0..<numRows {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
-                    let cardType = CardType.random()
+                    if row != photoRow || column != photoColumn {
+                        let cardType = CardType.random()
 
-                    let card = Card(column: column, row: row, cardType: cardType)
-                    cards[column, row] = card
+                        let card = Card(column: column, row: row, cardType: cardType)
+                        cards[column, row] = card
 
-                    set.insert(card)
+                        set.insert(card)
+                    }
                 }
             }
         }

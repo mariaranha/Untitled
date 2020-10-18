@@ -8,7 +8,9 @@
 import Foundation
 
 class LevelData: Codable {
-  let tiles: [[Int]]
+    let tiles: [[Int]]
+    let photoRow: Int
+    let photoColumn: Int
   
   static func loadFrom(file filename: String) -> LevelData? {
     var data: Data

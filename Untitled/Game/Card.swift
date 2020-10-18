@@ -9,7 +9,7 @@ import SpriteKit
 
 // MARK: - CardType
 enum CardType: Int {
-  case unknown = 0, character, confetti, dementors, glitter, riotPolice, serpentine, tacticalPolice
+  case unknown = 0, character, confetti, dementors, glitter, riotPolice, serpentine, tacticalPolice, photo
   var spriteName: String {
     let spriteNames = [
       "card_character",
@@ -18,16 +18,17 @@ enum CardType: Int {
       "card_glitter",
       "card_riotPolice",
       "card_serpentine",
-      "card_tacticalPolice"]
+      "card_tacticalPolice",
+      "photo"]
 
     return spriteNames[rawValue - 1]
   }
   
   static func random() -> CardType {
-    var type = CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
+    var type = CardType(rawValue: Int(arc4random_uniform(7)) + 1)!
     
     while type == .character {
-        type = CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
+        type = CardType(rawValue: Int(arc4random_uniform(7)) + 1)!
     }
     
     return type
