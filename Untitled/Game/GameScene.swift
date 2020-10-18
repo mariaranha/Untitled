@@ -196,7 +196,7 @@ class GameScene: SKScene {
         
         guard let toCard = level.card(atColumn: moveTo!.column,
                                       row: moveTo!.row) else { return }
-        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random())
+        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random(filename: "Level_1"))
         
         if let handler = moveHandler {
             let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)

@@ -60,7 +60,7 @@ class Level {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
                     if row != photoRow || column != photoColumn {
-                        let cardType = CardType.random()
+                        let cardType = CardType.random(filename: filename)
 
                         let card = Card(column: column, row: row, cardType: cardType)
                         cards[column, row] = card

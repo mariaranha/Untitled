@@ -10,7 +10,8 @@ import Foundation
 class LevelData: Codable {
     let tiles: [[Int]]
     let photoPosition: [String: Int]
-  
+    let randomPercentage: [Double]
+    
   static func loadFrom(file filename: String) -> LevelData? {
     var data: Data
     var levelData: LevelData?

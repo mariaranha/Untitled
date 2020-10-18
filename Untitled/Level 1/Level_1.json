@@ -5,5 +5,8 @@
               [1, 1, 1, 1, 1 ],
               [1, 1, 1, 1, 1 ],],
   
-  "photoPosition": {"row" : 3, "column": 3}
+  "photoPosition": {"row" : 3, "column": 3},
+  
+  "randomPercentage": [0.3, 0.15, 0.15, 0.1, 0.1, 0.2]
+  
 }
