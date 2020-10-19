@@ -23,6 +23,8 @@ class GameScene: SKScene {
     var moveHandler: ((MoveCard) -> Void)?
     var firstMoveHandler: ((FirstMove) -> Void)?
     
+    let gameViewController:GameViewController = GameViewController()
+    
     enum Moves {
         case up
         case down
@@ -175,10 +177,14 @@ class GameScene: SKScene {
     // MARK: Move
     func tryMove(move: Moves) {
         let moveFrom = getCharacterPosition()
+        guard let levelData = LevelData.loadFrom(file: "Level_1") else { return }
         guard moveFrom != nil else { return }
         guard let fromCard = level.card(atColumn: moveFrom!.column,
                                         row: moveFrom!.row) else { return }
         
+        let energyValue = levelData.energyCity
+        let photoRow = levelData.photoPosition["row"]!
+        let photoColumn = levelData.photoPosition["column"]!
         var moveTo = moveFrom
 
         switch move {
@@ -199,8 +205,17 @@ class GameScene: SKScene {
         let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random(filename: "Level_1"))
         
         if let handler = moveHandler {
-            let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
-            handler(move)
+            if toCard == Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 8)!)  {
+                if gameViewController.energyProgress.lifeValue >= energyValue {
+                    let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+                    handler(move)
+                }else{
+                    print("Complete a energia da cidade para coletar a foto")
+                }
+            }else{
+                let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+                handler(move)
+            }
         }
     }
     

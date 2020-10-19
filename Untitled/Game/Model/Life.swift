@@ -15,7 +15,7 @@ enum LifeType{
 class Life {
     
     var type: LifeType
-    private var lifeValue: Float
+    var lifeValue: Float
     
     //MARK: Initialization
     

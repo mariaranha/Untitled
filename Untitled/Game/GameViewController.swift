@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     //Scene draws the sprites and handles swipes
     var scene: GameScene!
     var level: Level!
+    var energyProgress: Life = Life(type: .city)
     
     @IBOutlet weak var progress: UIImageView!
     @IBOutlet weak var settings: UIButton!
@@ -42,7 +43,7 @@ class GameViewController: UIViewController {
 
         // Present the scene.
         skView.presentScene(scene)
-
+        
         beginGame()
     }
     

@@ -11,6 +11,7 @@ class LevelData: Codable {
     let tiles: [[Int]]
     let photoPosition: [String: Int]
     let randomPercentage: [Double]
+    let energyCity: Float
     
   static func loadFrom(file filename: String) -> LevelData? {
     var data: Data
