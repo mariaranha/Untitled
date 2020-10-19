@@ -107,10 +107,10 @@
 		0BE1E5B0252F4F1B00DD36C6 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				0D8BD833253DCFA1003ADD24 /* Controller */,
 				9CAC260E253B6C0D004F16EE /* Model */,
 				0BE1E5AD252F44E700DD36C6 /* Board.storyboard */,
 				9CA59E33252E07D700DCD349 /* GameScene.swift */,
-				9CA59E35252E07D700DCD349 /* GameViewController.swift */,
 				0BE1E5B3252F4FB800DD36C6 /* LevelData.swift */,
 				0B9DB3182535F9D8006B601D /* MoveCard.swift */,
 				0BE1E5B7252F502900DD36C6 /* Array2D.swift */,
@@ -119,6 +119,14 @@
 				0BE1E5BF252F5BC900DD36C6 /* Tile.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		0D8BD833253DCFA1003ADD24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CA59E35252E07D700DCD349 /* GameViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9CA59E21252E07D700DCD349 = {
