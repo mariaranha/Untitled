@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pAg-pE-1LB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pAg-pE-1LB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApO-Tv-S6f">
-                                <rect key="frame" x="32" y="76" width="64" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApO-Tv-S6f">
+                                <rect key="frame" x="32" y="76" width="63" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Settings"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-4Q-gAM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-4Q-gAM">
                                 <rect key="frame" x="338" y="76" width="44" height="30"/>
                                 <state key="normal" title="Album"/>
                             </button>
@@ -73,13 +75,13 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9f-tl-2at" customClass="ChapterView" customModule="Untitled" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="146" width="414" height="566"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="92a-5c-9qH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="bJb-03-4bJ"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEq-xj-qiH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEq-xj-qiH">
                                 <rect key="frame" x="156" y="680" width="102" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="57Z-6i-RfF"/>
@@ -91,7 +93,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MRx-tg-KzB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MRx-tg-KzB" firstAttribute="trailing" secondItem="G9f-tl-2at" secondAttribute="trailing" id="7Hw-O4-yhh"/>
                             <constraint firstItem="G9f-tl-2at" firstAttribute="top" secondItem="tdJ-4Q-gAM" secondAttribute="bottom" constant="40" id="9gn-nF-Ou9"/>
@@ -108,7 +111,6 @@
                             <constraint firstItem="nEq-xj-qiH" firstAttribute="centerX" secondItem="G9f-tl-2at" secondAttribute="centerX" id="izt-gr-2GD"/>
                             <constraint firstItem="ApO-Tv-S6f" firstAttribute="top" secondItem="MRx-tg-KzB" secondAttribute="top" constant="32" id="nv2-0M-Bam"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MRx-tg-KzB"/>
                     </view>
                     <navigationItem key="navigationItem" id="2EO-VK-bCC"/>
                     <connections>
@@ -124,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="1102.8985507246377" y="14.732142857142856"/>
         </scene>
-        <!--Board-->
+        <!--Narrative-->
         <scene sceneID="jsA-hR-YxF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Board" id="8G4-FD-UeR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Narrative" id="8G4-FD-UeR" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="k5u-j2-hK3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paq-vt-tBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,4 +154,9 @@
             <point key="canvasLocation" x="192.75362318840581" y="14.732142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
