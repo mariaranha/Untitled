@@ -25,10 +25,13 @@
                                     <constraint firstAttribute="height" constant="48" id="vnz-Yw-Nlr"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83F-0h-nuy">
-                                <rect key="frame" x="32" y="76" width="63" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Settings"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83F-0h-nuy">
+                                <rect key="frame" x="32" y="76" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="eVf-q7-JQr"/>
+                                    <constraint firstAttribute="height" constant="48" id="n3u-un-OmN"/>
+                                </constraints>
+                                <state key="normal" title="Settings" image="menuSettings"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-9A-c5p">
                                 <rect key="frame" x="0.0" y="343" width="48" height="210"/>
@@ -67,10 +70,17 @@
                                         <rect key="frame" x="64" y="128" width="286" height="640"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYY-7l-RbL">
+                                        <rect key="frame" x="184" y="825" width="46" height="30"/>
+                                        <state key="normal" title="Jogar"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="VYY-7l-RbL" firstAttribute="leading" secondItem="pkQ-7m-G8a" secondAttribute="leading" constant="184" id="4yC-f3-yYP"/>
                                     <constraint firstItem="pkQ-7m-G8a" firstAttribute="bottom" secondItem="Ii7-ub-fvT" secondAttribute="bottom" constant="128" id="Kg0-yN-yxN"/>
+                                    <constraint firstItem="pkQ-7m-G8a" firstAttribute="bottom" secondItem="VYY-7l-RbL" secondAttribute="bottom" constant="41" id="Q7A-hv-uKW"/>
                                     <constraint firstItem="Ii7-ub-fvT" firstAttribute="leading" secondItem="pkQ-7m-G8a" secondAttribute="leading" constant="64" id="W7G-34-aZg"/>
+                                    <constraint firstItem="pkQ-7m-G8a" firstAttribute="trailing" secondItem="VYY-7l-RbL" secondAttribute="trailing" constant="184" id="d65-0q-buN"/>
                                     <constraint firstItem="Ii7-ub-fvT" firstAttribute="top" secondItem="pkQ-7m-G8a" secondAttribute="top" constant="128" id="jOa-gc-UcG"/>
                                     <constraint firstItem="pkQ-7m-G8a" firstAttribute="trailing" secondItem="Ii7-ub-fvT" secondAttribute="trailing" constant="64" id="kPK-B5-U3d"/>
                                 </constraints>
@@ -82,18 +92,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xus-Kc-rwo" firstAttribute="trailing" secondItem="L8j-i5-Mqs" secondAttribute="trailing" constant="135" id="0Ye-LP-4mv"/>
+                            <constraint firstItem="83F-0h-nuy" firstAttribute="top" secondItem="xus-Kc-rwo" secondAttribute="top" constant="32" id="3fQ-Ff-W8g"/>
                             <constraint firstItem="xus-Kc-rwo" firstAttribute="bottom" secondItem="L8j-i5-Mqs" secondAttribute="bottom" id="9LD-PG-o9W"/>
                             <constraint firstItem="mMq-9A-c5p" firstAttribute="centerY" secondItem="RL6-2X-4zP" secondAttribute="centerY" id="FXR-an-x3m"/>
                             <constraint firstItem="xus-Kc-rwo" firstAttribute="trailing" secondItem="mMq-9A-c5p" secondAttribute="trailing" constant="366" id="GIp-UW-XBR"/>
+                            <constraint firstItem="83F-0h-nuy" firstAttribute="leading" secondItem="xus-Kc-rwo" secondAttribute="leading" constant="32" id="MeQ-Sh-9WJ"/>
                             <constraint firstItem="mMq-9A-c5p" firstAttribute="leading" secondItem="xus-Kc-rwo" secondAttribute="leading" id="PoB-UC-HjQ"/>
-                            <constraint firstItem="83F-0h-nuy" firstAttribute="leading" secondItem="xus-Kc-rwo" secondAttribute="leading" constant="32" id="V9r-Dx-skf"/>
                             <constraint firstItem="mMq-9A-c5p" firstAttribute="top" secondItem="xus-Kc-rwo" secondAttribute="top" constant="299" id="Z7c-4g-J1u"/>
-                            <constraint firstItem="83F-0h-nuy" firstAttribute="top" secondItem="xus-Kc-rwo" secondAttribute="top" constant="32" id="oAj-uf-RbI"/>
                             <constraint firstItem="L8j-i5-Mqs" firstAttribute="leading" secondItem="xus-Kc-rwo" secondAttribute="leading" constant="135" id="ry3-Ph-cnd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="narrativeSlide" destination="L8j-i5-Mqs" id="xbK-mD-9kt"/>
                         <outlet property="narrativeView" destination="Ii7-ub-fvT" id="FUz-1o-OR4"/>
+                        <outlet property="playButton" destination="VYY-7l-RbL" id="yvK-h0-NBa"/>
                         <outlet property="scrollView" destination="yFx-06-Fut" id="CLc-Gn-Ug6"/>
                     </connections>
                 </viewController>
@@ -103,6 +115,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menuSettings" width="48" height="48"/>
         <image name="narrative_slide" width="288" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
