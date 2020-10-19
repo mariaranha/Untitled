@@ -21,6 +21,10 @@ class GameScene: SKScene {
     var moveHandler: ((MoveCard) -> Void)?
     var firstMoveHandler: ((FirstMove) -> Void)?
     
+    let gameViewController:GameViewController = GameViewController()
+    
+    var canExit = false
+    
     enum Moves {
         case up
         case down
@@ -161,9 +165,17 @@ class GameScene: SKScene {
     // MARK: Move
     func tryMove(move: Moves) {
         let moveFrom = getCharacterPosition()
+        
+        guard let levelData = LevelData.loadFrom(file: "Level_1") else { return }
+        
         guard moveFrom != nil else { return }
         guard let fromCard = level.card(atColumn: moveFrom!.column,
                                         row: moveFrom!.row) else { return }
+        
+        let energyValue = levelData.energyCity
+        let photoRow = levelData.photoPosition["row"]!
+        let photoColumn = levelData.photoPosition["column"]!
+        let exitRow = levelData.exitPosition[0]["row"]!
         
         var moveTo = moveFrom
 
@@ -182,11 +194,31 @@ class GameScene: SKScene {
         
         guard let toCard = level.card(atColumn: moveTo!.column,
                                       row: moveTo!.row) else { return }
-        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random())
+        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random(filename: "Level_1"))
         
         if let handler = moveHandler {
-            let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
-            handler(move)
+            if toCard == Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 8)!)  {
+                if gameViewController.energyProgress.lifeValue >= energyValue {
+                    let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+                    handler(move)
+                    canExit = true
+                }else{
+                    print("Complete a energia da cidade para coletar a foto")
+                }
+            }else{
+                if canExit == true{
+                    if toCard.row == exitRow{
+                        for index in 0...levelData.photoPosition.count{
+                            if toCard.column == levelData.exitPosition[index]["column"]!{
+                                print("Venceu")
+                                break
+                            }
+                        }
+                    }
+                }
+                let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+                handler(move)
+            }
         }
     }
     
