@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
     
     let cardAspectRatio: CGFloat = 1.5
     
+    var energyProgress: Life = Life(type: .city)
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,7 +59,7 @@ class GameViewController: UIViewController {
     }
     
     func beginGame() {
-        let newCards = level.createInitialCards()
+        let newCards = level.createInitialCards(filename: "Level_1")
         scene.addInitialSprites(for: newCards)
     }
     
