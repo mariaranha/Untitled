@@ -26,6 +26,10 @@
 		0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1E5BF252F5BC900DD36C6 /* Tile.swift */; };
 		0BE1E5F9252F64F700DD36C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1E5F8252F64F700DD36C6 /* Assets.xcassets */; };
 		9C0918EE25430C3900CF1F8D /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */; };
+		9C0918F3254319A200CF1F8D /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0918F2254319A200CF1F8D /* Intro.storyboard */; };
+		9C0918F925432AA000CF1F8D /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */; };
+		9C0918FB254332EC00CF1F8D /* NarrativeIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0918FA254332EC00CF1F8D /* NarrativeIntroView.xib */; };
+		9C0918FF2543353400CF1F8D /* NarrativeIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918FE2543353400CF1F8D /* NarrativeIntroView.swift */; };
 		9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E6856253B8AF10048139A /* NarrativeTitleView.swift */; };
 		9C2E685B253B8C520048139A /* NarrativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E685A253B8C520048139A /* NarrativeViewController.swift */; };
 		9C49FCA1253B75AD0049F415 /* Narrative.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA0253B75AD0049F415 /* Narrative.storyboard */; };
@@ -78,6 +82,10 @@
 		0BE1E5BF252F5BC900DD36C6 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		0BE1E5F8252F64F700DD36C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
+		9C0918F2254319A200CF1F8D /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		9C0918FA254332EC00CF1F8D /* NarrativeIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrativeIntroView.xib; sourceTree = "<group>"; };
+		9C0918FE2543353400CF1F8D /* NarrativeIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeIntroView.swift; sourceTree = "<group>"; };
 		9C2E6856253B8AF10048139A /* NarrativeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeTitleView.swift; sourceTree = "<group>"; };
 		9C2E685A253B8C520048139A /* NarrativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeViewController.swift; sourceTree = "<group>"; };
 		9C49FCA0253B75AD0049F415 /* Narrative.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Narrative.storyboard; sourceTree = "<group>"; };
@@ -186,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				0B8E74962537535600B45F0C /* ChapterMenuViewController.swift */,
-				9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +223,34 @@
 				0B8E74A4253AAE1D00B45F0C /* Controller */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		9C0918EF2543194E00CF1F8D /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				9C0918F5254319AE00CF1F8D /* Controller */,
+				9C0918F4254319A800CF1F8D /* View */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		9C0918F4254319A800CF1F8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C0918F2254319A200CF1F8D /* Intro.storyboard */,
+				9C0918FA254332EC00CF1F8D /* NarrativeIntroView.xib */,
+				9C0918FE2543353400CF1F8D /* NarrativeIntroView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C0918F5254319AE00CF1F8D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */,
+				9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9C49FC9D253B75390049F415 /* Narrative */ = {
@@ -270,6 +305,7 @@
 		9CA59E2C252E07D700DCD349 /* Untitled */ = {
 			isa = PBXGroup;
 			children = (
+				9C0918EF2543194E00CF1F8D /* Intro */,
 				0B8E74932537441600B45F0C /* Menu */,
 				9C49FC9D253B75390049F415 /* Narrative */,
 				0BE1E5B0252F4F1B00DD36C6 /* Game */,
@@ -418,6 +454,8 @@
 				9C49FCA1253B75AD0049F415 /* Narrative.storyboard in Resources */,
 				0BE1E5F9252F64F700DD36C6 /* Assets.xcassets in Resources */,
 				9CA59E32252E07D700DCD349 /* Actions.sks in Resources */,
+				9C0918F3254319A200CF1F8D /* Intro.storyboard in Resources */,
+				9C0918FB254332EC00CF1F8D /* NarrativeIntroView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +486,7 @@
 				0B8E749B2537548000B45F0C /* ChapterView.swift in Sources */,
 				0BE1E5BA252F522600DD36C6 /* Card.swift in Sources */,
 				0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */,
+				9C0918FF2543353400CF1F8D /* NarrativeIntroView.swift in Sources */,
 				9C762D85253D22CF00F71BEC /* NarrativeView.swift in Sources */,
 				0B9DB31B25373355006B601D /* DesignSystem.swift in Sources */,
 				0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */,
@@ -458,6 +497,7 @@
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
 				0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */,
 				9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */,
+				9C0918F925432AA000CF1F8D /* IntroductionViewController.swift in Sources */,
 				0B8E74AC253CA00100B45F0C /* UserDefaultsStruct.swift in Sources */,
 				0BE1E5B8252F502900DD36C6 /* Array2D.swift in Sources */,
 				9C2E685B253B8C520048139A /* NarrativeViewController.swift in Sources */,
@@ -629,7 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5PT75G5CA6;
+				DEVELOPMENT_TEAM = 7FH5Q2A622;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -648,7 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5PT75G5CA6;
+				DEVELOPMENT_TEAM = 7FH5Q2A622;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

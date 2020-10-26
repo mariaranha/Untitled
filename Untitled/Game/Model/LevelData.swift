@@ -1,5 +1,3 @@
-//
-//  LevelData.swift
 //  Untitled
 //
 //  Created by Julia Conti Mestre on 08/10/20.

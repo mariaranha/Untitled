@@ -17,16 +17,18 @@ class InitialScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupView()
+        setupViews()
     }
     
     //View
-    func setupView(){
+    func setupViews(){
         //labels
         titleLabel.text = "untitled games"
         subtitleLabel.text = "apresenta:"
         //background
         backgroundImage.image = UIImage(named: "initialscreen_background")
     }
+    
+    
 
 }
