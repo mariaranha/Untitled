@@ -136,7 +136,7 @@ class GameScene: SKScene {
                 guard let toCard = level.card(atColumn: column, row: 0) else { return }
                 
                 if let handler = firstMoveHandler {
-                    let characterCard = Card(column: column, row: 0, cardType: .character)
+                    let characterCard = Card(column: column, row: 0, cardType: .character, value: 0)
                     let move = FirstMove(toCard: toCard, characterCard: characterCard)
                     handler(move)
                 }
@@ -194,10 +194,12 @@ class GameScene: SKScene {
         
         guard let toCard = level.card(atColumn: moveTo!.column,
                                       row: moveTo!.row) else { return }
-        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: .random(filename: "Level_1"))
+        let cardType = CardType.random(filename: "Level_1")
+        let cardValue = Card.setCardValue(filename: "Level_1", cardType: cardType)
+        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: cardType, value: cardValue)
         
         if let handler = moveHandler {
-            if toCard == Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 8)!)  {
+            if toCard == Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 7)!, value: 0)  {
                 if gameViewController.energyProgress.lifeValue >= energyValue {
                     let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
                     handler(move)

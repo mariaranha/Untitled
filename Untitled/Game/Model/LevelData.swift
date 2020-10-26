@@ -13,6 +13,15 @@ class LevelData: Codable {
     let randomPercentage: [Double]
     let energyCity: Float
     let exitPosition: [[String: Int]]
+    let riotPoliceValue: [Int]
+    let tacticalPoliceValue: [Int]
+    let blockValue: [Int]
+    let photoRollValue: [Int]
+    let riotPoliceValuePercentage: [Double]
+    let tacticalPoliceValuePercentage: [Double]
+    let blockValuePercentage: [Double]
+    let photoRollValuePercentage: [Double]
+    
     
   static func loadFrom(file filename: String) -> LevelData? {
     var data: Data

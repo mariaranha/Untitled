@@ -50,7 +50,7 @@ class Level {
         let photoRow = levelData.photoPosition["row"]!
         let photoColumn = levelData.photoPosition["column"]!
         
-        let photo = Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 8)!)
+        let photo = Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 7)!, value: 0)
         cards[photoColumn, photoRow] = photo
 
         set.insert(photo)
@@ -61,8 +61,9 @@ class Level {
                 if tiles[column, row] != nil {
                     if row != photoRow || column != photoColumn {
                         let cardType = CardType.random(filename: filename)
-
-                        let card = Card(column: column, row: row, cardType: cardType)
+                        let cardValue = Card.setCardValue(filename: filename, cardType: cardType)
+                        
+                        let card = Card(column: column, row: row, cardType: cardType, value: cardValue)
                         cards[column, row] = card
 
                         set.insert(card)
@@ -70,7 +71,6 @@ class Level {
                 }
             }
         }
-        
         return set
     }
     
