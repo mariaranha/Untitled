@@ -62,6 +62,9 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     
     }
     
+    @IBAction func backToChaptersMenu(_ sender: UIStoryboardSegue) {
+    }
+    
     // MARK: Chapters
     func createChapters() -> [ChapterView] {
         
