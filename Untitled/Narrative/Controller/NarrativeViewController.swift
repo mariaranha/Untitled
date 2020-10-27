@@ -58,7 +58,6 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPageIndex = floor(scrollView.contentOffset.y/view.frame.width) + 1
-        print(scrollPageIndex)
         let direction = scrollView.panGestureRecognizer.translation(in: scrollView.superview).y
         
         switch scrollPageIndex {
