@@ -7,8 +7,11 @@
 
 import UIKit
 
-class OpenAlbumViewController: UIViewController {
-    
+protocol PhotoDetail: NSObjectProtocol {
+    func showPhotoDetail(photoPosition: Int)
+}
+
+class OpenAlbumViewController: UIViewController, PhotoDetail {
     @IBOutlet weak var albumPage: OpenAlbumView!
     @IBOutlet weak var initialStoryButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -20,6 +23,10 @@ class OpenAlbumViewController: UIViewController {
     @IBOutlet weak var leadingPageConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingPageConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var photoDetailBackground: UIView!
+    @IBOutlet weak var photoDetailDescription: UIImageView!
+    @IBOutlet weak var photoDetail: UIImageView!
+    
     enum AlbumPageType {
         case left
         case right
@@ -28,6 +35,7 @@ class OpenAlbumViewController: UIViewController {
     var currentPage: Int = 1
     var totalPages: Int = 5
     var pageType: AlbumPageType = .left
+    var photoTapped: Int = 0
     
     //Need to retrieve from User Defaults
     var unlockedRewards: [Int] = [1]
@@ -36,6 +44,7 @@ class OpenAlbumViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = AppColor.lightBackground.value
+        albumPage.photoDetailDelegate = self
         
         view.setNeedsLayout()
         
@@ -61,6 +70,9 @@ class OpenAlbumViewController: UIViewController {
         albumPage.bottomPhoto.rotate(angle: 1.0)
         albumPage.bottomDescription.rotate(angle: 1.0)
         
+        //Set first view
+        photoDetailBackground.isHidden = true
+        
         //Set Pages
         setPageButtons()
         setPageConstraints()
@@ -80,14 +92,26 @@ class OpenAlbumViewController: UIViewController {
     }
     
     func setPageButtons() {
-        if currentPage == 1 {
-            previousPageButton.isHidden = true
-        } else if currentPage == totalPages{
-            nextPageButton.isHidden = true
+        if photoDetailBackground.isHidden {
+            if currentPage == 1 {
+                previousPageButton.isHidden = true
+            } else if currentPage == totalPages {
+                nextPageButton.isHidden = true
+            } else {
+                previousPageButton.isHidden = false
+                nextPageButton.isHidden = false
+            }
         } else {
-            previousPageButton.isHidden = false
-            nextPageButton.isHidden = false
+            if photoTapped == 1 {
+                previousPageButton.isHidden = true
+            } else if photoTapped == totalPages * 2 {
+                nextPageButton.isHidden = true
+            } else {
+                previousPageButton.isHidden = false
+                nextPageButton.isHidden = false
+            }
         }
+        
     }
     
     func setPageLayout() {
@@ -128,17 +152,83 @@ class OpenAlbumViewController: UIViewController {
         
     }
     
-    @IBAction func nextPage(_ sender: UIButton) {
+    func setPhotoDetailLayout() {
+        if unlockedRewards.contains(photoTapped) {
+            photoDetail.image = UIImage(named: "unlockedPhoto_0\(photoTapped)")
+            photoDetailDescription.image = UIImage(named: "unlockedLabel_0\(photoTapped)")
+        } else {
+            photoDetail.image = UIImage(named: "lockedPhoto")
+            photoDetailDescription.image = UIImage(named: "lockedLabel")
+        }
+    }
+    
+    func showPhotoDetail(photoPosition: Int) {
+        var topPagePhoto: Int
+        var bottomPagePhoto: Int
+        
+        topPagePhoto = currentPage * 2 - 1
+        bottomPagePhoto = currentPage * 2
+        
+        if photoPosition == 0 {
+            photoTapped = topPagePhoto
+        } else {
+            photoTapped = bottomPagePhoto
+        }
+        
+        photoDetailBackground.isHidden = false
+        setPhotoDetailLayout()
+    }
+    
+    func nextPage() {
         currentPage += 1
         setPageButtons()
         setPageConstraints()
         setPageLayout()
     }
     
-    @IBAction func previousPage(_ sender: UIButton) {
+    func previousPage() {
         currentPage -= 1
         setPageButtons()
         setPageConstraints()
         setPageLayout()
     }
+    
+    func nextPhoto() {
+        photoTapped += 1
+        setPageButtons()
+        setPhotoDetailLayout()
+    }
+    
+    func previousPhoto() {
+        photoTapped -= 1
+        setPageButtons()
+        setPhotoDetailLayout()
+    }
+    
+    @IBAction func nextPageOrPhoto(_ sender: UIButton) {
+        if photoDetailBackground.isHidden {
+            nextPage()
+        } else {
+            nextPhoto()
+        }
+    }
+    
+    @IBAction func previousPageOrPhoto(_ sender: UIButton) {
+        if photoDetailBackground.isHidden {
+            previousPage()
+        } else {
+            previousPhoto()
+        }
+    }
+    
+    @IBAction func closeAlbumOrPhoto(_ sender: Any) {
+        if photoDetailBackground.isHidden {
+            self.performSegue(withIdentifier: "backToCloseAlbum", sender: self)
+            setPageButtons()
+        } else {
+            photoDetailBackground.isHidden = true
+            setPageButtons()
+        }
+    }
+    
 }

@@ -19,6 +19,11 @@ class OpenAlbumView: UIView {
     @IBOutlet weak var leadingPhotoConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingPhotoConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var topPhotoButton: UIButton!
+    @IBOutlet weak var bottomPhotoButton: UIButton!
+    
+    weak var photoDetailDelegate: PhotoDetail?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -35,4 +40,13 @@ class OpenAlbumView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
+    
+    @IBAction func topPhotoTapped(_ sender: Any) {
+        photoDetailDelegate?.showPhotoDetail(photoPosition: 0)
+    }
+    
+    @IBAction func bottomPhotoTapped(_ sender: Any) {
+        photoDetailDelegate?.showPhotoDetail(photoPosition: 1)
+    }
+    
 }

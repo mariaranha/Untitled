@@ -13,10 +13,12 @@
                 <outlet property="albumPage" destination="pSd-vp-i0Z" id="VNf-5l-aKj"/>
                 <outlet property="bottomDescription" destination="Jgt-hh-FMd" id="BEc-PZ-rsI"/>
                 <outlet property="bottomPhoto" destination="nqr-pU-Wx3" id="GJH-7t-nXw"/>
+                <outlet property="bottomPhotoButton" destination="dkE-Be-Zoh" id="F71-4h-dMe"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="sBn-Nn-RHd"/>
                 <outlet property="leadingPhotoConstraint" destination="f3c-8P-Aap" id="Qn8-Uy-MbG"/>
                 <outlet property="topDescription" destination="mI8-JD-uep" id="hbH-B0-i7k"/>
                 <outlet property="topPhoto" destination="9XZ-WA-vsG" id="rav-Xj-3w1"/>
+                <outlet property="topPhotoButton" destination="KgR-XZ-mql" id="gmB-q6-tLj"/>
                 <outlet property="trailingPhotoConstraint" destination="9p9-bV-hql" id="YgL-R1-15N"/>
             </connections>
         </placeholder>
@@ -52,6 +54,18 @@
                         <constraint firstAttribute="height" constant="42" id="fUq-dc-byH"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-XZ-mql">
+                    <rect key="frame" x="76" y="64" width="256" height="179"/>
+                    <connections>
+                        <action selector="topPhotoTapped:" destination="-1" eventType="touchUpInside" id="f3a-Cq-quR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkE-Be-Zoh">
+                    <rect key="frame" x="76" y="303" width="256" height="179"/>
+                    <connections>
+                        <action selector="bottomPhotoTapped:" destination="-1" eventType="touchUpInside" id="8sD-EK-q8o"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
@@ -59,21 +73,29 @@
                 <constraint firstAttribute="bottom" secondItem="Jgt-hh-FMd" secondAttribute="bottom" priority="750" constant="118" id="49R-Lj-Esc"/>
                 <constraint firstItem="Jgt-hh-FMd" firstAttribute="leading" secondItem="nqr-pU-Wx3" secondAttribute="leading" id="5A7-lQ-4vE"/>
                 <constraint firstItem="pSd-vp-i0Z" firstAttribute="trailing" secondItem="9XZ-WA-vsG" secondAttribute="trailing" constant="42" id="9p9-bV-hql"/>
+                <constraint firstItem="dkE-Be-Zoh" firstAttribute="leading" secondItem="nqr-pU-Wx3" secondAttribute="leading" id="Eu1-EB-hUB"/>
                 <constraint firstItem="Jgt-hh-FMd" firstAttribute="top" secondItem="nqr-pU-Wx3" secondAttribute="bottom" constant="5" id="G5U-vX-5ZF"/>
+                <constraint firstItem="Jgt-hh-FMd" firstAttribute="bottom" secondItem="dkE-Be-Zoh" secondAttribute="bottom" id="MM6-4g-C0x"/>
+                <constraint firstItem="dkE-Be-Zoh" firstAttribute="trailing" secondItem="nqr-pU-Wx3" secondAttribute="trailing" id="Ncl-CH-TdW"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jgt-hh-FMd" secondAttribute="bottom" constant="75" id="Nqp-RB-g8K"/>
                 <constraint firstItem="nqr-pU-Wx3" firstAttribute="leading" secondItem="9XZ-WA-vsG" secondAttribute="leading" id="OfB-ze-kpA"/>
                 <constraint firstItem="mI8-JD-uep" firstAttribute="centerX" secondItem="9XZ-WA-vsG" secondAttribute="centerX" id="SiN-VS-1Kr"/>
+                <constraint firstItem="KgR-XZ-mql" firstAttribute="trailing" secondItem="9XZ-WA-vsG" secondAttribute="trailing" id="Thm-bJ-1MA"/>
                 <constraint firstItem="nqr-pU-Wx3" firstAttribute="trailing" secondItem="9XZ-WA-vsG" secondAttribute="trailing" id="VuQ-Yh-Fjj"/>
                 <constraint firstItem="nqr-pU-Wx3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mI8-JD-uep" secondAttribute="bottom" constant="10" id="VwB-vT-AUq"/>
+                <constraint firstItem="KgR-XZ-mql" firstAttribute="top" secondItem="9XZ-WA-vsG" secondAttribute="top" id="Zfw-7g-nkR"/>
                 <constraint firstItem="mI8-JD-uep" firstAttribute="width" secondItem="9XZ-WA-vsG" secondAttribute="width" id="Zxv-WA-jqY"/>
                 <constraint firstItem="9XZ-WA-vsG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="64" id="blQ-H3-GfF"/>
                 <constraint firstAttribute="trailing" secondItem="pSd-vp-i0Z" secondAttribute="trailing" id="eEO-27-pUU"/>
                 <constraint firstItem="9XZ-WA-vsG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="eLY-c4-jzG"/>
                 <constraint firstItem="9XZ-WA-vsG" firstAttribute="leading" secondItem="pSd-vp-i0Z" secondAttribute="leading" constant="76" id="f3c-8P-Aap"/>
+                <constraint firstItem="dkE-Be-Zoh" firstAttribute="top" secondItem="nqr-pU-Wx3" secondAttribute="top" id="gIu-7F-3TB"/>
+                <constraint firstItem="mI8-JD-uep" firstAttribute="bottom" secondItem="KgR-XZ-mql" secondAttribute="bottom" id="gn5-cU-IWq"/>
                 <constraint firstItem="mI8-JD-uep" firstAttribute="top" secondItem="9XZ-WA-vsG" secondAttribute="bottom" constant="5" id="guL-sy-ymY"/>
                 <constraint firstItem="pSd-vp-i0Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q0K-yY-4Bt"/>
                 <constraint firstItem="pSd-vp-i0Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tYv-Ut-I2z"/>
                 <constraint firstItem="Jgt-hh-FMd" firstAttribute="trailing" secondItem="nqr-pU-Wx3" secondAttribute="trailing" id="vA6-zG-irv"/>
+                <constraint firstItem="KgR-XZ-mql" firstAttribute="leading" secondItem="9XZ-WA-vsG" secondAttribute="leading" id="zmE-pQ-vsu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="179.71014492753625" y="109.82142857142857"/>
