@@ -15,7 +15,7 @@ enum LifeType{
 class Life {
     
     var type: LifeType
-    var lifeValue: Float
+    var value: Int
     
     //MARK: Initialization
     
@@ -23,26 +23,34 @@ class Life {
         self.type = type
         
         if type == LifeType.city{
-            lifeValue = 0.0
+            value = 0
         } else{
-            lifeValue = 5.0
+            value = 5
         }
         
     }
     
-    init(type: LifeType, lifeValue: Float) {
-        self.lifeValue = lifeValue
+    init(type: LifeType, lifeValue: Int) {
+        self.value = lifeValue
         self.type = type
     }
     
     //MARK: Actions
     
-    func decreaseLife(value: Float){
-        self.lifeValue = self.lifeValue - value
+    func decreaseLife(value: Int){
+        self.value = self.value - value
     }
     
-    func updateLife(value: Float){
-        self.lifeValue = value
+    func updateValue(value: Int, type: LifeType){
+        self.value += value
+        if self.value < 0{
+            self.value = 0
+        }
+        if type == .character{
+            if self.value > 10 {
+                self.value = 10
+            }
+        }
     }
     
 }

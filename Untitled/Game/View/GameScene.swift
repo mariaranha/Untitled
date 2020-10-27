@@ -19,7 +19,6 @@ class GameScene: SKScene {
     var level: Level!
     
     var moveHandler: ((MoveCard) -> Void)?
-    var firstMoveHandler: ((FirstMove) -> Void)?
     
     let gameViewController:GameViewController = GameViewController()
     
@@ -92,10 +91,7 @@ class GameScene: SKScene {
         var touchLocation = sender.location(ofTouch: 0, in: view)
         convertTouchCoordinate(&touchLocation)
         
-        guard let characterPosition = getCharacterPosition() else {
-            tryFirstMove(touchLocation)
-            return
-        }
+        guard let characterPosition = getCharacterPosition() else { return }
         
         let cardUp = (point: pointFor(column: characterPosition.column,
                                       row: characterPosition.row + 1),
@@ -119,27 +115,6 @@ class GameScene: SKScene {
             
             if cardFrame.contains(touchLocation) {
                 tryMove(move: card.move)
-                break
-            }
-        }
-    }
-    
-    fileprivate func tryFirstMove(_ touchLocation: CGPoint) {
-        for column in 0..<level.numColumns {
-            let point = pointFor(column: column, row: 0)
-            let cardFrame = CGRect(x: point.x-tileWidth/2,
-                                   y: point.y-tileHeight/2,
-                                   width: tileWidth,
-                                   height: tileHeight)
-            
-            if cardFrame.contains(touchLocation) {
-                guard let toCard = level.card(atColumn: column, row: 0) else { return }
-                
-                if let handler = firstMoveHandler {
-                    let characterCard = Card(column: column, row: 0, cardType: .character, value: 0)
-                    let move = FirstMove(toCard: toCard, characterCard: characterCard)
-                    handler(move)
-                }
                 break
             }
         }
@@ -194,13 +169,14 @@ class GameScene: SKScene {
         
         guard let toCard = level.card(atColumn: moveTo!.column,
                                       row: moveTo!.row) else { return }
-        let cardType = CardType.random(filename: "Level_1")
-        let cardValue = Card.setCardValue(filename: "Level_1", cardType: cardType)
-        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: cardType, value: cardValue)
+        
+        let newCardType = CardType.random(filename: "Level_1")
+        let newCardValue = Card.setCardValue(filename: "Level_1", cardType: newCardType)
+        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: newCardType, value: newCardValue)
         
         if let handler = moveHandler {
             if toCard == Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 7)!, value: 0)  {
-                if gameViewController.energyProgress.lifeValue >= energyValue {
+                if gameViewController.energyProgress.value >= energyValue {
                     let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
                     handler(move)
                     canExit = true
@@ -210,7 +186,7 @@ class GameScene: SKScene {
             }else{
                 if canExit == true{
                     if toCard.row == exitRow{
-                        for index in 0...levelData.photoPosition.count{
+                        for index in 0...levelData.exitPosition.count-1{
                             if toCard.column == levelData.exitPosition[index]["column"]!{
                                 print("Venceu")
                                 break
@@ -220,6 +196,22 @@ class GameScene: SKScene {
                 }
                 let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
                 handler(move)
+                
+                if toCard.cardType == .block || toCard.cardType == .tacticalPolice{
+                    gameViewController.energyProgress.updateValue(value: toCard.value, type: .city)
+                }else if toCard.cardType == .photoRoll || toCard.cardType == .riotPolice{
+                    gameViewController.lifeProgress.updateValue(value: toCard.value, type: .character)
+                }
+                
+
+//                print("Tipo da carta: \(toCard.cardType)")
+//                print("Valor da carta: \(toCard.value)")
+//                print("Energia: \(gameViewController.energyProgress.value)")
+//                print("Vida: \(gameViewController.lifeProgress.value)")
+                
+                if gameViewController.lifeProgress.value == 0{
+                    print("Game Over")
+                }
             }
         }
     }
@@ -271,16 +263,7 @@ class GameScene: SKScene {
         view.addGestureRecognizer(tap)
     }
     
-    // MARK: Animate Move
-    func animateFirstMove(_ move: FirstMove) {
-        let toSprite = move.toCard.sprite!
-        
-        let removeCard = SKAction.removeFromParent()
-        toSprite.run(removeCard)
-        
-        setSprite(move.characterCard)
-    }
-    
+    // MARK: Animate Move 
     
     func animateMove(_ move: MoveCard, completion: @escaping () -> Void) {
         let spriteA = move.cardA.sprite!

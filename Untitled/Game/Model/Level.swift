@@ -50,16 +50,23 @@ class Level {
         let photoRow = levelData.photoPosition["row"]!
         let photoColumn = levelData.photoPosition["column"]!
         
+        let characterRow = levelData.characterPosition["row"]!
+        let characterColumn = levelData.characterPosition["column"]!
+        
         let photo = Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 7)!, value: 0)
         cards[photoColumn, photoRow] = photo
+        
+        let character = Card(column: characterColumn, row: characterRow, cardType: CardType(rawValue: 1)!, value: 0)
+        cards[characterColumn,characterRow] = character
 
         set.insert(photo)
+        set.insert(character)
         
 
         for row in 0..<numRows {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
-                    if row != photoRow || column != photoColumn {
+                    if (row != photoRow || column != photoColumn) && (row != characterRow || column != characterColumn) {
                         let cardType = CardType.random(filename: filename)
                         let cardValue = Card.setCardValue(filename: filename, cardType: cardType)
                         
@@ -79,12 +86,6 @@ class Level {
         guard (row >= 0 && row < numRows) else { return nil }
         
         return cards[column, row]
-    }
-    
-    func performFirstMove(_ move: FirstMove) {
-        cards[move.toCard.column, move.toCard.row] = move.characterCard
-        move.characterCard.column = move.toCard.column
-        move.characterCard.row = move.toCard.row
     }
     
     func performMove(_ move: MoveCard) {

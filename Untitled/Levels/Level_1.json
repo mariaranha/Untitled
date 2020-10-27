@@ -5,28 +5,30 @@
               [1, 1, 1, 1, 1 ],
               [1, 1, 1, 1, 1 ],],
   
-  "photoPosition": {"row" : 3, "column": 3},
+  "photoPosition": {"row" : 4, "column": 4},
   
-  "randomPercentage": [0.15, 0.15, 0.3, 0.2, 0.2],
+  "randomPercentage": [0.15, 0.2, 0.15, 0.3, 0.2],
   
   "energyCity": 20,
   
-  "exitPosition": [{"row" : 4, "column": 1}, {"row" : 4, "column": 2}, {"row" : 4, "column": 3}],
+  "exitPosition": [{"row" : 0, "column": 1}, {"row" : 0, "column": 2}, {"row" : 0, "column": 3}],
   
   "riotPoliceValue": [-3,-2,-1],
   
-  "riotPoliceValuePercentage": [0.3,0.3,0.4],
+  "riotPoliceValuePercentage": [0.4,0.4,0.2],
   
   "tacticalPoliceValue": [-4,-3,-1],
   
-  "tacticalPoliceValuePercentage": [0.15,0.30,0.55],
+  "tacticalPoliceValuePercentage": [0.2,0.55,0.25],
   
-  "blockValue": [1,2,3],
+  "blockValue": [2,3,4],
   
   "blockValuePercentage": [0.3,0.3,0.4],
   
-  "photoRollValue": [1,3,4],
+  "photoRollValue": [1,2],
   
-  "photoRollValuePercentage": [0.15,0.30,0.55]
+  "photoRollValuePercentage": [0.65,0.35],
+  
+  "characterPosition": {"row" : 0, "column": 1}
   
 }
