@@ -173,6 +173,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pAg-pE-1LB" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="w68-Yv-JJQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zWA-mo-TrE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

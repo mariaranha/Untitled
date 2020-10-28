@@ -10,6 +10,7 @@ import Foundation
 struct UserDefaultsStruct {
     
     private static let defaults = UserDefaults.standard
+    static var rewards : [Rewards: Bool] = [:]
     
     struct UserLevel {
         static var level: Int {
@@ -24,5 +25,21 @@ struct UserDefaultsStruct {
         }
     }
     
+    enum Rewards: String, CaseIterable {
+        case photoChapter1
+        case photoChapter2
+        
+        func gotReward() {
+            defaults.set(true, forKey: self.rawValue)
+            UserDefaultsStruct.rewards[self] = true
+        }
+        
+        static func getRewards() {
+            for i in self.allCases {
+                let value = defaults.bool(forKey: i.rawValue)
+                
+                UserDefaultsStruct.rewards[i] = value
+            }
+        }
+    }
 }
-
