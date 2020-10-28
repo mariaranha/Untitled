@@ -37,11 +37,12 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     var pageType: AlbumPageType = .left
     var photoTapped: Int = 0
     
-    //Need to retrieve from User Defaults
-    var unlockedRewards: [Int] = [1]
+    var unlockedRewards: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getUnlockedRewards()
 
         view.backgroundColor = AppColor.lightBackground.value
         albumPage.photoDetailDelegate = self
@@ -77,6 +78,20 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         setPageButtons()
         setPageConstraints()
         setPageLayout()
+    }
+    
+    func getUnlockedRewards() {
+        //Unlocked Rewards - User Defaults
+        UserDefaultsStruct.Rewards.getRewards()
+        let rewards = UserDefaultsStruct.rewards
+        
+        var index: Int = 0
+        for reward in rewards {
+            index += 1
+            if reward.value == true {
+                unlockedRewards.append(index)
+            }
+        }
     }
     
     func setPageConstraints() {

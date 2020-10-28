@@ -9,6 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--introNarrative-->
+        <scene sceneID="BgT-Xf-WKi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Intro" referencedIdentifier="introNarrative" id="nWk-9I-lA8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lMd-pq-hFQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QlE-PG-gIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-513"/>
+        </scene>
         <!--Close Album View Controller-->
         <scene sceneID="IfT-06-BdQ">
             <objects>
@@ -20,6 +30,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-jz-jgD">
                                 <rect key="frame" x="326" y="76" width="56" height="56"/>
                                 <state key="normal" image="initialStory"/>
+                                <connections>
+                                    <segue destination="nWk-9I-lA8" kind="show" id="J4M-Nf-oA0"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closedAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="uXt-Rn-cYw">
                                 <rect key="frame" x="32" y="204.5" width="350" height="497"/>
@@ -96,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLu-rx-nf3" customClass="OpenAlbumView" customModule="Untitled" customModuleProvider="target">
-                                <rect key="frame" x="31" y="143" width="382" height="573"/>
+                                <rect key="frame" x="32" y="143" width="382" height="573"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-Yh-cbW">
@@ -116,12 +129,15 @@
                                     <constraint firstAttribute="height" constant="56" id="IAu-gh-3TN"/>
                                 </constraints>
                                 <state key="normal" image="initialStory"/>
+                                <connections>
+                                    <segue destination="fID-cM-2Rz" kind="show" id="8EZ-UO-rJW"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCq-Sw-hti">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1U-jW-iZV">
-                                        <rect key="frame" x="32" y="297" width="350" height="249"/>
+                                        <rect key="frame" x="32" y="296.5" width="350" height="249"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoLabelReward" translatesAutoresizingMaskIntoConstraints="NO" id="nwg-BI-gIq">
                                                 <rect key="frame" x="0.0" y="191" width="350" height="58"/>
@@ -237,7 +253,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMY-NB-JzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="m57-Wu-8IS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="-265.17857142857144"/>
+            <point key="canvasLocation" x="1145" y="-265"/>
+        </scene>
+        <!--introNarrative-->
+        <scene sceneID="cxk-J8-5f2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Intro" referencedIdentifier="introNarrative" id="fID-cM-2Rz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ibm-LN-P4X"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eh0-Gs-1Gu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-483"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
