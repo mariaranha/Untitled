@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pAg-pE-1LB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pAg-pE-1LB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,22 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApO-Tv-S6f">
-                                <rect key="frame" x="32" y="76" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ApO-Tv-S6f" secondAttribute="height" multiplier="1:1" id="0Vh-0D-lza"/>
-                                    <constraint firstAttribute="height" constant="48" id="63b-XC-cNQ"/>
-                                </constraints>
-                                <state key="normal" image="menuSettings"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-4Q-gAM">
-                                <rect key="frame" x="334" y="76" width="48" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="gGF-f3-75j"/>
-                                    <constraint firstAttribute="width" constant="48" id="ikT-Nj-FvS"/>
-                                </constraints>
-                                <state key="normal" image="menuAlbumButton"/>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sQ9-1H-FfV">
                                 <rect key="frame" x="0.0" y="798" width="414" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +60,7 @@
                                     <outlet property="delegate" destination="89M-PS-i4h" id="sw4-pI-K1c"/>
                                 </connections>
                             </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7N8-ue-wOx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N8-ue-wOx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -89,6 +73,25 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="92a-5c-9qH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="bJb-03-4bJ"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApO-Tv-S6f">
+                                <rect key="frame" x="32" y="76" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ApO-Tv-S6f" secondAttribute="height" multiplier="1:1" id="0Vh-0D-lza"/>
+                                    <constraint firstAttribute="height" constant="48" id="63b-XC-cNQ"/>
+                                </constraints>
+                                <state key="normal" image="menuSettings"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-4Q-gAM">
+                                <rect key="frame" x="334" y="76" width="48" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="gGF-f3-75j"/>
+                                    <constraint firstAttribute="width" constant="48" id="ikT-Nj-FvS"/>
+                                </constraints>
+                                <state key="normal" image="menuAlbumButton"/>
+                                <connections>
+                                    <segue destination="l4Q-DK-dNk" kind="show" id="RP8-4O-YdB"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8qz-Rt-LL9">
                                 <rect key="frame" x="206" y="723" width="2" height="75"/>
                                 <constraints>
@@ -144,6 +147,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmS-bP-ViM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1102.8985507246377" y="14.732142857142856"/>
+        </scene>
+        <!--Rewards-->
+        <scene sceneID="SUF-vl-03u">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rewards" id="l4Q-DK-dNk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9bh-v9-HWZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFY-Y4-bzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="-196"/>
         </scene>
         <!--Narrative-->
         <scene sceneID="jsA-hR-YxF">

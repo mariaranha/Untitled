@@ -31,6 +31,8 @@ class GameViewController: UIViewController {
     let cardAspectRatio: CGFloat = 1.5
     
     var energyProgress: Life = Life(type: .city)
+    var lifeProgress: Life  =  Life(type: .character)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +52,6 @@ class GameViewController: UIViewController {
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
         scene.moveHandler = handleMove
-        scene.firstMoveHandler = handleFirstMove
 
         // Present the scene
         skView.presentScene(scene)
@@ -61,15 +62,6 @@ class GameViewController: UIViewController {
     func beginGame() {
         let newCards = level.createInitialCards(filename: "Level_1")
         scene.addInitialSprites(for: newCards)
-    }
-    
-    func handleFirstMove(_ move: FirstMove) {
-        view.isUserInteractionEnabled = false
-        
-        playerCard.removeFromSuperview()
-        level.performFirstMove(move)
-        scene.animateFirstMove(move)
-        self.view.isUserInteractionEnabled = true
     }
     
     func handleMove(_ move: MoveCard) {
