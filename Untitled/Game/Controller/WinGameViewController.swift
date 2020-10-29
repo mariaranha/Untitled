@@ -28,10 +28,11 @@ class WinGameViewController: UIViewController {
         narrativeImageView.image = UIImage(named: "winGame_paper")
         imageStackView.backgroundColor = AppColor.intermediateBackground.value
         backgroundView.backgroundColor = AppColor.intermediateBackground.value
-    
-
     }
     
-
+    @IBAction func continueButtonPressed(_ sender: Any) {
+        //update user defaults
+    }
+    
 
 }

@@ -155,6 +155,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxL-J2-Iaa">
                                 <rect key="frame" x="119" y="760" width="176.5" height="48.5"/>
                                 <state key="normal" image="endChapter_button"/>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="ACA-rY-h55" eventType="touchUpInside" id="bUN-AW-9kA"/>
+                                    <segue destination="Eic-Tt-d8n" kind="presentation" modalPresentationStyle="fullScreen" id="2G4-Wu-uIO"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-qh-QPR">
                                 <rect key="frame" x="0.0" y="296" width="414" height="396"/>
@@ -205,6 +209,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frq-86-Phn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="220" y="-325"/>
+        </scene>
+        <!--ChapterMenu-->
+        <scene sceneID="ulA-jA-OkJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChapterMenu" id="Eic-Tt-d8n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2g2-51-91G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="-274"/>
         </scene>
     </scenes>
     <resources>
