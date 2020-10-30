@@ -25,6 +25,7 @@
 		0BE1E5BE252F5A6700DD36C6 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1E5BD252F5A6700DD36C6 /* Level_1.json */; };
 		0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1E5BF252F5BC900DD36C6 /* Tile.swift */; };
 		0BE1E5F9252F64F700DD36C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1E5F8252F64F700DD36C6 /* Assets.xcassets */; };
+		2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3C382254B8A25000846A5 /* FadeSegue.swift */; };
 		9C0918EE25430C3900CF1F8D /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */; };
 		9C0918F3254319A200CF1F8D /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0918F2254319A200CF1F8D /* Intro.storyboard */; };
 		9C0918F925432AA000CF1F8D /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */; };
@@ -81,6 +82,7 @@
 		0BE1E5BD252F5A6700DD36C6 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
 		0BE1E5BF252F5BC900DD36C6 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		0BE1E5F8252F64F700DD36C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AF3C382254B8A25000846A5 /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
 		9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 		9C0918F2254319A200CF1F8D /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0B8E74962537535600B45F0C /* ChapterMenuViewController.swift */,
+				2AF3C382254B8A25000846A5 /* FadeSegue.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				0B9DB31B25373355006B601D /* DesignSystem.swift in Sources */,
 				0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */,
 				0B8E74972537535600B45F0C /* ChapterMenuViewController.swift in Sources */,
+				2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */,
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,
 				0B8E74B2253CB56B00B45F0C /* Life.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
@@ -669,7 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = C7CS39R779;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

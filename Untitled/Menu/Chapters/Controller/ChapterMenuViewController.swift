@@ -8,7 +8,6 @@
 import UIKit
 
 class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
-    
     // MARK: IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var settingsButton: UIButton!
