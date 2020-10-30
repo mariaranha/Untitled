@@ -15,8 +15,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var life: UIImageView!
     @IBOutlet weak var energy: UIImageView!
-    @IBOutlet weak var playerCard: UIImageView!
-    @IBOutlet weak var album: UIImageView!
     @IBOutlet weak var cardBoard: SKView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
@@ -28,7 +26,7 @@ class GameViewController: UIViewController {
     var tileWidth: CGFloat = 0.0
     var tileHeight: CGFloat = 0.0
     
-    let cardAspectRatio: CGFloat = 1.5
+    let cardAspectRatio: CGFloat = 1.38
     
     var energyProgress: Life = Life(type: .city)
     var lifeProgress: Life  =  Life(type: .character)
@@ -77,9 +75,9 @@ class GameViewController: UIViewController {
     func getBoardSize(forLevel level: Level) -> CGSize {
         let screenSize = UIScreen.main.bounds
 
-        let topSpace = album.frame.maxY + 8
-        let bottomSpace = screenSize.height - life.frame.minY + 8
-        let sideSpace: CGFloat = 18.0
+        let topSpace = progress.frame.maxY + 16
+        let bottomSpace = screenSize.height - life.frame.minY + 20
+        let sideSpace: CGFloat = 20.0
         
         let boardSafeHeight = topSpace + bottomSpace
         let boardSafeWidth = 2 * sideSpace
@@ -93,7 +91,7 @@ class GameViewController: UIViewController {
         tileWidth = availableWidth / numCols
         tileHeight = tileWidth * cardAspectRatio
     
-        if cardAspectRatio * tileWidth * numRows > availableHeight {
+        if tileHeight * numRows > availableHeight {
             tileHeight = availableHeight / numRows
             tileWidth = tileHeight / cardAspectRatio
         }

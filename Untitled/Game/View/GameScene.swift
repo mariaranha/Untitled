@@ -12,7 +12,7 @@ class GameScene: SKScene {
     
     var tileWidth = CGFloat()
     var tileHeight = CGFloat()
-    var cardSpace: CGFloat = 6.0
+    var cardSpace: CGFloat = 10.0
 
     let cardsLayer = SKNode()
     
