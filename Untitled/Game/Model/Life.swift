@@ -25,7 +25,7 @@ class Life {
         if type == LifeType.city{
             value = 0
         } else{
-            value = 5
+            value = 10
         }
         
     }
