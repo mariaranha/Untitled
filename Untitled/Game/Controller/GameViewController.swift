@@ -13,7 +13,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var progress: UIImageView!
     @IBOutlet weak var settings: UIButton!
-    @IBOutlet weak var life: UIImageView!
+    @IBOutlet weak var lifePhoto: UIImageView!
+    @IBOutlet weak var totalLifeLabel: UILabel!
+    @IBOutlet weak var currentLifeLabel: UILabel!
     @IBOutlet weak var energy: UIImageView!
     @IBOutlet weak var cardBoard: SKView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
@@ -41,6 +43,9 @@ class GameViewController: UIViewController {
         //Note: Create a singleton to verify the user level and pass here
         level = Level(filename: "Level_1")
         
+        // Configure View
+        setInitialLifeLayout()
+        
         // Create and configure the scene
         view.layoutSubviews()
         let size = getBoardSize(forLevel: level)
@@ -50,11 +55,34 @@ class GameViewController: UIViewController {
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
         scene.moveHandler = handleMove
+        scene.lifeLayoutHandler = updateLifeValue(_:)
 
         // Present the scene
         skView.presentScene(scene)
 
         beginGame()
+    }
+    
+    func setInitialLifeLayout() {
+        totalLifeLabel.textColor = AppColor.lightText.value
+        currentLifeLabel.textColor = AppColor.lightText.value
+        
+        if lifeProgress.value < 10 {
+            totalLifeLabel.text = "0\(String(lifeProgress.value))"
+            currentLifeLabel.text = "0\(String(lifeProgress.value))"
+        } else {
+            totalLifeLabel.text = String(lifeProgress.value)
+            currentLifeLabel.text = String(lifeProgress.value)
+        }
+    }
+    
+    func updateLifeValue(_ value: Int) {
+        if value < 10 {
+            currentLifeLabel.text = "0\(String(value))"
+        } else {
+            currentLifeLabel.text = String(value)
+        }
+    
     }
     
     func beginGame() {
@@ -76,7 +104,7 @@ class GameViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
 
         let topSpace = progress.frame.maxY + 16
-        let bottomSpace = screenSize.height - life.frame.minY + 20
+        let bottomSpace = screenSize.height - lifePhoto.frame.minY + 20
         let sideSpace: CGFloat = 20.0
         
         let boardSafeHeight = topSpace + bottomSpace
