@@ -16,11 +16,11 @@ class FadeSegue: UIStoryboardSegue {
 
 extension FadeSegue: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return teste()
+        return FadePresentAnimator()
     }
 }
 
-class teste: NSObject, UIViewControllerAnimatedTransitioning {
+class FadePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 1.0
     }
