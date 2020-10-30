@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lalezar-Regular.ttf">
+            <string>Lalezar-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Initial Screen View Controller-->
         <scene sceneID="6HY-XV-ybm">
@@ -17,51 +22,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UUp-b6-FKw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initialScreen_background" translatesAutoresizingMaskIntoConstraints="NO" id="t1c-2P-4xJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ek9-28-ZZD">
-                                <rect key="frame" x="185" y="117" width="44" height="34"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KZ-15-SY1">
-                                        <rect key="frame" x="6.5" y="0.0" width="31.5" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDV-BV-g42">
-                                        <rect key="frame" x="0.0" y="19.5" width="44" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcS-Yk-zt8">
-                                <rect key="frame" x="135" y="738.5" width="144" height="48.5"/>
-                                <state key="normal" image="initialscreen_button">
+                                <rect key="frame" x="119" y="775.5" width="176.5" height="61.5"/>
+                                <state key="normal" image="initialScreen_button">
                                     <color key="titleColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="lls-sf-9y2" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="Iu2-LL-SC8"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="6Ie-8T-fDd">
+                                <rect key="frame" x="178.5" y="84" width="57" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KZ-15-SY1">
+                                        <rect key="frame" x="9.5" y="0.0" width="38" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDV-BV-g42">
+                                        <rect key="frame" x="0.0" y="23.5" width="57" height="27"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="17"/>
+                                        <color key="textColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SP8-AL-c0Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ek9-28-ZZD" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="9vA-bo-2LD"/>
-                            <constraint firstItem="SP8-AL-c0Q" firstAttribute="trailing" secondItem="UUp-b6-FKw" secondAttribute="trailing" id="BUP-3h-Pyh"/>
-                            <constraint firstAttribute="bottom" secondItem="UUp-b6-FKw" secondAttribute="bottom" id="JFo-3R-3FF"/>
-                            <constraint firstItem="SP8-AL-c0Q" firstAttribute="bottom" secondItem="fcS-Yk-zt8" secondAttribute="bottom" constant="75" id="URY-wk-KKx"/>
-                            <constraint firstItem="UUp-b6-FKw" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" id="aIC-pZ-48z"/>
+                            <constraint firstItem="6Ie-8T-fDd" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="4P6-Fa-NC6"/>
+                            <constraint firstItem="t1c-2P-4xJ" firstAttribute="trailing" secondItem="SP8-AL-c0Q" secondAttribute="trailing" id="C0F-wl-0Te"/>
+                            <constraint firstItem="t1c-2P-4xJ" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" id="Ipa-ZG-EwL"/>
+                            <constraint firstItem="6Ie-8T-fDd" firstAttribute="top" secondItem="SP8-AL-c0Q" secondAttribute="top" constant="40" id="ODK-ul-6MU"/>
+                            <constraint firstItem="SP8-AL-c0Q" firstAttribute="bottom" secondItem="fcS-Yk-zt8" secondAttribute="bottom" constant="25" id="URY-wk-KKx"/>
+                            <constraint firstAttribute="bottom" secondItem="t1c-2P-4xJ" secondAttribute="bottom" id="i2P-az-38g"/>
+                            <constraint firstItem="t1c-2P-4xJ" firstAttribute="top" secondItem="eDH-K7-hfz" secondAttribute="top" id="mEM-Dn-6uN"/>
                             <constraint firstItem="fcS-Yk-zt8" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="n6V-TQ-sfp"/>
-                            <constraint firstItem="UUp-b6-FKw" firstAttribute="top" secondItem="eDH-K7-hfz" secondAttribute="top" id="q9n-mN-Ztd"/>
-                            <constraint firstItem="ek9-28-ZZD" firstAttribute="top" secondItem="SP8-AL-c0Q" secondAttribute="top" constant="73" id="u7A-Lu-pOc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundImage" destination="UUp-b6-FKw" id="y2h-qu-8Yd"/>
+                        <outlet property="backgroundImage" destination="t1c-2P-4xJ" id="VL3-da-UPV"/>
                         <outlet property="startButton" destination="fcS-Yk-zt8" id="v59-v8-JxF"/>
                         <outlet property="subtitleLabel" destination="kDV-BV-g42" id="Usj-YM-CGR"/>
                         <outlet property="titleLabel" destination="3KZ-15-SY1" id="942-UZ-1sk"/>
@@ -159,8 +164,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="initialScreen_background" width="414.5" height="895.5"/>
+        <image name="initialScreen_button" width="176.5" height="61.5"/>
         <image name="initialnarrative_button" width="144" height="48.5"/>
-        <image name="initialscreen_button" width="144" height="48.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

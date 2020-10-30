@@ -18,6 +18,8 @@ class InitialScreenViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+        backgroundImage.image = UIImage(named: "initialScreen_background")
+        self.view.backgroundColor = AppColor.intermediateBackground.value
     }
     
     //View
@@ -25,10 +27,9 @@ class InitialScreenViewController: UIViewController {
         //labels
         titleLabel.text = "untitled games"
         subtitleLabel.text = "apresenta:"
-        //background
-        backgroundImage.image = UIImage(named: "initialscreen_background")
     }
     
     
 
 }
+

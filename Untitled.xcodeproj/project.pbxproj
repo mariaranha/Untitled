@@ -43,6 +43,7 @@
 		9C49FCA7253B7D1C0049F415 /* NarrativeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */; };
 		9C5DB975254AF7A30072B2B3 /* WinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */; };
 		9C762D85253D22CF00F71BEC /* NarrativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C762D84253D22CF00F71BEC /* NarrativeView.swift */; };
+		9C7AC379254C6265009DEDE2 /* Lalezar-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C7AC378254C6240009DEDE2 /* Lalezar-Regular.ttf */; };
 		9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E2D252E07D700DCD349 /* AppDelegate.swift */; };
 		9CA59E32252E07D700DCD349 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9CA59E31252E07D700DCD349 /* Actions.sks */; };
 		9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E33252E07D700DCD349 /* GameScene.swift */; };
@@ -106,6 +107,7 @@
 		9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrativeTitleView.xib; sourceTree = "<group>"; };
 		9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinGameViewController.swift; sourceTree = "<group>"; };
 		9C762D84253D22CF00F71BEC /* NarrativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeView.swift; sourceTree = "<group>"; };
+		9C7AC378254C6240009DEDE2 /* Lalezar-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lalezar-Regular.ttf"; path = "../../../../Downloads/Lalezar-Regular.ttf"; sourceTree = "<group>"; };
 		9CA59E2A252E07D700DCD349 /* Untitled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Untitled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA59E2D252E07D700DCD349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA59E31252E07D700DCD349 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		0B8E74A7253AB1E200B45F0C /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
+				9C7AC378254C6240009DEDE2 /* Lalezar-Regular.ttf */,
 				0B9DB31A25373355006B601D /* DesignSystem.swift */,
 				0BE1E5B7252F502900DD36C6 /* Array2D.swift */,
 			);
@@ -497,6 +500,7 @@
 				0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */,
 				0B8E74952537444300B45F0C /* ChapterMenu.storyboard in Resources */,
 				9C49FCA5253B7CAE0049F415 /* NarrativeView.xib in Resources */,
+				9C7AC379254C6265009DEDE2 /* Lalezar-Regular.ttf in Resources */,
 				0BE1E5AE252F44E700DD36C6 /* Board.storyboard in Resources */,
 				9C49FCA1253B75AD0049F415 /* Narrative.storyboard in Resources */,
 				0BE1E5F9252F64F700DD36C6 /* Assets.xcassets in Resources */,
