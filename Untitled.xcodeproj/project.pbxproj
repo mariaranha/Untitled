@@ -17,6 +17,11 @@
 		0B9DB3172530AE31006B601D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9DB3162530AE31006B601D /* Launch Screen.storyboard */; };
 		0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DB3182535F9D8006B601D /* MoveCard.swift */; };
 		0B9DB31B25373355006B601D /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DB31A25373355006B601D /* DesignSystem.swift */; };
+		0BB2F5B82541CDEB0042E6F2 /* CloseAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2F5B72541CDEB0042E6F2 /* CloseAlbumViewController.swift */; };
+		0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB2F5BC2541CDF90042E6F2 /* Rewards.storyboard */; };
+		0BB2F5C22541E1440042E6F2 /* OpenAlbum.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB2F5C12541E1440042E6F2 /* OpenAlbum.xib */; };
+		0BB2F5C72541E15B0042E6F2 /* OpenAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2F5C62541E15B0042E6F2 /* OpenAlbumView.swift */; };
+		0BD5A78425432B7A00B3A974 /* OpenAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5A78325432B7A00B3A974 /* OpenAlbumViewController.swift */; };
 		0BE1E5AE252F44E700DD36C6 /* Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1E5AD252F44E700DD36C6 /* Board.storyboard */; };
 		0BE1E5B4252F4FB800DD36C6 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1E5B3252F4FB800DD36C6 /* LevelData.swift */; };
 		0BE1E5B8252F502900DD36C6 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1E5B7252F502900DD36C6 /* Array2D.swift */; };
@@ -36,6 +41,7 @@
 		9C49FCA1253B75AD0049F415 /* Narrative.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA0253B75AD0049F415 /* Narrative.storyboard */; };
 		9C49FCA5253B7CAE0049F415 /* NarrativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA4253B7CAE0049F415 /* NarrativeView.xib */; };
 		9C49FCA7253B7D1C0049F415 /* NarrativeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */; };
+		9C5DB975254AF7A30072B2B3 /* WinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */; };
 		9C762D85253D22CF00F71BEC /* NarrativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C762D84253D22CF00F71BEC /* NarrativeView.swift */; };
 		9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E2D252E07D700DCD349 /* AppDelegate.swift */; };
 		9CA59E32252E07D700DCD349 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9CA59E31252E07D700DCD349 /* Actions.sks */; };
@@ -74,6 +80,11 @@
 		0B9DB3162530AE31006B601D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B9DB3182535F9D8006B601D /* MoveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCard.swift; sourceTree = "<group>"; };
 		0B9DB31A25373355006B601D /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		0BB2F5B72541CDEB0042E6F2 /* CloseAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAlbumViewController.swift; sourceTree = "<group>"; };
+		0BB2F5BC2541CDF90042E6F2 /* Rewards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rewards.storyboard; sourceTree = "<group>"; };
+		0BB2F5C12541E1440042E6F2 /* OpenAlbum.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenAlbum.xib; sourceTree = "<group>"; };
+		0BB2F5C62541E15B0042E6F2 /* OpenAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAlbumView.swift; sourceTree = "<group>"; };
+		0BD5A78325432B7A00B3A974 /* OpenAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAlbumViewController.swift; sourceTree = "<group>"; };
 		0BE1E5AD252F44E700DD36C6 /* Board.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Board.storyboard; sourceTree = "<group>"; };
 		0BE1E5B3252F4FB800DD36C6 /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		0BE1E5B7252F502900DD36C6 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
@@ -93,6 +104,7 @@
 		9C49FCA0253B75AD0049F415 /* Narrative.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Narrative.storyboard; sourceTree = "<group>"; };
 		9C49FCA4253B7CAE0049F415 /* NarrativeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrativeView.xib; sourceTree = "<group>"; };
 		9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrativeTitleView.xib; sourceTree = "<group>"; };
+		9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinGameViewController.swift; sourceTree = "<group>"; };
 		9C762D84253D22CF00F71BEC /* NarrativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeView.swift; sourceTree = "<group>"; };
 		9CA59E2A252E07D700DCD349 /* Untitled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Untitled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA59E2D252E07D700DCD349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +149,7 @@
 		0B8E74932537441600B45F0C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0BB2F5B42541CA9B0042E6F2 /* Rewards */,
 				0B8E74AD253CACA100B45F0C /* Chapters */,
 			);
 			path = Menu;
@@ -146,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA59E35252E07D700DCD349 /* GameViewController.swift */,
+				9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,6 +222,34 @@
 				0B8E74AA253AB28200B45F0C /* Controller */,
 			);
 			path = Chapters;
+			sourceTree = "<group>";
+		};
+		0BB2F5B42541CA9B0042E6F2 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				0BB2F5B52541CAAD0042E6F2 /* View */,
+				0BB2F5B62541CAB40042E6F2 /* Controller */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		0BB2F5B52541CAAD0042E6F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BB2F5BC2541CDF90042E6F2 /* Rewards.storyboard */,
+				0BB2F5C12541E1440042E6F2 /* OpenAlbum.xib */,
+				0BB2F5C62541E15B0042E6F2 /* OpenAlbumView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BB2F5B62541CAB40042E6F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BB2F5B72541CDEB0042E6F2 /* CloseAlbumViewController.swift */,
+				0BD5A78325432B7A00B3A974 /* OpenAlbumViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		0BE1E5AF252F4EDA00DD36C6 /* Levels */ = {
@@ -450,7 +492,9 @@
 				0B9DB3172530AE31006B601D /* Launch Screen.storyboard in Resources */,
 				0BE1E5BE252F5A6700DD36C6 /* Level_1.json in Resources */,
 				9CA59E39252E07D700DCD349 /* Main.storyboard in Resources */,
+				0BB2F5C22541E1440042E6F2 /* OpenAlbum.xib in Resources */,
 				0B8E749D2537548C00B45F0C /* ChapterView.xib in Resources */,
+				0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */,
 				0B8E74952537444300B45F0C /* ChapterMenu.storyboard in Resources */,
 				9C49FCA5253B7CAE0049F415 /* NarrativeView.xib in Resources */,
 				0BE1E5AE252F44E700DD36C6 /* Board.storyboard in Resources */,
@@ -484,8 +528,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0918EE25430C3900CF1F8D /* InitialScreenViewController.swift in Sources */,
+				9C5DB975254AF7A30072B2B3 /* WinGameViewController.swift in Sources */,
 				0BE1E5B4252F4FB800DD36C6 /* LevelData.swift in Sources */,
 				0BE1E5BC252F57F900DD36C6 /* Level.swift in Sources */,
+				0BB2F5B82541CDEB0042E6F2 /* CloseAlbumViewController.swift in Sources */,
 				0B8E749B2537548000B45F0C /* ChapterView.swift in Sources */,
 				0BE1E5BA252F522600DD36C6 /* Card.swift in Sources */,
 				0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */,
@@ -494,9 +540,11 @@
 				0B9DB31B25373355006B601D /* DesignSystem.swift in Sources */,
 				0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */,
 				0B8E74972537535600B45F0C /* ChapterMenuViewController.swift in Sources */,
+				0BD5A78425432B7A00B3A974 /* OpenAlbumViewController.swift in Sources */,
 				2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */,
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,
 				0B8E74B2253CB56B00B45F0C /* Life.swift in Sources */,
+				0BB2F5C72541E15B0042E6F2 /* OpenAlbumView.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
 				0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */,
@@ -692,7 +740,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = FKFGBBGDU2;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
