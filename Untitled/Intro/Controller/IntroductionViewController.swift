@@ -25,6 +25,8 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         
+        view.backgroundColor = AppColor.intermediateBackground.value
+        
         setupScrollView()
     }
     
