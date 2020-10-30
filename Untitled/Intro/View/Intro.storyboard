@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lls-sf-9y2" kind="presentation" modalPresentationStyle="fullScreen" id="Iu2-LL-SC8"/>
+                                    <segue destination="lls-sf-9y2" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="Iu2-LL-SC8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,7 +94,7 @@
                                                 <rect key="frame" x="135" y="775" width="144" height="49"/>
                                                 <state key="normal" image="initialnarrative_button"/>
                                                 <connections>
-                                                    <segue destination="mqV-Tj-WSX" kind="presentation" modalPresentationStyle="fullScreen" id="iRw-Ck-YeA"/>
+                                                    <segue destination="mqV-Tj-WSX" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="iRw-Ck-YeA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
