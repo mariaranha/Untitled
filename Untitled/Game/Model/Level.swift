@@ -53,7 +53,7 @@ class Level {
         let characterRow = levelData.characterPosition["row"]!
         let characterColumn = levelData.characterPosition["column"]!
         
-        let photo = Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 7)!, value: 0)
+        let photo = Card(column: photoColumn, row: photoRow, cardType: .photo, value: 0)
         cards[photoColumn, photoRow] = photo
         
         let character = Card(column: characterColumn, row: characterRow, cardType: CardType(rawValue: 1)!, value: 0)
@@ -95,4 +95,65 @@ class Level {
         move.cardA.column = move.cardB.column
         move.cardA.row = move.cardB.row
     }
+    
+    func createRewardCard(playerColumn:Int, playerRow: Int, rewardType: CardType, exitPositions: [[String: Int]]) -> Card{
+        let elementsColumn: [Int] = [0,4]
+        var rewardColumn: Int
+        var rewardRow: Int
+        
+        if playerColumn == 2{
+            rewardColumn = elementsColumn.randomElement()!
+        } else if playerColumn < 2{
+            rewardColumn = playerColumn + 2
+        } else {
+            rewardColumn = playerColumn - 2
+        }
+        
+        rewardRow = Int.random(in: 0...4)
+        while rewardRow == playerRow {
+            rewardRow = Int.random(in: 0...4)
+        }
+        
+        for index in 0...exitPositions.count-1{
+            if rewardColumn == exitPositions[index]["column"]!{
+                if rewardRow == 0{
+                    rewardRow = Int.random(in: 1...4)
+                }
+            }
+        }
+        
+        let rewardCard = Card(column: rewardColumn, row: rewardRow, cardType: rewardType, value: 0)
+        return rewardCard
+    }
+    
+    func setReward(reward: Card){
+        cards[reward.column,reward.row] = reward
+    }
+    
+    func createNewCard(column: Int, row: Int, filename: String) -> Card{
+        let newCardType = CardType.random(filename: filename)
+        let newCardValue = Card.setCardValue(filename: filename, cardType: newCardType)
+        let newCard = Card(column: column, row: row, cardType: newCardType, value: newCardValue)
+        
+        return newCard
+    }
+    
+    func checkExitPosition(toCard: Card, filename: String) -> Bool{
+        
+        guard let levelData = LevelData.loadFrom(file: filename) else { return false }
+        let exitRow = levelData.exitPosition[0]["row"]!
+        var win = false
+        
+        if toCard.row == exitRow{
+            for index in 0...levelData.exitPosition.count-1{
+                if toCard.column == levelData.exitPosition[index]["column"]!{
+                    win = true
+                }
+            }
+        }
+        
+        return win
+    }
+    
+    
 }
