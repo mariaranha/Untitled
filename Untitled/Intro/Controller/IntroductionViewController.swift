@@ -16,7 +16,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var skipButton: UIButton!
     
     // MARK: Class Variables
-    let numberPages: Int = 3
+    let numberPages: Int = 2
     var pages: [NarrativeIntroView] = []
     
     // MARK: View Cicle
@@ -25,7 +25,9 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         
+        //backgrounds
         view.backgroundColor = AppColor.intermediateBackground.value
+        backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "intro_background")!)
         
         setupScrollView()
     }
@@ -39,19 +41,13 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentPage = Int((scrollView.contentOffset.y)/(scrollView.frame.size.height))
-        
-        backgroundView.backgroundColor = AppColor.intermediateBackground.value
-        
+                
         switch currentPage {
         case 0:
             narrativeView.imageView.image = UIImage(named: "intro_page1")
-            skipButton.isHidden = false
         case 1:
-            narrativeView.imageView.image = UIImage(named: "intro_page1")
-            skipButton.isHidden = true
-        case 2:
-            narrativeView.imageView.image = UIImage(named: "intro_page1")
-            skipButton.isHidden = false
+            narrativeView.imageView.image = UIImage(named: "intro_page2")
+            skipButton.imageView?.image =  UIImage(named: "initialScreen_button")
         default:
             break
         }
