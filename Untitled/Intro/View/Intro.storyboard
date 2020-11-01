@@ -91,9 +91,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Me-07-dAx">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retângulo 3" translatesAutoresizingMaskIntoConstraints="NO" id="M8k-P5-tzb">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_logo" translatesAutoresizingMaskIntoConstraints="NO" id="M8k-P5-tzb">
                                                 <rect key="frame" x="88" y="104" width="238.5" height="96"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="M8k-P5-tzb" secondAttribute="height" multiplier="119:48" id="7fD-eH-Pko"/>
+                                                </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qD5-Yz-98p" customClass="NarrativeIntroView" customModule="Untitled" customModuleProvider="target">
                                                 <rect key="frame" x="40" y="272" width="334" height="390.5"/>
@@ -109,15 +112,17 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="qD5-Yz-98p" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="2Eo-c1-Lg6"/>
                                             <constraint firstItem="qD5-Yz-98p" firstAttribute="top" secondItem="M8k-P5-tzb" secondAttribute="bottom" constant="72" id="G9X-Wb-nzF"/>
-                                            <constraint firstAttribute="trailing" secondItem="qD5-Yz-98p" secondAttribute="trailing" constant="40" id="NQY-H5-JAX"/>
                                             <constraint firstItem="qD5-Yz-98p" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="NbZ-L9-xHb"/>
                                             <constraint firstItem="FYN-R1-ohA" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="PFe-eN-RaP"/>
+                                            <constraint firstItem="qD5-Yz-98p" firstAttribute="width" secondItem="4Me-07-dAx" secondAttribute="height" multiplier="167:448" id="ZrY-eE-l5X"/>
+                                            <constraint firstItem="qD5-Yz-98p" firstAttribute="height" secondItem="4Me-07-dAx" secondAttribute="height" multiplier="0.435826" id="cJ7-9e-BRf"/>
                                             <constraint firstItem="M8k-P5-tzb" firstAttribute="top" secondItem="4Me-07-dAx" secondAttribute="top" constant="104" id="mNY-Hg-C53"/>
-                                            <constraint firstItem="FYN-R1-ohA" firstAttribute="top" secondItem="qD5-Yz-98p" secondAttribute="bottom" constant="100" id="pMm-pc-cAu"/>
+                                            <constraint firstItem="FYN-R1-ohA" firstAttribute="top" secondItem="qD5-Yz-98p" secondAttribute="bottom" priority="750" constant="100" id="pMm-pc-cAu"/>
+                                            <constraint firstItem="M8k-P5-tzb" firstAttribute="width" secondItem="4Me-07-dAx" secondAttribute="width" multiplier="0.576087" id="seg-EK-9U4"/>
                                             <constraint firstItem="M8k-P5-tzb" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="sui-LK-SSW"/>
                                             <constraint firstItem="FYN-R1-ohA" firstAttribute="width" secondItem="4Me-07-dAx" secondAttribute="width" multiplier="0.426329" id="tbB-pO-QAL"/>
-                                            <constraint firstItem="qD5-Yz-98p" firstAttribute="leading" secondItem="4Me-07-dAx" secondAttribute="leading" constant="40" id="wUv-yE-2dV"/>
                                             <constraint firstItem="FYN-R1-ohA" firstAttribute="height" secondItem="4Me-07-dAx" secondAttribute="height" multiplier="0.0686384" id="wg6-Lt-4Dk"/>
                                             <constraint firstAttribute="bottom" secondItem="FYN-R1-ohA" secondAttribute="bottom" constant="72" id="yUq-ha-EE4"/>
                                         </constraints>
@@ -168,10 +173,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Retângulo 3" width="238.5" height="96"/>
         <image name="initialScreen_background" width="414.5" height="895.5"/>
         <image name="initialScreen_button" width="176.5" height="61.5"/>
         <image name="intro_button" width="176.5" height="61.5"/>
+        <image name="intro_logo" width="238.5" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
