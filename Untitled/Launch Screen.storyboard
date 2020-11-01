@@ -16,17 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="6je-9m-980">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_background" translatesAutoresizingMaskIntoConstraints="NO" id="6je-9m-980">
+                                <rect key="frame" x="0.0" y="-1" width="414" height="897"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ctx-fE-CL3">
+                                <rect key="frame" x="121.5" y="420" width="171" height="56.5"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6je-9m-980" secondAttribute="bottom" id="4t2-cC-35f"/>
-                            <constraint firstItem="6je-9m-980" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ajh-ug-hNm"/>
+                            <constraint firstItem="6je-9m-980" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-1" id="5RM-jV-3zM"/>
                             <constraint firstItem="6je-9m-980" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="mwe-5U-B3c"/>
+                            <constraint firstItem="Ctx-fE-CL3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pyb-J2-IdT"/>
                             <constraint firstItem="6je-9m-980" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="wWv-58-tXw"/>
+                            <constraint firstItem="Ctx-fE-CL3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ye5-Hh-G38"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +41,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchscreen" width="414" height="896"/>
+        <image name="launchscreen_background" width="414" height="896.5"/>
+        <image name="launchscreen_logo" width="171" height="56.5"/>
     </resources>
 </document>
