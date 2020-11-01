@@ -35,16 +35,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="6Ie-8T-fDd">
-                                <rect key="frame" x="178.5" y="84" width="57" height="50.5"/>
+                                <rect key="frame" x="178" y="84" width="58" height="35.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KZ-15-SY1">
-                                        <rect key="frame" x="9.5" y="0.0" width="38" height="31.5"/>
+                                        <rect key="frame" x="10.5" y="0.0" width="37.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDV-BV-g42">
-                                        <rect key="frame" x="0.0" y="23.5" width="57" height="27"/>
+                                        <rect key="frame" x="0.0" y="15.5" width="58" height="20"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="17"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.90980392160000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="qD5-Yz-98p" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="2Eo-c1-Lg6"/>
-                                            <constraint firstItem="qD5-Yz-98p" firstAttribute="top" secondItem="M8k-P5-tzb" secondAttribute="bottom" constant="72" id="G9X-Wb-nzF"/>
+                                            <constraint firstItem="qD5-Yz-98p" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M8k-P5-tzb" secondAttribute="bottom" constant="50" id="G9X-Wb-nzF"/>
                                             <constraint firstItem="qD5-Yz-98p" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="NbZ-L9-xHb"/>
                                             <constraint firstItem="FYN-R1-ohA" firstAttribute="centerX" secondItem="4Me-07-dAx" secondAttribute="centerX" id="PFe-eN-RaP"/>
                                             <constraint firstItem="qD5-Yz-98p" firstAttribute="width" secondItem="4Me-07-dAx" secondAttribute="height" multiplier="167:448" id="ZrY-eE-l5X"/>
