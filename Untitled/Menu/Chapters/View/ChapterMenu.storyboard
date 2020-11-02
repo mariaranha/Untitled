@@ -9,6 +9,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lalezar-Regular.ttf">
+            <string>Lalezar-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Chapter Menu View Controller-->
         <scene sceneID="XG3-dv-0eV">
@@ -39,8 +44,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-v9-DGE">
-                                                    <rect key="frame" x="1.5" y="2" width="53.5" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                    <rect key="frame" x="-6.5" y="-2.5" width="69" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -67,7 +72,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleAspectFill" id="G9f-tl-2at" customClass="ChapterView" customModule="Untitled" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="170" width="414" height="553"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="92a-5c-9qH"/>
@@ -79,7 +84,7 @@
                                     <constraint firstAttribute="width" secondItem="ApO-Tv-S6f" secondAttribute="height" multiplier="1:1" id="0Vh-0D-lza"/>
                                     <constraint firstAttribute="height" constant="48" id="63b-XC-cNQ"/>
                                 </constraints>
-                                <state key="normal" image="menuSettings"/>
+                                <state key="normal" image="settings"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-4Q-gAM">
                                 <rect key="frame" x="334" y="76" width="48" height="54"/>
@@ -87,7 +92,7 @@
                                     <constraint firstAttribute="height" constant="54" id="gGF-f3-75j"/>
                                     <constraint firstAttribute="width" constant="48" id="ikT-Nj-FvS"/>
                                 </constraints>
-                                <state key="normal" image="menuAlbumButton"/>
+                                <state key="normal" image="rewards"/>
                                 <connections>
                                     <segue destination="l4Q-DK-dNk" kind="show" id="RP8-4O-YdB"/>
                                 </connections>
@@ -106,7 +111,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="5" maxX="34" maxY="5"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" backgroundImage="chapters_button"/>
                                 <connections>
                                     <segue destination="8G4-FD-UeR" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="6W6-JF-i7N"/>
                                 </connections>
@@ -188,8 +193,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menuAlbumButton" width="48" height="53.5"/>
-        <image name="menuSettings" width="48" height="48"/>
+        <image name="chapters_button" width="176.5" height="61.5"/>
+        <image name="rewards" width="48.5" height="53.5"/>
+        <image name="settings" width="47.5" height="48.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

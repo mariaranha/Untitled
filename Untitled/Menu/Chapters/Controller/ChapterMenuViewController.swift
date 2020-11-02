@@ -34,15 +34,16 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         chapterNumCollection.delegate = self
         
         //Set view
-        self.view.backgroundColor = AppColor.lightBackground.value
-        chapterView.backgroundColor = AppColor.lightBackground.value
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chapters_background1")!)
+//        chapterView.backgroundColor = AppColor.lightBackground.value
+
         
         //Set button
-        startButton.layer.borderWidth = 3.0
-        startButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-        startButton.layer.backgroundColor = AppColor.lightBackground.value.cgColor
-        startButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
-        startButton.setTitle("Entrar", for: .normal)
+//        startButton.layer.borderWidth = 3.0
+//        startButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
+//        startButton.layer.backgroundColor = AppColor.lightBackground.value.cgColor
+//        startButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+//        startButton.setTitle("Entrar", for: .normal)
         startButtonLine.backgroundColor = AppColor.intermediateBorder.value
         
         //Set Chapters
@@ -76,7 +77,6 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
                 setUnlockedChapters(chapter, chapterNumber)
             }
             
-            chapter.backgroundColor = AppColor.lightBackground.value
             chapter.photoFrame.rotate(angle: -2.0)
 
             setChaptersLabels(chapterNumber, chapter)
@@ -93,7 +93,6 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         chapter.photoDescription.textColor = .clear
         chapter.photoDate.textColor = .clear
         
-        chapter.backgroundColor = AppColor.lightBackground.value
         chapter.chapterBackground.backgroundColor = .lightGray
         chapter.photoFrame.backgroundColor = .black
         chapter.photoBackground.backgroundColor = .darkGray
@@ -105,7 +104,6 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         chapter.photoDescription.textColor = AppColor.intermediateLightText.value
         chapter.photoDate.textColor = AppColor.darkText.value
         
-        chapter.chapterBackground.backgroundColor = AppColor.intermediateBackground.value
         chapter.photoFrame.backgroundColor = AppColor.lightBackground.value
         chapter.photoBackground.backgroundColor = AppColor.intermediateBackground.value
         chapter.photoBackground.image = UIImage(named: "chapterBackground_\(chapterNumber)")

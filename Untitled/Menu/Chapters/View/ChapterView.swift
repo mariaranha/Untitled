@@ -17,4 +17,5 @@ class ChapterView: UIView {
     @IBOutlet weak var photoDescription: UILabel!
     @IBOutlet weak var photoDate: UILabel!
     @IBOutlet weak var chapterBackground: UIView!
+    
 }
