@@ -13,12 +13,8 @@ class InitialScreenViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = AppColor.intermediateBackground.value
-//        backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "initialScreen_background")!)
 
     }
     
-    
-    
- 
 }
 

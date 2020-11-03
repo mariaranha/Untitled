@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="286" height="640"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chapter1_01" translatesAutoresizingMaskIntoConstraints="NO" id="9zR-S7-6t8">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chapter1_page1" translatesAutoresizingMaskIntoConstraints="NO" id="9zR-S7-6t8">
                     <rect key="frame" x="0.0" y="0.0" width="286" height="640"/>
                 </imageView>
             </subviews>
@@ -36,6 +36,6 @@
         </view>
     </objects>
     <resources>
-        <image name="chapter1_01" width="286" height="641"/>
+        <image name="chapter1_page1" width="318" height="585"/>
     </resources>
 </document>

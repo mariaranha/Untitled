@@ -317,7 +317,6 @@
 				9C49FCA4253B7CAE0049F415 /* NarrativeView.xib */,
 				9C762D84253D22CF00F71BEC /* NarrativeView.swift */,
 				9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */,
-				9C2E6856253B8AF10048139A /* NarrativeTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +324,7 @@
 		9C49FC9F253B75550049F415 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C2E6856253B8AF10048139A /* NarrativeTitleView.swift */,
 				9C2E685A253B8C520048139A /* NarrativeViewController.swift */,
 			);
 			path = Controller;
