@@ -82,10 +82,16 @@ class Level {
     }
     
     func card(atColumn column: Int, row: Int) -> Card? {
-        guard (column >= 0 && column < numColumns) else { return nil}
+        guard (column >= 0 && column < numColumns) else { return nil }
         guard (row >= 0 && row < numRows) else { return nil }
         
         return cards[column, row]
+    }
+    
+    func tile(column: Int, row: Int) -> Tile? {
+        guard (column >= 0 && column < numColumns) else { return nil }
+        guard (row >= 0 && row < numRows) else { return nil }
+        return tiles[column, row]
     }
     
     func performMove(_ move: MoveCard) {

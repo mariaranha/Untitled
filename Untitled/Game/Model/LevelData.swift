@@ -20,6 +20,7 @@ class LevelData: Codable {
     let blockValuePercentage: [Double]
     let photoRollValuePercentage: [Double]
     let characterPosition: [String: Int]
+    let cardTypes: [Int]
     
     
   static func loadFrom(file filename: String) -> LevelData? {

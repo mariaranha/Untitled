@@ -12,14 +12,17 @@ class GameScene: SKScene {
     
     var tileWidth = CGFloat()
     var tileHeight = CGFloat()
-    var cardSpace: CGFloat = 10.0
+    var cardSpace: CGFloat = 12.0
 
+    let gameLayer = SKNode()
+    let tilesLayer = SKNode()
     let cardsLayer = SKNode()
     
     var level: Level!
     
     var moveHandler: ((MoveCard) -> Void)?
     var lifeLayoutHandler: ((Int) -> Void)?
+    var energyLayoutHandler: ((Int) -> Void)?
     
     let gameViewController:GameViewController = GameViewController()
     
@@ -50,8 +53,86 @@ class GameScene: SKScene {
             x: -tileWidth * CGFloat(level.numColumns) / 2,
             y: -tileHeight * CGFloat(level.numRows) / 2)
 
+        addChild(gameLayer)
         cardsLayer.position = layerPosition
-        addChild(cardsLayer)
+        tilesLayer.position = layerPosition
+        gameLayer.addChild(tilesLayer)
+        gameLayer.addChild(cardsLayer)
+    }
+    
+    func addTiles() {
+        enum TileType {
+            case topLeft
+            case topRight
+            case bottomLeft
+            case bottomRight
+            case up
+            case down
+            case left
+            case right
+            case middle
+        }
+        
+        var tileType: TileType!
+        
+        for row in 1...level.numRows {
+            for column in 1...level.numColumns {
+                if column == 1 && row == level.numRows {
+                    tileType = .topLeft
+                } else if column == 1 && row == 1 {
+                    tileType = .bottomLeft
+                } else if column == level.numColumns && row == level.numRows {
+                    tileType = .topRight
+                } else if column == level.numColumns && row == 1 {
+                    tileType = .bottomRight
+                } else if column > 1 && column < level.numColumns && row == 1 {
+                    tileType = .down
+                } else if column > 1 && column < level.numColumns && row == level.numRows {
+                    tileType = .up
+                } else if column == 1 && row > 1 && row < level.numRows {
+                    tileType = .left
+                } else if column == level.numColumns && row > 1 && row < level.numRows {
+                    tileType = .right
+                } else if column > 1 && column < level.numColumns && row > 1 && row < level.numRows {
+                    tileType = .middle
+                }
+                
+
+                let tileName: String
+                var tileValue: Int
+                
+                switch tileType {
+                case .bottomRight:
+                    tileValue = 4
+                case .bottomLeft:
+                    tileValue = 2
+                case .topRight:
+                    tileValue = 3
+                case .topLeft:
+                    tileValue = 1
+                case .up:
+                    tileValue = 7
+                case .down:
+                    tileValue = 8
+                case .left:
+                    tileValue = 5
+                case .right:
+                    tileValue = 6
+                case .middle:
+                    tileValue = 9
+                case .none:
+                    tileValue = 9
+                }
+                
+                tileName = "tile_\(tileValue)"
+                
+                let tileNode = SKSpriteNode(imageNamed: tileName)
+                tileNode.size = CGSize(width: tileWidth, height: tileHeight)
+                let point = pointFor(column: column - 1, row: row - 1)
+                tileNode.position = point
+                tilesLayer.addChild(tileNode)
+            }
+          }
     }
     
     override func didMove(to view: SKView) {
@@ -66,7 +147,7 @@ class GameScene: SKScene {
     
     // Add sprite to cards layer
     fileprivate func setSprite(_ card: Card) {
-        let sprite = SKSpriteNode(imageNamed: card.cardType.spriteName)
+        let sprite = SKSpriteNode(imageNamed: card.cardType.setSpriteValue(cardType: card.cardType, cardValue: card.value))
         sprite.size = CGSize(width: tileWidth - cardSpace, height: tileHeight - cardSpace)
         sprite.position = pointFor(column: card.column, row: card.row)
         cardsLayer.addChild(sprite)
@@ -139,10 +220,6 @@ class GameScene: SKScene {
     }
     
     // MARK: Move
-    fileprivate func extractedFunc(_ lifeLayout: ((Int) -> Void)) {
-        lifeLayout(gameViewController.lifeProgress.value)
-    }
-    
     func tryMove(move: Moves) {
         let moveFrom = getCharacterPosition()
         
@@ -204,10 +281,13 @@ class GameScene: SKScene {
                 
                 if toCard.cardType == .block || toCard.cardType == .tacticalPolice{
                     gameViewController.energyProgress.updateValue(value: toCard.value, type: .city)
+                    guard let energyLayout = energyLayoutHandler else { return }
+                    energyLayout(gameViewController.energyProgress.value)
+                    
                 }else if toCard.cardType == .photoRoll || toCard.cardType == .riotPolice{
                     gameViewController.lifeProgress.updateValue(value: toCard.value, type: .character)
                     guard let lifeLayout = lifeLayoutHandler else { return }
-                    extractedFunc(lifeLayout)
+                    lifeLayout(gameViewController.lifeProgress.value)
                 }
                 
 
