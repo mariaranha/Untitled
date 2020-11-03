@@ -18,9 +18,22 @@ enum CardType: Int {
             "card_dementors",
             "card_riotPolice",
             "card_tacticalPolice",
-            "photo"]
+            "card_photo"]
         
         return spriteNames[rawValue - 1]
+    }
+    
+    func setSpriteValue(cardType: CardType, cardValue: Int) -> String {
+        var spriteName: String
+        
+        if cardType == .block || cardType == .photoRoll || cardType == .riotPolice || cardType == .tacticalPolice {
+            let value = "\(cardValue)".replacingOccurrences(of: "-", with: "")
+            spriteName = "\(cardType.spriteName)_\(value)"
+        } else {
+            spriteName = cardType.spriteName
+        }
+        
+        return spriteName
     }
     
     static func random(filename: String) -> CardType {
@@ -35,16 +48,24 @@ enum CardType: Int {
             }
             return type
         }
-     
+        
+        let cardTypes = levelData.cardTypes
         let percentage = levelData.randomPercentage
         
-        for index in 2...6 {
+        for index in cardTypes {
             total += percentage[index-2]
             if randomDouble <= total{
                 type = CardType(rawValue: index)!
                 break
             }
         }
+        
+        var keepCard = cardTypes.contains(type.rawValue)
+        while !keepCard {
+            type = CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
+            keepCard = cardTypes.contains(type.rawValue)
+        }
+        
         return type
     }
 }
@@ -108,6 +129,9 @@ class Card: CustomStringConvertible, Hashable {
             return value
         }
         
+        guard valuesVector.count != 0 else {
+            return value
+        }
         
         for index in 0 ... valuesVector.count-1{
             total += percentageVector[index]

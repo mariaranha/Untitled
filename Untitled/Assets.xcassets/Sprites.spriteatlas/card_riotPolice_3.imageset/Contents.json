@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "card_character.png",
+      "filename" : "card_riotPolice_3@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "card_riotPolice_3@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

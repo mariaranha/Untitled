@@ -67,7 +67,7 @@ class GameScene: SKScene {
     
     // Add sprite to cards layer
     fileprivate func setSprite(_ card: Card) {
-        let sprite = SKSpriteNode(imageNamed: card.cardType.spriteName)
+        let sprite = SKSpriteNode(imageNamed: card.cardType.setSpriteValue(cardType: card.cardType, cardValue: card.value))
         sprite.size = CGSize(width: tileWidth - cardSpace, height: tileHeight - cardSpace)
         sprite.position = pointFor(column: card.column, row: card.row)
         cardsLayer.addChild(sprite)
