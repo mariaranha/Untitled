@@ -9,7 +9,7 @@ class LevelData: Codable {
     let tiles: [[Int]]
     let photoPosition: [String: Int]
     let randomPercentage: [Double]
-    let energyCity: Int
+    let energyPhoto: Int
     let exitPosition: [[String: Int]]
     let riotPoliceValue: [Int]
     let tacticalPoliceValue: [Int]
@@ -20,6 +20,7 @@ class LevelData: Codable {
     let blockValuePercentage: [Double]
     let photoRollValuePercentage: [Double]
     let characterPosition: [String: Int]
+    let energyReward: Int
     let cardTypes: [Int]
     
     

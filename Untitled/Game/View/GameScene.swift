@@ -223,16 +223,18 @@ class GameScene: SKScene {
     func tryMove(move: Moves) {
         let moveFrom = getCharacterPosition()
         
-        guard let levelData = LevelData.loadFrom(file: "Level_1") else { return }
+        let filename = "Level_1"
+        
+        guard let levelData = LevelData.loadFrom(file: filename) else { return }
         
         guard moveFrom != nil else { return }
         guard let fromCard = level.card(atColumn: moveFrom!.column,
                                         row: moveFrom!.row) else { return }
         
-        let energyValue = levelData.energyCity
+        let energyPhotoValue = levelData.energyPhoto
+        let energyRewardValue = levelData.energyReward
         let photoRow = levelData.photoPosition["row"]!
         let photoColumn = levelData.photoPosition["column"]!
-        let exitRow = levelData.exitPosition[0]["row"]!
         
         var moveTo = moveFrom
 
@@ -252,32 +254,37 @@ class GameScene: SKScene {
         guard let toCard = level.card(atColumn: moveTo!.column,
                                       row: moveTo!.row) else { return }
         
-        let newCardType = CardType.random(filename: "Level_1")
-        let newCardValue = Card.setCardValue(filename: "Level_1", cardType: newCardType)
-        let newCard = Card(column: fromCard.column, row: fromCard.row, cardType: newCardType, value: newCardValue)
+        let newCard = level.createNewCard(column: fromCard.column, row: fromCard.row, filename: filename)
         
+        let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+    
         if let handler = moveHandler {
-            if toCard == Card(column: photoColumn, row: photoRow, cardType: CardType(rawValue: 7)!, value: 0)  {
-                if gameViewController.energyProgress.value >= energyValue {
-                    let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+            if toCard == level.card(atColumn: photoColumn, row: photoRow) && toCard.cardType == .photo{
+                if gameViewController.energyProgress.value >= energyPhotoValue {
                     handler(move)
                     canExit = true
+                    addReward(playerCard: fromCard, rewardType: .reward1, filename: filename)
                 }else{
                     print("Complete a energia da cidade para coletar a foto")
                 }
-            }else{
-                if canExit == true{
-                    if toCard.row == exitRow{
-                        for index in 0...levelData.exitPosition.count-1{
-                            if toCard.column == levelData.exitPosition[index]["column"]!{
-                                print("Venceu")
-                                break
-                            }
-                        }
-                    }
+            }else if toCard.cardType == .reward1{
+                if gameViewController.energyProgress.value >= energyRewardValue {
+                    handler(move)
+                    addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
+                    UserDefaultsStruct.Rewards.photoChapter1.gotReward() 
+                }else{
+                    print("Complete a energia X para coletar a primeira recompensa")
                 }
-                let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+            }else if toCard.cardType == .reward2{
+                if gameViewController.energyProgress.value >= energyRewardValue {
+                    handler(move)
+                    UserDefaultsStruct.Rewards.photoChapter2.gotReward() 
+                }else{
+                    print("Complete a energia X para coletar a segunda recompensa")
+                }
+            }else{
                 handler(move)
+                print("Energia \(gameViewController.energyProgress.value)")
                 
                 if toCard.cardType == .block || toCard.cardType == .tacticalPolice{
                     gameViewController.energyProgress.updateValue(value: toCard.value, type: .city)
@@ -298,6 +305,12 @@ class GameScene: SKScene {
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
+                }else{
+                    if canExit == true{
+                        if level.checkExitPosition(toCard: toCard, filename: filename){
+                            print("Venceu")
+                        }
+                    }
                 }
             }
         }
@@ -321,6 +334,19 @@ class GameScene: SKScene {
         }
         
         return nil
+    }
+    
+    func addReward(playerCard: Card, rewardType: CardType, filename: String){
+        guard let levelData = LevelData.loadFrom(file: filename) else { return }
+        let exitPositions = levelData.exitPosition
+        
+        let removeCard = SKAction.removeFromParent()
+        removeCard.timingMode = .easeOut
+        
+        let rewardCard = level.createRewardCard(playerColumn: playerCard.column, playerRow: playerCard.row, rewardType: rewardType, exitPositions: exitPositions)
+        level.card(atColumn: rewardCard.column, row: rewardCard.row)?.sprite!.run(removeCard)
+        level.setReward(reward: rewardCard)
+        setSprite(rewardCard)
     }
     
     fileprivate func addGestures(_ view: SKView) {

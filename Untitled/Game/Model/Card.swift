@@ -9,7 +9,7 @@ import SpriteKit
 
 // MARK: - CardType
 enum CardType: Int {
-    case unknown = 0, character, block, photoRoll, conservator, riotPolice, tacticalPolice, photo
+    case unknown = 0, character, block, photoRoll, conservator, riotPolice, tacticalPolice, reward1, reward2, photo
     var spriteName: String {
         let spriteNames = [
             "card_character",
@@ -18,6 +18,8 @@ enum CardType: Int {
             "card_dementors",
             "card_riotPolice",
             "card_tacticalPolice",
+            "reward1",
+            "reward2",
             "card_photo"]
         
         return spriteNames[rawValue - 1]
@@ -143,4 +145,5 @@ class Card: CustomStringConvertible, Hashable {
 
         return value
     }
+
 }
