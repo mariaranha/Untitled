@@ -8,27 +8,17 @@
 import UIKit
 
 class InitialScreenViewController: UIViewController {
-
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViews()
-    }
-    
-    //View
-    func setupViews(){
-        //labels
-        titleLabel.text = "untitled games"
-        subtitleLabel.text = "apresenta:"
-        //background
-        backgroundImage.image = UIImage(named: "initialscreen_background")
-    }
-    
-    
+        self.view.backgroundColor = AppColor.intermediateBackground.value
+//        backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "initialScreen_background")!)
 
+    }
+    
+    
+    
+ 
 }
+
