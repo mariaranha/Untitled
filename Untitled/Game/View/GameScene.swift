@@ -12,7 +12,7 @@ class GameScene: SKScene {
     
     var tileWidth = CGFloat()
     var tileHeight = CGFloat()
-    var cardSpace: CGFloat = 10.0
+    var cardSpace: CGFloat = 12.0
 
     let cardsLayer = SKNode()
     
@@ -20,6 +20,7 @@ class GameScene: SKScene {
     
     var moveHandler: ((MoveCard) -> Void)?
     var lifeLayoutHandler: ((Int) -> Void)?
+    var energyLayoutHandler: ((Int) -> Void)?
     
     let gameViewController:GameViewController = GameViewController()
     
@@ -139,10 +140,6 @@ class GameScene: SKScene {
     }
     
     // MARK: Move
-    fileprivate func extractedFunc(_ lifeLayout: ((Int) -> Void)) {
-        lifeLayout(gameViewController.lifeProgress.value)
-    }
-    
     func tryMove(move: Moves) {
         let moveFrom = getCharacterPosition()
         
@@ -204,10 +201,13 @@ class GameScene: SKScene {
                 
                 if toCard.cardType == .block || toCard.cardType == .tacticalPolice{
                     gameViewController.energyProgress.updateValue(value: toCard.value, type: .city)
+                    guard let energyLayout = energyLayoutHandler else { return }
+                    energyLayout(gameViewController.energyProgress.value)
+                    
                 }else if toCard.cardType == .photoRoll || toCard.cardType == .riotPolice{
                     gameViewController.lifeProgress.updateValue(value: toCard.value, type: .character)
                     guard let lifeLayout = lifeLayoutHandler else { return }
-                    extractedFunc(lifeLayout)
+                    lifeLayout(gameViewController.lifeProgress.value)
                 }
                 
 

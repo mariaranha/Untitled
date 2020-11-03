@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var currentLifeLabel: UILabel!
     @IBOutlet weak var energy: UIImageView!
     @IBOutlet weak var cardBoard: SKView!
+    @IBOutlet weak var energyStack: UIStackView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
     
@@ -45,6 +46,7 @@ class GameViewController: UIViewController {
         
         // Configure View
         setInitialLifeLayout()
+        setInitialEnergyLayout()
         
         // Create and configure the scene
         view.layoutSubviews()
@@ -56,6 +58,7 @@ class GameViewController: UIViewController {
         scene.scaleMode = .aspectFill
         scene.moveHandler = handleMove
         scene.lifeLayoutHandler = updateLifeValue(_:)
+        scene.energyLayoutHandler = updateEnergyValue(_:)
 
         // Present the scene
         skView.presentScene(scene)
@@ -73,6 +76,31 @@ class GameViewController: UIViewController {
         } else {
             totalLifeLabel.text = String(lifeProgress.value)
             currentLifeLabel.text = String(lifeProgress.value)
+        }
+    }
+    
+    func setInitialEnergyLayout() {
+        guard let energyBars = energyStack.subviews as? [UIImageView] else { return }
+        let energyValue = energyProgress.value
+        
+        for bar in energyBars {
+            if bar.tag > energyValue {
+                bar.image = UIImage(named: "energy_bar_empty")
+            } else {
+                bar.image = UIImage(named: "energy_bar_full")
+            }
+        }
+    }
+    
+    func updateEnergyValue(_ value: Int) {
+        guard let energyBars = energyStack.subviews as? [UIImageView] else { return }
+        
+        for bar in energyBars {
+            if bar.tag > value {
+                bar.image = UIImage(named: "energy_bar_empty")
+            } else {
+                bar.image = UIImage(named: "energy_bar_full")
+            }
         }
     }
     

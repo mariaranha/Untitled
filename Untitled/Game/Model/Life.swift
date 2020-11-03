@@ -22,9 +22,9 @@ class Life {
     init(type: LifeType) {
         self.type = type
         
-        if type == LifeType.city{
-            value = 0
-        } else{
+        if type == LifeType.city {
+            value = 10
+        } else {
             value = 10
         }
         
@@ -43,12 +43,16 @@ class Life {
     
     func updateValue(value: Int, type: LifeType){
         self.value += value
-        if self.value < 0{
+        if self.value < 0 {
             self.value = 0
         }
-        if type == .character{
+        if type == .character {
             if self.value > 10 {
                 self.value = 10
+            }
+        } else if type == .city {
+            if self.value > 15 {
+                self.value = 15
             }
         }
     }
