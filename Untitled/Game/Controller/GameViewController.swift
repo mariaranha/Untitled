@@ -56,6 +56,7 @@ class GameViewController: UIViewController {
         scene = GameScene(size: size, level: level, tileSize: .init(width: tileWidth, height: tileHeight))
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
+        scene.addTiles()
         scene.moveHandler = handleMove
         scene.lifeLayoutHandler = updateLifeValue(_:)
         scene.energyLayoutHandler = updateEnergyValue(_:)
