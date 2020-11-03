@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQM-Fr-zVN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AQM-Fr-zVN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lalezar-Regular.ttf">
+            <string>Lalezar-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="EZO-AQ-h2h">
@@ -252,11 +257,12 @@
                         <outlet property="progress" destination="maT-84-tln" id="XJm-dO-uqD"/>
                         <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
                         <outlet property="totalLifeLabel" destination="t19-Tf-pQ0" id="IK0-p2-QE3"/>
+                        <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868.11594202898561" y="-325.44642857142856"/>
+            <point key="canvasLocation" x="-943" y="-305"/>
         </scene>
         <!--Win Game View Controller-->
         <scene sceneID="wrJ-5v-v2m">
@@ -268,36 +274,36 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvZ-zf-gcF">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="akj-9U-TTo">
-                                <rect key="frame" x="178" y="108.5" width="58.5" height="54"/>
+                                <rect key="frame" x="169" y="134" width="76" height="94.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-nk-VxL">
-                                        <rect key="frame" x="3" y="0.0" width="52" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="63"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="40"/>
+                                        <color key="textColor" red="0.9882352941176471" green="0.792156862745098" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-J0-iAW">
-                                        <rect key="frame" x="0.0" y="33.5" width="58.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="4.5" y="63" width="67" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
+                                        <color key="textColor" red="0.96078431372549022" green="0.90980392156862744" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxL-J2-Iaa">
-                                <rect key="frame" x="143" y="680.5" width="128" height="128"/>
-                                <state key="normal" image="endChapter_button"/>
+                                <rect key="frame" x="119" y="746.5" width="176.5" height="62"/>
+                                <state key="normal" image="continue_button"/>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="ACA-rY-h55" eventType="touchUpInside" id="bUN-AW-9kA"/>
                                     <segue destination="Eic-Tt-d8n" kind="presentation" modalPresentationStyle="fullScreen" id="2G4-Wu-uIO"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-qh-QPR">
-                                <rect key="frame" x="0.0" y="216.5" width="414" height="396"/>
+                                <rect key="frame" x="0.0" y="282.5" width="414" height="396"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SPU-6f-Xtf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
@@ -363,7 +369,7 @@
         <image name="board_life" width="109" height="110"/>
         <image name="board_progress" width="200" height="54"/>
         <image name="board_settings" width="447.5" height="459.5"/>
-        <image name="endChapter_button" width="176.5" height="48.5"/>
+        <image name="continue_button" width="176.5" height="62"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

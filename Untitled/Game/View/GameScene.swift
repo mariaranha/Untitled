@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GameplayKit
+import UIKit
 
 class GameScene: SKScene {
     
@@ -305,6 +306,8 @@ class GameScene: SKScene {
                     if canExit == true{
                         if level.checkExitPosition(toCard: toCard, filename: filename){
                             print("Venceu")
+                            self.view!.window!.rootViewController!.performSegue(withIdentifier: "goToWinGame", sender: self)
+
                         }
                     }
                 }

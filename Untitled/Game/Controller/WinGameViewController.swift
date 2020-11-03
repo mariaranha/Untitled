@@ -23,11 +23,10 @@ class WinGameViewController: UIViewController {
         titleLabel.text = "capítulo finalizado"
         subtitleLabel.text = "#1 - uma história de carnaval"
         
-        view.backgroundColor = AppColor.intermediateBackground.value
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "winBackground")!)
         photoImageView.image = UIImage(named: "empty_photo")
-        narrativeImageView.image = UIImage(named: "winGame_paper")
-        imageStackView.backgroundColor = AppColor.intermediateBackground.value
-        backgroundView.backgroundColor = AppColor.intermediateBackground.value
+        narrativeImageView.image = UIImage(named: "chapter1_win")
+
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
