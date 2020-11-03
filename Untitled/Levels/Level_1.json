@@ -7,9 +7,9 @@
   
   "photoPosition": {"row" : 4, "column": 4},
   
-  "randomPercentage": [0.15, 0.2, 0.15, 0.3, 0.2],
+  "randomPercentage": [0.15, 0.2, 0.25, 0.25, 0.15],
   
-  "energyCity": 15,
+  "energyPhoto": 15,
   
   "exitPosition": [{"row" : 0, "column": 1}, {"row" : 0, "column": 2}, {"row" : 0, "column": 3}],
   
@@ -33,6 +33,6 @@
 
   "cardTypes": [2, 3, 5, 6],
   
-  "energyReward": 30
+  "energyReward": 15
   
 }
