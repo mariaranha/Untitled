@@ -204,12 +204,14 @@ class GameScene: SKScene {
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(move)
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
+                    UserDefaultsStruct.Rewards.photoChapter1.gotReward() 
                 }else{
                     print("Complete a energia X para coletar a primeira recompensa")
                 }
             }else if toCard.cardType == .reward2{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(move)
+                    UserDefaultsStruct.Rewards.photoChapter2.gotReward() 
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
