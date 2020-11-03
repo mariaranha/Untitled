@@ -219,6 +219,18 @@ class GameScene: SKScene {
         tryMove(move: .down)
     }
     
+    func updateProgressValues(card: Card){
+        if card.cardType == .block || card.cardType == .tacticalPolice{
+            gameViewController.energyProgress.updateValue(value: card.value, type: .city)
+            guard let energyLayout = energyLayoutHandler else { return }
+            energyLayout(gameViewController.energyProgress.value)
+        }else if card.cardType == .photoRoll || card.cardType == .riotPolice{
+            gameViewController.lifeProgress.updateValue(value: card.value, type: .character)
+            guard let lifeLayout = lifeLayoutHandler else { return }
+            lifeLayout(gameViewController.lifeProgress.value)
+        }
+    }
+    
     // MARK: Move
     func tryMove(move: Moves) {
         let moveFrom = getCharacterPosition()
@@ -284,24 +296,8 @@ class GameScene: SKScene {
                 }
             }else{
                 handler(move)
+                updateProgressValues(card: toCard)
                 print("Energia \(gameViewController.energyProgress.value)")
-                
-                if toCard.cardType == .block || toCard.cardType == .tacticalPolice{
-                    gameViewController.energyProgress.updateValue(value: toCard.value, type: .city)
-                    guard let energyLayout = energyLayoutHandler else { return }
-                    energyLayout(gameViewController.energyProgress.value)
-                    
-                }else if toCard.cardType == .photoRoll || toCard.cardType == .riotPolice{
-                    gameViewController.lifeProgress.updateValue(value: toCard.value, type: .character)
-                    guard let lifeLayout = lifeLayoutHandler else { return }
-                    lifeLayout(gameViewController.lifeProgress.value)
-                }
-                
-
-//                print("Tipo da carta: \(toCard.cardType)")
-//                print("Valor da carta: \(toCard.value)")
-//                print("Energia: \(gameViewController.energyProgress.value)")
-//                print("Vida: \(gameViewController.lifeProgress.value)")
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
