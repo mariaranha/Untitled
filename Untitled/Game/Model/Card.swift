@@ -54,18 +54,12 @@ enum CardType: Int {
         let cardTypes = levelData.cardTypes
         let percentage = levelData.randomPercentage
         
-        for index in cardTypes {
-            total += percentage[index-2]
+        for index in 0...cardTypes.count {
+            total += percentage[index]
             if randomDouble <= total{
-                type = CardType(rawValue: index)!
+                type = CardType(rawValue: cardTypes[index])!
                 break
             }
-        }
-        
-        var keepCard = cardTypes.contains(type.rawValue)
-        while !keepCard {
-            type = CardType(rawValue: Int(arc4random_uniform(6)) + 1)!
-            keepCard = cardTypes.contains(type.rawValue)
         }
         
         return type
