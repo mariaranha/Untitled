@@ -122,8 +122,8 @@ class Level {
         
         for index in 0...exitPositions.count-1{
             if rewardColumn == exitPositions[index]["column"]!{
-                if rewardRow == 0{
-                    rewardRow = Int.random(in: 1...4)
+                while rewardRow == playerRow || rewardRow == exitPositions[0]["row"]{
+                    rewardRow = Int.random(in: 0...4)
                 }
             }
         }
