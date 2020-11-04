@@ -11,7 +11,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var progress: UIImageView!
+    @IBOutlet weak var progressBackground: UIImageView!
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var lifePhoto: UIImageView!
     @IBOutlet weak var totalLifeLabel: UILabel!
@@ -19,12 +19,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var energy: UIImageView!
     @IBOutlet weak var cardBoard: SKView!
     @IBOutlet weak var energyStack: UIStackView!
+    @IBOutlet weak var photoReward: UIImageView!
+    @IBOutlet weak var firstReward: UIImageView!
+    @IBOutlet weak var secondReward: UIImageView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
     
     //Scene draws the sprites and handles gestures
     var scene: GameScene!
     var level: Level!
+    var currentLevel: Int = 1 //Note: Create a singleton to verify the current level and pass in init
     
     var tileWidth: CGFloat = 0.0
     var tileHeight: CGFloat = 0.0
@@ -41,12 +45,12 @@ class GameViewController: UIViewController {
         let skView = cardBoard!
         skView.isMultipleTouchEnabled = false
         
-        //Note: Create a singleton to verify the user level and pass here
-        level = Level(filename: "Level_1")
+        level = Level(filename: "Level_\(currentLevel)")
         
         // Configure View
         setInitialLifeLayout()
         setInitialEnergyLayout()
+        setInitialRewardsLayout()
         
         // Create and configure the scene
         view.layoutSubviews()
@@ -60,6 +64,7 @@ class GameViewController: UIViewController {
         scene.moveHandler = handleMove
         scene.lifeLayoutHandler = updateLifeValue(_:)
         scene.energyLayoutHandler = updateEnergyValue(_:)
+        scene.rewardLayoutHandler = updateRewards(_:_:_:)
 
         // Present the scene
         skView.presentScene(scene)
@@ -93,6 +98,12 @@ class GameViewController: UIViewController {
         }
     }
     
+    func setInitialRewardsLayout() {
+        photoReward.image = UIImage(named: "board_empty_reward")
+        firstReward.image = UIImage(named: "board_empty_reward")
+        secondReward.image = UIImage(named: "board_empty_reward")
+    }
+    
     func updateEnergyValue(_ value: Int) {
         guard let energyBars = energyStack.subviews as? [UIImageView] else { return }
         
@@ -114,6 +125,30 @@ class GameViewController: UIViewController {
     
     }
     
+    //Note: need to update assets
+    func updateRewards(_ gotPhoto: Bool, _ gotFirstReward: Bool, _ gotSecondReward: Bool) {
+        //PHOTO
+        if gotPhoto {
+            photoReward.image = UIImage(named: "board_collected_reward_\(currentLevel)")
+        } else {
+            photoReward.image = UIImage(named: "board_empty_reward")
+        }
+        
+        //FIRST REWARD
+        if gotFirstReward {
+            firstReward.image = UIImage(named: "board_collected_reward_\(currentLevel)")
+        } else {
+            firstReward.image = UIImage(named: "board_empty_reward")
+        }
+        
+        //SECOND REWARD
+        if gotSecondReward {
+            secondReward.image = UIImage(named: "board_collected_reward_\(currentLevel)")
+        } else {
+            secondReward.image = UIImage(named: "board_empty_reward")
+        }
+    }
+    
     func beginGame() {
         let newCards = level.createInitialCards(filename: "Level_1")
         scene.addInitialSprites(for: newCards)
@@ -132,7 +167,7 @@ class GameViewController: UIViewController {
     func getBoardSize(forLevel level: Level) -> CGSize {
         let screenSize = UIScreen.main.bounds
 
-        let topSpace = progress.frame.maxY + 16
+        let topSpace = progressBackground.frame.maxY + 16
         let bottomSpace = screenSize.height - lifePhoto.frame.minY + 20
         let sideSpace: CGFloat = 20.0
         

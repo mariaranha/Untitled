@@ -23,6 +23,7 @@ class GameScene: SKScene {
     var moveHandler: ((MoveCard) -> Void)?
     var lifeLayoutHandler: ((Int) -> Void)?
     var energyLayoutHandler: ((Int) -> Void)?
+    var rewardLayoutHandler: ((Bool, Bool, Bool) -> Void)?
     
     let gameViewController:GameViewController = GameViewController()
     
@@ -276,6 +277,9 @@ class GameScene: SKScene {
                     handler(move)
                     canExit = true
                     addReward(playerCard: fromCard, rewardType: .reward1, filename: filename)
+                    //Add photo to progress bar
+                    guard let rewardHandler = rewardLayoutHandler else { return }
+                    rewardHandler(true, false, false)
                 }else{
                     print("Complete a energia da cidade para coletar a foto")
                 }
@@ -283,13 +287,21 @@ class GameScene: SKScene {
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(move)
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
-                    UserDefaultsStruct.Rewards.photoChapter1.gotReward() 
+                    //Add reward1 to progress bar
+                    guard let rewardHandler = rewardLayoutHandler else { return }
+                    rewardHandler(true, true, false)
+                    
+                    UserDefaultsStruct.Rewards.photoChapter1.gotReward()
                 }else{
                     print("Complete a energia X para coletar a primeira recompensa")
                 }
             }else if toCard.cardType == .reward2{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(move)
+                    //Add reward2 to progress bar
+                    guard let rewardHandler = rewardLayoutHandler else { return }
+                    rewardHandler(true, true, true)
+                    
                     UserDefaultsStruct.Rewards.photoChapter2.gotReward() 
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
