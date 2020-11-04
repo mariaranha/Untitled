@@ -19,6 +19,7 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     @IBOutlet weak var previousPageButton: UIButton!
     @IBOutlet weak var nextPageButton: UIButton!
     @IBOutlet weak var closeAlbumButton: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet weak var leadingPageConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingPageConstraint: NSLayoutConstraint!
@@ -51,18 +52,15 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         
         //Set Close Album button
         closeAlbumButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-        closeAlbumButton.layer.borderWidth = 3.0
+        closeAlbumButton.layer.borderWidth = 1.0
         closeAlbumButton.backgroundColor = AppColor.lightBackground.value
-        
-        //Set Back button
-        backButton.setTitle("Voltar", for: .normal)
         
         //Set Pages button
         previousPageButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-        previousPageButton.layer.borderWidth = 3.0
+        previousPageButton.layer.borderWidth = 1.0
         previousPageButton.backgroundColor = AppColor.lightBackground.value
         nextPageButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-        nextPageButton.layer.borderWidth = 3.0
+        nextPageButton.layer.borderWidth = 1.0
         nextPageButton.backgroundColor = AppColor.lightBackground.value
         
         //Set angles
@@ -130,17 +128,17 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     }
     
     func setPageLayout() {
-        albumPage.contentView.backgroundColor = AppColor.lightBackground.value
-        
         switch pageType {
         case .left:
             albumPage.albumPage.image = UIImage(named: "leftOpenPage")
             albumPage.leadingPhotoConstraint.constant = 76
             albumPage.trailingPhotoConstraint.constant = 42
+            backgroundImage.image = UIImage(named: "rewards_background")
         case .right:
             albumPage.albumPage.image = UIImage(named: "rightOpenPage")
             albumPage.leadingPhotoConstraint.constant = 42
             albumPage.trailingPhotoConstraint.constant = 76
+            backgroundImage.image = UIImage(named: "rewards_background_2")
         }
         
         var topPagePhoto: Int
