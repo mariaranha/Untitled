@@ -33,7 +33,7 @@ extension AppColor {
         case .darkBackground:
             instanceColor = #colorLiteral(red: 0.1568627451, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
         case .lightBackground:
-            instanceColor = #colorLiteral(red: 0.9607843137, green: 0.9098039216, blue: 0.8392156863, alpha: 1)
+            instanceColor = #colorLiteral(red: 0.9176470588, green: 0.862745098, blue: 0.8431372549, alpha: 1)
         case .intermediateBackground:
             instanceColor = #colorLiteral(red: 0.3058823529, green: 0.1960784314, blue: 0.6588235294, alpha: 1)
             
