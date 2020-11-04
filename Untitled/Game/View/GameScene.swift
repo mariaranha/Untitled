@@ -29,6 +29,8 @@ class GameScene: SKScene {
     let gameViewController:GameViewController = GameViewController()
     
     var canExit = false
+    var gotRewar1 = false
+    var gotRewar2 = false
     
     enum Moves {
         case up
@@ -288,22 +290,20 @@ class GameScene: SKScene {
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(move)
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
+                    gotRewar1 = true
                     //Add reward1 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, false)
-                    
-                    UserDefaultsStruct.Rewards.photoChapter1.gotReward()
                 }else{
                     print("Complete a energia X para coletar a primeira recompensa")
                 }
             }else if toCard.cardType == .reward2{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(move)
+                    gotRewar2 = true
                     //Add reward2 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, true)
-                    
-                    UserDefaultsStruct.Rewards.photoChapter2.gotReward() 
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
@@ -318,6 +318,7 @@ class GameScene: SKScene {
                     if canExit == true{
                         if level.checkExitPosition(toCard: toCard, filename: filename){
                             print("Venceu")
+                            gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
                             
                             let storyboard = UIStoryboard(name: "Board", bundle: nil)
                             let vc = storyboard.instantiateViewController(withIdentifier: "WinGameViewController")
@@ -368,6 +369,15 @@ class GameScene: SKScene {
         level.card(atColumn: rewardCard.column, row: rewardCard.row)?.sprite!.run(removeCard)
         level.setReward(reward: rewardCard)
         setSprite(rewardCard)
+    }
+    
+    func gotReward(gotReward1: Bool, gotReward2: Bool){
+        if gotReward1{
+            UserDefaultsStruct.Rewards.photoChapter1.gotReward()
+        }
+        if gotReward2{
+            UserDefaultsStruct.Rewards.photoChapter2.gotReward()
+        }
     }
     
     fileprivate func addGestures(_ view: SKView) {
