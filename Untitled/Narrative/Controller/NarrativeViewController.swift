@@ -53,6 +53,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         let currentPage = Int((scrollView.contentOffset.y)/(scrollView.frame.size.height))
         setLabels()
         playButton.isHidden = true
+        narrativeSlide.isHidden = false
         switch currentPage {
         case 0:
 //            playButton.isHidden = true
@@ -85,7 +86,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             label5.font = UIFont.boldSystemFont(ofSize: 20.0)
             narrativeView.imageView.image = UIImage(named: "chapter1_page5")
         case 5:
-//            narrativeSlide.isHidden = true
+            narrativeSlide.isHidden = true
 //            playButton.isHidden = false
             label6.text = "- VI"
             label6.font = UIFont.boldSystemFont(ofSize: 20.0)

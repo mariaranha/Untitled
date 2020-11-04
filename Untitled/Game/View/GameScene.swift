@@ -306,7 +306,17 @@ class GameScene: SKScene {
                     if canExit == true{
                         if level.checkExitPosition(toCard: toCard, filename: filename){
                             print("Venceu")
-                            self.view!.window!.rootViewController!.performSegue(withIdentifier: "goToWinGame", sender: self)
+                            
+                            let storyboard = UIStoryboard(name: "Board", bundle: nil)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "WinGameViewController")
+                            vc.view.layoutIfNeeded()
+
+                            UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
+                                    {
+                                        self.view?.window?.rootViewController = vc
+                                }, completion: { completed in
+                                    // maybe do something here
+                                })
 
                         }
                     }
