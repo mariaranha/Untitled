@@ -37,7 +37,7 @@ class GameScene: SKScene {
         case down
         case right
         case left
-        case first
+        case center
     }
   
     required init?(coder aDecoder: NSCoder) {
@@ -191,7 +191,12 @@ class GameScene: SKScene {
         let cardLeft = (point: pointFor(column: characterPosition.column - 1,
                                          row: characterPosition.row),
                         move: Moves.left)
-        let possibleCards = [cardUp, cardDown, cardRight, cardLeft]
+        
+        let cardCenter = (point: pointFor(column: characterPosition.column,
+                                         row: characterPosition.row),
+                    move: Moves.center)
+        
+        let possibleCards = [cardUp, cardDown, cardRight, cardLeft, cardCenter]
         
         for card in possibleCards {
             let cardFrame = CGRect(x: card.point.x-tileWidth/2,
@@ -237,6 +242,7 @@ class GameScene: SKScene {
     
     // MARK: Move
     func tryMove(move: Moves) {
+        
         let moveFrom = getCharacterPosition()
         
         let filename = "Level_1"
@@ -263,21 +269,39 @@ class GameScene: SKScene {
             moveTo?.column += 1
         case .left:
             moveTo?.column -= 1
-        case .first:
-            break
+        case .center:
+            moveTo?.row = -1
         }
         
-        guard let toCard = level.card(atColumn: moveTo!.column,
-                                      row: moveTo!.row) else { return }
+        guard let toCard = level.card(atColumn: moveTo!.column, row: moveTo!.row) else {
+            if moveTo?.row == -1 && canExit == true && (move == .down || move == .center){
+                if level.checkExitPosition(toCard: fromCard, filename: filename) {
+                    gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
+                    print("Venceu")
+                    let storyboard = UIStoryboard(name: "Board", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "WinGameViewController")
+                    vc.view.layoutIfNeeded()
+
+                    UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
+                            {
+                                self.view?.window?.rootViewController = vc
+                        }, completion: { completed in
+                            // maybe do something here
+                        })
+                    
+                }
+            }
+            return
+        }
         
         let newCard = level.createNewCard(column: fromCard.column, row: fromCard.row, filename: filename)
         
-        let move = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
+        let moveCard = MoveCard(cardA: fromCard, cardB: toCard, newCard: newCard)
     
         if let handler = moveHandler {
             if toCard == level.card(atColumn: photoColumn, row: photoRow) && toCard.cardType == .photo{
                 if gameViewController.energyProgress.value >= energyPhotoValue {
-                    handler(move)
+                    handler(moveCard)
                     canExit = true
                     addReward(playerCard: fromCard, rewardType: .reward1, filename: filename)
                     //Add photo to progress bar
@@ -288,7 +312,7 @@ class GameScene: SKScene {
                 }
             }else if toCard.cardType == .reward1{
                 if gameViewController.energyProgress.value >= energyRewardValue {
-                    handler(move)
+                    handler(moveCard)
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
                     gotRewar1 = true
                     //Add reward1 to progress bar
@@ -299,7 +323,7 @@ class GameScene: SKScene {
                 }
             }else if toCard.cardType == .reward2{
                 if gameViewController.energyProgress.value >= energyRewardValue {
-                    handler(move)
+                    handler(moveCard)
                     gotRewar2 = true
                     //Add reward2 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
@@ -308,31 +332,13 @@ class GameScene: SKScene {
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
             }else{
-                handler(move)
+                handler(moveCard)
                 updateProgressValues(card: toCard)
+                
                 print("Energia \(gameViewController.energyProgress.value)")
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
-                }else{
-                    if canExit == true{
-                        if level.checkExitPosition(toCard: toCard, filename: filename){
-                            print("Venceu")
-                            gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
-                            
-                            let storyboard = UIStoryboard(name: "Board", bundle: nil)
-                            let vc = storyboard.instantiateViewController(withIdentifier: "WinGameViewController")
-                            vc.view.layoutIfNeeded()
-
-                            UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
-                                    {
-                                        self.view?.window?.rootViewController = vc
-                                }, completion: { completed in
-                                    // maybe do something here
-                                })
-
-                        }
-                    }
                 }
             }
         }
