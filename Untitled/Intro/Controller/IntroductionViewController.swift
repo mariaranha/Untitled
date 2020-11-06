@@ -81,8 +81,6 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         
         pageIndex = Int(scrollPageIndex)
         
-        print(pageIndex)
-        
         if pageIndex <= 0 {
             continueButton.isHidden = true
             swipeToRead.isHidden = false
