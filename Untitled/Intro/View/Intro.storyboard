@@ -96,6 +96,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="h0G-qs-A49"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FYN-R1-ohA" firstAttribute="centerX" secondItem="xbF-8E-VOe" secondAttribute="centerX" id="4o4-0I-D4A"/>
@@ -104,17 +105,16 @@
                             <constraint firstItem="qD5-Yz-98p" firstAttribute="height" secondItem="xbF-8E-VOe" secondAttribute="height" multiplier="0.606585" id="E1U-f1-IU2"/>
                             <constraint firstAttribute="bottom" secondItem="Vvn-Zr-JX2" secondAttribute="bottom" id="EiE-v5-CeC"/>
                             <constraint firstItem="M8k-P5-tzb" firstAttribute="centerX" secondItem="xbF-8E-VOe" secondAttribute="centerX" id="HnV-kS-pP1"/>
-                            <constraint firstItem="qD5-Yz-98p" firstAttribute="leading" secondItem="xbF-8E-VOe" secondAttribute="leading" constant="32" id="KUr-YC-Nlr"/>
                             <constraint firstItem="Vvn-Zr-JX2" firstAttribute="top" secondItem="xbF-8E-VOe" secondAttribute="top" id="Kss-iG-qxD"/>
                             <constraint firstItem="qD5-Yz-98p" firstAttribute="top" secondItem="M8k-P5-tzb" secondAttribute="bottom" priority="750" constant="40" id="MOl-nc-cq5"/>
-                            <constraint firstAttribute="trailing" secondItem="qD5-Yz-98p" secondAttribute="trailing" constant="32" id="QwB-Gl-UGw"/>
                             <constraint firstAttribute="trailing" secondItem="Vvn-Zr-JX2" secondAttribute="trailing" id="SK8-Oa-oUt"/>
-                            <constraint firstItem="M8k-P5-tzb" firstAttribute="top" secondItem="xbF-8E-VOe" secondAttribute="topMargin" priority="750" constant="88" id="bMn-bn-bSe"/>
+                            <constraint firstItem="M8k-P5-tzb" firstAttribute="top" secondItem="xbF-8E-VOe" secondAttribute="topMargin" priority="999" constant="88" id="bMn-bn-bSe"/>
                             <constraint firstItem="qD5-Yz-98p" firstAttribute="width" secondItem="xbF-8E-VOe" secondAttribute="width" multiplier="0.845411" id="fM9-1B-zC0"/>
                             <constraint firstItem="M8k-P5-tzb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xbF-8E-VOe" secondAttribute="topMargin" constant="24" id="ggr-st-lod"/>
                             <constraint firstItem="FYN-R1-ohA" firstAttribute="top" secondItem="qD5-Yz-98p" secondAttribute="bottom" constant="20" id="kXJ-rd-62u"/>
                             <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="FYN-R1-ohA" secondAttribute="bottom" constant="24" id="oQk-fr-fRH"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="FYN-R1-ohA" secondAttribute="bottom" priority="750" constant="55" id="r4x-sb-ter"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="FYN-R1-ohA" secondAttribute="bottom" priority="999" constant="55" id="r4x-sb-ter"/>
+                            <constraint firstItem="qD5-Yz-98p" firstAttribute="centerX" secondItem="h0G-qs-A49" secondAttribute="centerX" id="sFt-oe-2H2"/>
                             <constraint firstItem="qD5-Yz-98p" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M8k-P5-tzb" secondAttribute="bottom" constant="20" id="uTf-h5-4cs"/>
                         </constraints>
                     </view>
