@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8BEE2825559070005ED2AD /* Alegreya-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */; };
+		0B8BEE2925559070005ED2AD /* Alegreya-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */; };
+		0B8BEE2A25559070005ED2AD /* Alegreya-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */; };
 		0B8E74952537444300B45F0C /* ChapterMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E74942537444300B45F0C /* ChapterMenu.storyboard */; };
 		0B8E74972537535600B45F0C /* ChapterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E74962537535600B45F0C /* ChapterMenuViewController.swift */; };
 		0B8E749B2537548000B45F0C /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E749A2537548000B45F0C /* ChapterView.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Medium.ttf"; sourceTree = "<group>"; };
+		0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Regular.ttf"; sourceTree = "<group>"; };
+		0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-ExtraBold.ttf"; sourceTree = "<group>"; };
 		0B8E74942537444300B45F0C /* ChapterMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChapterMenu.storyboard; sourceTree = "<group>"; };
 		0B8E74962537535600B45F0C /* ChapterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterMenuViewController.swift; sourceTree = "<group>"; };
 		0B8E749A2537548000B45F0C /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 			children = (
 				0B9DB31A25373355006B601D /* DesignSystem.swift */,
 				9C3166DC25518D6000C6E466 /* Lalezar-Regular.ttf */,
+				0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */,
+				0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */,
+				0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */,
 				0BE1E5B7252F502900DD36C6 /* Array2D.swift */,
 			);
 			path = Auxiliary;
@@ -493,8 +502,10 @@
 			files = (
 				9C49FCA7253B7D1C0049F415 /* NarrativeTitleView.xib in Resources */,
 				0B9DB3172530AE31006B601D /* Launch Screen.storyboard in Resources */,
+				0B8BEE2825559070005ED2AD /* Alegreya-Medium.ttf in Resources */,
 				0BE1E5BE252F5A6700DD36C6 /* Level_1.json in Resources */,
 				9CA59E39252E07D700DCD349 /* Main.storyboard in Resources */,
+				0B8BEE2925559070005ED2AD /* Alegreya-Regular.ttf in Resources */,
 				0BB2F5C22541E1440042E6F2 /* OpenAlbum.xib in Resources */,
 				0B8E749D2537548C00B45F0C /* ChapterView.xib in Resources */,
 				0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */,
@@ -507,6 +518,7 @@
 				9CA59E32252E07D700DCD349 /* Actions.sks in Resources */,
 				9C0918F3254319A200CF1F8D /* Intro.storyboard in Resources */,
 				9C0918FB254332EC00CF1F8D /* NarrativeIntroView.xib in Resources */,
+				0B8BEE2A25559070005ED2AD /* Alegreya-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
