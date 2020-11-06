@@ -95,10 +95,25 @@
                                     <segue destination="mqV-Tj-WSX" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="iRw-Ck-YeA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-MK-pu5">
+                                <rect key="frame" x="139" y="812" width="136" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="deslize para ler">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Lalezar-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h0G-qs-A49"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hez-MK-pu5" firstAttribute="centerX" secondItem="h0G-qs-A49" secondAttribute="centerX" id="4DR-w7-Z4G"/>
                             <constraint firstItem="FYN-R1-ohA" firstAttribute="centerX" secondItem="xbF-8E-VOe" secondAttribute="centerX" id="4o4-0I-D4A"/>
                             <constraint firstItem="FYN-R1-ohA" firstAttribute="top" secondItem="qD5-Yz-98p" secondAttribute="bottom" priority="750" constant="20" id="5Cn-Vp-jbN"/>
                             <constraint firstItem="Vvn-Zr-JX2" firstAttribute="leading" secondItem="xbF-8E-VOe" secondAttribute="leading" id="6Sm-eM-wdx"/>
@@ -108,6 +123,8 @@
                             <constraint firstItem="Vvn-Zr-JX2" firstAttribute="top" secondItem="xbF-8E-VOe" secondAttribute="top" id="Kss-iG-qxD"/>
                             <constraint firstItem="qD5-Yz-98p" firstAttribute="top" secondItem="M8k-P5-tzb" secondAttribute="bottom" priority="750" constant="40" id="MOl-nc-cq5"/>
                             <constraint firstAttribute="trailing" secondItem="Vvn-Zr-JX2" secondAttribute="trailing" id="SK8-Oa-oUt"/>
+                            <constraint firstAttribute="bottom" secondItem="hez-MK-pu5" secondAttribute="bottom" priority="999" constant="60" id="TCc-ps-coP"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hez-MK-pu5" secondAttribute="bottom" constant="44" id="bLZ-Me-IWl"/>
                             <constraint firstItem="M8k-P5-tzb" firstAttribute="top" secondItem="xbF-8E-VOe" secondAttribute="topMargin" priority="999" constant="88" id="bMn-bn-bSe"/>
                             <constraint firstItem="qD5-Yz-98p" firstAttribute="width" secondItem="xbF-8E-VOe" secondAttribute="width" multiplier="0.845411" id="fM9-1B-zC0"/>
                             <constraint firstItem="M8k-P5-tzb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xbF-8E-VOe" secondAttribute="topMargin" constant="24" id="ggr-st-lod"/>
@@ -123,6 +140,7 @@
                         <outlet property="narrativeView" destination="qD5-Yz-98p" id="CIc-Vo-oHw"/>
                         <outlet property="scrollView" destination="jOB-k0-lhr" id="LoX-MD-Ar0"/>
                         <outlet property="skipButton" destination="FYN-R1-ohA" id="pBG-g3-k0w"/>
+                        <outlet property="swipeToRead" destination="hez-MK-pu5" id="weK-Zw-6RF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhI-RF-0ei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,7 +163,7 @@
         <image name="initialScreen_button" width="176.5" height="61.5"/>
         <image name="initialScreen_logo" width="123" height="40.5"/>
         <image name="intro_background" width="414.5" height="895.5"/>
-        <image name="intro_button" width="176.5" height="61.5"/>
+        <image name="intro_button" width="176.5" height="62"/>
         <image name="intro_logo" width="238.5" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

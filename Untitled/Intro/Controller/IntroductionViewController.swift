@@ -14,6 +14,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var narrativeView: NarrativeIntroView!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var introLogo: UIImageView!
+    @IBOutlet weak var swipeToRead: UILabel!
     
     // MARK: Class Variables
     let numberPages: Int = 2
@@ -27,10 +28,13 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         scrollView.delegate = self
-        
-        //backgrounds
+    
         view.backgroundColor = AppColor.intermediateBackground.value
         narrativeOrigin = narrativeView.frame.origin
+        
+        swipeToRead.text = "deslize para ler"
+        swipeToRead.textColor = AppColor.lightText.value
+        skipButton.isHidden = true
 
         view.layoutIfNeeded()
         view.layoutSubviews()
@@ -78,6 +82,14 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         pageIndex = Int(scrollPageIndex)
         
         print(pageIndex)
+        
+        if pageIndex <= 0 {
+            skipButton.isHidden = true
+            swipeToRead.isHidden = false
+        } else {
+            skipButton.isHidden = false
+            swipeToRead.isHidden = true
+        }
     }
     
 }
