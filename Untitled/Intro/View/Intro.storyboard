@@ -30,7 +30,7 @@
                                 <rect key="frame" x="118.5" y="766" width="177" height="62"/>
                                 <state key="normal" image="initialScreen_button"/>
                                 <connections>
-                                    <segue destination="lls-sf-9y2" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="cg4-1e-0vb"/>
+                                    <action selector="startPressed:" destination="YdN-7V-9ub" eventType="touchUpInside" id="EvF-i5-xfc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,6 +49,10 @@
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="trailing" secondItem="SP8-AL-c0Q" secondAttribute="trailing" id="zkH-63-rpl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="mqV-Tj-WSX" kind="presentation" identifier="skipIntro" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="geQ-jw-j7Z"/>
+                        <segue destination="lls-sf-9y2" kind="presentation" identifier="showIntro" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="AOD-H3-6cp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPy-EV-67r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,6 +96,7 @@
                                 </constraints>
                                 <state key="normal" image="intro_button"/>
                                 <connections>
+                                    <action selector="continuePressed:" destination="lls-sf-9y2" eventType="touchUpInside" id="HAD-wN-7nI"/>
                                     <segue destination="mqV-Tj-WSX" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="iRw-Ck-YeA"/>
                                 </connections>
                             </button>
@@ -136,16 +141,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="FYN-R1-ohA" id="pBG-g3-k0w"/>
                         <outlet property="introLogo" destination="M8k-P5-tzb" id="q7a-SK-S36"/>
                         <outlet property="narrativeView" destination="qD5-Yz-98p" id="CIc-Vo-oHw"/>
                         <outlet property="scrollView" destination="jOB-k0-lhr" id="LoX-MD-Ar0"/>
-                        <outlet property="skipButton" destination="FYN-R1-ohA" id="pBG-g3-k0w"/>
                         <outlet property="swipeToRead" destination="hez-MK-pu5" id="weK-Zw-6RF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhI-RF-0ei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318.84057971014494" y="14.732142857142856"/>
+            <point key="canvasLocation" x="280" y="15"/>
         </scene>
         <!--ChapterMenu-->
         <scene sceneID="yIh-mR-seU">
@@ -155,9 +160,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqF-W5-YLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="2"/>
+            <point key="canvasLocation" x="1108" y="15"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="geQ-jw-j7Z"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="initialScreen_background" width="414.5" height="895.5"/>
         <image name="initialScreen_button" width="176.5" height="61.5"/>

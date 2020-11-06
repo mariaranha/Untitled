@@ -12,7 +12,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     // MARK: IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var narrativeView: NarrativeIntroView!
-    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var introLogo: UIImageView!
     @IBOutlet weak var swipeToRead: UILabel!
     
@@ -34,7 +34,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         
         swipeToRead.text = "deslize para ler"
         swipeToRead.textColor = AppColor.lightText.value
-        skipButton.isHidden = true
+        continueButton.isHidden = true
 
         view.layoutIfNeeded()
         view.layoutSubviews()
@@ -58,7 +58,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     // MARK: ScrollView
     func setupScrollView(narratives: [NarrativeIntroView]) {
         let screenWidth = UIScreen.main.bounds.width
-        let scrollHeight = -introLogo.frame.maxY + skipButton.frame.minY
+        let scrollHeight = -introLogo.frame.maxY + continueButton.frame.minY
         
         scrollView.frame = CGRect(x: 0, y: introLogo.frame.maxY, width: screenWidth, height: scrollHeight)
         scrollView.contentSize = CGSize(width: screenWidth, height: scrollHeight * CGFloat(numberPages))
@@ -84,12 +84,16 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         print(pageIndex)
         
         if pageIndex <= 0 {
-            skipButton.isHidden = true
+            continueButton.isHidden = true
             swipeToRead.isHidden = false
         } else {
-            skipButton.isHidden = false
+            continueButton.isHidden = false
             swipeToRead.isHidden = true
         }
+    }
+    
+    @IBAction func continuePressed(_ sender: Any) {
+        UserDefaultsStruct.IntroNarrative.skipeIntro = true
     }
     
 }

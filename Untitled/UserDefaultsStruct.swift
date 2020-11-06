@@ -25,6 +25,19 @@ struct UserDefaultsStruct {
         }
     }
     
+    struct IntroNarrative {
+        static var skipeIntro: Bool {
+            get {
+//                guard defaults.bool(forKey: "introNarrative") != nil else { return true }
+                return defaults.bool(forKey: "introNarrative")
+            }
+            set {
+                defaults.set(newValue, forKey: "introNarrative")
+                defaults.synchronize()
+            }
+        }
+    }
+    
     enum Rewards: String, CaseIterable {
         case photoChapter1
         case photoChapter2
