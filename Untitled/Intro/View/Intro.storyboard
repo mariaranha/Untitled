@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fme-a0-MBJ">
-                                <rect key="frame" x="118.5" y="766.5" width="177" height="61.5"/>
+                                <rect key="frame" x="118.5" y="766" width="177" height="62"/>
                                 <state key="normal" image="initialScreen_button"/>
                                 <connections>
                                     <action selector="startPressed:" destination="YdN-7V-9ub" eventType="touchUpInside" id="EvF-i5-xfc"/>
@@ -51,20 +51,19 @@
                         <viewLayoutGuide key="safeArea" id="SP8-AL-c0Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qRl-V2-726" secondAttribute="bottom" constant="90" id="1Ns-st-3s0"/>
+                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qRl-V2-726" secondAttribute="bottom" constant="30" id="1Ns-st-3s0"/>
                             <constraint firstItem="qRl-V2-726" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" constant="51.5" id="24w-w8-j18"/>
                             <constraint firstItem="Yxe-7z-2GM" firstAttribute="top" secondItem="eDH-K7-hfz" secondAttribute="topMargin" constant="30" id="6My-7L-B00"/>
                             <constraint firstItem="SP8-AL-c0Q" firstAttribute="trailing" secondItem="qRl-V2-726" secondAttribute="trailing" constant="51.5" id="A2e-jS-y9B"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="height" secondItem="eDH-K7-hfz" secondAttribute="height" id="AOD-Kx-CGg"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="top" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="750" constant="68" id="Eai-h5-FWy"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="width" secondItem="gwq-5V-PFQ" secondAttribute="width" multiplier="0.751208" id="K2i-Cx-9RR"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eOo-fY-PNq" secondAttribute="bottom" constant="40" id="Kkr-Rr-SQV"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="height" secondItem="gwq-5V-PFQ" secondAttribute="height" multiplier="0.226562" id="NmR-wj-TY0"/>
+                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" secondItem="qRl-V2-726" secondAttribute="bottom" priority="450" constant="175" id="CP9-uU-094"/>
+                            <constraint firstItem="qRl-V2-726" firstAttribute="top" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="400" constant="68" id="Eai-h5-FWy"/>
+                            <constraint firstItem="qRl-V2-726" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="800" constant="30" id="Kkr-Rr-SQV"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" id="OQh-3x-bqz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fme-a0-MBJ" secondAttribute="bottom" constant="34" id="SNI-eH-7sf"/>
-                            <constraint firstItem="eOo-fY-PNq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yxe-7z-2GM" secondAttribute="bottom" constant="60" id="Tyh-sk-ICV"/>
+                            <constraint firstItem="eOo-fY-PNq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yxe-7z-2GM" secondAttribute="bottom" priority="800" constant="60" id="Tyh-sk-ICV"/>
                             <constraint firstItem="fme-a0-MBJ" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="Vot-QZ-Mqe"/>
-                            <constraint firstItem="eOo-fY-PNq" firstAttribute="top" secondItem="Yxe-7z-2GM" secondAttribute="bottom" priority="750" constant="99" id="Wc3-jV-gTJ"/>
+                            <constraint firstItem="eOo-fY-PNq" firstAttribute="top" secondItem="Yxe-7z-2GM" secondAttribute="bottom" priority="400" constant="99" id="Wc3-jV-gTJ"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="width" secondItem="eDH-K7-hfz" secondAttribute="width" id="Wtf-XE-W9a"/>
                             <constraint firstItem="qRl-V2-726" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="X6c-mP-cD9"/>
                             <constraint firstItem="eOo-fY-PNq" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="YAz-ey-oDC"/>
