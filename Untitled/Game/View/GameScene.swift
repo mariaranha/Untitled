@@ -240,6 +240,19 @@ class GameScene: SKScene {
         }
     }
     
+    func goToScreen(storyboard: String, viewController: String){
+        let storyBoard = UIStoryboard(name: storyboard, bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: viewController)
+        vc.view.layoutIfNeeded()
+
+        UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
+                {
+                    self.view?.window?.rootViewController = vc
+            }, completion: { completed in
+                // maybe do something here
+            })
+    }
+    
     // MARK: Move
     func tryMove(move: Moves) {
         
@@ -278,17 +291,7 @@ class GameScene: SKScene {
                 if level.checkExitPosition(toCard: fromCard, filename: filename) {
                     gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
                     print("Venceu")
-                    let storyboard = UIStoryboard(name: "Board", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "WinGameViewController")
-                    vc.view.layoutIfNeeded()
-
-                    UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
-                            {
-                                self.view?.window?.rootViewController = vc
-                        }, completion: { completed in
-                            // maybe do something here
-                        })
-                    
+                    goToScreen(storyboard: "Board", viewController: "WinGameViewController")
                 }
             }
             return
@@ -339,15 +342,7 @@ class GameScene: SKScene {
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
-                    let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "GameOverViewController")
-                    vc.view.layoutIfNeeded()
-                    UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
-                            {
-                                self.view?.window?.rootViewController = vc
-                        }, completion: { completed in
-                            // maybe do something here
-                        })
+                    goToScreen(storyboard: "GameOver", viewController: "GameOverViewController")
                 }
             }
         }
