@@ -194,7 +194,7 @@ class GameScene: SKScene {
         
         let cardCenter = (point: pointFor(column: characterPosition.column,
                                          row: characterPosition.row),
-                    move: Moves.center)
+                        move: Moves.center)
         
         let possibleCards = [cardUp, cardDown, cardRight, cardLeft, cardCenter]
         
@@ -339,6 +339,15 @@ class GameScene: SKScene {
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
+                    let storyboard = UIStoryboard(name: "GameOver", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "GameOverViewController")
+                    vc.view.layoutIfNeeded()
+                    UIView.transition(with: self.view!, duration: 0.0, options: .transitionFlipFromRight, animations:
+                            {
+                                self.view?.window?.rootViewController = vc
+                        }, completion: { completed in
+                            // maybe do something here
+                        })
                 }
             }
         }
