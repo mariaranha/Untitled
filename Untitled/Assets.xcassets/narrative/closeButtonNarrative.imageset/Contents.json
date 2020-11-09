@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chapter1_page3.png",
+      "filename" : "closeButton@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chapter1_page3@2x.png",
+      "filename" : "closeButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "chapter1_page3@3x.png",
+      "filename" : "closeButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

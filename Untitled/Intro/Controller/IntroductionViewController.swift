@@ -28,6 +28,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         scrollView.delegate = self
+        scrollView.contentInsetAdjustmentBehavior = .never
     
         view.backgroundColor = AppColor.intermediateBackground.value
         narrativeOrigin = narrativeView.frame.origin

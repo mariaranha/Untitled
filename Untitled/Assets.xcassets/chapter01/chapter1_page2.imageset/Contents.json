@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 511.png",
+      "filename" : "chapter1_page2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 511 (1).png",
+      "filename" : "chapter1_page2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 511 (2).png",
+      "filename" : "chapter1_page2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
