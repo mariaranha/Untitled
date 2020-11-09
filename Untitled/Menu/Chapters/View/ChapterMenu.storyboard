@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-v9-DGE">
-                                                    <rect key="frame" x="-6.5" y="-2.5" width="69" height="33"/>
+                                                    <rect key="frame" x="-4" y="-8" width="64" height="44"/>
                                                     <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -121,7 +121,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sQ9-1H-FfV" firstAttribute="top" secondItem="8qz-Rt-LL9" secondAttribute="bottom" id="89W-kx-8c2"/>
-                            <constraint firstItem="nEq-xj-qiH" firstAttribute="height" secondItem="q9U-uw-Q7u" secondAttribute="height" multiplier="0.0680804" id="G3p-7V-iKi"/>
                             <constraint firstItem="8qz-Rt-LL9" firstAttribute="top" secondItem="G9f-tl-2at" secondAttribute="bottom" id="JTc-sl-v7g"/>
                             <constraint firstItem="sQ9-1H-FfV" firstAttribute="leading" secondItem="MRx-tg-KzB" secondAttribute="leading" id="Jm6-0a-bAW"/>
                             <constraint firstItem="MRx-tg-KzB" firstAttribute="trailing" secondItem="tdJ-4Q-gAM" secondAttribute="trailing" constant="32" id="P9q-vM-WaU"/>
@@ -136,7 +135,6 @@
                             <constraint firstItem="ApO-Tv-S6f" firstAttribute="top" secondItem="MRx-tg-KzB" secondAttribute="top" constant="32" id="nv2-0M-Bam"/>
                             <constraint firstItem="nEq-xj-qiH" firstAttribute="centerX" secondItem="MRx-tg-KzB" secondAttribute="centerX" id="sgp-58-nX2"/>
                             <constraint firstItem="MRx-tg-KzB" firstAttribute="trailing" secondItem="G9f-tl-2at" secondAttribute="trailing" id="ueU-8z-2E6"/>
-                            <constraint firstItem="nEq-xj-qiH" firstAttribute="width" secondItem="q9U-uw-Q7u" secondAttribute="height" multiplier="11:56" id="vI0-ww-dcj"/>
                             <constraint firstItem="G9f-tl-2at" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tdJ-4Q-gAM" secondAttribute="bottom" constant="16" id="vpH-cP-m3T"/>
                         </constraints>
                     </view>
