@@ -47,7 +47,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" id="K0z-me-jul">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="pageCell" id="K0z-me-jul" customClass="NarrativePageCell" customModule="Untitled" customModuleProvider="target">
                                         <rect key="frame" x="2" y="0.0" width="28" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" id="Qk5-Yr-DCg">
@@ -61,7 +61,7 @@
                                                         <constraint firstAttribute="width" constant="32" id="exX-10-1eG"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="- I">
+                                                        <fragment content="- III">
                                                             <attributes>
                                                                 <font key="NSFont" size="15" name="Alegreya-ExtraBold"/>
                                                             </attributes>
@@ -77,8 +77,15 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="pageLabel" destination="FC4-AW-qB7" id="qDc-wi-wQE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="OER-Ue-nQI" id="SxY-zE-VuS"/>
+                                    <outlet property="delegate" destination="OER-Ue-nQI" id="RQc-O7-8Sb"/>
+                                </connections>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-06-Fut">
                                 <rect key="frame" x="0.0" y="-1" width="414" height="896"/>

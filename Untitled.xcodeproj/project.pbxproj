@@ -10,6 +10,7 @@
 		0B8BEE2825559070005ED2AD /* Alegreya-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */; };
 		0B8BEE2925559070005ED2AD /* Alegreya-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */; };
 		0B8BEE2A25559070005ED2AD /* Alegreya-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */; };
+		0B8BEE2F25565EB4005ED2AD /* NarrativePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2E25565EB3005ED2AD /* NarrativePageCell.swift */; };
 		0B8E74952537444300B45F0C /* ChapterMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E74942537444300B45F0C /* ChapterMenu.storyboard */; };
 		0B8E74972537535600B45F0C /* ChapterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E74962537535600B45F0C /* ChapterMenuViewController.swift */; };
 		0B8E749B2537548000B45F0C /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E749A2537548000B45F0C /* ChapterView.swift */; };
@@ -77,6 +78,7 @@
 		0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Medium.ttf"; sourceTree = "<group>"; };
 		0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Regular.ttf"; sourceTree = "<group>"; };
 		0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0B8BEE2E25565EB3005ED2AD /* NarrativePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativePageCell.swift; sourceTree = "<group>"; };
 		0B8E74942537444300B45F0C /* ChapterMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChapterMenu.storyboard; sourceTree = "<group>"; };
 		0B8E74962537535600B45F0C /* ChapterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterMenuViewController.swift; sourceTree = "<group>"; };
 		0B8E749A2537548000B45F0C /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				9C49FCA0253B75AD0049F415 /* Narrative.storyboard */,
 				9C49FCA4253B7CAE0049F415 /* NarrativeView.xib */,
 				9C762D84253D22CF00F71BEC /* NarrativeView.swift */,
+				0B8BEE2E25565EB3005ED2AD /* NarrativePageCell.swift */,
 				9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */,
 			);
 			path = View;
@@ -560,6 +563,7 @@
 				2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */,
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,
 				0B8E74B2253CB56B00B45F0C /* Life.swift in Sources */,
+				0B8BEE2F25565EB4005ED2AD /* NarrativePageCell.swift in Sources */,
 				0BB2F5C72541E15B0042E6F2 /* OpenAlbumView.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
@@ -737,7 +741,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = FKFGBBGDU2;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -756,7 +760,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7FH5Q2A622;
+				DEVELOPMENT_TEAM = FKFGBBGDU2;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

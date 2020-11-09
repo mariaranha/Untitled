@@ -74,7 +74,11 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         //Setup pages
         narratives = createNarratives()
         setupScrollView(narratives: narratives)
-//        labels  = [label1, label2, label3, label4, label5, label6]
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
     }
     
     //MARK: Narratives
@@ -115,6 +119,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         let scrollPageIndex = floor(scrollView.contentOffset.y/scrollView.frame.height)
         
         pageIndex = Int(scrollPageIndex)
+        setNumberLayout()
         
         if pageIndex == numPages - 1 {
             playButton.isHidden = false
@@ -124,72 +129,103 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             narrativeSlide.isHidden = false
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}
 
+// MARK: Number CollectionView
+extension NarrativeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numPages
+    }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let currentPage = Int((scrollView.contentOffset.y)/(scrollView.frame.size.height))
-//        setLabels()
-//        playButton.isHidden = true
-//        narrativeSlide.isHidden = false
-//        switch currentPage {
-//        case 0:
-////            playButton.isHidden = true
-////            narrativeSlide.isHidden = false
-//            label1.text = "- I"
-//            label1.font = UIFont.boldSystemFont(ofSize: 20.0)
-//            narrativeView.imageView.image = UIImage(named: "chapter1_page1")
-//        case 1:
-////            narrativeSlide.isHidden = true
-////            playButton.isHidden = true
-//            label2.text = "- II"
-//            label2.font = UIFont.boldSystemFont(ofSize: 20.0)
-//            narrativeView.imageView.image = UIImage(named: "chapter1_page2")
-//        case 2:
-////            narrativeSlide.isHidden = true
-////            playButton.isHidden = true
-//            label3.text = "- III"
-//            label3.font = UIFont.boldSystemFont(ofSize: 20.0)
-//            narrativeView.imageView.image = UIImage(named: "chapter1_page3")
-//        case 3:
-////            narrativeSlide.isHidden = true
-////            playButton.isHidden = true
-//            label4.text = "- IV"
-//            label4.font = UIFont.boldSystemFont(ofSize: 20.0)
-//            narrativeView.imageView.image = UIImage(named: "chapter1_page4")
-//        case 4:
-////            narrativeSlide.isHidden = true
-////            playButton.isHidden = false
-//            label5.text = "- V"
-//            label5.font = UIFont.boldSystemFont(ofSize: 20.0)
-//            narrativeView.imageView.image = UIImage(named: "chapter1_page5")
-//        case 5:
-//            narrativeSlide.isHidden = true
-////            playButton.isHidden = false
-//            label6.text = "- VI"
-//            label6.font = UIFont.boldSystemFont(ofSize: 20.0)
-//            narrativeView.imageView.image = UIImage(named: "chapter1_page6")
-//            playButton.isHidden = false
-//        default:
-//            break
-//        }
-//
-//    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
-    func setLabels(){
-        for elem in labels{
-            elem.font = UIFont.systemFont(ofSize: 20.0)
-            elem.text = "-"
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pageCell", for: indexPath) as! NarrativePageCell
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = .clear
+        cell.pageLabel.textColor = AppColor.intermediateDarkText.value
+        cell.pageLabel.font = UIFont(name: "Alegreya Medium", size: 18.0)
+        cell.pageLabel.text = "-"
+        
+        if indexPath.row == 0 {
+            cell.pageLabel.font = UIFont(name: "Alegreya ExtraBold", size: 18.0)
+            cell.pageLabel.text = "- I"
         }
+        
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellHeight: CGFloat = 40.0
+        let collectionWidth = indexCollection.frame.width
+        
+        return CGSize(width: collectionWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        let totalHeight = 40 * collectionView.numberOfItems(inSection: 0)
+
+        let topInset = (collectionView.layer.frame.size.height - CGFloat(totalHeight)) / 2
+        let bottomInset = topInset
+
+        return UIEdgeInsets(top: topInset, left: 0, bottom: bottomInset, right: 0)
     }
     
 
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func setCellNumber(row: Int) -> String {
+        var cellText: String
+        
+        switch row {
+        case 0:
+            cellText = "- I"
+        case 1:
+            cellText = "- II"
+        case 2:
+            cellText = "- III"
+        case 3:
+            cellText = "- IV"
+        case 4:
+            cellText = "- V"
+        case 5:
+            cellText = "- VI"
+        case 6:
+            cellText = "- VII"
+        case 7:
+            cellText = "- VIII"
+        case 8:
+            cellText = "- IX"
+        case 9:
+            cellText = "- X"
+        case 10:
+            cellText = "- XI"
+        default:
+            cellText = ""
+        }
+        
+        return cellText
+    }
+    
+    func setNumberLayout() {
+        for row in 0..<numPages {
+            let indexPath = IndexPath(row: row, section: 0)
+            guard let cell = indexCollection.cellForItem(at: indexPath) as? NarrativePageCell else { return }
+            if row == pageIndex {
+                cell.pageLabel.font = UIFont(name: "Alegreya ExtraBold", size: 18.0)
+                cell.pageLabel.text = setCellNumber(row: row)
+            } else {
+                cell.pageLabel.font = UIFont(name: "Alegreya Medium", size: 18.0)
+                cell.pageLabel.text = "-"
+            }
+        }
+    }
 }
