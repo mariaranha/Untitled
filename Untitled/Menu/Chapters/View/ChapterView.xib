@@ -22,7 +22,7 @@
                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4i-Y8-o13">
                     <rect key="frame" x="30" y="0.0" width="381" height="551"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chapters_background2" translatesAutoresizingMaskIntoConstraints="NO" id="55D-Bk-Wmz">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="55D-Bk-Wmz">
                             <rect key="frame" x="0.0" y="0.0" width="381" height="551"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Chapter Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAH-lA-S5u">
@@ -75,7 +75,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="chapterBackground" destination="R4i-Y8-o13" id="IpW-Wn-2S7"/>
+                <outlet property="chapterBackground" destination="55D-Bk-Wmz" id="DXp-PS-Nr9"/>
                 <outlet property="chapterSubtitle" destination="iAH-lA-S5u" id="TsB-2f-8Zm"/>
                 <outlet property="chapterTitle" destination="vSY-g0-w6g" id="F3d-6T-EPW"/>
                 <outlet property="photoImageView" destination="5Bx-Qm-ype" id="vNW-Db-Z1V"/>
@@ -172,7 +172,6 @@
         </view>
     </objects>
     <resources>
-        <image name="chapters_background2" width="531.5" height="898"/>
         <image name="empty_photo" width="360.5" height="280.5"/>
     </resources>
 </document>
