@@ -77,7 +77,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
                 setUnlockedChapters(chapter, chapterNumber)
             }
             
-            chapter.photoFrame.rotate(angle: -2.0)
+//            chapter.photoFrame.rotate(angle: -2.0)
 
             setChaptersLabels(chapterNumber, chapter)
             
@@ -90,24 +90,24 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     fileprivate func setLockedChapters(_ chapter: ChapterView) {
         chapter.chapterTitle.textColor = .black
         chapter.chapterSubtitle.textColor = .clear
-        chapter.photoDescription.textColor = .clear
-        chapter.photoDate.textColor = .clear
+//        chapter.photoDescription.textColor = .clear
+//        chapter.photoDate.textColor = .clear
         
         chapter.chapterBackground.backgroundColor = .lightGray
-        chapter.photoFrame.backgroundColor = .black
-        chapter.photoBackground.backgroundColor = .darkGray
+//        chapter.photoFrame.backgroundColor = .black
+//        chapter.photoBackground.backgroundColor = .darkGray
     }
     
     fileprivate func setUnlockedChapters(_ chapter: ChapterView, _ chapterNumber: Int) {
         chapter.chapterTitle.textColor = AppColor.highlightText.value
         chapter.chapterSubtitle.textColor = AppColor.lightText.value
-        chapter.photoDescription.textColor = AppColor.intermediateLightText.value
-        chapter.photoDate.textColor = AppColor.darkText.value
+//        chapter.photoDescription.textColor = AppColor.intermediateLightText.value
+//        chapter.photoDate.textColor = AppColor.darkText.value
         
-        chapter.photoFrame.backgroundColor = AppColor.lightBackground.value
-        chapter.photoBackground.backgroundColor = AppColor.intermediateBackground.value
-        chapter.photoBackground.image = UIImage(named: "chapterBackground_\(chapterNumber)")
-        chapter.photoFront.image = UIImage(named: "chapterFront_\(chapterNumber)")
+//        chapter.photoFrame.backgroundColor = AppColor.lightBackground.value
+//        chapter.photoBackground.backgroundColor = AppColor.intermediateBackground.value
+//        chapter.photoBackground.image = UIImage(named: "chapterBackground_\(chapterNumber)")
+//        chapter.photoFront.image = UIImage(named: "chapterFront_\(chapterNumber)")
     }
     
     fileprivate func setChaptersLabels(_ chapterNumber: Int, _ chapter: ChapterView) {
@@ -115,28 +115,28 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         case 1:
             chapter.chapterTitle.text = "capítulo um"
             chapter.chapterSubtitle.text = "uma história de carnaval"
-            chapter.photoDescription.text = "quando lutamos pelo carnaval"
-            chapter.photoDate.text = "12 de fevereiro"
+//            chapter.photoDescription.text = "quando lutamos pelo carnaval"
+//            chapter.photoDate.text = "12 de fevereiro"
         case 2:
             chapter.chapterTitle.text = "capítulo dois"
             chapter.chapterSubtitle.text = "uma história de carnaval"
-            chapter.photoDescription.text = "quando lutamos pelo carnaval"
-            chapter.photoDate.text = "12 de fevereiro"
+//            chapter.photoDescription.text = "quando lutamos pelo carnaval"
+//            chapter.photoDate.text = "12 de fevereiro"
         case 3:
             chapter.chapterTitle.text = "capítulo três"
             chapter.chapterSubtitle.text = "uma história de carnaval"
-            chapter.photoDescription.text = "quando lutamos pelo carnaval"
-            chapter.photoDate.text = "12 de fevereiro"
+//            chapter.photoDescription.text = "quando lutamos pelo carnaval"
+//            chapter.photoDate.text = "12 de fevereiro"
         case 4:
             chapter.chapterTitle.text = "capítulo quatro"
             chapter.chapterSubtitle.text = "uma história de carnaval"
-            chapter.photoDescription.text = "quando lutamos pelo carnaval"
-            chapter.photoDate.text = "12 de fevereiro"
+//            chapter.photoDescription.text = "quando lutamos pelo carnaval"
+//            chapter.photoDate.text = "12 de fevereiro"
         case 5:
             chapter.chapterTitle.text = "capítulo cinco"
             chapter.chapterSubtitle.text = "uma história de carnaval"
-            chapter.photoDescription.text = "quando lutamos pelo carnaval"
-            chapter.photoDate.text = "12 de fevereiro"
+//            chapter.photoDescription.text = "quando lutamos pelo carnaval"
+//            chapter.photoDate.text = "12 de fevereiro"
         default:
             chapter.chapterTitle.text = "capítulo \(chapterNumber)"
         }

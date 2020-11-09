@@ -11,6 +11,7 @@ class ChapterView: UIView {
 
     @IBOutlet weak var chapterTitle: UILabel!
     @IBOutlet weak var chapterSubtitle: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoFrame: UIView!
     @IBOutlet weak var photoBackground: UIImageView!
     @IBOutlet weak var photoFront: UIImageView!
