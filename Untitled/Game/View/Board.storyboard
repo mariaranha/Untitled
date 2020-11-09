@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -261,11 +261,22 @@
                         <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
                         <outlet property="totalLifeLabel" destination="t19-Tf-pQ0" id="IK0-p2-QE3"/>
                         <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
+                        <segue destination="VYv-SU-PnI" kind="presentation" identifier="goToGameOver" modalPresentationStyle="fullScreen" id="2Cj-fM-RMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-943" y="-305"/>
+        </scene>
+        <!--GameOver-->
+        <scene sceneID="Wfj-HA-mK7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameOver" id="VYv-SU-PnI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Trb-8i-hFg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsq-xD-0j2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447" y="111"/>
         </scene>
         <!--Win Game View Controller-->
         <scene sceneID="wrJ-5v-v2m">
