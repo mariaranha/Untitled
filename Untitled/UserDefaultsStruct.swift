@@ -28,12 +28,22 @@ struct UserDefaultsStruct {
     struct IntroNarrative {
         static var skipeIntro: Bool {
             get {
-//                guard defaults.bool(forKey: "introNarrative") != nil else { return true }
                 return defaults.bool(forKey: "introNarrative")
             }
             set {
                 defaults.set(newValue, forKey: "introNarrative")
                 defaults.synchronize()
+            }
+        }
+    }
+    
+    struct Language {
+        static var preferLanguage: String {
+            get {
+                return defaults.string(forKey: "preferLanguage") ?? ""
+            }
+            set {
+                defaults.set(newValue, forKey: "preferLanguage")
             }
         }
     }
