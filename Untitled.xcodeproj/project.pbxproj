@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B54C65A255AC26C004E16C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B54C65C255AC26C004E16C7 /* Localizable.strings */; };
 		0B8BEE2825559070005ED2AD /* Alegreya-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */; };
 		0B8BEE2925559070005ED2AD /* Alegreya-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */; };
 		0B8BEE2A25559070005ED2AD /* Alegreya-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */; };
@@ -77,6 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B54C651255AC1C8004E16C7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		0B54C65B255AC26C004E16C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B54C660255AC270004E16C7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Medium.ttf"; sourceTree = "<group>"; };
 		0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Regular.ttf"; sourceTree = "<group>"; };
 		0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		0B8E74A7253AB1E200B45F0C /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
+				0B54C65C255AC26C004E16C7 /* Localizable.strings */,
 				0B9DB31A25373355006B601D /* DesignSystem.swift */,
 				9C3166DC25518D6000C6E466 /* Lalezar-Regular.ttf */,
 				0B8BEE2725559070005ED2AD /* Alegreya-ExtraBold.ttf */,
@@ -491,6 +496,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 9CA59E21252E07D700DCD349;
 			productRefGroup = 9CA59E2B252E07D700DCD349 /* Products */;
@@ -519,6 +525,7 @@
 				0B8E749D2537548C00B45F0C /* ChapterView.xib in Resources */,
 				0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */,
 				0B8E74952537444300B45F0C /* ChapterMenu.storyboard in Resources */,
+				0B54C65A255AC26C004E16C7 /* Localizable.strings in Resources */,
 				9C49FCA5253B7CAE0049F415 /* NarrativeView.xib in Resources */,
 				9C3166DD25518D6000C6E466 /* Lalezar-Regular.ttf in Resources */,
 				0BE1E5AE252F44E700DD36C6 /* Board.storyboard in Resources */,
@@ -616,10 +623,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0B54C65C255AC26C004E16C7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B54C65B255AC26C004E16C7 /* en */,
+				0B54C660255AC270004E16C7 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9CA59E37252E07D700DCD349 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9CA59E38252E07D700DCD349 /* Base */,
+				0B54C651255AC1C8004E16C7 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -631,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -692,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

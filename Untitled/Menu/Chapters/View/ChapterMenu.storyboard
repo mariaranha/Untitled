@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -111,7 +111,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="5" maxX="34" maxY="5"/>
-                                <state key="normal" backgroundImage="chapters_button"/>
+                                <state key="normal" backgroundImage="enter_button"/>
                                 <connections>
                                     <action selector="startPressed:" destination="89M-PS-i4h" eventType="touchUpInside" id="mKF-LT-e54"/>
                                 </connections>
@@ -193,7 +193,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chapters_button" width="176.5" height="61.5"/>
+        <image name="enter_button" width="176.5" height="61.5"/>
         <image name="rewards" width="48.5" height="53.5"/>
         <image name="settings" width="47.5" height="48.5"/>
         <systemColor name="systemBackgroundColor">

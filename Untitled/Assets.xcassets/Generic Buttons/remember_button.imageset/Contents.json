@@ -1,52 +1,52 @@
 {
   "images" : [
     {
-      "filename" : "chapter1_page6_en@1x-1.png",
+      "filename" : "remember_button_en@1x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chapter1_page6_en@2x-1.png",
+      "filename" : "remember_button_en@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "chapter1_page6_en@3x-1.png",
+      "filename" : "remember_button_en@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
     {
-      "filename" : "chapter1_page6_en@1x.png",
+      "filename" : "remember_button_en@1x.png",
       "idiom" : "universal",
       "locale" : "en",
       "scale" : "1x"
     },
     {
-      "filename" : "chapter1_page6_en@2x.png",
+      "filename" : "remember_button_en@2x.png",
       "idiom" : "universal",
       "locale" : "en",
       "scale" : "2x"
     },
     {
-      "filename" : "chapter1_page6_en@3x.png",
+      "filename" : "remember_button_en@3x.png",
       "idiom" : "universal",
       "locale" : "en",
       "scale" : "3x"
     },
     {
-      "filename" : "chapter1_page6.png",
+      "filename" : "botao-continuar 1 (9).png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "1x"
     },
     {
-      "filename" : "chapter1_page6@2x.png",
+      "filename" : "botao-continuar 1 (10).png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "2x"
     },
     {
-      "filename" : "chapter1_page6@3x.png",
+      "filename" : "botao-continuar 1 (11).png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "3x"
