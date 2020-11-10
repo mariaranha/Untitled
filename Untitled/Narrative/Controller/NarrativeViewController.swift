@@ -18,24 +18,15 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var narrativeSlide: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var indexCollection: UICollectionView!
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
-    @IBOutlet weak var label5: UILabel!
-    @IBOutlet weak var label6: UILabel!
-    var labels: [UILabel] = []
 
     // MARK: Class Variables
-    var numPages: Int = 6
-    var chapter: Int = 1
+    var numPages: Int = 0
+    var chapter: Int = 0
     var narratives: [NarrativeView] = []
     var pageIndex: Int = 0
     
     //MARK: Init
-    init(chapterNumber: Int) {
-        super.init(nibName: nil, bundle: nil)
-        
+    init?(chapterNumber: Int, coder: NSCoder) {
         self.chapter = chapterNumber
         
         //Change number of pages here
@@ -49,6 +40,8 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         default:
             numPages = 6
         }
+
+        super.init(coder: coder)
     }
     
     required init?(coder: NSCoder) {

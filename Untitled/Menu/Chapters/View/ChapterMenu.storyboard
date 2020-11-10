@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttk-v9-DGE">
-                                                    <rect key="frame" x="-4" y="-8" width="64" height="44"/>
+                                                    <rect key="frame" x="-6.5" y="-2.5" width="69" height="33"/>
                                                     <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                                 <inset key="contentEdgeInsets" minX="34" minY="5" maxX="34" maxY="5"/>
                                 <state key="normal" backgroundImage="chapters_button"/>
                                 <connections>
-                                    <segue destination="8G4-FD-UeR" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="6W6-JF-i7N"/>
+                                    <action selector="startPressed:" destination="89M-PS-i4h" eventType="touchUpInside" id="mKF-LT-e54"/>
                                 </connections>
                             </button>
                         </subviews>

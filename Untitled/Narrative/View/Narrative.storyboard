@@ -18,7 +18,7 @@
         <!--Narrative View Controller-->
         <scene sceneID="Iuk-Cq-B5r">
             <objects>
-                <viewController id="OER-Ue-nQI" customClass="NarrativeViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chapterNarrative" id="OER-Ue-nQI" customClass="NarrativeViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RL6-2X-4zP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

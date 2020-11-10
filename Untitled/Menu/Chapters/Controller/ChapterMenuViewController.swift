@@ -35,15 +35,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         
         //Set view
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chapters_background1")!)
-//        chapterView.backgroundColor = AppColor.lightBackground.value
 
-        
-        //Set button
-//        startButton.layer.borderWidth = 3.0
-//        startButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-//        startButton.layer.backgroundColor = AppColor.lightBackground.value.cgColor
-//        startButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
-//        startButton.setTitle("Entrar", for: .normal)
         startButtonLine.backgroundColor = AppColor.intermediateBorder.value
         
         //Set Chapters
@@ -65,6 +57,14 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func backToChaptersMenu(_ sender: UIStoryboardSegue) {
     }
     
+    @IBAction func startPressed(_ sender: Any) {
+        let viewController = UIStoryboard(name: "Narrative", bundle: nil).instantiateViewController(identifier: "chapterNarrative", creator: { coder in
+            NarrativeViewController(chapterNumber: self.pageIndex + 1, coder: coder)
+            })
+        
+        show(viewController, sender: self)
+    }
+    
     // MARK: Chapters
     func createChapters() -> [ChapterView] {
         
@@ -76,8 +76,6 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
             } else {
                 setUnlockedChapters(chapter, chapterNumber)
             }
-            
-//            chapter.photoFrame.rotate(angle: -2.0)
 
             setChaptersLabels(chapterNumber, chapter)
             
