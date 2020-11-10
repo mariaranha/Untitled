@@ -307,39 +307,46 @@ class GameScene: SKScene {
             if toCard == level.card(atColumn: photoColumn, row: photoRow) && toCard.cardType == .photo{
                 if gameViewController.energyProgress.value >= energyPhotoValue {
                     handler(moveCard)
+                    round += 1
                     canExit = true
                     addReward(playerCard: fromCard, rewardType: .reward1, filename: filename)
                     //Add photo to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, false, false)
+                    setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia da cidade para coletar a foto")
                 }
             }else if toCard.cardType == .reward1{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(moveCard)
+                    round += 1
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
                     gotRewar1 = true
                     //Add reward1 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, false)
+                    setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia X para coletar a primeira recompensa")
                 }
             }else if toCard.cardType == .reward2{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(moveCard)
+                    round += 1
                     gotRewar2 = true
                     //Add reward2 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, true)
+                    setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
             }else{
                 handler(moveCard)
+                round += 1
                 updateProgressValues(card: toCard)
-                
+                setConservator(characterCard: toCard)
                 print("Energia \(gameViewController.energyProgress.value)")
                 
                 if gameViewController.lifeProgress.value == 0{
@@ -348,29 +355,32 @@ class GameScene: SKScene {
                 }
             }
         }
-        
-        round += 1
+    }
+    
+    func setConservator(characterCard: Card){
         if round % 3 == 0{
-            let newPositionConservator = conservatorNewPosition(characterCard: toCard)
+            let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
             let removeCard = SKAction.removeFromParent()
             removeCard.timingMode = .easeOut
 
             
             if let conservatorPosition = getConservatorPosition(){
                 level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)?.sprite!.run(removeCard)
+                
                 var cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
                 while cardNew.cardType == .photoRoll || cardNew.cardType == .block{
                     cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
                 }
+                
                 level.setCard(newCard: cardNew)
                 setSprite(cardNew)
             }
             
             let conservatorCard = Card(column: newPositionConservator.column, row: newPositionConservator.row, cardType: .conservator, value: 0)
+            
             level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)?.sprite!.run(removeCard)
             level.setCard(newCard: conservatorCard)
             setSprite(conservatorCard)
-            
             
         }
     }
