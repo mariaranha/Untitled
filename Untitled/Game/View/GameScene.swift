@@ -32,6 +32,8 @@ class GameScene: SKScene {
     var gotRewar1 = false
     var gotRewar2 = false
     
+    var round: Int = 0
+    
     enum Moves {
         case up
         case down
@@ -258,7 +260,7 @@ class GameScene: SKScene {
         
         let moveFrom = getCharacterPosition()
         
-        let filename = "Level_1"
+        let filename = "Level_\(gameViewController.currentLevel)"
         
         guard let levelData = LevelData.loadFrom(file: filename) else { return }
         
@@ -346,6 +348,73 @@ class GameScene: SKScene {
                 }
             }
         }
+        
+        round += 1
+        if round % 3 == 0{
+            let newPositionConservator = conservatorNewPosition(characterCard: toCard)
+            let removeCard = SKAction.removeFromParent()
+            removeCard.timingMode = .easeOut
+
+            
+            if let conservatorPosition = getConservatorPosition(){
+                level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)?.sprite!.run(removeCard)
+                var cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
+                while cardNew.cardType == .photoRoll || cardNew.cardType == .block{
+                    cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
+                }
+                level.setCard(newCard: cardNew)
+                setSprite(cardNew)
+            }
+            
+            let conservatorCard = Card(column: newPositionConservator.column, row: newPositionConservator.row, cardType: .conservator, value: 0)
+            level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)?.sprite!.run(removeCard)
+            level.setCard(newCard: conservatorCard)
+            setSprite(conservatorCard)
+            
+            
+        }
+    }
+    
+    func conservatorNewPosition(characterCard: Card) -> (column: Int, row: Int){
+        var enemyCards: [Card] = []
+        var lifeCards: [Card] = []
+        var cards: [Card] = []
+        var positionConservator = (column: 0, row: 0)
+        var randomCard: Card
+        
+        if let cardUp = level.card(atColumn: characterCard.column, row: characterCard.row + 1){
+            cards.append(cardUp)
+        }
+        if let cardDown = level.card(atColumn: characterCard.column, row: characterCard.row - 1){
+            cards.append(cardDown)
+        }
+        if let cardRight = level.card(atColumn: characterCard.column + 1, row: characterCard.row){
+            cards.append(cardRight)
+        }
+        if let cardLeft = level.card(atColumn: characterCard.column - 1, row: characterCard.row){
+            cards.append(cardLeft)
+        }
+        print(cards)
+        
+        for card in cards {
+            if card.cardType == .block || card.cardType == .photoRoll{
+                lifeCards.append(card)
+            }else if card.cardType == .tacticalPolice || card.cardType == .riotPolice{
+                enemyCards.append(card)
+            }
+        }
+        
+        if lifeCards.count != 0{
+            randomCard = lifeCards.randomElement()!
+            positionConservator.column = randomCard.column
+            positionConservator.row = randomCard.row
+        }else{
+            randomCard = enemyCards.randomElement()!
+            positionConservator.column = randomCard.column
+            positionConservator.row = randomCard.row
+        }
+        
+        return positionConservator
     }
     
     fileprivate func getCharacterPosition() -> (column: Int, row: Int)? {
@@ -368,6 +437,26 @@ class GameScene: SKScene {
         return nil
     }
     
+    fileprivate func getConservatorPosition() -> (column: Int, row: Int)? {
+        var position = (column: 0, row: 0)
+        let numColumns = level.numColumns
+        let numRows = level.numRows
+        
+        for row in 0..<numRows {
+            for column in 0..<numColumns {
+                let card = level.card(atColumn: column, row: row)
+                if card?.cardType == CardType.conservator {
+                    position.column = column
+                    position.row = row
+                    
+                    return position
+                }
+            }
+        }
+        
+        return nil
+    }
+    
     func addReward(playerCard: Card, rewardType: CardType, filename: String){
         guard let levelData = LevelData.loadFrom(file: filename) else { return }
         let exitPositions = levelData.exitPosition
@@ -377,7 +466,7 @@ class GameScene: SKScene {
         
         let rewardCard = level.createRewardCard(playerColumn: playerCard.column, playerRow: playerCard.row, rewardType: rewardType, exitPositions: exitPositions)
         level.card(atColumn: rewardCard.column, row: rewardCard.row)?.sprite!.run(removeCard)
-        level.setReward(reward: rewardCard)
+        level.setCard(newCard: rewardCard)
         setSprite(rewardCard)
     }
     
