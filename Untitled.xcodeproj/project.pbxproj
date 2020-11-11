@@ -49,6 +49,7 @@
 		9C49FCA5253B7CAE0049F415 /* NarrativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA4253B7CAE0049F415 /* NarrativeView.xib */; };
 		9C49FCA7253B7D1C0049F415 /* NarrativeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */; };
 		9C5DB975254AF7A30072B2B3 /* WinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */; };
+		9C707A0D255C136B00EB82A7 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C707A0C255C136B00EB82A7 /* LanguageViewController.swift */; };
 		9C762D85253D22CF00F71BEC /* NarrativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C762D84253D22CF00F71BEC /* NarrativeView.swift */; };
 		9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E2D252E07D700DCD349 /* AppDelegate.swift */; };
 		9CA59E32252E07D700DCD349 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9CA59E31252E07D700DCD349 /* Actions.sks */; };
@@ -122,6 +123,7 @@
 		9C49FCA4253B7CAE0049F415 /* NarrativeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrativeView.xib; sourceTree = "<group>"; };
 		9C49FCA6253B7D1C0049F415 /* NarrativeTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NarrativeTitleView.xib; sourceTree = "<group>"; };
 		9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinGameViewController.swift; sourceTree = "<group>"; };
+		9C707A0C255C136B00EB82A7 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		9C762D84253D22CF00F71BEC /* NarrativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeView.swift; sourceTree = "<group>"; };
 		9CA59E2A252E07D700DCD349 /* Untitled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Untitled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA59E2D252E07D700DCD349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			children = (
 				9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */,
 				9CF797B6255B693600FCF351 /* CreditsViewController.swift */,
+				9C707A0C255C136B00EB82A7 /* LanguageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				0BD1FC2B255992C800D1C4F3 /* NarrativePageCell.swift in Sources */,
 				0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */,
 				0B8E74972537535600B45F0C /* ChapterMenuViewController.swift in Sources */,
+				9C707A0D255C136B00EB82A7 /* LanguageViewController.swift in Sources */,
 				0BD5A78425432B7A00B3A974 /* OpenAlbumViewController.swift in Sources */,
 				2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */,
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,
