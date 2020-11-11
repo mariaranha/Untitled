@@ -40,7 +40,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         case 3:
             numPages = 6
         default:
-            numPages = 6
+            numPages = 0
         }
 
         super.init(coder: coder)
@@ -56,6 +56,18 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         scrollView.contentInsetAdjustmentBehavior = .never
+        
+        //Change number of pages here without init
+        switch chapter {
+        case 1:
+            numPages = 6
+        case 2:
+            numPages = 6
+        case 3:
+            numPages = 6
+        default:
+            numPages = 0
+        }
         
         //setup view
         let language = UserDefaultsStruct.Language.preferLanguage

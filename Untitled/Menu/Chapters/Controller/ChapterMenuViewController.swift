@@ -60,11 +60,20 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func startPressed(_ sender: Any) {
-        let viewController = UIStoryboard(name: "Narrative", bundle: nil).instantiateViewController(identifier: "chapterNarrative", creator: { coder in
-            NarrativeViewController(chapterNumber: self.pageIndex + 1, coder: coder)
-            })
-        
-        show(viewController, sender: self)
+//        let viewController = UIStoryboard(name: "Narrative", bundle: nil).instantiateViewController(identifier: "chapterNarrative", creator: { coder in
+//            NarrativeViewController(chapterNumber: self.pageIndex + 1, coder: coder)
+//            })
+//        viewController.modalTransitionStyle = .crossDissolve
+//        viewController.modalPresentationStyle = .fullScreen
+//
+//        present(viewController, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chapterNarrative" {
+            let viewController = segue.destination as! NarrativeViewController
+            viewController.chapter = self.pageIndex + 1
+        }
     }
     
     // MARK: Chapters
