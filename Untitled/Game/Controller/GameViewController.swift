@@ -209,15 +209,23 @@ class GameViewController: UIViewController {
     @IBAction func exitGame(_ sender: Any) {
         let view = ExitView()
         view.tag = 100
-        self.view.addSubview(view)
         view.delegate = self
+        view.alpha = 0.0
+        self.view.addSubview(view)
         view.dismiss = {
             self.dismiss(animated: true, completion: nil)
             self.dismissNarrative?()
         }
         view.cancel = {
-            view.removeFromSuperview()
+            UIView.animate(withDuration: 0.5, animations: {
+                view.alpha = 0.0
+            }) { (completion) in
+                view.removeFromSuperview()
+            }
         }
+        UIView.animate(withDuration: 0.5, animations: {
+            view.alpha = 1.0
+        })
     }
     
 }

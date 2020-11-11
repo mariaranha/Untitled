@@ -295,6 +295,7 @@ class GameScene: SKScene {
                     gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
                     print("Venceu")
                     let view = WinRewardsView()
+                    view.alpha = 0.0
                     self.gameViewController.view.addSubview(view)
                     
                     if gotRewar1 { view.rewardsImages.append(UIImage(named: "board_collected_reward_1.png")) }
@@ -304,6 +305,9 @@ class GameScene: SKScene {
                     view.continueFunc = {
                         self.gameViewController.performSegue(withIdentifier: "goToWinGame", sender: self.gameViewController)
                     }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        view.alpha = 1.0
+                    })
                 }
             }
             return
