@@ -16,6 +16,8 @@ class WinGameViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var narrativeImageView: UIImageView!
     
+    var dismissFunc : (() -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,8 @@ class WinGameViewController: UIViewController {
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         //update user defaults
+        self.dismiss(animated: true, completion: nil)
+        self.dismissFunc?()
     }
     
 

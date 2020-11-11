@@ -14,9 +14,8 @@ class ExitView: UIView {
             self.setConstraints()
         }
     }
-    public typealias typelias = () -> Void
-    public var dismiss : typelias?
-    public var cancel : typelias?
+    public var dismiss : (() -> Void)?
+    public var cancel : (() -> Void)?
     
     private var backView: UIView = {
         let view = UIView()

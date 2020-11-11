@@ -264,7 +264,7 @@
                         <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
                         <outlet property="totalLifeLabel" destination="t19-Tf-pQ0" id="IK0-p2-QE3"/>
                         <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
-                        <segue destination="VYv-SU-PnI" kind="presentation" identifier="goToGameOver" modalPresentationStyle="fullScreen" id="2Cj-fM-RMS"/>
+                        <segue destination="VYv-SU-PnI" kind="presentation" identifier="goToGameOver" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="2Cj-fM-RMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -316,7 +316,6 @@
                                 <state key="normal" image="endChapter_button"/>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="ACA-rY-h55" eventType="touchUpInside" id="bUN-AW-9kA"/>
-                                    <segue destination="Eic-Tt-d8n" kind="presentation" modalPresentationStyle="fullScreen" id="2G4-Wu-uIO"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-qh-QPR">

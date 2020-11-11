@@ -14,8 +14,7 @@ class WinRewardsView: UIView {
             self.setConstraints()
         }
     }
-    public typealias typelias = () -> Void
-    public var continueFunc : typelias?
+    public var continueFunc : (() -> Void)?
     
     private var backView: UIView = {
         let view = UIView()

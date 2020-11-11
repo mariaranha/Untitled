@@ -38,8 +38,8 @@ class GameViewController: UIViewController {
     var energyProgress: Life = Life(type: .city)
     var lifeProgress: Life  =  Life(type: .character)
     
-    public typealias typelias = () -> Void
-    var dismissNarrative : typelias?
+    var dismissNarrative : (() -> Void)?
+    var restartNarrative : (() -> Void)?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -228,4 +228,20 @@ class GameViewController: UIViewController {
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? WinGameViewController {
+            vc.dismissFunc = {
+                self.dismiss(animated: false) {
+                    self.dismissNarrative?()
+                }
+            }
+        }
+        if let vc = segue.destination as? GameOverViewController {
+            vc.dismissFunc = {
+                self.dismiss(animated: false) {
+                    self.restartNarrative?()
+                }
+            }
+        }
+    }
 }

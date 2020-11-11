@@ -370,7 +370,8 @@ class GameScene: SKScene {
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
-                    goToScreen(storyboard: "GameOver", viewController: "GameOverViewController")
+                    self.gameViewController.performSegue(withIdentifier: "goToGameOver", sender: self)
+//                    goToScreen(storyboard: "GameOver", viewController: "GameOverViewController")
                 }
             }
         }

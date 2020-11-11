@@ -127,6 +127,9 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             vc.dismissNarrative = {
                 self.dismiss(animated: false, completion: nil)
             }
+            vc.restartNarrative = {
+                self.performSegue(withIdentifier: "toBoardSegue", sender: self)
+            }
         }
     }
 }
