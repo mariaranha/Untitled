@@ -309,10 +309,12 @@ class GameScene: SKScene {
                     handler(moveCard)
                     round += 1
                     canExit = true
+                    
                     addReward(playerCard: fromCard, rewardType: .reward1, filename: filename)
                     //Add photo to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, false, false)
+                    
                     setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia da cidade para coletar a foto")
@@ -321,11 +323,13 @@ class GameScene: SKScene {
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(moveCard)
                     round += 1
+                    
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
                     gotRewar1 = true
                     //Add reward1 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, false)
+                    
                     setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia X para coletar a primeira recompensa")
@@ -334,10 +338,12 @@ class GameScene: SKScene {
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(moveCard)
                     round += 1
+                    
                     gotRewar2 = true
                     //Add reward2 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, true)
+                    
                     setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
@@ -347,7 +353,6 @@ class GameScene: SKScene {
                 round += 1
                 updateProgressValues(card: toCard)
                 setConservator(characterCard: toCard)
-                print("Energia \(gameViewController.energyProgress.value)")
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
@@ -358,7 +363,7 @@ class GameScene: SKScene {
     }
     
     func setConservator(characterCard: Card){
-        if round % 3 == 0{
+        if round % 3 == 0 && gameViewController.currentLevel == 1 /*trocar para capitulo 2*/{
             let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
             let removeCard = SKAction.removeFromParent()
             removeCard.timingMode = .easeOut
