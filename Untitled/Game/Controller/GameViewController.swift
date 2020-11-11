@@ -37,6 +37,9 @@ class GameViewController: UIViewController {
     
     var energyProgress: Life = Life(type: .city)
     var lifeProgress: Life  =  Life(type: .character)
+    
+    public typealias typelias = () -> Void
+    var dismissNarrative : typelias?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,11 +208,15 @@ class GameViewController: UIViewController {
     
     @IBAction func exitGame(_ sender: Any) {
         let view = ExitView()
-        
+        view.tag = 100
         self.view.addSubview(view)
         view.delegate = self
         view.dismiss = {
             self.dismiss(animated: true, completion: nil)
+            self.dismissNarrative?()
+        }
+        view.cancel = {
+            view.removeFromSuperview()
         }
     }
     

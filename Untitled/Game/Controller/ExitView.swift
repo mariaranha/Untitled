@@ -14,37 +14,71 @@ class ExitView: UIView {
             self.setConstraints()
         }
     }
-    public typealias dismissTypelias = () -> Void
-    public var dismiss : dismissTypelias?
-    private var backView = UIView()
+    public typealias typelias = () -> Void
+    public var dismiss : typelias?
+    public var cancel : typelias?
+    
+    private var backView: UIView = {
+        let view = UIView()
+        
+        view.backgroundColor = .black
+        view.alpha = 0.5
+        
+        return view
+    }()
     public var exitButton: UIButton = {
         let btn = UIButton()
+        let img = UIImage(named: "confirm_button.png")
         
-        btn.setTitle("Fechar", for: .normal)
+        btn.setImage(img, for: .normal)
         
         return btn
+    }()
+    public var cancelButton: UIButton = {
+        let btn = UIButton()
+        let img = UIImage(named: "cancel_button.png")
+        
+        btn.setImage(img, for: .normal)
+        
+        return btn
+    }()
+    public var messageImage: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "board_leave.png")
+                
+        return img
     }()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         self.backgroundColor = .clear
-        self.backView.backgroundColor = .black
-        self.backView.alpha = 0.3
         
         self.exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
+        self.cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
     }
     
     @objc func exitAction() {
         self.dismiss?()
     }
     
+    @objc func cancelAction() {
+        self.cancel?()
+    }
+    
     func setConstraints() {
+        let stackH = UIStackView(arrangedSubviews: [self.cancelButton, self.exitButton])
+        let stackV = UIStackView(arrangedSubviews: [self.messageImage, stackH])
+        stackH.axis = .horizontal
+        stackV.axis = .vertical
+        stackV.alignment = .center
+        
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backView.translatesAutoresizingMaskIntoConstraints = false
-        self.exitButton.translatesAutoresizingMaskIntoConstraints = false
+        stackV.translatesAutoresizingMaskIntoConstraints = false
         self.delegate?.view.addSubview(self)
+        
         self.addSubview(self.backView)
-        self.addSubview(self.exitButton)
+        self.addSubview(stackV)
         
         let exitTop = self.topAnchor.constraint(equalTo: self.delegate!.view.topAnchor)
         let exitBottom = self.bottomAnchor.constraint(equalTo: self.delegate!.view.bottomAnchor)
@@ -54,10 +88,8 @@ class ExitView: UIView {
         let backBottom = self.backView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         let backLeading = self.backView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         let backTrailing = self.backView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        let buttonCenterX = self.exitButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        let buttonCenterY = self.exitButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-        let buttonHeight = self.exitButton.heightAnchor.constraint(equalToConstant: 60.0)
-        let buttonWidth = self.exitButton.heightAnchor.constraint(equalToConstant: 100.0)
+        let stackCenterX = stackV.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        let stackCenterY = stackV.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         
         let constraints = [
             exitTop,
@@ -68,10 +100,8 @@ class ExitView: UIView {
             backBottom,
             backLeading,
             backTrailing,
-            buttonCenterX,
-            buttonCenterY,
-            buttonHeight,
-            buttonWidth
+            stackCenterX,
+            stackCenterY
         ]
         
         NSLayoutConstraint.activate(constraints)
