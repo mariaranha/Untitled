@@ -32,6 +32,8 @@ class GameScene: SKScene {
     var gotRewar1 = false
     var gotRewar2 = false
     
+    var round: Int = 0
+    
     enum Moves {
         case up
         case down
@@ -258,7 +260,7 @@ class GameScene: SKScene {
         
         let moveFrom = getCharacterPosition()
         
-        let filename = "Level_1"
+        let filename = "Level_\(gameViewController.currentLevel)"
         
         guard let levelData = LevelData.loadFrom(file: filename) else { return }
         
@@ -305,40 +307,52 @@ class GameScene: SKScene {
             if toCard == level.card(atColumn: photoColumn, row: photoRow) && toCard.cardType == .photo{
                 if gameViewController.energyProgress.value >= energyPhotoValue {
                     handler(moveCard)
+                    round += 1
                     canExit = true
+                    
                     addReward(playerCard: fromCard, rewardType: .reward1, filename: filename)
                     //Add photo to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, false, false)
+                    
+                    setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia da cidade para coletar a foto")
                 }
             }else if toCard.cardType == .reward1{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(moveCard)
+                    round += 1
+                    
                     addReward(playerCard: fromCard, rewardType: .reward2, filename: filename)
                     gotRewar1 = true
                     //Add reward1 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, false)
+                    
+                    setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia X para coletar a primeira recompensa")
                 }
             }else if toCard.cardType == .reward2{
                 if gameViewController.energyProgress.value >= energyRewardValue {
                     handler(moveCard)
+                    round += 1
+                    
                     gotRewar2 = true
                     //Add reward2 to progress bar
                     guard let rewardHandler = rewardLayoutHandler else { return }
                     rewardHandler(true, true, true)
+                    
+                    setConservator(characterCard: toCard)
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
             }else{
                 handler(moveCard)
+                round += 1
                 updateProgressValues(card: toCard)
-                
-                print("Energia \(gameViewController.energyProgress.value)")
+                setConservator(characterCard: toCard)
                 
                 if gameViewController.lifeProgress.value == 0{
                     print("Game Over")
@@ -346,6 +360,76 @@ class GameScene: SKScene {
                 }
             }
         }
+    }
+    
+    func setConservator(characterCard: Card){
+        if round % 3 == 0 && gameViewController.currentLevel == 1 /*trocar para capitulo 2*/{
+            let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
+            let removeCard = SKAction.removeFromParent()
+            removeCard.timingMode = .easeOut
+
+            
+            if let conservatorPosition = getConservatorPosition(){
+                level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)?.sprite!.run(removeCard)
+                
+                var cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
+                while cardNew.cardType == .photoRoll || cardNew.cardType == .block{
+                    cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
+                }
+                
+                level.setCard(newCard: cardNew)
+                setSprite(cardNew)
+            }
+            
+            let conservatorCard = Card(column: newPositionConservator.column, row: newPositionConservator.row, cardType: .conservator, value: 0)
+            
+            level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)?.sprite!.run(removeCard)
+            level.setCard(newCard: conservatorCard)
+            setSprite(conservatorCard)
+            
+        }
+    }
+    
+    func conservatorNewPosition(characterCard: Card) -> (column: Int, row: Int){
+        var enemyCards: [Card] = []
+        var lifeCards: [Card] = []
+        var cards: [Card] = []
+        var positionConservator = (column: 0, row: 0)
+        var randomCard: Card
+        
+        if let cardUp = level.card(atColumn: characterCard.column, row: characterCard.row + 1){
+            cards.append(cardUp)
+        }
+        if let cardDown = level.card(atColumn: characterCard.column, row: characterCard.row - 1){
+            cards.append(cardDown)
+        }
+        if let cardRight = level.card(atColumn: characterCard.column + 1, row: characterCard.row){
+            cards.append(cardRight)
+        }
+        if let cardLeft = level.card(atColumn: characterCard.column - 1, row: characterCard.row){
+            cards.append(cardLeft)
+        }
+        print(cards)
+        
+        for card in cards {
+            if card.cardType == .block || card.cardType == .photoRoll{
+                lifeCards.append(card)
+            }else if card.cardType == .tacticalPolice || card.cardType == .riotPolice{
+                enemyCards.append(card)
+            }
+        }
+        
+        if lifeCards.count != 0{
+            randomCard = lifeCards.randomElement()!
+            positionConservator.column = randomCard.column
+            positionConservator.row = randomCard.row
+        }else{
+            randomCard = enemyCards.randomElement()!
+            positionConservator.column = randomCard.column
+            positionConservator.row = randomCard.row
+        }
+        
+        return positionConservator
     }
     
     fileprivate func getCharacterPosition() -> (column: Int, row: Int)? {
@@ -368,6 +452,26 @@ class GameScene: SKScene {
         return nil
     }
     
+    fileprivate func getConservatorPosition() -> (column: Int, row: Int)? {
+        var position = (column: 0, row: 0)
+        let numColumns = level.numColumns
+        let numRows = level.numRows
+        
+        for row in 0..<numRows {
+            for column in 0..<numColumns {
+                let card = level.card(atColumn: column, row: row)
+                if card?.cardType == CardType.conservator {
+                    position.column = column
+                    position.row = row
+                    
+                    return position
+                }
+            }
+        }
+        
+        return nil
+    }
+    
     func addReward(playerCard: Card, rewardType: CardType, filename: String){
         guard let levelData = LevelData.loadFrom(file: filename) else { return }
         let exitPositions = levelData.exitPosition
@@ -377,7 +481,7 @@ class GameScene: SKScene {
         
         let rewardCard = level.createRewardCard(playerColumn: playerCard.column, playerRow: playerCard.row, rewardType: rewardType, exitPositions: exitPositions)
         level.card(atColumn: rewardCard.column, row: rewardCard.row)?.sprite!.run(removeCard)
-        level.setReward(reward: rewardCard)
+        level.setCard(newCard: rewardCard)
         setSprite(rewardCard)
     }
     

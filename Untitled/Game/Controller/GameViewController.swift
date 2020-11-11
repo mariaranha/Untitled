@@ -150,7 +150,7 @@ class GameViewController: UIViewController {
     }
     
     func beginGame() {
-        let newCards = level.createInitialCards(filename: "Level_1")
+        let newCards = level.createInitialCards(filename: "Level_\(currentLevel)")
         scene.addInitialSprites(for: newCards)
     }
     

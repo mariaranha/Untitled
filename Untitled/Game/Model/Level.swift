@@ -132,8 +132,8 @@ class Level {
         return rewardCard
     }
     
-    func setReward(reward: Card){
-        cards[reward.column,reward.row] = reward
+    func setCard(newCard: Card){
+        cards[newCard.column,newCard.row] = newCard
     }
     
     func createNewCard(column: Int, row: Int, filename: String) -> Card{
