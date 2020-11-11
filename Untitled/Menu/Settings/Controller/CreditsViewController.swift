@@ -1,15 +1,15 @@
 //
-//  SettingsViewController.swift
+//  CreditsViewController.swift
 //  Untitled
 //
-//  Created by Marina Miranda Aranha on 09/11/20.
+//  Created by Marina Miranda Aranha on 10/11/20.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class CreditsViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var creditsLabel: UILabel!
     @IBOutlet weak var untitledLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     
@@ -17,11 +17,10 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = AppColor.intermediateBackground.value
-        titleLabel.textColor = AppColor.lightText.value
+        creditsLabel.textColor = AppColor.lightText.value
         untitledLabel.textColor = AppColor.lightText.value
         versionLabel.textColor = AppColor.lightText.value
     }
-    
-    @IBAction func backToSettings(segue:UIStoryboardSegue) { }
+
     
 }

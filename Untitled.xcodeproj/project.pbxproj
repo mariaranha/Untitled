@@ -59,6 +59,7 @@
 		9CA59E51252E07DA00DCD349 /* UntitledUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E50252E07DA00DCD349 /* UntitledUITests.swift */; };
 		9CD6028B255A0A2A00667A81 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD6028A255A0A2A00667A81 /* Settings.storyboard */; };
 		9CD60290255A0FFE00667A81 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */; };
+		9CF797B7255B693600FCF351 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF797B6255B693600FCF351 /* CreditsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		9CA59E52252E07DA00DCD349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD6028A255A0A2A00667A81 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9CF797B6255B693600FCF351 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */,
+				9CF797B6255B693600FCF351 /* CreditsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,
 				0B8E74B2253CB56B00B45F0C /* Life.swift in Sources */,
 				0DB782E12558897F0065024D /* GameOverViewController.swift in Sources */,
+				9CF797B7255B693600FCF351 /* CreditsViewController.swift in Sources */,
 				0BB2F5C72541E15B0042E6F2 /* OpenAlbumView.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
