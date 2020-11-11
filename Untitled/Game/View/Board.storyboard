@@ -263,7 +263,7 @@
                         <outlet property="secondReward" destination="rUr-2Q-lUN" id="vbv-xR-DL2"/>
                         <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
                         <outlet property="totalLifeLabel" destination="t19-Tf-pQ0" id="IK0-p2-QE3"/>
-                        <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
+                        <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
                         <segue destination="VYv-SU-PnI" kind="presentation" identifier="goToGameOver" modalPresentationStyle="fullScreen" id="2Cj-fM-RMS"/>
                     </connections>
                 </viewController>

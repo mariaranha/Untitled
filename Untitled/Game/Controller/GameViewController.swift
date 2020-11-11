@@ -60,7 +60,7 @@ class GameViewController: UIViewController {
         let size = getBoardSize(forLevel: level)
         boardWidth.constant = size.width
         boardHeight.constant = size.height
-        scene = GameScene(size: size, level: level, tileSize: .init(width: tileWidth, height: tileHeight))
+        scene = GameScene(gameViewController: self, size: size, level: level, tileSize: .init(width: tileWidth, height: tileHeight))
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
         scene.addTiles()

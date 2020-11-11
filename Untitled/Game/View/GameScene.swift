@@ -26,7 +26,7 @@ class GameScene: SKScene {
     var energyLayoutHandler: ((Int) -> Void)?
     var rewardLayoutHandler: ((Bool, Bool, Bool) -> Void)?
     
-    let gameViewController:GameViewController = GameViewController()
+    var gameViewController:GameViewController!
     
     var canExit = false
     var gotRewar1 = false
@@ -46,7 +46,8 @@ class GameScene: SKScene {
         fatalError("init(coder) is not used in this app")
     }
   
-    init(size: CGSize, level: Level, tileSize: CGSize) {
+    init(gameViewController: GameViewController, size: CGSize, level: Level, tileSize: CGSize) {
+        self.gameViewController = gameViewController
         self.level = level
         super.init(size: size)
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -293,7 +294,16 @@ class GameScene: SKScene {
                 if level.checkExitPosition(toCard: fromCard, filename: filename) {
                     gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
                     print("Venceu")
-                    goToScreen(storyboard: "Board", viewController: "WinGameViewController")
+                    let view = WinRewardsView()
+                    self.gameViewController.view.addSubview(view)
+                    
+                    if gotRewar1 { view.rewardsImages.append(UIImage(named: "board_collected_reward_1.png")) }
+                    if gotRewar2 { view.rewardsImages.append(UIImage(named: "board_collected_reward_1.png")) }
+                    
+                    view.delegate = self.gameViewController
+                    view.continueFunc = {
+                        self.gameViewController.performSegue(withIdentifier: "goToWinGame", sender: self.gameViewController)
+                    }
                 }
             }
             return
@@ -363,7 +373,7 @@ class GameScene: SKScene {
     }
     
     func setConservator(characterCard: Card){
-        if round % 3 == 0 && gameViewController.currentLevel == 1 /*trocar para capitulo 2*/{
+        if round % 3 == 0 && gameViewController.currentLevel == 2 /*trocar para capitulo 2*/{
             let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
             let removeCard = SKAction.removeFromParent()
             removeCard.timingMode = .easeOut

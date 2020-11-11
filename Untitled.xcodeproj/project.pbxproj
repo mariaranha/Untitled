@@ -38,6 +38,7 @@
 		0D57BF16255883FD0018E2C8 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D57BF15255883FD0018E2C8 /* GameOver.storyboard */; };
 		0DB782E12558897F0065024D /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB782E02558897F0065024D /* GameOverViewController.swift */; };
 		2A45E12A255A3F0900D6AABF /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45E129255A3F0900D6AABF /* ExitView.swift */; };
+		2A45E14A255C63B500D6AABF /* WinRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45E149255C63B500D6AABF /* WinRewardsView.swift */; };
 		2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3C382254B8A25000846A5 /* FadeSegue.swift */; };
 		9C0918EE25430C3900CF1F8D /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */; };
 		9C0918F3254319A200CF1F8D /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0918F2254319A200CF1F8D /* Intro.storyboard */; };
@@ -113,6 +114,7 @@
 		0D57BF15255883FD0018E2C8 /* GameOver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
 		0DB782E02558897F0065024D /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		2A45E129255A3F0900D6AABF /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
+		2A45E149255C63B500D6AABF /* WinRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinRewardsView.swift; sourceTree = "<group>"; };
 		2AF3C382254B8A25000846A5 /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
 		9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 		9C0918F2254319A200CF1F8D /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				9C5DB974254AF7A30072B2B3 /* WinGameViewController.swift */,
 				0DB782E02558897F0065024D /* GameOverViewController.swift */,
 				2A45E129255A3F0900D6AABF /* ExitView.swift */,
+				2A45E149255C63B500D6AABF /* WinRewardsView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */,
 				9C0918FF2543353400CF1F8D /* NarrativeIntroView.swift in Sources */,
 				9C762D85253D22CF00F71BEC /* NarrativeView.swift in Sources */,
+				2A45E14A255C63B500D6AABF /* WinRewardsView.swift in Sources */,
 				0B9DB31B25373355006B601D /* DesignSystem.swift in Sources */,
 				0BD1FC2B255992C800D1C4F3 /* NarrativePageCell.swift in Sources */,
 				0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */,

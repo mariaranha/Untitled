@@ -125,7 +125,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GameViewController {
             vc.dismissNarrative = {
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: false, completion: nil)
             }
         }
     }
