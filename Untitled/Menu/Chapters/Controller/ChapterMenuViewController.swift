@@ -13,9 +13,9 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var chapterView: ChapterView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var chapterNumCollection: UICollectionView!
-    @IBOutlet weak var startButtonLine: UIImageView!
+    @IBOutlet weak var enterButtonLine: UIImageView!
     
     // MARK: Class Variables
     var numChapters: Int = 5
@@ -23,6 +23,8 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     let numCellPerPage: CGFloat = 5.0
     var pageIndex: Int = 0
     var userLevel: Int = 0
+    
+    let language = UserDefaultsStruct.Language.preferLanguage
     
     // MARK: View Cicle
     override func viewDidLoad() {
@@ -35,16 +37,8 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         
         //Set view
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chapters_background1")!)
-//        chapterView.backgroundColor = AppColor.lightBackground.value
-
-        
-        //Set button
-//        startButton.layer.borderWidth = 3.0
-//        startButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-//        startButton.layer.backgroundColor = AppColor.lightBackground.value.cgColor
-//        startButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
-//        startButton.setTitle("Entrar", for: .normal)
-        startButtonLine.backgroundColor = AppColor.intermediateBorder.value
+        enterButton.setImage(UIImage(named: "enter_button".localized(language)), for: .normal)
+        enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
         
         //Set Chapters
         view.layoutIfNeeded()
@@ -65,6 +59,14 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func backToChaptersMenu(_ sender: UIStoryboardSegue) {
     }
     
+    @IBAction func startPressed(_ sender: Any) {
+        let viewController = UIStoryboard(name: "Narrative", bundle: nil).instantiateViewController(identifier: "chapterNarrative", creator: { coder in
+            NarrativeViewController(chapterNumber: self.pageIndex + 1, coder: coder)
+            })
+        
+        show(viewController, sender: self)
+    }
+    
     // MARK: Chapters
     func createChapters() -> [ChapterView] {
         
@@ -76,8 +78,6 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
             } else {
                 setUnlockedChapters(chapter, chapterNumber)
             }
-            
-//            chapter.photoFrame.rotate(angle: -2.0)
 
             setChaptersLabels(chapterNumber, chapter)
             
@@ -105,20 +105,20 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         
         switch chapterNumber {
         case 1:
-            chapter.chapterTitle.text = "capítulo um"
-            chapter.chapterSubtitle.text = "uma história de carnaval"
+            chapter.chapterTitle.text = "capítulo um".localized(language)
+            chapter.chapterSubtitle.text = "uma história de carnaval".localized(language)
         case 2:
-            chapter.chapterTitle.text = "capítulo dois"
-            chapter.chapterSubtitle.text = "uma história de carnaval"
+            chapter.chapterTitle.text = "capítulo dois".localized(language)
+            chapter.chapterSubtitle.text = "o bloco em movimento".localized(language)
         case 3:
-            chapter.chapterTitle.text = "capítulo três"
-            chapter.chapterSubtitle.text = "uma história de carnaval"
+            chapter.chapterTitle.text = "capítulo três".localized(language)
+            chapter.chapterSubtitle.text = "capítulo três subtitulo".localized(language)
         case 4:
-            chapter.chapterTitle.text = "capítulo quatro"
-            chapter.chapterSubtitle.text = "uma história de carnaval"
+            chapter.chapterTitle.text = "capítulo quatro".localized(language)
+            chapter.chapterSubtitle.text = "capítulo quatro subtitulo".localized(language)
         case 5:
-            chapter.chapterTitle.text = "capítulo cinco"
-            chapter.chapterSubtitle.text = "uma história de carnaval"
+            chapter.chapterTitle.text = "capítulo cinco".localized(language)
+            chapter.chapterSubtitle.text = "capítulo cinco subtitulo".localized(language)
         default:
             chapter.chapterTitle.text = "capítulo \(chapterNumber)"
         }
@@ -162,11 +162,11 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         
         //Start button for unlocked levels
         if pageIndex + 1 > userLevel {
-            startButton.isHidden = true
-            startButtonLine.backgroundColor = AppColor.darkBorder.value
+            enterButton.isHidden = true
+            enterButtonLine.backgroundColor = AppColor.darkBorder.value
         } else {
-            startButton.isHidden = false
-            startButtonLine.backgroundColor = AppColor.intermediateBorder.value
+            enterButton.isHidden = false
+            enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
         }
     }
     

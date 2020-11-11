@@ -20,6 +20,8 @@ class CloseAlbumViewController: UIViewController {
         //Set background
         view.backgroundColor = AppColor.lightBackground.value
         backgroundImage.image = UIImage(named: "rewards_background")
+        let language = UserDefaultsStruct.Language.preferLanguage
+        openButton.setImage(UIImage(named: "open_album".localized(language)), for: .normal)
     }
     
     @IBAction func backToCloseAlbum(_ sender: UIStoryboardSegue) {

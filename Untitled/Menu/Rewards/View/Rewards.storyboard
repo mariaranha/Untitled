@@ -68,6 +68,10 @@
                                     <constraint firstAttribute="width" constant="80" id="21U-zB-cdA"/>
                                     <constraint firstAttribute="height" constant="80" id="iax-qD-2a5"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="4SK-cP-Oo9" kind="show" id="xo5-Ah-AjP"/>
                                 </connections>
