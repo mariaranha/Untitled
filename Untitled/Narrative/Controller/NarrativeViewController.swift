@@ -25,6 +25,8 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     var narratives: [NarrativeView] = []
     var pageIndex: Int = 0
     
+    let language = UserDefaultsStruct.Language.preferLanguage
+    
     //MARK: Init
     init?(chapterNumber: Int, coder: NSCoder) {
         self.chapter = chapterNumber
@@ -56,9 +58,11 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentInsetAdjustmentBehavior = .never
         
         //setup view
+        let language = UserDefaultsStruct.Language.preferLanguage
         backgroundImage.image = UIImage(named: "narrative_background")
-        narrativeSlide.text = "deslize para ler"
+        narrativeSlide.text = "deslize para ler".localized(language)
         narrativeSlide.textColor = AppColor.lightText.value
+        playButton.setImage(UIImage(named: "remember_button".localized(language)), for: .normal)
         playButton.isHidden = true
         
         view.layoutIfNeeded()
@@ -67,11 +71,6 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         //Setup pages
         narratives = createNarratives()
         setupScrollView(narratives: narratives)
-        
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
     }
     
     //MARK: Narratives
@@ -79,7 +78,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         for narrativeNumber in 1...numPages {
             let narrative: NarrativeView = Bundle.main.loadNibNamed("NarrativeView", owner: self, options: nil)?.first as! NarrativeView
             
-            narrative.imageView.image = UIImage(named: "chapter\(String(describing: chapter))_page\(narrativeNumber)")
+            narrative.imageView.image = UIImage(named: "chapter\(String(describing: chapter))_page\(narrativeNumber)".localized(language))
             
             narratives.append(narrative)
         }

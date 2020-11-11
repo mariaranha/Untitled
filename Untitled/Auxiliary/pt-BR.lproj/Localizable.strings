@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  Untitled
+
+  Created by Julia Conti Mestre on 10/11/20.
+  
+*/
+
+"deslize para ler" = "deslize para ler";
+"capítulo um" = "capítulo um";
+"uma história de carnaval" = "uma história de carnaval";
+"capítulo dois" = "capítulo dois";
+"o bloco em movimento" = "o bloco em movimento";
+"capítulo três" = "capítulo três";
+"capítulo três subtitulo" = "capítulo três subtitulo";
+"capítulo quatro" = "capítulo quatro";
+"capítulo quatro subtitulo" = "capítulo quatro subtitulo";
+"capítulo cinco" = "capítulo cinco";
+"capítulo cinco subtitulo" = "capítulo cinco subtitulo";
+"capítulo finalizado" = "capítulo finalizado";
+"#1 - uma história de carnaval" = "#1 - uma história de carnaval";
+"memória perdida" = "memória perdida";
+"1. uma história de carnaval" = "1. uma história de carnaval";
+
+"continue_button" = "continue_button";
+"enter_button" = "enter_button";
+"remember_button" = "remember_button";
+"restart_button" = "restart_button";
+"start_button" = "start_button";
+"open_album" = "open_album";
+
+"intro_page1" = "intro_page1";
+"intro_page2" = "intro_page2";
+"initialScreen_logo" = "initialScreen_logo";
+"chapter1_page1" = "chapter1_page1";
+"chapter1_page2" = "chapter1_page2";
+"chapter1_page3" = "chapter1_page3";
+"chapter1_page4" = "chapter1_page4";
+"chapter1_page5" = "chapter1_page5";
+"chapter1_page6" = "chapter1_page6";
+"chapter2_page1" = "chapter2_page1";
+"chapter2_page2" = "chapter2_page2";
+"chapter2_page3" = "chapter2_page3";
+"chapter2_page4" = "chapter2_page4";
+"chapter2_page5" = "chapter2_page5";
+"chapter2_page6" = "chapter2_page6";
+"chapter1_win" = "chapter1_win";
+"chapter1_gameOver" = "chapter1_gameOver";
