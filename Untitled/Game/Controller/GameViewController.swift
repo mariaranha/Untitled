@@ -203,5 +203,14 @@ class GameViewController: UIViewController {
         return true
     }
     
+    @IBAction func exitGame(_ sender: Any) {
+        let view = ExitView()
+        
+        self.view.addSubview(view)
+        view.delegate = self
+        view.dismiss = {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
 }
