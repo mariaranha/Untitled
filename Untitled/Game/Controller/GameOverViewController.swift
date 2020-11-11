@@ -14,18 +14,22 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var narrativeImageView: UIImageView!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var restartButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        titleLabel.text = "memória perdida"
+        
+        let language = UserDefaultsStruct.Language.preferLanguage
+        titleLabel.text = "memória perdida".localized(language)
         titleLabel.font = UIFont(name: "Lalezar-Regular", size: 40)
-        subtitleLabel.text = "1. uma história de carnaval"
+        subtitleLabel.text = "1. uma história de carnaval".localized(language)
         subtitleLabel.font = UIFont(name: "Lalezar-Regular", size: 20)
+        
+        restartButton.setImage(UIImage(named: "restart_button".localized(language)), for: .normal)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "gameOverBackground")!)
         photoImageView.image = UIImage(named: "empty_photo")
-        narrativeImageView.image = UIImage(named: "chapter1_gameOver")
+        narrativeImageView.image = UIImage(named: "chapter1_gameOver".localized(language))
     }
     
 

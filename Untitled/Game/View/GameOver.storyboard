@@ -105,6 +105,7 @@
                         <outlet property="backgroundView" destination="GnW-9s-mto" id="oZa-W9-BQ0"/>
                         <outlet property="narrativeImageView" destination="L6P-Pe-vBz" id="yxX-L6-NxO"/>
                         <outlet property="photoImageView" destination="HRk-jZ-Ujy" id="78a-7A-x5O"/>
+                        <outlet property="restartButton" destination="IE8-7k-svf" id="cu6-o4-M0e"/>
                         <outlet property="subtitleLabel" destination="jRy-Id-RTZ" id="8JS-jl-RcY"/>
                         <outlet property="titleLabel" destination="XBj-on-BvZ" id="aMd-op-6PI"/>
                     </connections>

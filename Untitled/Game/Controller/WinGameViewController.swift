@@ -20,12 +20,13 @@ class WinGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = "capítulo finalizado"
-        subtitleLabel.text = "#1 - uma história de carnaval"
+        let language = UserDefaultsStruct.Language.preferLanguage
+        titleLabel.text = "capítulo finalizado".localized(language)
+        subtitleLabel.text = "#1 - uma história de carnaval".localized(language)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "winBackground")!)
         photoImageView.image = UIImage(named: "empty_photo")
-        narrativeImageView.image = UIImage(named: "chapter1_win")
+        narrativeImageView.image = UIImage(named: "chapter1_win".localized(language))
 
     }
     

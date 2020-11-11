@@ -74,6 +74,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logo" destination="Yxe-7z-2GM" id="ZyC-CI-jOh"/>
+                        <outlet property="startButton" destination="fme-a0-MBJ" id="CLb-JR-uEo"/>
                         <segue destination="mqV-Tj-WSX" kind="presentation" identifier="skipIntro" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="geQ-jw-j7Z"/>
                         <segue destination="lls-sf-9y2" kind="presentation" identifier="showIntro" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="AOD-H3-6cp"/>
                     </connections>
@@ -191,14 +193,14 @@
         <segue reference="iRw-Ck-YeA"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="continue_button" width="176.5" height="61.5"/>
+        <image name="continue_button" width="176.5" height="62"/>
         <image name="initialScreen_background" width="414.5" height="895.5"/>
         <image name="initialScreen_logo" width="123" height="40.5"/>
         <image name="initialScreen_logo2" width="264" height="106.5"/>
         <image name="intro_background" width="414.5" height="895.5"/>
         <image name="intro_logo" width="238.5" height="96"/>
         <image name="openAlbum" width="311" height="203.5"/>
-        <image name="start_button" width="176.5" height="62"/>
+        <image name="start_button" width="176.5" height="61.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

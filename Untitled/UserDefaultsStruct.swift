@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum Languages: String {
+    case english = "en"
+    case portuguese = "pt-BR"
+    case portugueseDevice = "pt"
+}
+
 struct UserDefaultsStruct {
     
     private static let defaults = UserDefaults.standard

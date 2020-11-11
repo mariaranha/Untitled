@@ -23,6 +23,8 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     
     var narrativeOrigin: CGPoint!
     
+    let language = UserDefaultsStruct.Language.preferLanguage
+    
     // MARK: View Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,9 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = AppColor.intermediateBackground.value
         narrativeOrigin = narrativeView.frame.origin
         
-        swipeToRead.text = "deslize para ler"
+        swipeToRead.text = "deslize para ler".localized(language)
         swipeToRead.textColor = AppColor.lightText.value
+        continueButton.setImage(UIImage(named: "continue_button".localized(language)), for: .normal)
         continueButton.isHidden = true
 
         view.layoutIfNeeded()
@@ -48,7 +51,7 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         for narrativeNumber in 1...numberPages {
             let narrative: NarrativeIntroView = Bundle.main.loadNibNamed("NarrativeIntroView", owner: self, options: nil)?.first as! NarrativeIntroView
             
-            narrative.imageView.image = UIImage(named: "intro_page\(narrativeNumber)")
+            narrative.imageView.image = UIImage(named: "intro_page\(narrativeNumber)".localized(language))
             
             narratives.append(narrative)
         }

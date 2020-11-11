@@ -9,6 +9,9 @@ import UIKit
 
 class InitialScreenViewController: UIViewController {
     
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var logo: UIImageView!
+    
     var skipeIntroNarrative: Bool!
     
     override func viewDidLoad() {
@@ -19,6 +22,9 @@ class InitialScreenViewController: UIViewController {
         skipeIntroNarrative = UserDefaultsStruct.IntroNarrative.skipeIntro
         
         setLanguage()
+        let language = UserDefaultsStruct.Language.preferLanguage
+        startButton.setImage(UIImage(named: "start_button".localized(language)), for: .normal)
+        logo.image = UIImage(named: "initialScreen_logo".localized(language))
     }
     
     @IBAction func startPressed(_ sender: Any) {
@@ -31,7 +37,7 @@ class InitialScreenViewController: UIViewController {
     
     func setLanguage() {
         var language: String = UserDefaultsStruct.Language.preferLanguage
-        
+
         if language == "" {
             let deviceLanguage = Locale.preferredLanguages[0]
             let appLanguage = NSLocale.current.languageCode
@@ -39,7 +45,15 @@ class InitialScreenViewController: UIViewController {
             if appLanguage == "" {
                 language = deviceLanguage
             } else {
-                language = appLanguage ?? "pt_BR"
+                language = appLanguage ?? Languages.english.rawValue
+            }
+            
+            if language != Languages.portuguese.rawValue && language != Languages.portugueseDevice.rawValue && language != Languages.english.rawValue {
+                language = Languages.english.rawValue
+            }
+            
+            if language == Languages.portugueseDevice.rawValue {
+                language = Languages.portuguese.rawValue
             }
             
             UserDefaultsStruct.Language.preferLanguage = language
@@ -47,3 +61,11 @@ class InitialScreenViewController: UIViewController {
     }
 }
 
+extension String {
+func localized(_ lang: String) -> String {
+
+    let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+    let bundle = Bundle(path: path!)
+
+    return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+}}

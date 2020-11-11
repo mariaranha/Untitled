@@ -5,3 +5,44 @@
   Created by Julia Conti Mestre on 10/11/20.
   
 */
+
+"deslize para ler" = "swipe to read";
+"capítulo um" = "chapter one";
+"uma história de carnaval" = "a carnival story";
+"capítulo dois" = "chapter two";
+"o bloco em movimento" = "the block in motion";
+"capítulo três" = "chapter three";
+"capítulo três subtitulo" = "chapter three subtitle";
+"capítulo quatro" = "chapter four";
+"capítulo quatro subtitulo" = "chapter four subtitle";
+"capítulo cinco" = "chapter five";
+"capítulo cinco subtitulo" = "capítulo five subtitle";
+"capítulo finalizado" = "finished chapter";
+"#1 - uma história de carnaval" = "#1 - a carnival story";
+"memória perdida" = "lost memory";
+"1. uma história de carnaval" = "1. a carnival story";
+
+"continue_button" = "continue_button_en";
+"enter_button" = "enter_button_en";
+"remember_button" = "remember_button_en";
+"restart_button" = "restart_button_en";
+"start_button" = "start_button_en";
+"open_album" = "open_album_en";
+
+"intro_page1" = "intro_page1_en";
+"intro_page2" = "intro_page2_en";
+"initialScreen_logo" = "initialScreen_logo_en";
+"chapter1_page1" = "chapter1_page1_en";
+"chapter1_page2" = "chapter1_page2_en";
+"chapter1_page3" = "chapter1_page3_en";
+"chapter1_page4" = "chapter1_page4_en";
+"chapter1_page5" = "chapter1_page5_en";
+"chapter1_page6" = "chapter1_page6_en";
+"chapter2_page1" = "chapter2_page1_en";
+"chapter2_page2" = "chapter2_page2_en";
+"chapter2_page3" = "chapter2_page3_en";
+"chapter2_page4" = "chapter2_page4_en";
+"chapter2_page5" = "chapter2_page5_en";
+"chapter2_page6" = "chapter2_page6_en";
+"chapter1_win" = "chapter1_win_en";
+"chapter1_gameOver" = "chapter1_gameOver_en";
