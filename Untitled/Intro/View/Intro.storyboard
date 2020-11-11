@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-MK-pu5">
-                                <rect key="frame" x="144" y="803.5" width="126" height="32.5"/>
+                                <rect key="frame" x="139" y="811.5" width="136" height="24.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="deslize para ler">
                                         <attributes>

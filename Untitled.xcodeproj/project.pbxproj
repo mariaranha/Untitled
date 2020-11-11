@@ -57,6 +57,8 @@
 		9CA59E39252E07D700DCD349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA59E37252E07D700DCD349 /* Main.storyboard */; };
 		9CA59E46252E07DA00DCD349 /* UntitledTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E45252E07DA00DCD349 /* UntitledTests.swift */; };
 		9CA59E51252E07DA00DCD349 /* UntitledUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E50252E07DA00DCD349 /* UntitledUITests.swift */; };
+		9CD6028B255A0A2A00667A81 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD6028A255A0A2A00667A81 /* Settings.storyboard */; };
+		9CD60290255A0FFE00667A81 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		9CA59E4C252E07DA00DCD349 /* UntitledUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UntitledUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA59E50252E07DA00DCD349 /* UntitledUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntitledUITests.swift; sourceTree = "<group>"; };
 		9CA59E52252E07DA00DCD349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD6028A255A0A2A00667A81 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		0B8E74932537441600B45F0C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				9CD60287255A09E900667A81 /* Settings */,
 				0BB2F5B42541CA9B0042E6F2 /* Rewards */,
 				0B8E74AD253CACA100B45F0C /* Chapters */,
 			);
@@ -406,6 +411,31 @@
 			path = UntitledUITests;
 			sourceTree = "<group>";
 		};
+		9CD60287255A09E900667A81 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9CD60289255A0A0400667A81 /* Controller */,
+				9CD60288255A09F500667A81 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9CD60288255A09F500667A81 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6028A255A0A2A00667A81 /* Settings.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CD60289255A0A0400667A81 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -515,6 +545,7 @@
 				0BE1E5BE252F5A6700DD36C6 /* Level_1.json in Resources */,
 				9CA59E39252E07D700DCD349 /* Main.storyboard in Resources */,
 				0B8BEE2925559070005ED2AD /* Alegreya-Regular.ttf in Resources */,
+				9CD6028B255A0A2A00667A81 /* Settings.storyboard in Resources */,
 				0BB2F5C22541E1440042E6F2 /* OpenAlbum.xib in Resources */,
 				0B8E749D2537548C00B45F0C /* ChapterView.xib in Resources */,
 				0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */,
@@ -576,6 +607,7 @@
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
 				0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */,
+				9CD60290255A0FFE00667A81 /* SettingsViewController.swift in Sources */,
 				9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */,
 				9C0918F925432AA000CF1F8D /* IntroductionViewController.swift in Sources */,
 				0B8E74AC253CA00100B45F0C /* UserDefaultsStruct.swift in Sources */,

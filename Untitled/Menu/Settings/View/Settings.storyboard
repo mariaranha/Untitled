@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LsZ-lG-g64">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lalezar-Regular.ttf">
+            <string>Lalezar-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="RmK-63-riB">
+            <objects>
+                <viewController id="LsZ-lG-g64" customClass="SettingsViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zjd-BU-qRp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_background" translatesAutoresizingMaskIntoConstraints="NO" id="XHO-jX-jeG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkU-WV-7pE">
+                                <rect key="frame" x="32" y="76" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="J8N-dt-Bfm"/>
+                                    <constraint firstAttribute="width" secondItem="vkU-WV-7pE" secondAttribute="height" multiplier="1:1" id="c0G-gv-dfs"/>
+                                </constraints>
+                                <state key="normal" image="settings_backButton"/>
+                                <connections>
+                                    <segue destination="BXI-WB-kTE" kind="unwind" unwindAction="backToChaptersMenu:" id="PrO-zH-G8s"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rFc-Qx-VBM">
+                                <rect key="frame" x="159" y="134" width="96.5" height="95"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LWe-RC-SdB">
+                                        <rect key="frame" x="26.5" y="0.0" width="43" height="42.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Ti-2Db">
+                                        <rect key="frame" x="0.0" y="44.5" width="96.5" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-GH-z5b">
+                                <rect key="frame" x="144" y="799.5" width="126" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="untitled games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBx-iH-evF">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="versão 1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-RQ-VdV">
+                                        <rect key="frame" x="26.5" y="26.5" width="73.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0Xh-i6-qLs">
+                                <rect key="frame" x="30.5" y="299" width="353.5" height="123.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKf-Yf-nrn">
+                                        <rect key="frame" x="0.0" y="0.0" width="353.5" height="50"/>
+                                        <state key="normal" image="language_button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTi-bZ-R3P">
+                                        <rect key="frame" x="0.0" y="74" width="353.5" height="49.5"/>
+                                        <state key="normal" image="credits_button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-hC-qIv">
+                                <rect key="frame" x="30.5" y="478.5" width="353.5" height="50"/>
+                                <state key="normal" image="restartStory_button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="njD-OO-YHB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="njD-OO-YHB" firstAttribute="bottom" secondItem="Pq8-GH-z5b" secondAttribute="bottom" constant="12" id="2ZQ-gY-LlN"/>
+                            <constraint firstItem="rFc-Qx-VBM" firstAttribute="centerX" secondItem="Zjd-BU-qRp" secondAttribute="centerX" id="4rA-QL-9z7"/>
+                            <constraint firstItem="Zpb-hC-qIv" firstAttribute="centerX" secondItem="Zjd-BU-qRp" secondAttribute="centerX" id="7Tk-tb-dk5"/>
+                            <constraint firstAttribute="trailing" secondItem="XHO-jX-jeG" secondAttribute="trailing" id="8hU-mP-rjO"/>
+                            <constraint firstItem="Pq8-GH-z5b" firstAttribute="centerX" secondItem="Zjd-BU-qRp" secondAttribute="centerX" id="BrO-UZ-a7c"/>
+                            <constraint firstItem="XHO-jX-jeG" firstAttribute="bottom" secondItem="Zjd-BU-qRp" secondAttribute="bottom" id="By8-IO-Q0N"/>
+                            <constraint firstItem="XHO-jX-jeG" firstAttribute="leading" secondItem="Zjd-BU-qRp" secondAttribute="leading" id="E2s-eN-pfn"/>
+                            <constraint firstItem="Zpb-hC-qIv" firstAttribute="top" secondItem="0Xh-i6-qLs" secondAttribute="bottom" constant="56" id="V0h-TO-TXL"/>
+                            <constraint firstItem="0Xh-i6-qLs" firstAttribute="top" secondItem="rFc-Qx-VBM" secondAttribute="bottom" constant="70" id="fuN-FM-T9i"/>
+                            <constraint firstAttribute="top" secondItem="XHO-jX-jeG" secondAttribute="top" id="gb1-Mr-ufb"/>
+                            <constraint firstItem="rFc-Qx-VBM" firstAttribute="top" secondItem="njD-OO-YHB" secondAttribute="top" constant="90" id="hGt-qh-nra"/>
+                            <constraint firstItem="0Xh-i6-qLs" firstAttribute="centerX" secondItem="Zjd-BU-qRp" secondAttribute="centerX" id="my0-iA-6MC"/>
+                            <constraint firstItem="vkU-WV-7pE" firstAttribute="leading" secondItem="njD-OO-YHB" secondAttribute="leading" constant="32" id="w2b-8m-Wp1"/>
+                            <constraint firstItem="vkU-WV-7pE" firstAttribute="top" secondItem="njD-OO-YHB" secondAttribute="top" constant="32" id="wEF-A2-uxQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="ezb-Ti-2Db" id="uhE-fz-JVS"/>
+                        <outlet property="untitledLabel" destination="kBx-iH-evF" id="qlY-FL-lRY"/>
+                        <outlet property="versionLabel" destination="DZN-RQ-VdV" id="fIu-QZ-9tb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6A-wu-Hsd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BXI-WB-kTE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-624.63768115942037" y="-109.15178571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="credits_button" width="353.5" height="49.5"/>
+        <image name="language_button" width="353.5" height="50"/>
+        <image name="restartStory_button" width="353.5" height="50"/>
+        <image name="settings_backButton" width="47" height="48.5"/>
+        <image name="settings_background" width="414.5" height="896"/>
+        <image name="settings_icon" width="43" height="42.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
