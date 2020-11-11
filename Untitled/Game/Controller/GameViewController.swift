@@ -239,6 +239,11 @@ class GameViewController: UIViewController {
         if let vc = segue.destination as? GameOverViewController {
             vc.dismissFunc = {
                 self.dismiss(animated: false) {
+                    self.dismissNarrative?()
+                }
+            }
+            vc.restartFunc = {
+                self.dismiss(animated: false) {
                     self.restartNarrative?()
                 }
             }

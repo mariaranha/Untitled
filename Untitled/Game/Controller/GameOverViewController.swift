@@ -16,6 +16,7 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var restartButton: UIButton!
     
+    var restartFunc : (() -> Void)?
     var dismissFunc : (() -> Void)?
     
     override func viewDidLoad() {
@@ -37,7 +38,11 @@ class GameOverViewController: UIViewController {
 
     @IBAction func restartBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        self.dismissFunc?()
+        self.restartFunc?()
     }
     
+    @IBAction func closeBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.dismissFunc?()
+    }
 }

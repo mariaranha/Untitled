@@ -74,7 +74,7 @@
                                         </constraints>
                                         <state key="normal" image="close_button"/>
                                         <connections>
-                                            <segue destination="KJX-uN-iev" kind="presentation" identifier="goToChapterMenu" modalPresentationStyle="fullScreen" id="Ypo-JH-QqB"/>
+                                            <action selector="closeBtn:" destination="ERs-Xi-Pbx" eventType="touchUpInside" id="oyJ-pb-GOS"/>
                                         </connections>
                                     </button>
                                 </subviews>
