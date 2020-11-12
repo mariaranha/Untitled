@@ -53,7 +53,9 @@ class FadePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             } completion: { (finished) in
 //                transitionContext.completeTransition(true)
             }
-            fromView?.alpha = 1.0
+//            if let vc = fromView as? NarrativeView {
+//                fromView?.alpha = 1.0
+//            }
             transitionContext.completeTransition(true)
         }
         

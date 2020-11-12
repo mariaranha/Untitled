@@ -124,11 +124,16 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GameViewController {
+//            self.view.alpha = 0.0
             vc.dismissNarrative = {
                 self.dismiss(animated: false, completion: nil)
             }
             vc.restartNarrative = {
+                self.view.alpha = 0.0
                 self.performSegue(withIdentifier: "toBoardSegue", sender: self)
+//                UIView.animate(withDuration: 1.0) {
+//                    self.view.alpha = 1.0
+//                }
             }
         }
     }
