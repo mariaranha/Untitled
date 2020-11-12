@@ -27,7 +27,8 @@ class ExitView: UIView {
     }()
     public var exitButton: UIButton = {
         let btn = UIButton()
-        let img = UIImage(named: "confirm_button.png")
+        let language = UserDefaultsStruct.Language.preferLanguage
+        let img = UIImage(named: "confirm_button".localized(language))
         
         btn.setImage(img, for: .normal)
         
@@ -35,7 +36,8 @@ class ExitView: UIView {
     }()
     public var cancelButton: UIButton = {
         let btn = UIButton()
-        let img = UIImage(named: "cancel_button.png")
+        let language = UserDefaultsStruct.Language.preferLanguage
+        let img = UIImage(named: "cancel_button".localized(language))
         
         btn.setImage(img, for: .normal)
         
@@ -43,7 +45,8 @@ class ExitView: UIView {
     }()
     public var messageImage: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "board_leave.png")
+        let language = UserDefaultsStruct.Language.preferLanguage
+        img.image = UIImage(named: "board_leave".localized(language))
                 
         return img
     }()
