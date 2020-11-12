@@ -82,13 +82,13 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         for chapterNumber in 1...numChapters {
             let chapter: ChapterView = Bundle.main.loadNibNamed("ChapterView", owner: self, options: nil)?.first as! ChapterView
             
+            setChaptersLabels(chapterNumber, chapter)
+            
             if chapterNumber > userLevel {
                 setLockedChapters(chapter)
             } else {
                 setUnlockedChapters(chapter, chapterNumber)
             }
-
-            setChaptersLabels(chapterNumber, chapter)
             
             chapters.append(chapter)
         }
@@ -98,8 +98,10 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     
     fileprivate func setLockedChapters(_ chapter: ChapterView) {
         chapter.chapterTitle.textColor = .black
-        chapter.chapterSubtitle.textColor = .clear
+        chapter.chapterSubtitle.textColor = AppColor.lightText.value
         chapter.chapterBackground.image = UIImage(named: "blocked_background")
+        chapter.chapterTitle.text = "bloqueado".localized(language)
+        chapter.chapterSubtitle.text = "história do capítulo não disponível".localized(language)
         
         chapter.chapterBackground.backgroundColor = .lightGray
     }
