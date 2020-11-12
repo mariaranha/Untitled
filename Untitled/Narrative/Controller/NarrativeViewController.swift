@@ -25,6 +25,9 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     var narratives: [NarrativeView] = []
     var pageIndex: Int = 0
     
+    var dismissFunc : (() -> Void)?
+    var dismissNarrative : (() -> Void)?
+    
     let language = UserDefaultsStruct.Language.preferLanguage
     
     //MARK: Init
@@ -144,6 +147,29 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    @IBAction func closePressed(_ sender: Any) {
+        let view = ExitView()
+        view.tag = 100
+        view.delegate = self
+        view.alpha = 0.0
+        self.view.addSubview(view)
+        view.dismiss = {
+            self.dismiss(animated: true, completion: nil)
+            self.dismissNarrative?()
+        }
+        view.cancel = {
+            UIView.animate(withDuration: 0.5, animations: {
+                view.alpha = 0.0
+            }) { (completion) in
+                view.removeFromSuperview()
+            }
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            view.alpha = 1.0
+        })
+    }
+    
 }
 
 // MARK: Number CollectionView
