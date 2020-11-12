@@ -47,6 +47,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Alegreya-Bold.ttf</string>
 		<string>Alegreya-Regular.ttf</string>
 		<string>Alegreya-Medium.ttf</string>
 		<string>Alegreya-ExtraBold.ttf</string>

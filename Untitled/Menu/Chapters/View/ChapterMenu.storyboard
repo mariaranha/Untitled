@@ -85,6 +85,9 @@
                                     <constraint firstAttribute="height" constant="48" id="63b-XC-cNQ"/>
                                 </constraints>
                                 <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="bkx-Ik-bHR" kind="show" id="I6I-IX-iVd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-4Q-gAM">
                                 <rect key="frame" x="334" y="76" width="48" height="54"/>
@@ -164,6 +167,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFY-Y4-bzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1625" y="-196"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="48g-sQ-lM9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="bkx-Ik-bHR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Hzd-EP-AmZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0o-Mz-6Fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="3"/>
         </scene>
         <!--Narrative-->
         <scene sceneID="jsA-hR-YxF">
