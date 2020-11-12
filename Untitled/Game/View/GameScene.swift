@@ -378,7 +378,9 @@ class GameScene: SKScene {
     }
     
     func setConservator(characterCard: Card){
-        if round % 3 == 0 && gameViewController.currentLevel == 2 /*trocar para capitulo 2*/{
+        guard let levelData = LevelData.loadFrom(file: "Level_\(gameViewController.currentLevel)") else { return }
+        //trocar == por != quando tiver implementada a transicao de capitulos
+        if round % levelData.roundConservator == 0 && gameViewController.currentLevel == 1 {
             let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
             let removeCard = SKAction.removeFromParent()
             removeCard.timingMode = .easeOut

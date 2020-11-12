@@ -24,7 +24,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var secondReward: UIImageView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
-    
     @IBOutlet weak var boardFantasy: UIImageView!
     
     //Scene draws the sprites and handles gestures
