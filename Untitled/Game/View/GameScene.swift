@@ -292,7 +292,12 @@ class GameScene: SKScene {
         guard let toCard = level.card(atColumn: moveTo!.column, row: moveTo!.row) else {
             if moveTo?.row == -1 && canExit == true && (move == .down || move == .center){
                 if level.checkExitPosition(toCard: fromCard, filename: filename) {
+                    //Update rewards
                     gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
+                    //Update user level
+                    UserDefaultsStruct.UserLevel.level = gameViewController.currentLevel + 1
+                    SelectedLevel.value = UserDefaultsStruct.UserLevel.level
+                    
                     print("Venceu")
                     let view = WinRewardsView()
                     view.alpha = 0.0

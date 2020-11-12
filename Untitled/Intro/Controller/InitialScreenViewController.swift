@@ -7,6 +7,10 @@
 
 import UIKit
 
+struct SelectedLevel {
+    static var value = UserDefaultsStruct.UserLevel.level
+}
+
 class InitialScreenViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!

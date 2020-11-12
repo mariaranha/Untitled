@@ -18,19 +18,20 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var enterButtonLine: UIImageView!
     
     // MARK: Class Variables
-    var numChapters: Int = 5
+    var numChapters: Int = 3
     var chapters: [ChapterView] = []
     let numCellPerPage: CGFloat = 5.0
     var pageIndex: Int = 0
     var userLevel: Int = 0
     
-    let language = UserDefaultsStruct.Language.preferLanguage
+    var language: String!
     
     // MARK: View Cicle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         userLevel = UserDefaultsStruct.UserLevel.level
+        language = UserDefaultsStruct.Language.preferLanguage
         
         scrollView.delegate = self
         chapterNumCollection.delegate = self
@@ -52,8 +53,18 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
                                      left: cellWidth * 2,
                                      bottom: 0,
                                      right: 0)
-
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let selectedLevel = SelectedLevel.value
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
+            self.scrollToChapter(chapter: selectedLevel)
+        }
+        
+        RunLoop.current.add(timer, forMode: .common)
     }
     
     @IBAction func backToChaptersMenu(_ sender: UIStoryboardSegue) {
@@ -72,12 +83,14 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chapterNarrative" {
             let viewController = segue.destination as! NarrativeViewController
-            viewController.chapter = self.pageIndex + 1
+            SelectedLevel.value = self.pageIndex + 1
+            viewController.chapter = SelectedLevel.value
         }
     }
     
     // MARK: Chapters
     func createChapters() -> [ChapterView] {
+        chapters = []
         
         for chapterNumber in 1...numChapters {
             let chapter: ChapterView = Bundle.main.loadNibNamed("ChapterView", owner: self, options: nil)?.first as! ChapterView
@@ -179,6 +192,14 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
             enterButton.isHidden = false
             enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
         }
+    }
+    
+    func scrollToChapter(chapter: Int) {
+        let page = chapter - 1
+        let x: CGFloat = CGFloat(page) * view.frame.width
+        let y: CGFloat = 0
+        
+        scrollView.setContentOffset(CGPoint(x: x, y: y), animated: true)
     }
     
 }

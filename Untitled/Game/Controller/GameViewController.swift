@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
     //Scene draws the sprites and handles gestures
     var scene: GameScene!
     var level: Level!
-    var currentLevel: Int = 1 //Note: Create a singleton to verify the current level and pass in init
+    var currentLevel: Int = 0
     
     var tileWidth: CGFloat = 0.0
     var tileHeight: CGFloat = 0.0

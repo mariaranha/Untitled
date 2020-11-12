@@ -139,6 +139,8 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GameViewController {
+            vc.currentLevel = SelectedLevel.value
+            
             vc.dismissNarrative = {
                 self.dismiss(animated: false, completion: nil)
             }
@@ -169,7 +171,6 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             view.alpha = 1.0
         })
     }
-    
 }
 
 // MARK: Number CollectionView
