@@ -18,6 +18,10 @@ extension FadeSegue: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadePresentAnimator()
     }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadePresentAnimator()
+    }
 }
 
 class FadePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
@@ -47,8 +51,9 @@ class FadePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 toView?.alpha = 1.0
                 toView?.layoutIfNeeded()
             } completion: { (finished) in
-                transitionContext.completeTransition(true)
+//                transitionContext.completeTransition(true)
             }
+            fromView?.alpha = 1.0
             transitionContext.completeTransition(true)
         }
         

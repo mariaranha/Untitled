@@ -65,7 +65,6 @@
                                         <state key="normal" image="restart_button"/>
                                         <connections>
                                             <action selector="restartBtn:" destination="ERs-Xi-Pbx" eventType="touchUpInside" id="fgo-tB-4mf"/>
-                                            <segue destination="Two-9j-FuG" kind="presentation" identifier="goToBoard" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="bLG-ho-N6b"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMo-b2-rHC">
@@ -75,7 +74,7 @@
                                         </constraints>
                                         <state key="normal" image="close_button"/>
                                         <connections>
-                                            <segue destination="KJX-uN-iev" kind="presentation" identifier="goToChapterMenu" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="Ypo-JH-QqB"/>
+                                            <action selector="closeBtn:" destination="ERs-Xi-Pbx" eventType="touchUpInside" id="oyJ-pb-GOS"/>
                                         </connections>
                                     </button>
                                 </subviews>

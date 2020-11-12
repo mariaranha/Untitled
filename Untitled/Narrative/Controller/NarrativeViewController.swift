@@ -133,6 +133,17 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             narrativeSlide.isHidden = false
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameViewController {
+            vc.dismissNarrative = {
+                self.dismiss(animated: false, completion: nil)
+            }
+            vc.restartNarrative = {
+                self.performSegue(withIdentifier: "toBoardSegue", sender: self)
+            }
+        }
+    }
 }
 
 // MARK: Number CollectionView

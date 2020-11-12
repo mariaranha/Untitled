@@ -131,7 +131,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="deslize para ler">
                                         <attributes>
-                                            <font key="NSFont" size="20" name="Lalezar-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="20"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -190,7 +190,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iRw-Ck-YeA"/>
+        <segue reference="geQ-jw-j7Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="continue_button" width="176.5" height="62"/>
