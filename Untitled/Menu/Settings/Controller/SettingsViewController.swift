@@ -31,4 +31,13 @@ class SettingsViewController: UIViewController {
     
     @IBAction func backToSettings(segue:UIStoryboardSegue) { }
     
+    @IBAction func restartGameTapped(_ sender: Any) {
+        
+        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "RestartAlert") as! RestartGameViewController
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(customAlert, animated: true, completion: nil)
+    }
 }

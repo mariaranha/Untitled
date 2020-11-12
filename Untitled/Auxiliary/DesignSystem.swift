@@ -12,6 +12,7 @@ enum AppColor {
     case darkBackground
     case lightBackground
     case intermediateBackground
+    case darkGreyBackground
     
     case darkText
     case lightText
@@ -36,6 +37,8 @@ extension AppColor {
             instanceColor = #colorLiteral(red: 0.9176470588, green: 0.862745098, blue: 0.8431372549, alpha: 1)
         case .intermediateBackground:
             instanceColor = #colorLiteral(red: 0.3058823529, green: 0.1960784314, blue: 0.6588235294, alpha: 1)
+        case .darkGreyBackground:
+            instanceColor = #colorLiteral(red: 0.16, green: 0.16, blue: 0.16, alpha: 1.00)
             
         case .darkText:
             instanceColor = #colorLiteral(red: 0.1568627451, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
