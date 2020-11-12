@@ -13,6 +13,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var untitledLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     
+    @IBOutlet weak var restartGameButton: UIButton!
+    @IBOutlet weak var creditsButton: UIButton!
+    @IBOutlet weak var languageButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +24,9 @@ class SettingsViewController: UIViewController {
         titleLabel.textColor = AppColor.lightText.value
         untitledLabel.textColor = AppColor.lightText.value
         versionLabel.textColor = AppColor.lightText.value
+        languageButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+        restartGameButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+        creditsButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
     }
     
     @IBAction func backToSettings(segue:UIStoryboardSegue) { }

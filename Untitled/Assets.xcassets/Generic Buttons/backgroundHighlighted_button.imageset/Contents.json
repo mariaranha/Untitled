@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "botões-idioma3.png",
+      "filename" : "backgroundHighlighted_button.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "botões-idioma3(1).png",
+      "filename" : "backgroundHighlighted_button2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "botões-idioma3(2).png",
+      "filename" : "backgroundHighlighted_button3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
