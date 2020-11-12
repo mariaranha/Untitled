@@ -25,11 +25,16 @@
 "1. uma história de carnaval" = "1. uma história de carnaval";
 
 "continue_button" = "continue_button";
+"confirm_button" = "confirm_button";
+"cancel_button" = "cancel_button";
 "enter_button" = "enter_button";
 "remember_button" = "remember_button";
 "restart_button" = "restart_button";
 "start_button" = "start_button";
 "open_album" = "open_album";
+
+"board_leave" = "board_leave";
+"memories_rewards" = "memories_rewards";
 
 "intro_page1" = "intro_page1";
 "intro_page2" = "intro_page2";

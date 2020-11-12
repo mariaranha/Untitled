@@ -26,7 +26,8 @@ class WinRewardsView: UIView {
     }()
     public var continueButton: UIButton = {
         let btn = UIButton()
-        let img = UIImage(named: "continue_button.png")
+        let language = UserDefaultsStruct.Language.preferLanguage
+        let img = UIImage(named: "continue_button".localized(language))
         
         btn.setImage(img, for: .normal)
         
@@ -34,7 +35,8 @@ class WinRewardsView: UIView {
     }()
     public var memoriesImage: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "memories.png")
+        let language = UserDefaultsStruct.Language.preferLanguage
+        img.image = UIImage(named: "memories_rewards".localized(language))
                 
         return img
     }()
