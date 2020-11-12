@@ -206,6 +206,13 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_life" translatesAutoresizingMaskIntoConstraints="NO" id="FP9-RJ-x0T">
+                                <rect key="frame" x="280" y="762" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="7pN-zt-bZY"/>
+                                    <constraint firstAttribute="width" constant="110" id="ibb-0g-Tnw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dtU-Bt-I4v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -223,10 +230,12 @@
                             <constraint firstItem="reQ-NG-OJa" firstAttribute="leading" secondItem="WVv-JW-KQO" secondAttribute="leading" constant="-16" id="FiG-kg-39X"/>
                             <constraint firstItem="maT-84-tln" firstAttribute="trailing" secondItem="2bQ-PV-gl2" secondAttribute="trailing" id="IYB-vp-RN6"/>
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="top" secondItem="2bQ-PV-gl2" secondAttribute="top" id="Iz5-L8-AkB"/>
+                            <constraint firstAttribute="bottom" secondItem="FP9-RJ-x0T" secondAttribute="bottom" constant="24" id="KdL-xm-Sgi"/>
                             <constraint firstItem="JDm-Hk-fp1" firstAttribute="top" secondItem="dtU-Bt-I4v" secondAttribute="top" constant="12" id="Kte-gl-k55"/>
                             <constraint firstItem="b4D-3s-Zf0" firstAttribute="leading" secondItem="BHL-2V-fOR" secondAttribute="leading" constant="-20" id="LV3-WJ-QUw"/>
                             <constraint firstItem="reQ-NG-OJa" firstAttribute="top" secondItem="dtU-Bt-I4v" secondAttribute="top" constant="12" id="NDO-uN-hr3"/>
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="leading" secondItem="2bQ-PV-gl2" secondAttribute="leading" id="QAj-CO-Hcs"/>
+                            <constraint firstItem="FP9-RJ-x0T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ahH-5D-Y5u" secondAttribute="bottom" constant="20" id="Rnk-Yi-JWq"/>
                             <constraint firstItem="FQd-Qj-Qp1" firstAttribute="leading" secondItem="maT-84-tln" secondAttribute="leading" constant="19" id="Saj-1D-9Hc"/>
                             <constraint firstAttribute="leading" secondItem="JDm-Hk-fp1" secondAttribute="leading" constant="-24" id="Xnp-Fb-PKs"/>
                             <constraint firstItem="maT-84-tln" firstAttribute="top" secondItem="reQ-NG-OJa" secondAttribute="bottom" constant="12" id="Ymt-wJ-kms"/>
@@ -245,11 +254,14 @@
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="trailing" secondItem="2bQ-PV-gl2" secondAttribute="trailing" id="oll-Ns-shc"/>
                             <constraint firstItem="Xg8-0H-Xgj" firstAttribute="leading" secondItem="FQd-Qj-Qp1" secondAttribute="trailing" constant="12" id="pW6-aX-Ql2"/>
                             <constraint firstItem="ahH-5D-Y5u" firstAttribute="top" relation="greaterThanOrEqual" secondItem="maT-84-tln" secondAttribute="bottom" constant="16" id="qJb-E2-Q9z"/>
+                            <constraint firstItem="dtU-Bt-I4v" firstAttribute="trailing" secondItem="FP9-RJ-x0T" secondAttribute="trailing" constant="24" id="qsm-Z3-jmT"/>
+                            <constraint firstItem="FP9-RJ-x0T" firstAttribute="top" secondItem="ahH-5D-Y5u" secondAttribute="bottom" priority="750" constant="80" id="rOT-sI-cpw"/>
                             <constraint firstItem="6S6-kh-Pgq" firstAttribute="trailing" secondItem="reQ-NG-OJa" secondAttribute="trailing" constant="-4" id="rqn-TA-ch9"/>
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="top" secondItem="2bQ-PV-gl2" secondAttribute="top" id="sHk-6b-djt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="boardFantasy" destination="FP9-RJ-x0T" id="jMQ-0p-kRQ"/>
                         <outlet property="boardHeight" destination="dQF-Qx-3aa" id="mJK-M0-AkN"/>
                         <outlet property="boardWidth" destination="qzd-xX-eXc" id="pCK-ql-Ec8"/>
                         <outlet property="cardBoard" destination="ahH-5D-Y5u" id="m1a-iR-H7Y"/>
@@ -294,16 +306,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="akj-9U-TTo">
-                                <rect key="frame" x="169" y="147.5" width="76" height="94.5"/>
+                                <rect key="frame" x="169.5" y="171.5" width="75" height="70.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-nk-VxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="63"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="47"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="40"/>
                                         <color key="textColor" red="0.9882352941176471" green="0.792156862745098" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-J0-iAW">
-                                        <rect key="frame" x="4.5" y="63" width="67" height="31.5"/>
+                                        <rect key="frame" x="3.5" y="47" width="68.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <color key="textColor" red="0.96078431372549022" green="0.90980392156862744" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
