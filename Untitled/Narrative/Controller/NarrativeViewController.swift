@@ -40,7 +40,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         case 3:
             numPages = 6
         default:
-            numPages = 6
+            numPages = 0
         }
 
         super.init(coder: coder)
@@ -56,6 +56,18 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         scrollView.contentInsetAdjustmentBehavior = .never
+        
+        //Change number of pages here without init
+        switch chapter {
+        case 1:
+            numPages = 6
+        case 2:
+            numPages = 6
+        case 3:
+            numPages = 6
+        default:
+            numPages = 0
+        }
         
         //setup view
         let language = UserDefaultsStruct.Language.preferLanguage
@@ -120,6 +132,45 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             playButton.isHidden = true
             narrativeSlide.isHidden = false
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameViewController {
+            vc.currentLevel = SelectedLevel.value
+            
+//            self.view.alpha = 0.0
+            vc.dismissNarrative = {
+                self.dismiss(animated: true, completion: nil)
+            }
+            vc.restartNarrative = {
+                self.view.alpha = 0.0
+                self.performSegue(withIdentifier: "toBoardSegue", sender: self)
+//                UIView.animate(withDuration: 1.0) {
+//                    self.view.alpha = 1.0
+//                }
+            }
+        }
+    }
+    
+    @IBAction func closePressed(_ sender: Any) {
+        let view = ExitView()
+        view.tag = 100
+        view.delegate = self
+        view.alpha = 0.0
+        self.view.addSubview(view)
+        view.dismiss = {
+            self.dismiss(animated: true, completion: nil)
+        }
+        view.cancel = {
+            UIView.animate(withDuration: 0.5, animations: {
+                view.alpha = 0.0
+            }) { (completion) in
+                view.removeFromSuperview()
+            }
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            view.alpha = 1.0
+        })
     }
 }
 

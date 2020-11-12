@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
     //Scene draws the sprites and handles gestures
     var scene: GameScene!
     var level: Level!
-    var currentLevel: Int = 1 //Note: Create a singleton to verify the current level and pass in init
+    var currentLevel: Int = 0
     
     var tileWidth: CGFloat = 0.0
     var tileHeight: CGFloat = 0.0
@@ -37,6 +37,9 @@ class GameViewController: UIViewController {
     
     var energyProgress: Life = Life(type: .city)
     var lifeProgress: Life  =  Life(type: .character)
+    
+    var dismissNarrative : (() -> Void)?
+    var restartNarrative : (() -> Void)?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +60,7 @@ class GameViewController: UIViewController {
         let size = getBoardSize(forLevel: level)
         boardWidth.constant = size.width
         boardHeight.constant = size.height
-        scene = GameScene(size: size, level: level, tileSize: .init(width: tileWidth, height: tileHeight))
+        scene = GameScene(gameViewController: self, size: size, level: level, tileSize: .init(width: tileWidth, height: tileHeight))
         scene.backgroundColor = .clear
         scene.scaleMode = .aspectFill
         scene.addTiles()
@@ -203,5 +206,47 @@ class GameViewController: UIViewController {
         return true
     }
     
+    @IBAction func exitGame(_ sender: Any) {
+        let view = ExitView()
+        view.tag = 100
+        view.delegate = self
+        view.alpha = 0.0
+        self.view.addSubview(view)
+        view.dismiss = {
+            self.dismiss(animated: true, completion: nil)
+            self.dismissNarrative?()
+        }
+        view.cancel = {
+            UIView.animate(withDuration: 0.5, animations: {
+                view.alpha = 0.0
+            }) { (completion) in
+                view.removeFromSuperview()
+            }
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            view.alpha = 1.0
+        })
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? WinGameViewController {
+            vc.dismissFunc = {
+                self.dismiss(animated: false) {
+                    self.dismissNarrative?()
+                }
+            }
+        }
+        if let vc = segue.destination as? GameOverViewController {
+            vc.dismissFunc = {
+                self.dismiss(animated: false) {
+                    self.dismissNarrative?()
+                }
+            }
+            vc.restartFunc = {
+                self.dismiss(animated: false) {
+                    self.restartNarrative?()
+                }
+            }
+        }
+    }
 }

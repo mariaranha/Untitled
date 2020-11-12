@@ -17,10 +17,22 @@
 "capítulo quatro subtitulo" = "chapter four subtitle";
 "capítulo cinco" = "chapter five";
 "capítulo cinco subtitulo" = "capítulo five subtitle";
+"bloqueado" = "blocked";
+"história do capítulo não disponível" = "chapter history not available";
 "capítulo finalizado" = "finished chapter";
 "#1 - uma história de carnaval" = "#1 - a carnival story";
 "memória perdida" = "lost memory";
 "1. uma história de carnaval" = "1. a carnival story";
+"ajustes" = "settings";
+"Idioma" = "Language";
+"idioma" = "language";
+"Créditos do Jogo" = "Game Credits";
+"créditos do jogo" = "game credits";
+"Zerar História" = "Reset Game History";
+"versão 1.0.1" = "version 1.0.1";
+"Cancelar" = "Cancel";
+"Confirmar" = "Confirm";
+
 
 "continue_button" = "continue_button_en";
 "enter_button" = "enter_button_en";
@@ -46,3 +58,6 @@
 "chapter2_page6" = "chapter2_page6_en";
 "chapter1_win" = "chapter1_win_en";
 "chapter1_gameOver" = "chapter1_gameOver_en";
+
+"alertRestart_text"= "alertRestart_text_en";
+"credits_text" = "credits_text_en";

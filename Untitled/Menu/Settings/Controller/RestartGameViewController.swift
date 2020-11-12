@@ -12,6 +12,9 @@ class RestartGameViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var alert_imageView: UIImageView!
+    
+    var language: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,12 @@ class RestartGameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.view.backgroundColor = (AppColor.darkGreyBackground.value).withAlphaComponent(0.9)
         animateView()
+        
+        language = UserDefaultsStruct.Language.preferLanguage
+        confirmButton.setTitle("Confirmar".localized(language), for: .normal)
+        cancelButton.setTitle("Cancelar".localized(language), for: .normal)
+        alert_imageView.image = UIImage(named: "alertRestart_text".localized(language))
+        
     }
     
     func animateView() {

@@ -63,7 +63,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="- III">
                                                             <attributes>
-                                                                <font key="NSFont" size="15" name="Alegreya-ExtraBold"/>
+                                                                <font key="NSFont" metaFont="system" size="15"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -106,7 +106,7 @@
                                 </constraints>
                                 <state key="normal" image="remember_button"/>
                                 <connections>
-                                    <segue destination="M22-ir-8BX" kind="presentation" modalPresentationStyle="fullScreen" id="rW6-Tl-oTQ"/>
+                                    <segue destination="M22-ir-8BX" kind="presentation" identifier="toBoardSegue" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="rW6-Tl-oTQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6V-zu-JsC">
@@ -115,6 +115,9 @@
                                     <constraint firstAttribute="height" constant="48.5" id="wle-ga-x0J"/>
                                 </constraints>
                                 <state key="normal" image="closeButtonNarrative"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="OER-Ue-nQI" eventType="touchUpInside" id="AqP-Y1-C4H"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xus-Kc-rwo"/>

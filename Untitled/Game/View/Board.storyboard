@@ -32,7 +32,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="board_settings"/>
+                                        <state key="normal" image="close_button"/>
+                                        <connections>
+                                            <action selector="exitGame:" destination="AQM-Fr-zVN" eventType="touchUpInside" id="MDc-U1-i1Z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,8 +263,8 @@
                         <outlet property="secondReward" destination="rUr-2Q-lUN" id="vbv-xR-DL2"/>
                         <outlet property="settings" destination="65V-k9-RGN" id="Mgc-N4-Hos"/>
                         <outlet property="totalLifeLabel" destination="t19-Tf-pQ0" id="IK0-p2-QE3"/>
-                        <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
-                        <segue destination="VYv-SU-PnI" kind="presentation" identifier="goToGameOver" modalPresentationStyle="fullScreen" id="2Cj-fM-RMS"/>
+                        <segue destination="ACA-rY-h55" kind="presentation" identifier="goToWinGame" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="LBB-Un-35j"/>
+                        <segue destination="VYv-SU-PnI" kind="presentation" identifier="goToGameOver" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="2Cj-fM-RMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -291,16 +294,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="akj-9U-TTo">
-                                <rect key="frame" x="169.5" y="171.5" width="75" height="70.5"/>
+                                <rect key="frame" x="169" y="147.5" width="76" height="94.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-nk-VxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="63"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="40"/>
                                         <color key="textColor" red="0.9882352941176471" green="0.792156862745098" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-J0-iAW">
-                                        <rect key="frame" x="3.5" y="47" width="68.5" height="23.5"/>
+                                        <rect key="frame" x="4.5" y="63" width="67" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <color key="textColor" red="0.96078431372549022" green="0.90980392156862744" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -313,7 +316,6 @@
                                 <state key="normal" image="endChapter_button"/>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="ACA-rY-h55" eventType="touchUpInside" id="bUN-AW-9kA"/>
-                                    <segue destination="Eic-Tt-d8n" kind="presentation" modalPresentationStyle="fullScreen" id="2G4-Wu-uIO"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-qh-QPR">
@@ -382,7 +384,7 @@
         <image name="board_energy" width="251" height="55"/>
         <image name="board_life" width="109" height="110"/>
         <image name="board_progress" width="200" height="54"/>
-        <image name="board_settings" width="447.5" height="459.5"/>
+        <image name="close_button" width="47" height="48.5"/>
         <image name="endChapter_button" width="176.5" height="48.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -283,6 +283,7 @@
                     </view>
                     <connections>
                         <outlet property="alertView" destination="zvb-Ve-fRq" id="hA8-0h-Yvf"/>
+                        <outlet property="alert_imageView" destination="vbQ-5q-xIk" id="OCr-QD-AmJ"/>
                         <outlet property="cancelButton" destination="eQR-rn-Ppl" id="t92-ZU-jsr"/>
                         <outlet property="confirmButton" destination="avn-ii-8XT" id="8h2-IZ-esR"/>
                     </connections>
@@ -381,6 +382,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creditsImageView" destination="P6q-UT-d0E" id="0qb-0F-L0o"/>
                         <outlet property="creditsLabel" destination="Fkt-rz-dWj" id="yuU-p2-Llr"/>
                         <outlet property="untitledLabel" destination="Abt-bg-OGN" id="9T4-R3-ouw"/>
                         <outlet property="versionLabel" destination="wRi-sB-r8A" id="f32-Nd-BEq"/>
