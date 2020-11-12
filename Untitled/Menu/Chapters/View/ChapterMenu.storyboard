@@ -97,7 +97,7 @@
                                 </constraints>
                                 <state key="normal" image="rewards"/>
                                 <connections>
-                                    <segue destination="l4Q-DK-dNk" kind="show" id="RP8-4O-YdB"/>
+                                    <segue destination="l4Q-DK-dNk" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RP8-4O-YdB"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8qz-Rt-LL9">
@@ -119,6 +119,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startPressed:" destination="89M-PS-i4h" eventType="touchUpInside" id="mKF-LT-e54"/>
+                                    <segue destination="8G4-FD-UeR" kind="presentation" identifier="chapterNarrative" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="5mB-Fc-eEf"/>
                                 </connections>
                             </button>
                         </subviews>
