@@ -25,9 +25,6 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     var narratives: [NarrativeView] = []
     var pageIndex: Int = 0
     
-    var dismissFunc : (() -> Void)?
-    var dismissNarrative : (() -> Void)?
-    
     let language = UserDefaultsStruct.Language.preferLanguage
     
     //MARK: Init
@@ -143,7 +140,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
             
 //            self.view.alpha = 0.0
             vc.dismissNarrative = {
-                self.dismiss(animated: false, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
             vc.restartNarrative = {
                 self.view.alpha = 0.0
@@ -163,7 +160,6 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(view)
         view.dismiss = {
             self.dismiss(animated: true, completion: nil)
-            self.dismissNarrative?()
         }
         view.cancel = {
             UIView.animate(withDuration: 0.5, animations: {
