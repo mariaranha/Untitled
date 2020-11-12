@@ -42,11 +42,11 @@ class LanguageViewController: UIViewController {
         }
         
         if portugueseButton.isSelected{
-            print("Update user default to portuguese here")
+            UserDefaultsStruct.Language.preferLanguage = Languages.portuguese.rawValue
         }
         
         if englishButton.isSelected{
-            print("Update user default to english here")
+            UserDefaultsStruct.Language.preferLanguage = Languages.english.rawValue
         }
     }
 
