@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "leftOpenPage@2x.png",
+      "filename" : "leftOpenPage2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "leftOpenPage@3x.png",
+      "filename" : "leftOpenPage3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -23,6 +23,8 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     
     @IBOutlet weak var leadingPageConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingPageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingButtonConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var photoDetailBackground: UIView!
     @IBOutlet weak var photoDetailDescription: UIImageView!
@@ -51,9 +53,9 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         view.setNeedsLayout()
         
         //Set Close Album button
-        closeAlbumButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-        closeAlbumButton.layer.borderWidth = 1.0
-        closeAlbumButton.backgroundColor = AppColor.lightBackground.value
+//        closeAlbumButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
+//        closeAlbumButton.layer.borderWidth = 1.0
+//        closeAlbumButton.backgroundColor = AppColor.lightBackground.value
         
         //Set Pages button
         previousPageButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
@@ -93,15 +95,23 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     }
     
     func setPageConstraints() {
+        
+        leadingPageConstraint.constant = 0
+        trailingPageConstraint.constant = 0
+        
         if currentPage % 2 == 0 {
-            leadingPageConstraint.constant = 0
-            trailingPageConstraint.constant = 32
             pageType = .right
+            trailingButtonConstraint.priority = UILayoutPriority(1000)
+            leadingButtonConstraint.priority = UILayoutPriority(750.0)
+            trailingButtonConstraint.constant = 16
+
         } else {
-            leadingPageConstraint.constant = 32
-            trailingPageConstraint.constant = 0
             pageType = .left
+            leadingButtonConstraint.priority = UILayoutPriority(1000)
+            trailingButtonConstraint.priority = UILayoutPriority(750.0)
+            leadingButtonConstraint.constant = 16
         }
+        
     }
     
     func setPageButtons() {

@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-jz-jgD">
-                                <rect key="frame" x="326" y="76" width="56" height="56"/>
+                                <rect key="frame" x="334.5" y="76" width="47.5" height="48.5"/>
                                 <state key="normal" image="initialStory"/>
                                 <connections>
                                     <segue destination="nWk-9I-lA8" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="J4M-Nf-oA0"/>
@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmH-zT-oZB">
-                                <rect key="frame" x="326" y="76" width="56" height="56"/>
+                                <rect key="frame" x="334.5" y="76" width="47.5" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="IAu-gh-3TN"/>
                                 </constraints>
@@ -220,7 +220,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpy-9P-93t">
-                                <rect key="frame" x="16" y="172" width="48" height="48"/>
+                                <rect key="frame" x="16" y="204" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="I0B-hW-J0N"/>
                                     <constraint firstAttribute="width" secondItem="Cpy-9P-93t" secondAttribute="height" id="tUt-c7-pCk"/>
@@ -241,7 +241,8 @@
                             <constraint firstItem="TCq-Sw-hti" firstAttribute="leading" secondItem="U9J-ni-UDz" secondAttribute="leading" id="6oI-24-PJs"/>
                             <constraint firstItem="hbq-Yh-cbW" firstAttribute="leading" secondItem="U9J-ni-UDz" secondAttribute="leading" constant="32" id="86w-Nc-DQP"/>
                             <constraint firstItem="U9J-ni-UDz" firstAttribute="trailing" secondItem="lLu-rx-nf3" secondAttribute="trailing" id="A2C-iv-inc"/>
-                            <constraint firstItem="lLu-rx-nf3" firstAttribute="top" secondItem="Cpy-9P-93t" secondAttribute="top" constant="15" id="BGg-r5-YpD"/>
+                            <constraint firstItem="U9J-ni-UDz" firstAttribute="trailing" secondItem="Cpy-9P-93t" secondAttribute="trailing" constant="350" id="A9e-rx-oym"/>
+                            <constraint firstItem="lLu-rx-nf3" firstAttribute="top" secondItem="Cpy-9P-93t" secondAttribute="top" constant="-17" id="BGg-r5-YpD"/>
                             <constraint firstItem="4GG-AV-054" firstAttribute="centerX" secondItem="U9J-ni-UDz" secondAttribute="centerX" id="JqY-DY-wN1"/>
                             <constraint firstItem="lLu-rx-nf3" firstAttribute="top" secondItem="lmH-zT-oZB" secondAttribute="bottom" priority="750" constant="55" id="OFo-jX-oPq"/>
                             <constraint firstItem="hbq-Yh-cbW" firstAttribute="top" secondItem="U9J-ni-UDz" secondAttribute="top" constant="32" id="VHK-dd-03D"/>
@@ -264,6 +265,7 @@
                         <outlet property="backgroundImage" destination="iHk-O9-avA" id="qBr-3m-vpa"/>
                         <outlet property="closeAlbumButton" destination="Cpy-9P-93t" id="x87-u5-Yey"/>
                         <outlet property="initialStoryButton" destination="lmH-zT-oZB" id="95f-g7-Xfm"/>
+                        <outlet property="leadingButtonConstraint" destination="ckc-T8-Pm8" id="sLs-4p-ANH"/>
                         <outlet property="leadingPageConstraint" destination="dGC-UF-cNG" id="W1A-Jc-wdq"/>
                         <outlet property="nextPageButton" destination="BWn-2W-47U" id="V8b-c7-ALO"/>
                         <outlet property="pageStack" destination="4GG-AV-054" id="SBV-eT-Qec"/>
@@ -271,6 +273,7 @@
                         <outlet property="photoDetailBackground" destination="TCq-Sw-hti" id="Y83-DD-5Zc"/>
                         <outlet property="photoDetailDescription" destination="nwg-BI-gIq" id="ZUo-nu-sOR"/>
                         <outlet property="previousPageButton" destination="dw8-HB-4hc" id="fs4-KL-PC4"/>
+                        <outlet property="trailingButtonConstraint" destination="A9e-rx-oym" id="gLz-2s-3KS"/>
                         <outlet property="trailingPageConstraint" destination="A2C-iv-inc" id="uwp-M2-hvs"/>
                         <segue destination="m57-Wu-8IS" kind="unwind" identifier="backToCloseAlbum" unwindAction="backToCloseAlbum:" id="S5e-7Y-kqR"/>
                     </connections>
@@ -298,9 +301,9 @@
         <image name="backArrow" width="13" height="19.5"/>
         <image name="back_navigation" width="47" height="48.5"/>
         <image name="backgroundButton_short" width="176.5" height="61.5"/>
-        <image name="closeButton" width="19" height="18.5"/>
+        <image name="closeButton" width="59" height="60.5"/>
         <image name="closedAlbum" width="368.5" height="521.5"/>
-        <image name="initialStory" width="56" height="56"/>
+        <image name="initialStory" width="47.5" height="48.5"/>
         <image name="nextArrow" width="13" height="19.5"/>
         <image name="photoLabelReward" width="276" height="47"/>
         <image name="photoReward" width="270" height="136"/>

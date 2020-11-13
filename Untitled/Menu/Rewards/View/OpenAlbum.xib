@@ -101,7 +101,7 @@
         </view>
     </objects>
     <resources>
-        <image name="leftOpenPage" width="389.5" height="628.5"/>
+        <image name="leftOpenPage" width="414.5" height="595.5"/>
         <image name="photoLabelReward" width="276" height="47"/>
         <image name="photoReward" width="270" height="136"/>
     </resources>
