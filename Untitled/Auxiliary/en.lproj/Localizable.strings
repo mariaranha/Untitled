@@ -33,13 +33,16 @@
 "Cancelar" = "Cancel";
 "Confirmar" = "Confirm";
 
-
-"continue_button" = "continue_button_en";
-"enter_button" = "enter_button_en";
-"remember_button" = "remember_button_en";
+"Entrar" = "Enter";
+"Continuar" = "Continue";
+"Abrir Álbum" = "Open Album";
+"Relembrar" = "Remember";
+//"continue_button" = "continue_button_en";
+//"enter_button" = "enter_button_en";
+//"remember_button" = "remember_button_en";
 "restart_button" = "restart_button_en";
 "start_button" = "start_button_en";
-"open_album" = "open_album_en";
+//"open_album" = "open_album_en";
 
 "intro_page1" = "intro_page1_en";
 "intro_page2" = "intro_page2_en";

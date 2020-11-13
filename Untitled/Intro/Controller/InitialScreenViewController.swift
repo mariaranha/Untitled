@@ -22,12 +22,13 @@ class InitialScreenViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = AppColor.intermediateBackground.value
+        startButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         
         skipeIntroNarrative = UserDefaultsStruct.IntroNarrative.skipeIntro
         
         setLanguage()
         let language = UserDefaultsStruct.Language.preferLanguage
-        startButton.setImage(UIImage(named: "start_button".localized(language)), for: .normal)
+        startButton.setTitle("Entrar".localized(language), for: .normal)
         logo.image = UIImage(named: "initialScreen_logo".localized(language))
     }
     

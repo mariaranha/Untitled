@@ -38,8 +38,9 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         
         //Set view
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chapters_background1")!)
-        enterButton.setImage(UIImage(named: "enter_button".localized(language)), for: .normal)
         enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
+        enterButton.setTitle("Entrar".localized(language), for: .normal)
+        enterButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         
         //Set Chapters
         view.layoutIfNeeded()

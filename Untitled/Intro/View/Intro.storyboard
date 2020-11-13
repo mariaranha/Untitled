@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Alegreya-Bold.ttf">
+            <string>Alegreya-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Initial Screen View Controller-->
         <scene sceneID="6HY-XV-ybm">
@@ -31,8 +36,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fme-a0-MBJ">
-                                <rect key="frame" x="118.5" y="766" width="177" height="62"/>
-                                <state key="normal" image="start_button"/>
+                                <rect key="frame" x="119" y="766" width="176.5" height="62"/>
+                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                <state key="normal" title="Entrar" backgroundImage="backgroundButton_short"/>
                                 <connections>
                                     <action selector="startPressed:" destination="YdN-7V-9ub" eventType="touchUpInside" id="EvF-i5-xfc"/>
                                 </connections>
@@ -120,14 +126,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61.5" id="kqQ-za-bBy"/>
                                 </constraints>
-                                <state key="normal" image="continue_button"/>
+                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                <state key="normal" title="Continuar" backgroundImage="backgroundButton_short"/>
                                 <connections>
                                     <action selector="continuePressed:" destination="lls-sf-9y2" eventType="touchUpInside" id="HAD-wN-7nI"/>
                                     <segue destination="mqV-Tj-WSX" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="iRw-Ck-YeA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-MK-pu5">
-                                <rect key="frame" x="139" y="811.5" width="136" height="24.5"/>
+                                <rect key="frame" x="140.5" y="811" width="133" height="25"/>
                                 <attributedString key="attributedText">
                                     <fragment content="deslize para ler">
                                         <attributes>
@@ -190,17 +197,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="geQ-jw-j7Z"/>
+        <segue reference="iRw-Ck-YeA"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="continue_button" width="176.5" height="62"/>
+        <image name="backgroundButton_short" width="176.5" height="61.5"/>
         <image name="initialScreen_background" width="414.5" height="895.5"/>
         <image name="initialScreen_logo" width="123" height="40.5"/>
         <image name="initialScreen_logo2" width="264" height="106.5"/>
         <image name="intro_background" width="414.5" height="895.5"/>
         <image name="intro_logo" width="238.5" height="96"/>
         <image name="openAlbum" width="311" height="203.5"/>
-        <image name="start_button" width="176.5" height="61.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
