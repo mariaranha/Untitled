@@ -64,6 +64,7 @@
 		9CA59E51252E07DA00DCD349 /* UntitledUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E50252E07DA00DCD349 /* UntitledUITests.swift */; };
 		9CD6028B255A0A2A00667A81 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD6028A255A0A2A00667A81 /* Settings.storyboard */; };
 		9CD60290255A0FFE00667A81 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */; };
+		9CD6569E255D760900662D61 /* RestartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6569D255D760900662D61 /* RestartGameViewController.swift */; };
 		9CF797B7255B693600FCF351 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF797B6255B693600FCF351 /* CreditsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		9CA59E52252E07DA00DCD349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD6028A255A0A2A00667A81 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9CD6569D255D760900662D61 /* RestartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartGameViewController.swift; sourceTree = "<group>"; };
 		9CF797B6255B693600FCF351 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -453,6 +455,7 @@
 				9CD6028F255A0FFE00667A81 /* SettingsViewController.swift */,
 				9CF797B6255B693600FCF351 /* CreditsViewController.swift */,
 				9C707A0C255C136B00EB82A7 /* LanguageViewController.swift */,
+				9CD6569D255D760900662D61 /* RestartGameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				0BB2F5C72541E15B0042E6F2 /* OpenAlbumView.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
+				9CD6569E255D760900662D61 /* RestartGameViewController.swift in Sources */,
 				0B9DB3192535F9D8006B601D /* MoveCard.swift in Sources */,
 				9CD60290255A0FFE00667A81 /* SettingsViewController.swift in Sources */,
 				9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */,
@@ -826,7 +830,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FKFGBBGDU2;
+				DEVELOPMENT_TEAM = 7FH5Q2A622;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -845,7 +849,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FKFGBBGDU2;
+				DEVELOPMENT_TEAM = 7FH5Q2A622;
 				INFOPLIST_FILE = Untitled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

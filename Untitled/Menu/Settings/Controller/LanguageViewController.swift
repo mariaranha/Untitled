@@ -14,6 +14,13 @@ class LanguageViewController: UIViewController {
     @IBOutlet weak var englishButton: UIButton!
     
     var buttons: [UIButton] = []
+    var language: String!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        language = UserDefaultsStruct.Language.preferLanguage
+        languageLabel.text = "idioma".localized(language)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

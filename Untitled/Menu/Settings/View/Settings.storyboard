@@ -76,7 +76,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKf-Yf-nrn">
                                         <rect key="frame" x="0.0" y="0.0" width="353.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
-                                        <state key="normal" title="Idioma" backgroundImage="background_button"/>
+                                        <state key="normal" title="Idioma" backgroundImage="backgroundButton_long"/>
                                         <connections>
                                             <segue destination="AKh-3N-d5D" kind="show" id="H27-9e-Aal"/>
                                         </connections>
@@ -84,7 +84,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTi-bZ-R3P">
                                         <rect key="frame" x="0.0" y="73.5" width="353.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
-                                        <state key="normal" title="Créditos do Jogo" backgroundImage="background_button"/>
+                                        <state key="normal" title="Créditos do Jogo" backgroundImage="backgroundButton_long"/>
                                         <connections>
                                             <segue destination="Vqg-2a-0AL" kind="show" id="KMI-Ah-475"/>
                                         </connections>
@@ -94,7 +94,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-hC-qIv">
                                 <rect key="frame" x="30.5" y="465" width="353.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
-                                <state key="normal" title="Zerar História" backgroundImage="background_button"/>
+                                <state key="normal" title="Zerar História" backgroundImage="backgroundButton_long"/>
+                                <connections>
+                                    <action selector="restartGameTapped:" destination="LsZ-lG-g64" eventType="touchUpInside" id="enQ-Rx-C6w"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="njD-OO-YHB"/>
@@ -173,13 +176,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="353.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Português" backgroundImage="background_button"/>
+                                        <state key="normal" title="Português" backgroundImage="backgroundButton_long"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIZ-zn-jza">
                                         <rect key="frame" x="0.0" y="73.5" width="353.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="English" backgroundImage="background_button"/>
+                                        <state key="normal" title="English" backgroundImage="backgroundButton_long"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -210,6 +213,84 @@
                 <exit id="XCd-qc-ELd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-626.08695652173913" y="665.625"/>
+        </scene>
+        <!--Restart Game View Controller-->
+        <scene sceneID="My0-A6-ZUg">
+            <objects>
+                <viewController storyboardIdentifier="RestartAlert" id="s2m-zC-gI2" customClass="RestartGameViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d1Q-I3-cNc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvb-Ve-fRq">
+                                <rect key="frame" x="32" y="389" width="350" height="182"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertRestart_text" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-5q-xIk">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="109"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="109" id="kzy-yv-t6U"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gCc-W6-XqR">
+                                        <rect key="frame" x="3" y="125" width="344" height="57"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQR-rn-Ppl">
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="57"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="164" id="2qN-YP-qr3"/>
+                                                    <constraint firstAttribute="height" constant="57" id="Pgl-CB-zwU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                                <state key="normal" title="Cancelar" backgroundImage="backgroundButton_short"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="s2m-zC-gI2" eventType="touchUpInside" id="j3B-RS-nBR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avn-ii-8XT">
+                                                <rect key="frame" x="180" y="0.0" width="164" height="57"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="MpH-z5-auN"/>
+                                                    <constraint firstAttribute="width" constant="164" id="cr7-3o-FA0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                                <state key="normal" title="Confirmar" backgroundImage="highlightedButton_short"/>
+                                                <connections>
+                                                    <action selector="confirmButtonTapped:" destination="s2m-zC-gI2" eventType="touchUpInside" id="mAh-lg-f0e"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="0g4-jr-enX"/>
+                                    <constraint firstItem="gCc-W6-XqR" firstAttribute="top" secondItem="vbQ-5q-xIk" secondAttribute="bottom" constant="16" id="Pwo-cW-XPJ"/>
+                                    <constraint firstItem="vbQ-5q-xIk" firstAttribute="leading" secondItem="zvb-Ve-fRq" secondAttribute="leading" id="T4c-Ay-dqj"/>
+                                    <constraint firstItem="gCc-W6-XqR" firstAttribute="centerX" secondItem="zvb-Ve-fRq" secondAttribute="centerX" id="aFD-e8-27c"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbQ-5q-xIk" secondAttribute="trailing" id="aZC-De-Fcp"/>
+                                    <constraint firstAttribute="width" constant="350" id="bE0-Vl-QqR"/>
+                                    <constraint firstItem="vbQ-5q-xIk" firstAttribute="top" secondItem="zvb-Ve-fRq" secondAttribute="top" id="oQa-hU-BTQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qMJ-zN-rAH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qMJ-zN-rAH" firstAttribute="bottom" secondItem="zvb-Ve-fRq" secondAttribute="bottom" constant="291" id="lnh-cj-oAX"/>
+                            <constraint firstItem="zvb-Ve-fRq" firstAttribute="centerX" secondItem="d1Q-I3-cNc" secondAttribute="centerX" id="qrh-1I-qPp"/>
+                            <constraint firstItem="zvb-Ve-fRq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qMJ-zN-rAH" secondAttribute="top" constant="250" id="sUn-ne-cJh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="zvb-Ve-fRq" id="hA8-0h-Yvf"/>
+                        <outlet property="alert_imageView" destination="vbQ-5q-xIk" id="OCr-QD-AmJ"/>
+                        <outlet property="cancelButton" destination="eQR-rn-Ppl" id="t92-ZU-jsr"/>
+                        <outlet property="confirmButton" destination="avn-ii-8XT" id="8h2-IZ-esR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFl-px-YwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423.1884057971015" y="667.63392857142856"/>
         </scene>
         <!--Credits View Controller-->
         <scene sceneID="ahI-vA-zNZ">
@@ -301,6 +382,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creditsImageView" destination="P6q-UT-d0E" id="0qb-0F-L0o"/>
                         <outlet property="creditsLabel" destination="Fkt-rz-dWj" id="yuU-p2-Llr"/>
                         <outlet property="untitledLabel" destination="Abt-bg-OGN" id="9T4-R3-ouw"/>
                         <outlet property="versionLabel" destination="wRi-sB-r8A" id="f32-Nd-BEq"/>
@@ -313,10 +395,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background_button" width="353.5" height="49.5"/>
+        <image name="alertRestart_text" width="350.5" height="109.5"/>
+        <image name="backgroundButton_long" width="353.5" height="49.5"/>
+        <image name="backgroundButton_short" width="176.5" height="61.5"/>
         <image name="credits_background" width="414.5" height="896"/>
         <image name="credits_icon" width="42.5" height="42.5"/>
         <image name="credits_text" width="350.5" height="283"/>
+        <image name="highlightedButton_short" width="176.5" height="62"/>
         <image name="intro_logo" width="238.5" height="96"/>
         <image name="language_icon" width="70.5" height="42.5"/>
         <image name="settings_backButton" width="47" height="48.5"/>

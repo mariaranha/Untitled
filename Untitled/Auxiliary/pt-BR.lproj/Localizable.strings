@@ -23,6 +23,14 @@
 "#1 - uma história de carnaval" = "#1 - uma história de carnaval";
 "memória perdida" = "memória perdida";
 "1. uma história de carnaval" = "1. uma história de carnaval";
+"ajustes" = "ajustes";
+"Idioma" = "Idioma";
+"idioma" = "idioma";
+"Créditos do Jogo" = "Créditos do Jogo";
+"Zerar História" = "Zerar História";
+"versão 1.0.1" = "versão 1.0.1";
+"Cancelar" = "Cancelar";
+"Confirmar" = "Confirmar";
 
 "continue_button" = "continue_button";
 "confirm_button" = "confirm_button";
@@ -53,3 +61,6 @@
 "chapter2_page6" = "chapter2_page6";
 "chapter1_win" = "chapter1_win";
 "chapter1_gameOver" = "chapter1_gameOver";
+
+"alertRestart_text"= "alertRestart_text";
+"credits_text" = "credits_text";

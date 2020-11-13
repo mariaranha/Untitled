@@ -17,6 +17,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var creditsButton: UIButton!
     @IBOutlet weak var languageButton: UIButton!
     
+    var language: String!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        language = UserDefaultsStruct.Language.preferLanguage
+        titleLabel.text = "ajustes".localized(language)
+        languageButton.setTitle("Idioma".localized(language), for: .normal)
+        creditsButton.setTitle("Créditos do Jogo".localized(language), for: .normal)
+        restartGameButton.setTitle("Zerar História".localized(language), for: .normal)
+        versionLabel.text = "versão 1.0.1".localized(language)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,4 +43,13 @@ class SettingsViewController: UIViewController {
     
     @IBAction func backToSettings(segue:UIStoryboardSegue) { }
     
+    @IBAction func restartGameTapped(_ sender: Any) {
+        
+        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "RestartAlert") as! RestartGameViewController
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(customAlert, animated: true, completion: nil)
+    }
 }
