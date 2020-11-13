@@ -40,7 +40,7 @@ class WinRewardsView: UIView {
                 
         return img
     }()
-    public var rewardsImages: [UIImage?] = [UIImage(named: "board_collected_reward_1.png")]
+    public var rewardsImages: [UIImage?] = [UIImage(named: "board_collected_reward_1_1.png")]
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)

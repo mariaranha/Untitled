@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YdN-7V-9ub">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YdN-7V-9ub">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -123,11 +123,10 @@
                                 <state key="normal" image="continue_button"/>
                                 <connections>
                                     <action selector="continuePressed:" destination="lls-sf-9y2" eventType="touchUpInside" id="HAD-wN-7nI"/>
-                                    <segue destination="mqV-Tj-WSX" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="iRw-Ck-YeA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-MK-pu5">
-                                <rect key="frame" x="139" y="811.5" width="136" height="24.5"/>
+                                <rect key="frame" x="140.5" y="811" width="133" height="25"/>
                                 <attributedString key="attributedText">
                                     <fragment content="deslize para ler">
                                         <attributes>
@@ -172,6 +171,7 @@
                         <outlet property="narrativeView" destination="qD5-Yz-98p" id="CIc-Vo-oHw"/>
                         <outlet property="scrollView" destination="jOB-k0-lhr" id="LoX-MD-Ar0"/>
                         <outlet property="swipeToRead" destination="hez-MK-pu5" id="weK-Zw-6RF"/>
+                        <segue destination="mqV-Tj-WSX" kind="presentation" identifier="toChaptersSegue" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="jAC-eY-b2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhI-RF-0ei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,11 +186,11 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqF-W5-YLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="15"/>
+            <point key="canvasLocation" x="-152" y="453"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="geQ-jw-j7Z"/>
+        <segue reference="jAC-eY-b2L"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="continue_button" width="176.5" height="62"/>

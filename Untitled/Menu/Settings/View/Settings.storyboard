@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LsZ-lG-g64">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="auE-JG-y3R">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,6 +17,21 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Zvm-Wp-LDC">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="auE-JG-y3R" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qZl-6F-wZ4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LsZ-lG-g64" kind="relationship" relationship="rootViewController" id="ZuS-4X-NM3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygU-V1-O37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433" y="-109"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="RmK-63-riB">
             <objects>
@@ -34,19 +49,19 @@
                                     <constraint firstAttribute="height" constant="48" id="J8N-dt-Bfm"/>
                                     <constraint firstAttribute="width" secondItem="vkU-WV-7pE" secondAttribute="height" multiplier="1:1" id="c0G-gv-dfs"/>
                                 </constraints>
-                                <state key="normal" image="settings_backButton"/>
+                                <state key="normal" image="close_button"/>
                                 <connections>
                                     <segue destination="BXI-WB-kTE" kind="unwind" unwindAction="backToChaptersMenu:" id="PrO-zH-G8s"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rFc-Qx-VBM">
-                                <rect key="frame" x="156.5" y="134" width="101.5" height="82"/>
+                                <rect key="frame" x="159" y="134" width="96.5" height="95"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LWe-RC-SdB">
-                                        <rect key="frame" x="29" y="0.0" width="43" height="42.5"/>
+                                        <rect key="frame" x="26.5" y="0.0" width="43" height="42.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-Ti-2Db">
-                                        <rect key="frame" x="0.0" y="44.5" width="101.5" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="96.5" height="50.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -54,16 +69,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-GH-z5b">
-                                <rect key="frame" x="141" y="814" width="132" height="36"/>
+                                <rect key="frame" x="144" y="799.5" width="126" height="50.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="untitled games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBx-iH-evF">
-                                        <rect key="frame" x="0.0" y="0.0" width="132" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="versão 1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-RQ-VdV">
-                                        <rect key="frame" x="25" y="18.5" width="82.5" height="17.5"/>
+                                        <rect key="frame" x="26.5" y="26.5" width="73.5" height="24"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -71,7 +86,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0Xh-i6-qLs">
-                                <rect key="frame" x="30.5" y="286" width="353.5" height="123"/>
+                                <rect key="frame" x="30.5" y="299" width="353.5" height="123"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKf-Yf-nrn">
                                         <rect key="frame" x="0.0" y="0.0" width="353.5" height="49.5"/>
@@ -92,7 +107,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-hC-qIv">
-                                <rect key="frame" x="30.5" y="465" width="353.5" height="49.5"/>
+                                <rect key="frame" x="30.5" y="478" width="353.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                 <state key="normal" title="Zerar História" backgroundImage="backgroundButton_long"/>
                                 <connections>
@@ -119,6 +134,7 @@
                             <constraint firstItem="vkU-WV-7pE" firstAttribute="top" secondItem="njD-OO-YHB" secondAttribute="top" constant="32" id="wEF-A2-uxQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="g7M-b3-4Qb"/>
                     <connections>
                         <outlet property="creditsButton" destination="FTi-bZ-R3P" id="gg0-eZ-WyQ"/>
                         <outlet property="languageButton" destination="uKf-Yf-nrn" id="mSV-6D-gXf"/>
@@ -145,13 +161,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qBh-Sl-Blg">
-                                <rect key="frame" x="159" y="119" width="96.5" height="88"/>
+                                <rect key="frame" x="160.5" y="119" width="93" height="101"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="language_icon" translatesAutoresizingMaskIntoConstraints="NO" id="dit-fc-cfS">
-                                        <rect key="frame" x="13" y="0.0" width="70.5" height="42.5"/>
+                                        <rect key="frame" x="11.5" y="0.0" width="70.5" height="42.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idioma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05F-U7-v2b">
-                                        <rect key="frame" x="0.0" y="50.5" width="96.5" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="93" height="50.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -170,7 +186,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="4VD-sx-KrH">
-                                <rect key="frame" x="30.5" y="277" width="353.5" height="123"/>
+                                <rect key="frame" x="30.5" y="290" width="353.5" height="123"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUZ-jG-kxr">
                                         <rect key="frame" x="0.0" y="0.0" width="353.5" height="49.5"/>
@@ -318,31 +334,31 @@
                                 <rect key="frame" x="186" y="112" width="42.5" height="42.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="créditos do jogo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkt-rz-dWj">
-                                <rect key="frame" x="90.5" y="162.5" width="233" height="50.5"/>
+                                <rect key="frame" x="100.5" y="162.5" width="213.5" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_logo" translatesAutoresizingMaskIntoConstraints="NO" id="zaD-HH-97E">
-                                <rect key="frame" x="87" y="275.5" width="240" height="96"/>
+                                <rect key="frame" x="87" y="261" width="240" height="96"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credits_text" translatesAutoresizingMaskIntoConstraints="NO" id="P6q-UT-d0E">
-                                <rect key="frame" x="32" y="411.5" width="350.5" height="283.5"/>
+                                <rect key="frame" x="32" y="397" width="350.5" height="283.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P6q-UT-d0E" secondAttribute="height" multiplier="350:283" id="a7A-7G-jmD"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-sx-NA5">
-                                <rect key="frame" x="141" y="814" width="132" height="36"/>
+                                <rect key="frame" x="144" y="799.5" width="126" height="50.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="untitled games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-bg-OGN">
-                                        <rect key="frame" x="0.0" y="0.0" width="132" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="versão 1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRi-sB-r8A">
-                                        <rect key="frame" x="25" y="18.5" width="82.5" height="17.5"/>
+                                        <rect key="frame" x="26.5" y="26.5" width="73.5" height="24"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -381,6 +397,7 @@
                             <constraint firstItem="eFb-yO-FZX" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="zaD-HH-97E" secondAttribute="trailing" constant="87" id="xFj-G3-wD7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fbV-Sq-c1A"/>
                     <connections>
                         <outlet property="creditsImageView" destination="P6q-UT-d0E" id="0qb-0F-L0o"/>
                         <outlet property="creditsLabel" destination="Fkt-rz-dWj" id="yuU-p2-Llr"/>
@@ -398,6 +415,7 @@
         <image name="alertRestart_text" width="350.5" height="109.5"/>
         <image name="backgroundButton_long" width="353.5" height="49.5"/>
         <image name="backgroundButton_short" width="176.5" height="61.5"/>
+        <image name="close_button" width="47" height="48.5"/>
         <image name="credits_background" width="414.5" height="896"/>
         <image name="credits_icon" width="42.5" height="42.5"/>
         <image name="credits_text" width="350.5" height="283"/>

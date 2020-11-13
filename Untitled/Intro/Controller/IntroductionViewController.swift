@@ -95,6 +95,11 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func continuePressed(_ sender: Any) {
+        if UserDefaultsStruct.IntroNarrative.skipeIntro {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "toChaptersSegue", sender: self)
+        }
         UserDefaultsStruct.IntroNarrative.skipeIntro = true
     }
     

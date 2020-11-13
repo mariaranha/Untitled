@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ts8-M9-ow8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ts8-M9-ow8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="32" y="76" width="47" height="48.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-9" maxY="0.0"/>
-                                <state key="normal" image="back_navigation">
+                                <state key="normal" image="closeButtonNarrative">
                                     <color key="titleColor" red="0.30588235289999999" green="0.1960784314" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -292,6 +292,7 @@
         <image name="backArrow" width="13" height="19.5"/>
         <image name="back_navigation" width="47" height="48.5"/>
         <image name="closeButton" width="19" height="18.5"/>
+        <image name="closeButtonNarrative" width="47" height="48.5"/>
         <image name="closedAlbum" width="350.5" height="497.5"/>
         <image name="initialStory" width="56" height="56"/>
         <image name="nextArrow" width="13" height="19.5"/>

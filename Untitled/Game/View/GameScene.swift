@@ -302,9 +302,9 @@ class GameScene: SKScene {
                     let view = WinRewardsView()
                     view.alpha = 0.0
                     self.gameViewController.view.addSubview(view)
-                    
-                    if gotRewar1 { view.rewardsImages.append(UIImage(named: "board_collected_reward_1.png")) }
-                    if gotRewar2 { view.rewardsImages.append(UIImage(named: "board_collected_reward_1.png")) }
+                    let img1 = gotRewar1 ? UIImage(named: "board_collected_reward_1_2.png") : UIImage(named: "board_not_collected_reward.png")
+                    let img2 = gotRewar2 ? UIImage(named: "board_collected_reward_1_3.png") : UIImage(named: "board_not_collected_reward.png")
+                    view.rewardsImages.append(contentsOf: [img1, img2])
                     
                     view.delegate = self.gameViewController
                     view.continueFunc = {
