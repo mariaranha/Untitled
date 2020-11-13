@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "closedAlbum@2x.png",
+      "filename" : "closedAlbum2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "closedAlbum@3x.png",
+      "filename" : "closedAlbum3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

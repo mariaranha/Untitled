@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closedAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="uXt-Rn-cYw">
-                                <rect key="frame" x="32" y="204.5" width="350" height="497"/>
+                                <rect key="frame" x="32" y="192.5" width="350" height="521.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKK-y4-ik2">
                                 <rect key="frame" x="32" y="76" width="47" height="48.5"/>
@@ -299,7 +299,7 @@
         <image name="back_navigation" width="47" height="48.5"/>
         <image name="backgroundButton_short" width="176.5" height="61.5"/>
         <image name="closeButton" width="19" height="18.5"/>
-        <image name="closedAlbum" width="350.5" height="497.5"/>
+        <image name="closedAlbum" width="368.5" height="521.5"/>
         <image name="initialStory" width="56" height="56"/>
         <image name="nextArrow" width="13" height="19.5"/>
         <image name="photoLabelReward" width="276" height="47"/>
