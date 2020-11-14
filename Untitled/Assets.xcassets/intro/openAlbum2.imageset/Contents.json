@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "unlockedPhoto_01.png",
+      "filename" : "openAlbum2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "unlockedPhoto_01@2x.png",
+      "filename" : "openAlbum22.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "unlockedPhoto_01@3x.png",
+      "filename" : "openAlbum23.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

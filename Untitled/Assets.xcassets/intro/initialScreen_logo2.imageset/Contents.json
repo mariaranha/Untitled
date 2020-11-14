@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Retangulo1.png",
+      "filename" : "initialScreen_logo2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Retangulo1@2x.png",
+      "filename" : "initialScreen_logo21.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Retangulo1@3x.png",
+      "filename" : "initialScreen_logo22.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
