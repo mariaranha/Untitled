@@ -174,12 +174,18 @@ extension GameViewController {
     //MARK: TUTORIAL CHAPTER 3
     func costumePage() {
         tutorialImageView.image = UIImage(named: "tutorial_costume".localized(language))
+        costumePhoto.image = UIImage(named: "costume_5")
         
         view.bringSubviewToFront(tutorialPage)
         
+        view.bringSubviewToFront(costumePhoto)
         view.bringSubviewToFront(tutorialImageView)
         view.bringSubviewToFront(continueTutorialLabel)
         view.bringSubviewToFront(tapView)
+    }
+    
+    func endCostumeTutorial() {
+        costumePhoto.image = UIImage(named: "")
     }
     
     //MARK: TAP HANDLER
@@ -190,6 +196,7 @@ extension GameViewController {
         case 2:
             endTutorial()
         case 3:
+            endCostumeTutorial()
             endTutorial()
         default:
             break
