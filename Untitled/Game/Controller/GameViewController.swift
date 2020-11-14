@@ -17,11 +17,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var totalLifeLabel: UILabel!
     @IBOutlet weak var currentLifeLabel: UILabel!
     @IBOutlet weak var energy: UIImageView!
+    @IBOutlet weak var cityPhoto: UIImageView!
     @IBOutlet weak var cardBoard: SKView!
     @IBOutlet weak var energyStack: UIStackView!
     @IBOutlet weak var photoReward: UIImageView!
     @IBOutlet weak var firstReward: UIImageView!
     @IBOutlet weak var secondReward: UIImageView!
+    @IBOutlet weak var costumePhoto: UIImageView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
     
@@ -40,6 +42,36 @@ class GameViewController: UIViewController {
     
     var dismissNarrative : (() -> Void)?
     var restartNarrative : (() -> Void)?
+    
+    var language: String = ""
+    
+    //Tutorial view
+    let tutorialPage: UIView = {
+        let view = UIView()
+        
+        view.frame = UIScreen.main.bounds
+        view.backgroundColor = .black
+        view.alpha = 0.8
+        
+        return view
+    }()
+    
+    let tapView: UIView = {
+        let view = UIView()
+        
+        view.frame = UIScreen.main.bounds
+        view.backgroundColor = .clear
+        
+        return view
+    }()
+    
+    let tutorialImageView = UIImageView()
+    
+    let continueTutorialLabel = UILabel()
+    
+    let albumView = UIView()
+    
+    var currentTutorialPage: Int = 1
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +86,7 @@ class GameViewController: UIViewController {
         setInitialLifeLayout()
         setInitialEnergyLayout()
         setInitialRewardsLayout()
+        costumePhoto.image = UIImage(named: "")
         
         // Create and configure the scene
         view.layoutSubviews()
@@ -73,6 +106,13 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
 
         beginGame()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        language = UserDefaultsStruct.Language.preferLanguage
+        currentTutorialPage = 1
+        
+        setUpTutorial()
     }
     
     func setInitialLifeLayout() {

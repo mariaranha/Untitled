@@ -206,6 +206,13 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="costume_5" translatesAutoresizingMaskIntoConstraints="NO" id="O4c-Xc-8Zn">
+                                <rect key="frame" x="280" y="762" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="1NW-my-PHF"/>
+                                    <constraint firstAttribute="height" constant="110" id="VNQ-Gm-Pmn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dtU-Bt-I4v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -221,10 +228,12 @@
                             <constraint firstItem="rUr-2Q-lUN" firstAttribute="leading" secondItem="Xg8-0H-Xgj" secondAttribute="trailing" id="Cx2-pL-xiE"/>
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="trailing" secondItem="2bQ-PV-gl2" secondAttribute="trailing" id="EkS-x5-pwo"/>
                             <constraint firstItem="reQ-NG-OJa" firstAttribute="leading" secondItem="WVv-JW-KQO" secondAttribute="leading" constant="-16" id="FiG-kg-39X"/>
+                            <constraint firstItem="O4c-Xc-8Zn" firstAttribute="bottom" secondItem="2bQ-PV-gl2" secondAttribute="bottom" constant="-24" id="I3o-T7-7GN"/>
                             <constraint firstItem="maT-84-tln" firstAttribute="trailing" secondItem="2bQ-PV-gl2" secondAttribute="trailing" id="IYB-vp-RN6"/>
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="top" secondItem="2bQ-PV-gl2" secondAttribute="top" id="Iz5-L8-AkB"/>
                             <constraint firstItem="JDm-Hk-fp1" firstAttribute="top" secondItem="dtU-Bt-I4v" secondAttribute="top" constant="12" id="Kte-gl-k55"/>
                             <constraint firstItem="b4D-3s-Zf0" firstAttribute="leading" secondItem="BHL-2V-fOR" secondAttribute="leading" constant="-20" id="LV3-WJ-QUw"/>
+                            <constraint firstAttribute="trailing" secondItem="O4c-Xc-8Zn" secondAttribute="trailing" constant="24" id="Md9-Ib-oS3"/>
                             <constraint firstItem="reQ-NG-OJa" firstAttribute="top" secondItem="dtU-Bt-I4v" secondAttribute="top" constant="12" id="NDO-uN-hr3"/>
                             <constraint firstItem="jTS-cf-1vI" firstAttribute="leading" secondItem="2bQ-PV-gl2" secondAttribute="leading" id="QAj-CO-Hcs"/>
                             <constraint firstItem="FQd-Qj-Qp1" firstAttribute="leading" secondItem="maT-84-tln" secondAttribute="leading" constant="19" id="Saj-1D-9Hc"/>
@@ -253,6 +262,8 @@
                         <outlet property="boardHeight" destination="dQF-Qx-3aa" id="mJK-M0-AkN"/>
                         <outlet property="boardWidth" destination="qzd-xX-eXc" id="pCK-ql-Ec8"/>
                         <outlet property="cardBoard" destination="ahH-5D-Y5u" id="m1a-iR-H7Y"/>
+                        <outlet property="cityPhoto" destination="WVv-JW-KQO" id="JQC-K3-Va3"/>
+                        <outlet property="costumePhoto" destination="O4c-Xc-8Zn" id="YLV-0y-ic3"/>
                         <outlet property="currentLifeLabel" destination="BHL-2V-fOR" id="jyS-mQ-cx0"/>
                         <outlet property="energy" destination="reQ-NG-OJa" id="c0i-KV-GEp"/>
                         <outlet property="energyStack" destination="6S6-kh-Pgq" id="xlm-sV-dhG"/>
@@ -294,16 +305,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="akj-9U-TTo">
-                                <rect key="frame" x="169" y="147.5" width="76" height="94.5"/>
+                                <rect key="frame" x="169.5" y="171.5" width="75" height="70.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-nk-VxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="63"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="47"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="40"/>
                                         <color key="textColor" red="0.9882352941176471" green="0.792156862745098" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-J0-iAW">
-                                        <rect key="frame" x="4.5" y="63" width="67" height="31.5"/>
+                                        <rect key="frame" x="3.5" y="47" width="68.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <color key="textColor" red="0.96078431372549022" green="0.90980392156862744" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -378,13 +389,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="board_background" width="414" height="894"/>
+        <image name="board_background" width="414" height="895.5"/>
         <image name="board_city_photo" width="56" height="57"/>
         <image name="board_empty_reward" width="52" height="52.5"/>
         <image name="board_energy" width="251" height="55"/>
         <image name="board_life" width="109" height="110"/>
         <image name="board_progress" width="200" height="54"/>
         <image name="close_button" width="47" height="48.5"/>
+        <image name="costume_5" width="115" height="117"/>
         <image name="endChapter_button" width="176.5" height="48.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
