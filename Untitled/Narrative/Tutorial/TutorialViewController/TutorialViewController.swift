@@ -62,6 +62,17 @@ extension GameViewController {
         tutorialPage.removeFromSuperview()
         continueTutorialLabel.removeFromSuperview()
         tapView.removeFromSuperview()
+        
+        switch currentLevel {
+        case 1:
+            UserDefaultsStruct.Tutorial.skipChapterOne = true
+        case 2:
+            UserDefaultsStruct.Tutorial.skipChapterTwo = true
+        case 3:
+            UserDefaultsStruct.Tutorial.skipChapterThree = true
+        default:
+            break
+        }
     }
     
     //MARK: TUTORIAL CHAPTER 1

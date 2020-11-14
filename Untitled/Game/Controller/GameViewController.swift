@@ -24,6 +24,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var firstReward: UIImageView!
     @IBOutlet weak var secondReward: UIImageView!
     @IBOutlet weak var costumePhoto: UIImageView!
+    @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
     
@@ -111,8 +112,23 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         language = UserDefaultsStruct.Language.preferLanguage
         currentTutorialPage = 1
+        var skipTutorial: Bool = false
         
-        setUpTutorial()
+        switch currentLevel {
+        case 1:
+            skipTutorial = UserDefaultsStruct.Tutorial.skipChapterOne
+        case 2:
+            skipTutorial = UserDefaultsStruct.Tutorial.skipChapterTwo
+        case 3:
+            skipTutorial = UserDefaultsStruct.Tutorial.skipChapterThree
+        default:
+            break
+        }
+        
+        if !skipTutorial {
+            setUpTutorial()
+        }
+        
     }
     
     func setInitialLifeLayout() {
