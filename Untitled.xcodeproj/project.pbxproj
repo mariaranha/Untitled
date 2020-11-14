@@ -35,6 +35,7 @@
 		0BE1E5BE252F5A6700DD36C6 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1E5BD252F5A6700DD36C6 /* Level_1.json */; };
 		0BE1E5C0252F5BC900DD36C6 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1E5BF252F5BC900DD36C6 /* Tile.swift */; };
 		0BE1E5F9252F64F700DD36C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1E5F8252F64F700DD36C6 /* Assets.xcassets */; };
+		0BF428AC255F96550092A8A7 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF428AB255F96550092A8A7 /* TutorialViewController.swift */; };
 		0D57BF16255883FD0018E2C8 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D57BF15255883FD0018E2C8 /* GameOver.storyboard */; };
 		0DB782E12558897F0065024D /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB782E02558897F0065024D /* GameOverViewController.swift */; };
 		2A45E12A255A3F0900D6AABF /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45E129255A3F0900D6AABF /* ExitView.swift */; };
@@ -117,6 +118,7 @@
 		0BE1E5BD252F5A6700DD36C6 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
 		0BE1E5BF252F5BC900DD36C6 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		0BE1E5F8252F64F700DD36C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0BF428AB255F96550092A8A7 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		0D57BF15255883FD0018E2C8 /* GameOver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
 		0DB782E02558897F0065024D /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		2A45E129255A3F0900D6AABF /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
@@ -316,6 +318,23 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		0BF428A9255F962A0092A8A7 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0BF428AA255F96440092A8A7 /* TutorialViewController */,
+			);
+			name = Tutorial;
+			path = Narrative/Tutorial;
+			sourceTree = "<group>";
+		};
+		0BF428AA255F96440092A8A7 /* TutorialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0BF428AB255F96550092A8A7 /* TutorialViewController.swift */,
+			);
+			path = TutorialViewController;
+			sourceTree = "<group>";
+		};
 		9C0918EF2543194E00CF1F8D /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +419,7 @@
 				9C0918EF2543194E00CF1F8D /* Intro */,
 				0B8E74932537441600B45F0C /* Menu */,
 				9C49FC9D253B75390049F415 /* Narrative */,
+				0BF428A9255F962A0092A8A7 /* Tutorial */,
 				0BE1E5B0252F4F1B00DD36C6 /* Game */,
 				0BE1E5AF252F4EDA00DD36C6 /* Levels */,
 				0B8E74A7253AB1E200B45F0C /* Auxiliary */,
@@ -637,6 +657,7 @@
 				0B8E74B2253CB56B00B45F0C /* Life.swift in Sources */,
 				0DB782E12558897F0065024D /* GameOverViewController.swift in Sources */,
 				9CF797B7255B693600FCF351 /* CreditsViewController.swift in Sources */,
+				0BF428AC255F96550092A8A7 /* TutorialViewController.swift in Sources */,
 				0BB2F5C72541E15B0042E6F2 /* OpenAlbumView.swift in Sources */,
 				9CA59E36252E07D700DCD349 /* GameViewController.swift in Sources */,
 				9C2E6857253B8AF10048139A /* NarrativeTitleView.swift in Sources */,
