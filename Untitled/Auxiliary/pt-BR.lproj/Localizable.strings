@@ -43,6 +43,9 @@
 "start_button" = "start_button";
 //"open_album" = "open_album";
 
+"board_leave" = "board_leave";
+"memories_rewards" = "memories_rewards";
+
 "intro_page1" = "intro_page1";
 "intro_page2" = "intro_page2";
 "initialScreen_logo" = "initialScreen_logo";

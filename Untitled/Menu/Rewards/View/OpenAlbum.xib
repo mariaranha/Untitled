@@ -10,15 +10,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenAlbumView" customModule="Untitled" customModuleProvider="target">
             <connections>
                 <outlet property="albumPage" destination="pSd-vp-i0Z" id="VNf-5l-aKj"/>
-                <outlet property="bottomDescription" destination="Jgt-hh-FMd" id="BEc-PZ-rsI"/>
-                <outlet property="bottomPhoto" destination="nqr-pU-Wx3" id="GJH-7t-nXw"/>
-                <outlet property="bottomPhotoButton" destination="dkE-Be-Zoh" id="F71-4h-dMe"/>
+                <outlet property="bottomPhotoButton" destination="Imz-V3-0Pc" id="UPn-Rm-ZHY"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="sBn-Nn-RHd"/>
-                <outlet property="leadingPhotoConstraint" destination="f3c-8P-Aap" id="Qn8-Uy-MbG"/>
-                <outlet property="topDescription" destination="mI8-JD-uep" id="hbH-B0-i7k"/>
-                <outlet property="topPhoto" destination="9XZ-WA-vsG" id="rav-Xj-3w1"/>
-                <outlet property="topPhotoButton" destination="KgR-XZ-mql" id="gmB-q6-tLj"/>
-                <outlet property="trailingPhotoConstraint" destination="9p9-bV-hql" id="YgL-R1-15N"/>
+                <outlet property="topPhotoButton" destination="2nr-Lk-VgE" id="PVZ-Sq-3VL"/>
+                <outlet property="topPhotoLeadingConstraint" destination="hKy-zB-dy6" id="x9O-ka-aQ4"/>
+                <outlet property="topPhotoTopConstraint" destination="Bnd-U1-4dh" id="y97-vA-qfe"/>
+                <outlet property="topPhotoTrailingConstraint" destination="LIP-x2-X8o" id="wCs-nE-ax2"/>
+                <outlet property="topPhotoWidth" destination="32O-zJ-s4u" id="k3k-tS-HxN"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,80 +27,49 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="253" image="leftOpenPage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-vp-i0Z">
                     <rect key="frame" x="0.0" y="0.0" width="374" height="600"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" image="photoReward" translatesAutoresizingMaskIntoConstraints="NO" id="9XZ-WA-vsG">
-                    <rect key="frame" x="76" y="64" width="256" height="132"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-Lk-VgE">
+                    <rect key="frame" x="15" y="50" width="174" height="256"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="132" id="c8i-MI-fdz"/>
+                        <constraint firstAttribute="width" constant="174" id="32O-zJ-s4u"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoReward" translatesAutoresizingMaskIntoConstraints="NO" id="nqr-pU-Wx3">
-                    <rect key="frame" x="76" y="303" width="256" height="132"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="132" id="Uym-hi-V2g"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="253" image="photoLabelReward" translatesAutoresizingMaskIntoConstraints="NO" id="mI8-JD-uep">
-                    <rect key="frame" x="76" y="201" width="256" height="42"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="Egf-Vz-2mM"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="253" image="photoLabelReward" translatesAutoresizingMaskIntoConstraints="NO" id="Jgt-hh-FMd">
-                    <rect key="frame" x="76" y="440" width="256" height="42"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="fUq-dc-byH"/>
-                    </constraints>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-XZ-mql">
-                    <rect key="frame" x="76" y="64" width="256" height="179"/>
+                    <state key="normal" image="emptyReward1"/>
                     <connections>
-                        <action selector="topPhotoTapped:" destination="-1" eventType="touchUpInside" id="f3a-Cq-quR"/>
+                        <action selector="topPhotoTapped:" destination="-1" eventType="touchUpInside" id="3yQ-cS-T92"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkE-Be-Zoh">
-                    <rect key="frame" x="76" y="303" width="256" height="179"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imz-V3-0Pc">
+                    <rect key="frame" x="195" y="277" width="179" height="243"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="179" id="5EY-Rt-AkF"/>
+                    </constraints>
+                    <state key="normal" image="emptyReward2"/>
                     <connections>
-                        <action selector="bottomPhotoTapped:" destination="-1" eventType="touchUpInside" id="8sD-EK-q8o"/>
+                        <action selector="bottomPhotoTapped:" destination="-1" eventType="touchUpInside" id="iLN-1x-4zc"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="pSd-vp-i0Z" secondAttribute="bottom" id="3pz-x6-7db"/>
-                <constraint firstAttribute="bottom" secondItem="Jgt-hh-FMd" secondAttribute="bottom" priority="750" constant="118" id="49R-Lj-Esc"/>
-                <constraint firstItem="Jgt-hh-FMd" firstAttribute="leading" secondItem="nqr-pU-Wx3" secondAttribute="leading" id="5A7-lQ-4vE"/>
-                <constraint firstItem="pSd-vp-i0Z" firstAttribute="trailing" secondItem="9XZ-WA-vsG" secondAttribute="trailing" constant="42" id="9p9-bV-hql"/>
-                <constraint firstItem="dkE-Be-Zoh" firstAttribute="leading" secondItem="nqr-pU-Wx3" secondAttribute="leading" id="Eu1-EB-hUB"/>
-                <constraint firstItem="Jgt-hh-FMd" firstAttribute="top" secondItem="nqr-pU-Wx3" secondAttribute="bottom" constant="5" id="G5U-vX-5ZF"/>
-                <constraint firstItem="Jgt-hh-FMd" firstAttribute="bottom" secondItem="dkE-Be-Zoh" secondAttribute="bottom" id="MM6-4g-C0x"/>
-                <constraint firstItem="dkE-Be-Zoh" firstAttribute="trailing" secondItem="nqr-pU-Wx3" secondAttribute="trailing" id="Ncl-CH-TdW"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jgt-hh-FMd" secondAttribute="bottom" constant="75" id="Nqp-RB-g8K"/>
-                <constraint firstItem="nqr-pU-Wx3" firstAttribute="leading" secondItem="9XZ-WA-vsG" secondAttribute="leading" id="OfB-ze-kpA"/>
-                <constraint firstItem="mI8-JD-uep" firstAttribute="centerX" secondItem="9XZ-WA-vsG" secondAttribute="centerX" id="SiN-VS-1Kr"/>
-                <constraint firstItem="KgR-XZ-mql" firstAttribute="trailing" secondItem="9XZ-WA-vsG" secondAttribute="trailing" id="Thm-bJ-1MA"/>
-                <constraint firstItem="nqr-pU-Wx3" firstAttribute="trailing" secondItem="9XZ-WA-vsG" secondAttribute="trailing" id="VuQ-Yh-Fjj"/>
-                <constraint firstItem="nqr-pU-Wx3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mI8-JD-uep" secondAttribute="bottom" constant="10" id="VwB-vT-AUq"/>
-                <constraint firstItem="KgR-XZ-mql" firstAttribute="top" secondItem="9XZ-WA-vsG" secondAttribute="top" id="Zfw-7g-nkR"/>
-                <constraint firstItem="mI8-JD-uep" firstAttribute="width" secondItem="9XZ-WA-vsG" secondAttribute="width" id="Zxv-WA-jqY"/>
-                <constraint firstItem="9XZ-WA-vsG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="64" id="blQ-H3-GfF"/>
+                <constraint firstItem="2nr-Lk-VgE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="4qL-dZ-NHx"/>
+                <constraint firstItem="2nr-Lk-VgE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" constant="50" id="Bnd-U1-4dh"/>
+                <constraint firstAttribute="trailing" secondItem="2nr-Lk-VgE" secondAttribute="trailing" constant="185" id="LIP-x2-X8o"/>
+                <constraint firstAttribute="bottom" secondItem="Imz-V3-0Pc" secondAttribute="bottom" priority="750" constant="80" id="dRE-gr-YXT"/>
                 <constraint firstAttribute="trailing" secondItem="pSd-vp-i0Z" secondAttribute="trailing" id="eEO-27-pUU"/>
-                <constraint firstItem="9XZ-WA-vsG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="eLY-c4-jzG"/>
-                <constraint firstItem="9XZ-WA-vsG" firstAttribute="leading" secondItem="pSd-vp-i0Z" secondAttribute="leading" constant="76" id="f3c-8P-Aap"/>
-                <constraint firstItem="dkE-Be-Zoh" firstAttribute="top" secondItem="nqr-pU-Wx3" secondAttribute="top" id="gIu-7F-3TB"/>
-                <constraint firstItem="mI8-JD-uep" firstAttribute="bottom" secondItem="KgR-XZ-mql" secondAttribute="bottom" id="gn5-cU-IWq"/>
-                <constraint firstItem="mI8-JD-uep" firstAttribute="top" secondItem="9XZ-WA-vsG" secondAttribute="bottom" constant="5" id="guL-sy-ymY"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Imz-V3-0Pc" secondAttribute="bottom" constant="60" id="hGn-jc-QZX"/>
+                <constraint firstItem="2nr-Lk-VgE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="hKy-zB-dy6"/>
+                <constraint firstAttribute="trailing" secondItem="Imz-V3-0Pc" secondAttribute="trailing" id="iwq-eV-lRq"/>
                 <constraint firstItem="pSd-vp-i0Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q0K-yY-4Bt"/>
                 <constraint firstItem="pSd-vp-i0Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tYv-Ut-I2z"/>
-                <constraint firstItem="Jgt-hh-FMd" firstAttribute="trailing" secondItem="nqr-pU-Wx3" secondAttribute="trailing" id="vA6-zG-irv"/>
-                <constraint firstItem="KgR-XZ-mql" firstAttribute="leading" secondItem="9XZ-WA-vsG" secondAttribute="leading" id="zmE-pQ-vsu"/>
+                <constraint firstItem="Imz-V3-0Pc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="195" id="tp0-eU-BwN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="179.71014492753625" y="109.82142857142857"/>
         </view>
     </objects>
     <resources>
+        <image name="emptyReward1" width="186.5" height="256"/>
+        <image name="emptyReward2" width="197" height="243"/>
         <image name="leftOpenPage" width="414.5" height="595.5"/>
-        <image name="photoLabelReward" width="276" height="47"/>
-        <image name="photoReward" width="270" height="136"/>
     </resources>
 </document>

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "unlockedPhoto_01.png",
+      "filename" : "memories_rewards_en.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "unlockedPhoto_012.png",
+      "filename" : "fundo-memorias-2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "unlockedPhoto_013.png",
+      "filename" : "fundo-memorias-3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
