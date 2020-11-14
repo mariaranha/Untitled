@@ -140,7 +140,8 @@ extension GameViewController {
     func leaveBoardPage() {
         albumView.frame = CGRect(origin: CGPoint(x: 0, y: 0),
                                  size: CGSize(width: view.frame.width, height: view.frame.height))
-        albumView.backgroundColor = UIColor(patternImage: UIImage(named: "board_album_highlighted")!)
+        albumView.image = UIImage(named: "board_album_highlighted")
+        albumView.contentMode = .scaleAspectFill
         
         tutorialImageView.image = UIImage(named: "tutorial_leaveBoard".localized(language))
         

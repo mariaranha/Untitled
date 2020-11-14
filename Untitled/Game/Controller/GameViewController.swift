@@ -69,7 +69,7 @@ class GameViewController: UIViewController {
     
     let continueTutorialLabel = UILabel()
     
-    let albumView = UIView()
+    let albumView = UIImageView()
     
     var currentTutorialPage: Int = 1
         
