@@ -37,7 +37,8 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
         
         swipeToRead.text = "deslize para ler".localized(language)
         swipeToRead.textColor = AppColor.lightText.value
-        continueButton.setImage(UIImage(named: "continue_button".localized(language)), for: .normal)
+        continueButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+        continueButton.setTitle("Continuar".localized(language), for: .normal)
         continueButton.isHidden = true
 
         view.layoutIfNeeded()

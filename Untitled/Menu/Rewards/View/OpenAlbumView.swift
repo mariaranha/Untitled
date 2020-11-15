@@ -16,6 +16,10 @@ class OpenAlbumView: UIView {
     @IBOutlet weak var topDescription: UIImageView!
     @IBOutlet weak var bottomDescription: UIImageView!
     
+    @IBOutlet weak var topPhotoWidth: NSLayoutConstraint!
+    @IBOutlet weak var topPhotoTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topPhotoLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topPhotoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingPhotoConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingPhotoConstraint: NSLayoutConstraint!
     

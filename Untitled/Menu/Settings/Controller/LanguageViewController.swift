@@ -43,8 +43,8 @@ class LanguageViewController: UIViewController {
         buttons.forEach { $0.isSelected = false }
 
         if !sender.isSelected {
-            sender.setBackgroundImage(UIImage(named: "backgroundHighlighted_button"), for: .selected)
-            sender.setBackgroundImage(UIImage(named: "backgroundHighlighted_button"), for: .highlighted)
+            sender.setBackgroundImage(UIImage(named: "highlightedButton_long"), for: .selected)
+            sender.setBackgroundImage(UIImage(named: "highlightedButton_long"), for: .highlighted)
             sender.isSelected = true
         }
         

@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Alegreya-Bold.ttf">
+            <string>Alegreya-Bold</string>
+        </array>
+        <array key="Lalezar-Regular.ttf">
+            <string>Lalezar-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Initial Screen View Controller-->
         <scene sceneID="6HY-XV-ybm">
@@ -31,8 +39,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fme-a0-MBJ">
-                                <rect key="frame" x="118.5" y="766" width="177" height="62"/>
-                                <state key="normal" image="start_button"/>
+                                <rect key="frame" x="119" y="765.5" width="176.5" height="62.5"/>
+                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                <state key="normal" title="Entrar" backgroundImage="backgroundButton_short"/>
                                 <connections>
                                     <action selector="startPressed:" destination="YdN-7V-9ub" eventType="touchUpInside" id="EvF-i5-xfc"/>
                                 </connections>
@@ -44,22 +53,21 @@
                                     <constraint firstAttribute="width" constant="264" id="R2s-Rz-Rdk"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="qRl-V2-726">
-                                <rect key="frame" x="51.5" y="388" width="311" height="203"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openAlbum2" translatesAutoresizingMaskIntoConstraints="NO" id="qRl-V2-726">
+                                <rect key="frame" x="18" y="373" width="378" height="266.5"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SP8-AL-c0Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qRl-V2-726" secondAttribute="bottom" constant="30" id="1Ns-st-3s0"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" constant="51.5" id="24w-w8-j18"/>
+                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qRl-V2-726" secondAttribute="bottom" constant="35" id="1Ns-st-3s0"/>
                             <constraint firstItem="Yxe-7z-2GM" firstAttribute="top" secondItem="eDH-K7-hfz" secondAttribute="topMargin" constant="30" id="6My-7L-B00"/>
-                            <constraint firstItem="SP8-AL-c0Q" firstAttribute="trailing" secondItem="qRl-V2-726" secondAttribute="trailing" constant="51.5" id="A2e-jS-y9B"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="height" secondItem="eDH-K7-hfz" secondAttribute="height" id="AOD-Kx-CGg"/>
-                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" secondItem="qRl-V2-726" secondAttribute="bottom" priority="450" constant="175" id="CP9-uU-094"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="top" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="400" constant="68" id="Eai-h5-FWy"/>
-                            <constraint firstItem="qRl-V2-726" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="800" constant="30" id="Kkr-Rr-SQV"/>
+                            <constraint firstItem="qRl-V2-726" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="800" constant="15" id="Kkr-Rr-SQV"/>
+                            <constraint firstItem="qRl-V2-726" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" constant="18" id="MVk-a1-IzY"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="leading" secondItem="SP8-AL-c0Q" secondAttribute="leading" id="OQh-3x-bqz"/>
+                            <constraint firstItem="SP8-AL-c0Q" firstAttribute="trailing" secondItem="qRl-V2-726" secondAttribute="trailing" constant="18" id="Qrh-AK-eGA"/>
+                            <constraint firstItem="qRl-V2-726" firstAttribute="top" secondItem="eOo-fY-PNq" secondAttribute="bottom" priority="400" constant="53" id="Rmr-7U-duZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fme-a0-MBJ" secondAttribute="bottom" constant="34" id="SNI-eH-7sf"/>
                             <constraint firstItem="eOo-fY-PNq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yxe-7z-2GM" secondAttribute="bottom" priority="800" constant="60" id="Tyh-sk-ICV"/>
                             <constraint firstItem="fme-a0-MBJ" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="Vot-QZ-Mqe"/>
@@ -68,6 +76,7 @@
                             <constraint firstItem="qRl-V2-726" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="X6c-mP-cD9"/>
                             <constraint firstItem="eOo-fY-PNq" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="YAz-ey-oDC"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="top" secondItem="eDH-K7-hfz" secondAttribute="top" id="al1-Wh-HUF"/>
+                            <constraint firstItem="fme-a0-MBJ" firstAttribute="top" secondItem="qRl-V2-726" secondAttribute="bottom" priority="450" constant="126" id="dwk-qw-bgQ"/>
                             <constraint firstItem="Yxe-7z-2GM" firstAttribute="centerX" secondItem="eDH-K7-hfz" secondAttribute="centerX" id="usJ-6N-Bpy"/>
                             <constraint firstAttribute="bottom" secondItem="gwq-5V-PFQ" secondAttribute="bottom" id="z23-Eb-a6q"/>
                             <constraint firstItem="gwq-5V-PFQ" firstAttribute="trailing" secondItem="SP8-AL-c0Q" secondAttribute="trailing" id="zkH-63-rpl"/>
@@ -120,23 +129,18 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61.5" id="kqQ-za-bBy"/>
                                 </constraints>
-                                <state key="normal" image="continue_button"/>
+                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                <state key="normal" title="Continuar" backgroundImage="backgroundButton_short"/>
                                 <connections>
                                     <action selector="continuePressed:" destination="lls-sf-9y2" eventType="touchUpInside" id="HAD-wN-7nI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-MK-pu5">
-                                <rect key="frame" x="140.5" y="811" width="133" height="25"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="deslize para ler">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="deslize para ler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hez-MK-pu5">
+                                <rect key="frame" x="139" y="811.5" width="136" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="shadowColor" white="1" alpha="0.29957726883561642" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
@@ -193,14 +197,13 @@
         <segue reference="jAC-eY-b2L"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="continue_button" width="176.5" height="62"/>
+        <image name="backgroundButton_short" width="176.5" height="61.5"/>
         <image name="initialScreen_background" width="414.5" height="895.5"/>
         <image name="initialScreen_logo" width="123" height="40.5"/>
-        <image name="initialScreen_logo2" width="264" height="106.5"/>
+        <image name="initialScreen_logo2" width="240.5" height="98.5"/>
         <image name="intro_background" width="414.5" height="895.5"/>
         <image name="intro_logo" width="238.5" height="96"/>
-        <image name="openAlbum" width="311" height="203.5"/>
-        <image name="start_button" width="176.5" height="61.5"/>
+        <image name="openAlbum2" width="378.5" height="266.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

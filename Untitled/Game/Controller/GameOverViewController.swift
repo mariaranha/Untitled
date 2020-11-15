@@ -31,7 +31,7 @@ class GameOverViewController: UIViewController {
         restartButton.setImage(UIImage(named: "restart_button".localized(language)), for: .normal)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "gameOverBackground")!)
-        photoImageView.image = UIImage(named: "empty_photo")
+        photoImageView.image = UIImage(named: "gameOver_photo")
         narrativeImageView.image = UIImage(named: "chapter1_gameOver".localized(language))
     }
     

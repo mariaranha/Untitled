@@ -49,6 +49,7 @@ class RestartGameViewController: UIViewController {
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
         UserDefaultsStruct.UserLevel.level = 1
+        SelectedLevel.value = 1
         self.dismiss(animated: true, completion: nil)
     }
 }

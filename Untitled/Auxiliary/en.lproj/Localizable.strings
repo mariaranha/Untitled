@@ -33,15 +33,18 @@
 "Cancelar" = "Cancel";
 "Confirmar" = "Confirm";
 
-
-"continue_button" = "continue_button_en";
-"confirm_button" = "confirm_button_en";
-"cancel_button" = "cancel_button_en";
-"enter_button" = "enter_button_en";
-"remember_button" = "remember_button_en";
+"Entrar" = "Enter";
+"Continuar" = "Continue";
+"Abrir Álbum" = "Open Album";
+"Relembrar" = "Remember";
+//"continue_button" = "continue_button_en";
+//"enter_button" = "enter_button_en";
+//"remember_button" = "remember_button_en";
 "restart_button" = "restart_button_en";
 "start_button" = "start_button_en";
-"open_album" = "open_album_en";
+//"open_album" = "open_album_en";
+"cancel_button" = "cancel_button_en";
+"confirm_button" = "confirm_button_en";
 
 "board_leave" = "board_leave_en";
 "memories_rewards" = "memories_rewards_en";
@@ -66,3 +69,17 @@
 
 "alertRestart_text"= "alertRestart_text_en";
 "credits_text" = "credits_text_en";
+
+"clique para continuar" = "tap to continue";
+"tutorial_life" = "tutorial_life_en";
+"tutorial_life_cards" = "tutorial_life_cards_en";
+"tutorial_memories" = "tutorial_memories_en";
+"tutorial_memories_cards" = "tutorial_memories_cards_en";
+"tutorial_energy" = "tutorial_energy_en";
+"tutorial_energy_cards" = "tutorial_energy_cards_en";
+"tutorial_leaveBoard" = "tutorial_leaveBoard_en";
+"tutorial_conservative" = "tutorial_conservative_en";
+"tutorial_costume" = "tutorial_costume_en";
+
+"Ver Tutorial" = "View Tutorial";
+"Sair do Capítulo" = "Leave the Chapter";

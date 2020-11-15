@@ -74,7 +74,8 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         backgroundImage.image = UIImage(named: "narrative_background")
         narrativeSlide.text = "deslize para ler".localized(language)
         narrativeSlide.textColor = AppColor.lightText.value
-        playButton.setImage(UIImage(named: "remember_button".localized(language)), for: .normal)
+        playButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+        playButton.setTitle("Relembrar".localized(language), for: .normal)
         playButton.isHidden = true
         
         view.layoutIfNeeded()

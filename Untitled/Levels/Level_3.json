@@ -1,0 +1,53 @@
+{
+  "tiles" : [ [1, 1, 1, 1, 1 ],
+              [1, 1, 1, 1, 1 ],
+              [1, 1, 1, 1, 1 ],
+              [1, 1, 1, 1, 1 ],
+              [1, 1, 1, 1, 1 ],],
+  
+  "photoPosition": {"row" : 4, "column": 4},
+  
+  "randomPercentage": [0.25, 0.25, 0.2, 0.30],
+  
+  "energyPhoto": 15,
+  
+  "exitPosition": [{"row" : 0, "column": 1}, {"row" : 0, "column": 2}, {"row" : 0, "column": 3}],
+  
+  "riotPoliceValue": [-3,-2,-1],
+  
+  "riotPoliceValuePercentage": [0.4,0.4,0.2],
+  
+  "tacticalPoliceValue": [-4,-3,-1],
+  
+  "tacticalPoliceValuePercentage": [0.2,0.55,0.25],
+  
+  "blockValue": [2,3,4],
+  
+  "blockValuePercentage": [0.3,0.3,0.4],
+  
+  "photoRollValue": [1,2],
+  
+  "photoRollValuePercentage": [0.65,0.35],
+  
+  "characterPosition": {"row" : 0, "column": 1},
+
+  "cardTypes": [2, 3, 5, 6],
+  
+  "energyReward": 15,
+  
+  "roundConservator": 3,
+  
+  "conservatorPosition": {"row" : 4, "column": 0},
+  
+  "hasConservator": true,
+  
+  "fantasyValue": 5,
+  
+  "fantasyFrequency": 1,
+  
+  "fantasyPosition": {"row" : 2, "column": 2},
+  
+  "hasFantasy": true
+  
+}
+

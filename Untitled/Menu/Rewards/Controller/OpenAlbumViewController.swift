@@ -23,6 +23,8 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     
     @IBOutlet weak var leadingPageConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingPageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingButtonConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var photoDetailBackground: UIView!
     @IBOutlet weak var photoDetailDescription: UIImageView!
@@ -51,9 +53,9 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         view.setNeedsLayout()
         
         //Set Close Album button
-        closeAlbumButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
-        closeAlbumButton.layer.borderWidth = 1.0
-        closeAlbumButton.backgroundColor = AppColor.lightBackground.value
+//        closeAlbumButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
+//        closeAlbumButton.layer.borderWidth = 1.0
+//        closeAlbumButton.backgroundColor = AppColor.lightBackground.value
         
         //Set Pages button
         previousPageButton.layer.borderColor = AppColor.intermediateBorder.value.cgColor
@@ -64,10 +66,10 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         nextPageButton.backgroundColor = AppColor.lightBackground.value
         
         //Set angles
-        albumPage.topPhoto.rotate(angle: -1.0)
-        albumPage.topDescription.rotate(angle: -1.0)
-        albumPage.bottomPhoto.rotate(angle: 1.0)
-        albumPage.bottomDescription.rotate(angle: 1.0)
+//        albumPage.topPhoto.rotate(angle: -1.0)
+//        albumPage.topDescription.rotate(angle: -1.0)
+//        albumPage.bottomPhoto.rotate(angle: 1.0)
+//        albumPage.bottomDescription.rotate(angle: 1.0)
         
         //Set first view
         photoDetailBackground.isHidden = true
@@ -93,15 +95,23 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     }
     
     func setPageConstraints() {
+        
+        leadingPageConstraint.constant = 0
+        trailingPageConstraint.constant = 0
+        
         if currentPage % 2 == 0 {
-            leadingPageConstraint.constant = 0
-            trailingPageConstraint.constant = 32
             pageType = .right
+            trailingButtonConstraint.priority = UILayoutPriority(1000)
+            leadingButtonConstraint.priority = UILayoutPriority(750.0)
+            trailingButtonConstraint.constant = 16
+
         } else {
-            leadingPageConstraint.constant = 32
-            trailingPageConstraint.constant = 0
             pageType = .left
+            leadingButtonConstraint.priority = UILayoutPriority(1000)
+            trailingButtonConstraint.priority = UILayoutPriority(750.0)
+            leadingButtonConstraint.constant = 16
         }
+        
     }
     
     func setPageButtons() {
@@ -131,13 +141,19 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         switch pageType {
         case .left:
             albumPage.albumPage.image = UIImage(named: "leftOpenPage")
-            albumPage.leadingPhotoConstraint.constant = 76
-            albumPage.trailingPhotoConstraint.constant = 42
+            albumPage.topPhotoWidth.constant = 174
+            albumPage.topPhotoLeadingConstraint.constant = 15
+            albumPage.topPhotoTrailingConstraint.constant = 185
+            albumPage.topPhotoTopConstraint.constant = 50
+            albumPage.bottomPhotoButton.isHidden = false
             backgroundImage.image = UIImage(named: "rewards_background")
         case .right:
             albumPage.albumPage.image = UIImage(named: "rightOpenPage")
-            albumPage.leadingPhotoConstraint.constant = 42
-            albumPage.trailingPhotoConstraint.constant = 76
+            albumPage.topPhotoWidth.constant = 192
+            albumPage.topPhotoLeadingConstraint.constant = 157
+            albumPage.topPhotoTrailingConstraint.constant = 25
+            albumPage.topPhotoTopConstraint.constant = 75
+            albumPage.bottomPhotoButton.isHidden = true
             backgroundImage.image = UIImage(named: "rewards_background_2")
         }
         
@@ -147,20 +163,24 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         topPagePhoto = currentPage * 2 - 1
         bottomPagePhoto = currentPage * 2
         
+        
         if unlockedRewards.contains(topPagePhoto) {
-            albumPage.topPhoto.image = UIImage(named: "unlockedPhoto_0\(topPagePhoto)")
-            albumPage.topDescription.image = UIImage(named: "unlockedLabel_0\(topPagePhoto)")
+            albumPage.topPhotoButton.setImage(UIImage(named: "unlockedPhoto_0\(topPagePhoto)"), for: .normal)
         } else {
-            albumPage.topPhoto.image = UIImage(named: "lockedPhoto")
-            albumPage.topDescription.image = UIImage(named: "lockedLabel")
+            if pageType == .left{
+                albumPage.topPhotoButton.setImage(UIImage(named: "emptyReward1"), for: .normal)
+            }else{
+                albumPage.topPhotoButton.setImage(UIImage(named: "emptyReward3"), for: .normal)
+            
+            }
         }
         
         if unlockedRewards.contains(bottomPagePhoto) {
-            albumPage.bottomPhoto.image = UIImage(named: "unlockedPhoto_0\(bottomPagePhoto)")
-            albumPage.bottomDescription.image = UIImage(named: "unlockedLabel_0\(bottomPagePhoto)")
+            albumPage.bottomPhotoButton.setImage(UIImage(named: "unlockedPhoto_0\(bottomPagePhoto)"), for: .normal)
         } else {
-            albumPage.bottomPhoto.image = UIImage(named: "lockedPhoto")
-            albumPage.bottomDescription.image = UIImage(named: "lockedLabel")
+            if pageType == .left{
+                albumPage.bottomPhotoButton.setImage(UIImage(named: "emptyReward2"), for: .normal)
+            }
         }
         
     }

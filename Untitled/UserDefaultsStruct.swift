@@ -71,4 +71,36 @@ struct UserDefaultsStruct {
             }
         }
     }
+    
+    struct Tutorial {
+        static var skipChapterOne: Bool {
+            get {
+                return defaults.bool(forKey: "tutorialOne")
+            }
+            set {
+                defaults.set(newValue, forKey: "tutorialOne")
+                defaults.synchronize()
+            }
+        }
+        
+        static var skipChapterTwo: Bool {
+            get {
+                return defaults.bool(forKey: "tutorialTwo")
+            }
+            set {
+                defaults.set(newValue, forKey: "tutorialTwo")
+                defaults.synchronize()
+            }
+        }
+        
+        static var skipChapterThree: Bool {
+            get {
+                return defaults.bool(forKey: "tutorialThree")
+            }
+            set {
+                defaults.set(newValue, forKey: "tutorialThree")
+                defaults.synchronize()
+            }
+        }
+    }
 }
