@@ -27,6 +27,8 @@ class LevelData: Codable {
     let fantasyValue: Int
     let fantasyFrequency: Int
     let hasConservator: Bool
+    let fantasyPosition: [String: Int]
+    let hasFantasy: Bool
     
     
   static func loadFrom(file filename: String) -> LevelData? {

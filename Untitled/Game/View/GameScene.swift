@@ -31,6 +31,9 @@ class GameScene: SKScene {
     var canExit = false
     var gotRewar1 = false
     var gotRewar2 = false
+    var gotFantasy = false
+    
+    var fantasyValue: Int = 0
     
     var round: Int = 0
     
@@ -232,14 +235,32 @@ class GameScene: SKScene {
     }
     
     func updateProgressValues(card: Card){
+        var value: Int
         if card.cardType == .block || card.cardType == .tacticalPolice{
             gameViewController.energyProgress.updateValue(value: card.value, type: .city)
             guard let energyLayout = energyLayoutHandler else { return }
             energyLayout(gameViewController.energyProgress.value)
-        }else if card.cardType == .photoRoll || card.cardType == .riotPolice{
+        }else if card.cardType == .photoRoll {
             gameViewController.lifeProgress.updateValue(value: card.value, type: .character)
             guard let lifeLayout = lifeLayoutHandler else { return }
             lifeLayout(gameViewController.lifeProgress.value)
+        }else if card.cardType == .riotPolice{
+            if gotFantasy == true && fantasyValue > 0{
+                value = card.value + fantasyValue
+                fantasyValue = value
+                if value < 0 {
+                    gameViewController.boardFantasy.image = .none
+                    gameViewController.lifeProgress.updateValue(value: value, type: .character)
+                    guard let lifeLayout = lifeLayoutHandler else { return }
+                    lifeLayout(gameViewController.lifeProgress.value)
+                }else{
+                    gameViewController.boardFantasy.image = UIImage(named: "board_status_fantasy_\(value)")
+                }
+            }else{
+                gameViewController.lifeProgress.updateValue(value: card.value, type: .character)
+                guard let lifeLayout = lifeLayoutHandler else { return }
+                lifeLayout(gameViewController.lifeProgress.value)
+            }
         }
     }
     
@@ -362,6 +383,13 @@ class GameScene: SKScene {
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
+            }else if toCard.cardType == .fantasy{
+                gameViewController.boardFantasy.image = UIImage(named: "board_status_fantasy")
+                gotFantasy = true
+                fantasyValue = toCard.value
+                handler(moveCard)
+                round += 1
+                setConservator(characterCard: toCard)
             }else{
                 handler(moveCard)
                 round += 1

@@ -43,7 +43,11 @@
   
   "fantasyValue": 5,
   
-  "fantasyFrequency": 1
+  "fantasyFrequency": 1,
+  
+  "fantasyPosition": {"row" : 2, "column": 2},
+  
+  "hasFantasy": true
   
 }
 
