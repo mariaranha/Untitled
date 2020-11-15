@@ -37,7 +37,7 @@
 "Continuar" = "Continue";
 "Abrir Álbum" = "Open Album";
 "Relembrar" = "Remember";
-//"continue_button" = "continue_button_en";
+"continue_button" = "continue_button_en";
 //"enter_button" = "enter_button_en";
 //"remember_button" = "remember_button_en";
 "restart_button" = "restart_button_en";
