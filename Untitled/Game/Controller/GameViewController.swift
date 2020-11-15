@@ -189,21 +189,21 @@ class GameViewController: UIViewController {
     func updateRewards(_ gotPhoto: Bool, _ gotFirstReward: Bool, _ gotSecondReward: Bool) {
         //PHOTO
         if gotPhoto {
-            photoReward.image = UIImage(named: "board_collected_reward_\(currentLevel)")
+            photoReward.image = UIImage(named: "board_collected_reward_\(currentLevel)_1")
         } else {
             photoReward.image = UIImage(named: "board_empty_reward")
         }
         
         //FIRST REWARD
         if gotFirstReward {
-            firstReward.image = UIImage(named: "board_collected_reward_\(currentLevel)")
+            firstReward.image = UIImage(named: "board_collected_reward_\(currentLevel)_2")
         } else {
             firstReward.image = UIImage(named: "board_empty_reward")
         }
         
         //SECOND REWARD
         if gotSecondReward {
-            secondReward.image = UIImage(named: "board_collected_reward_\(currentLevel)")
+            secondReward.image = UIImage(named: "board_collected_reward_\(currentLevel)_3")
         } else {
             secondReward.image = UIImage(named: "board_empty_reward")
         }
