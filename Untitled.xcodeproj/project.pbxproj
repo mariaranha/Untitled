@@ -41,6 +41,7 @@
 		2A45E12A255A3F0900D6AABF /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45E129255A3F0900D6AABF /* ExitView.swift */; };
 		2A45E14A255C63B500D6AABF /* WinRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45E149255C63B500D6AABF /* WinRewardsView.swift */; };
 		2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3C382254B8A25000846A5 /* FadeSegue.swift */; };
+		9C021B962560803F0082BC55 /* BoardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C021B952560803F0082BC55 /* BoardSettingsViewController.swift */; };
 		9C0918EE25430C3900CF1F8D /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */; };
 		9C0918F3254319A200CF1F8D /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0918F2254319A200CF1F8D /* Intro.storyboard */; };
 		9C0918F925432AA000CF1F8D /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */; };
@@ -124,6 +125,7 @@
 		2A45E129255A3F0900D6AABF /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
 		2A45E149255C63B500D6AABF /* WinRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinRewardsView.swift; sourceTree = "<group>"; };
 		2AF3C382254B8A25000846A5 /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
+		9C021B952560803F0082BC55 /* BoardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSettingsViewController.swift; sourceTree = "<group>"; };
 		9C0918ED25430C3900CF1F8D /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 		9C0918F2254319A200CF1F8D /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		9C0918F825432AA000CF1F8D /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				0DB782E02558897F0065024D /* GameOverViewController.swift */,
 				2A45E129255A3F0900D6AABF /* ExitView.swift */,
 				2A45E149255C63B500D6AABF /* WinRewardsView.swift */,
+				9C021B952560803F0082BC55 /* BoardSettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				0B8E74A12539D83200B45F0C /* ChapterNumCell.swift in Sources */,
 				0B8E74972537535600B45F0C /* ChapterMenuViewController.swift in Sources */,
 				9C707A0D255C136B00EB82A7 /* LanguageViewController.swift in Sources */,
+				9C021B962560803F0082BC55 /* BoardSettingsViewController.swift in Sources */,
 				0BD5A78425432B7A00B3A974 /* OpenAlbumViewController.swift in Sources */,
 				2AF3C383254B8A26000846A5 /* FadeSegue.swift in Sources */,
 				9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */,

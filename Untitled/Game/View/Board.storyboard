@@ -9,11 +9,98 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Alegreya-Bold.ttf">
+            <string>Alegreya-Bold</string>
+        </array>
         <array key="Lalezar-Regular.ttf">
             <string>Lalezar-Regular</string>
         </array>
     </customFonts>
     <scenes>
+        <!--Board Settings View Controller-->
+        <scene sceneID="IYL-Q2-bF1">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="32H-XU-ElO" customClass="BoardSettingsViewController" customModule="Untitled" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K5B-RL-oyU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boardSettings_background" translatesAutoresizingMaskIntoConstraints="NO" id="k3S-fx-yX9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-e3-dYB">
+                                <rect key="frame" x="32" y="76" width="48.5" height="48.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W5z-e3-dYB" secondAttribute="height" multiplier="1:1" id="Bwz-3Y-Pog"/>
+                                </constraints>
+                                <state key="normal" image="close_button"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="32H-XU-ElO" eventType="touchUpInside" id="aE6-ac-OVg"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-lb-1Y7">
+                                <rect key="frame" x="88.5" y="144" width="237.5" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="capítulo um" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfT-iN-jvJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="237.5" height="75.5"/>
+                                        <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uma história de carnaval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLW-JK-o2y">
+                                        <rect key="frame" x="16.5" y="60.5" width="204.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-WH-wuk">
+                                <rect key="frame" x="30.5" y="304" width="353.5" height="49.5"/>
+                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                <state key="normal" title="Ver Tutorial" backgroundImage="backgroundButton_long"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-PO-zMf">
+                                <rect key="frame" x="99" y="401.5" width="217" height="61.5"/>
+                                <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                <state key="normal" title="Sair do Capítulo" backgroundImage="backgroundButton_short"/>
+                                <connections>
+                                    <action selector="exitChapterButtonTapped:" destination="32H-XU-ElO" eventType="touchUpInside" id="BBt-gP-CIR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dXZ-Hu-GhD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W5z-e3-dYB" firstAttribute="leading" secondItem="dXZ-Hu-GhD" secondAttribute="leading" constant="32" id="49M-Sj-4Bv"/>
+                            <constraint firstAttribute="bottom" secondItem="k3S-fx-yX9" secondAttribute="bottom" id="73k-pe-BJ0"/>
+                            <constraint firstItem="ZfT-WH-wuk" firstAttribute="top" secondItem="gCr-lb-1Y7" secondAttribute="bottom" constant="72" id="ARI-0S-mSL"/>
+                            <constraint firstItem="k3S-fx-yX9" firstAttribute="top" secondItem="K5B-RL-oyU" secondAttribute="top" id="BGh-tQ-CBa"/>
+                            <constraint firstAttribute="trailing" secondItem="k3S-fx-yX9" secondAttribute="trailing" id="FK7-WL-uFD"/>
+                            <constraint firstItem="ZfT-WH-wuk" firstAttribute="centerX" secondItem="K5B-RL-oyU" secondAttribute="centerX" id="HUm-ot-MeA"/>
+                            <constraint firstItem="Qnx-PO-zMf" firstAttribute="leading" secondItem="dXZ-Hu-GhD" secondAttribute="leading" constant="99" id="LOu-dW-bo0"/>
+                            <constraint firstItem="gCr-lb-1Y7" firstAttribute="top" secondItem="K5B-RL-oyU" secondAttribute="top" constant="144" id="PLG-r3-y5n"/>
+                            <constraint firstItem="k3S-fx-yX9" firstAttribute="leading" secondItem="K5B-RL-oyU" secondAttribute="leading" id="PwS-jo-3FZ"/>
+                            <constraint firstItem="W5z-e3-dYB" firstAttribute="top" secondItem="dXZ-Hu-GhD" secondAttribute="top" constant="32" id="QYk-k0-IyH"/>
+                            <constraint firstItem="dXZ-Hu-GhD" firstAttribute="trailing" secondItem="Qnx-PO-zMf" secondAttribute="trailing" constant="98" id="ewb-Lt-4fF"/>
+                            <constraint firstItem="gCr-lb-1Y7" firstAttribute="centerX" secondItem="K5B-RL-oyU" secondAttribute="centerX" id="ezx-5q-wzf"/>
+                            <constraint firstItem="Qnx-PO-zMf" firstAttribute="top" secondItem="ZfT-WH-wuk" secondAttribute="bottom" constant="48" id="iWu-qF-p64"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s5r-5o-7Hn"/>
+                    <connections>
+                        <outlet property="exitChapterButton" destination="Qnx-PO-zMf" id="Vl1-wF-GKw"/>
+                        <outlet property="subtitleLabel" destination="TLW-JK-o2y" id="0SR-d1-3ST"/>
+                        <outlet property="titleLabel" destination="KfT-iN-jvJ" id="gka-0E-DaK"/>
+                        <outlet property="tutorialButton" destination="ZfT-WH-wuk" id="kJm-gC-7nh"/>
+                        <segue destination="cGC-bD-dgw" kind="unwind" identifier="settingsToChaptersMenu" unwindAction="backToChaptersMenu:" id="Hh7-tV-aps"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGK-0W-Rfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cGC-bD-dgw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1998.5507246376812" y="-305.35714285714283"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="EZO-AQ-h2h">
             <objects>
@@ -35,9 +122,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="close_button"/>
+                                        <state key="normal" image="board_settings"/>
                                         <connections>
-                                            <action selector="exitGame:" destination="AQM-Fr-zVN" eventType="touchUpInside" id="MDc-U1-i1Z"/>
+                                            <segue destination="32H-XU-ElO" kind="show" id="Zci-Nx-gjZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -313,16 +400,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="akj-9U-TTo">
-                                <rect key="frame" x="169.5" y="171.5" width="75" height="70.5"/>
+                                <rect key="frame" x="169" y="147.5" width="76" height="94.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-nk-VxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="63"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="40"/>
                                         <color key="textColor" red="0.9882352941176471" green="0.792156862745098" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-J0-iAW">
-                                        <rect key="frame" x="3.5" y="47" width="68.5" height="23.5"/>
+                                        <rect key="frame" x="4.5" y="63" width="67" height="31.5"/>
                                         <fontDescription key="fontDescription" name="Lalezar-Regular" family="Lalezar" pointSize="20"/>
                                         <color key="textColor" red="0.96078431372549022" green="0.90980392156862744" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -397,6 +484,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundButton_long" width="353.5" height="49.5"/>
+        <image name="backgroundButton_short" width="176.5" height="61.5"/>
+        <image name="boardSettings_background" width="414" height="896"/>
         <image name="board_album" width="414" height="895.5"/>
         <image name="board_background" width="414" height="895.5"/>
         <image name="board_city_photo" width="56" height="57"/>
@@ -404,6 +494,7 @@
         <image name="board_energy" width="251" height="55"/>
         <image name="board_life" width="109" height="110"/>
         <image name="board_progress" width="200" height="54"/>
+        <image name="board_settings" width="447.5" height="459.5"/>
         <image name="close_button" width="47" height="48.5"/>
         <image name="costume_5" width="115" height="117"/>
         <image name="endChapter_button" width="176.5" height="48.5"/>
