@@ -379,54 +379,94 @@ class GameScene: SKScene {
     
     func setConservator(characterCard: Card){
         guard let levelData = LevelData.loadFrom(file: "Level_\(gameViewController.currentLevel)") else { return }
-        //trocar == por != quando tiver implementada a transicao de capitulos
-        if round % levelData.roundConservator == 0 && gameViewController.currentLevel == 1 {
-            let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
+        if round % levelData.roundConservator == 0 && levelData.hasConservator == true {
             let removeCard = SKAction.removeFromParent()
             removeCard.timingMode = .easeOut
 
-            
             if let conservatorPosition = getConservatorPosition(){
-                level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)?.sprite!.run(removeCard)
+                let newPositionConservator = conservatorNewPosition(currentPosition: conservatorPosition)
                 
                 var cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
                 while cardNew.cardType == .photoRoll || cardNew.cardType == .block{
                     cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
                 }
+
+                let moveCard = MoveCard(cardA: level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)!, cardB: level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)!, newCard: cardNew)
+                if let handler = moveHandler{
+                    handler(moveCard)
+                }
                 
-                level.setCard(newCard: cardNew)
-                setSprite(cardNew)
+            }else{
+                let positionConservator = conservatorPosition(characterPosition: characterCard)
+                let conservatorCard = Card(column: positionConservator.column, row: positionConservator.row, cardType: .conservator, value: 0)
+                
+                level.card(atColumn: positionConservator.column, row: positionConservator.row)?.sprite!.run(removeCard)
+                level.setCard(newCard: conservatorCard)
+                setSprite(conservatorCard)
             }
-            
-            let conservatorCard = Card(column: newPositionConservator.column, row: newPositionConservator.row, cardType: .conservator, value: 0)
-            
-            level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)?.sprite!.run(removeCard)
-            level.setCard(newCard: conservatorCard)
-            setSprite(conservatorCard)
             
         }
     }
     
-    func conservatorNewPosition(characterCard: Card) -> (column: Int, row: Int){
+    func conservatorPosition(characterPosition: Card) -> (column: Int, row: Int){
+        var positionConservator = (column: 0, row: 0)
+        let elementsColumn: [Int] = [0,4]
+        var enemyCards: [Card] = []
+        var lifeCards: [Card] = []
+        var randomCard: Card
+        
+        if characterPosition.column == 2{
+            positionConservator.column = elementsColumn.randomElement()!
+        } else if characterPosition.column < 2{
+            positionConservator.column = characterPosition.column + 2
+        } else {
+            positionConservator.column = characterPosition.column - 2
+        }
+        
+        let cards = [level.card(atColumn: positionConservator.column, row: 0),
+                     level.card(atColumn: positionConservator.column, row: 1),
+                     level.card(atColumn: positionConservator.column, row: 2),
+                     level.card(atColumn: positionConservator.column, row: 3),
+                     level.card(atColumn: positionConservator.column, row: 4)]
+        
+        for card in cards {
+            if (card!.cardType == .block || card!.cardType == .photoRoll) && card!.row != characterPosition.row{
+                lifeCards.append(card!)
+            }else if (card!.cardType == .tacticalPolice || card!.cardType == .riotPolice) && card!.row != characterPosition.row{
+                enemyCards.append(card!)
+            }
+        }
+        
+        if lifeCards.count != 0{
+            randomCard = lifeCards.randomElement()!
+            positionConservator.row = randomCard.row
+        }else{
+            randomCard = enemyCards.randomElement()!
+            positionConservator.column = randomCard.column
+        }
+        
+        return positionConservator
+    }
+    
+    func conservatorNewPosition(currentPosition: (column: Int, row: Int)) -> (column: Int, row: Int){
         var enemyCards: [Card] = []
         var lifeCards: [Card] = []
         var cards: [Card] = []
         var positionConservator = (column: 0, row: 0)
         var randomCard: Card
         
-        if let cardUp = level.card(atColumn: characterCard.column, row: characterCard.row + 1){
+        if let cardUp = level.card(atColumn: currentPosition.column, row: currentPosition.row + 1){
             cards.append(cardUp)
         }
-        if let cardDown = level.card(atColumn: characterCard.column, row: characterCard.row - 1){
+        if let cardDown = level.card(atColumn: currentPosition.column, row: currentPosition.row - 1){
             cards.append(cardDown)
         }
-        if let cardRight = level.card(atColumn: characterCard.column + 1, row: characterCard.row){
+        if let cardRight = level.card(atColumn: currentPosition.column + 1, row: currentPosition.row){
             cards.append(cardRight)
         }
-        if let cardLeft = level.card(atColumn: characterCard.column - 1, row: characterCard.row){
+        if let cardLeft = level.card(atColumn: currentPosition.column - 1, row: currentPosition.row){
             cards.append(cardLeft)
         }
-        print(cards)
         
         for card in cards {
             if card.cardType == .block || card.cardType == .photoRoll{

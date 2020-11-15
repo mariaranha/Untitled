@@ -37,6 +37,10 @@
   
   "roundConservator": 3,
   
+  "conservatorPosition": {"row" : 4, "column": 0},
+  
+  "hasConservator": true,
+  
   "fantasyValue": 5,
   
   "fantasyFrequency": 1

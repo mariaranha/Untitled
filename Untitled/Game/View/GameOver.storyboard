@@ -58,7 +58,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IE8-7k-svf">
-                                        <rect key="frame" x="51" y="678" width="312" height="108"/>
+                                        <rect key="frame" x="120" y="725.5" width="174" height="60.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IE8-7k-svf" secondAttribute="height" multiplier="176:61" id="c4C-7p-xCo"/>
                                         </constraints>
@@ -83,7 +83,7 @@
                                     <constraint firstItem="vQl-hP-P2c" firstAttribute="top" secondItem="WMo-b2-rHC" secondAttribute="bottom" constant="32" id="GvQ-x5-CXf"/>
                                     <constraint firstItem="WMo-b2-rHC" firstAttribute="top" secondItem="GnW-9s-mto" secondAttribute="top" constant="32" id="Oeu-yK-JVg"/>
                                     <constraint firstItem="WMo-b2-rHC" firstAttribute="leading" secondItem="GnW-9s-mto" secondAttribute="leading" constant="16" id="RWT-Yp-ZL9"/>
-                                    <constraint firstItem="IE8-7k-svf" firstAttribute="top" secondItem="Z2o-s0-wL4" secondAttribute="bottom" constant="64" id="VtE-0Y-TqJ"/>
+                                    <constraint firstItem="IE8-7k-svf" firstAttribute="top" secondItem="Z2o-s0-wL4" secondAttribute="bottom" priority="750" constant="64" id="VtE-0Y-TqJ"/>
                                     <constraint firstItem="IE8-7k-svf" firstAttribute="centerX" secondItem="GnW-9s-mto" secondAttribute="centerX" id="baf-qB-5dY"/>
                                     <constraint firstItem="Z2o-s0-wL4" firstAttribute="top" secondItem="vQl-hP-P2c" secondAttribute="bottom" constant="64" id="mF0-1J-zq9"/>
                                     <constraint firstItem="Z2o-s0-wL4" firstAttribute="leading" secondItem="GnW-9s-mto" secondAttribute="leading" id="nDH-Pr-OhU"/>

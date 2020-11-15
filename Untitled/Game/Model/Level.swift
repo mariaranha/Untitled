@@ -41,6 +41,7 @@ class Level {
             }
         }
     }
+    
 
     func createInitialCards(filename: String) -> Set<Card> {
         var set: Set<Card> = []
@@ -53,20 +54,27 @@ class Level {
         let characterRow = levelData.characterPosition["row"]!
         let characterColumn = levelData.characterPosition["column"]!
         
+        let conservatorRow = levelData.conservatorPosition["row"]!
+        let conservatorColumn = levelData.conservatorPosition["column"]!
+        
         let photo = Card(column: photoColumn, row: photoRow, cardType: .photo, value: 0)
         cards[photoColumn, photoRow] = photo
         
-        let character = Card(column: characterColumn, row: characterRow, cardType: CardType(rawValue: 1)!, value: 0)
+        let character = Card(column: characterColumn, row: characterRow, cardType: .character, value: 0)
         cards[characterColumn,characterRow] = character
-
+        
+        let conservator = Card(column: conservatorColumn, row: conservatorRow, cardType: .conservator, value: 0)
+        cards[conservatorColumn,conservatorRow] = conservator
+        
         set.insert(photo)
         set.insert(character)
+        set.insert(conservator)
         
 
         for row in 0..<numRows {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
-                    if (row != photoRow || column != photoColumn) && (row != characterRow || column != characterColumn) {
+                    if (row != photoRow || column != photoColumn) && (row != characterRow || column != characterColumn) && (row != conservatorRow || column != conservatorColumn) {
                         let cardType = CardType.random(filename: filename)
                         let cardValue = Card.setCardValue(filename: filename, cardType: cardType)
                         
