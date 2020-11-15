@@ -56,4 +56,23 @@ class BoardSettingsViewController: UIViewController {
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func tutorialButtonTapped(_ sender: Any) {
+        
+        let userLevel = UserDefaultsStruct.UserLevel.level
+        
+        switch userLevel {
+        case 1:
+            UserDefaultsStruct.Tutorial.skipChapterOne = false
+        case 2:
+            UserDefaultsStruct.Tutorial.skipChapterTwo = false
+        case 3:
+            UserDefaultsStruct.Tutorial.skipChapterThree = false
+        default:
+            UserDefaultsStruct.Tutorial.skipChapterTwo = false
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 }
