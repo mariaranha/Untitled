@@ -42,6 +42,8 @@
 "restart_button" = "restart_button";
 "start_button" = "start_button";
 //"open_album" = "open_album";
+"cancel_button" = "cancel_button";
+"confirm_button" = "confirm_button";
 
 "board_leave" = "board_leave";
 "memories_rewards" = "memories_rewards";
@@ -77,3 +79,6 @@
 "tutorial_leaveBoard" = "tutorial_leaveBoard";
 "tutorial_conservative" = "tutorial_conservative";
 "tutorial_costume" = "tutorial_costume";
+
+"Ver Tutorial" = "Ver Tutorial";
+"Sair do Capítulo" = "Sair do Capítulo";

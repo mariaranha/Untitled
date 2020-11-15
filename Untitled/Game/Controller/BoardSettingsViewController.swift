@@ -13,14 +13,22 @@ class BoardSettingsViewController: UIViewController {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var exitChapterButton: UIButton!
+    
+    var language: String!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.textColor = AppColor.highlightText.value
-        subtitleLabel.textColor = AppColor.highlightText.value
+        subtitleLabel.textColor = AppColor.lightText.value
         tutorialButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         exitChapterButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+        
+        language = UserDefaultsStruct.Language.preferLanguage
+        titleLabel.text = "capítulo um".localized(language)
+        subtitleLabel.text = "uma história de carnaval".localized(language)
+        tutorialButton.setTitle("Ver Tutorial".localized(language), for: .normal)
+        exitChapterButton.setTitle("Sair do Capítulo".localized(language), for: .normal)
         
     }
 

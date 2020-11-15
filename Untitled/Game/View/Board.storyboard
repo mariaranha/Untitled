@@ -60,8 +60,8 @@
                                 <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                 <state key="normal" title="Ver Tutorial" backgroundImage="backgroundButton_long"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-PO-zMf">
-                                <rect key="frame" x="99" y="401.5" width="217" height="61.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-PO-zMf">
+                                <rect key="frame" x="85" y="401.5" width="244" height="61.5"/>
                                 <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                 <state key="normal" title="Sair do Capítulo" backgroundImage="backgroundButton_short"/>
                                 <connections>
@@ -73,18 +73,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W5z-e3-dYB" firstAttribute="leading" secondItem="dXZ-Hu-GhD" secondAttribute="leading" constant="32" id="49M-Sj-4Bv"/>
+                            <constraint firstItem="dXZ-Hu-GhD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qnx-PO-zMf" secondAttribute="trailing" constant="10" id="6KI-m2-QRP"/>
                             <constraint firstAttribute="bottom" secondItem="k3S-fx-yX9" secondAttribute="bottom" id="73k-pe-BJ0"/>
                             <constraint firstItem="ZfT-WH-wuk" firstAttribute="top" secondItem="gCr-lb-1Y7" secondAttribute="bottom" constant="72" id="ARI-0S-mSL"/>
                             <constraint firstItem="k3S-fx-yX9" firstAttribute="top" secondItem="K5B-RL-oyU" secondAttribute="top" id="BGh-tQ-CBa"/>
                             <constraint firstAttribute="trailing" secondItem="k3S-fx-yX9" secondAttribute="trailing" id="FK7-WL-uFD"/>
                             <constraint firstItem="ZfT-WH-wuk" firstAttribute="centerX" secondItem="K5B-RL-oyU" secondAttribute="centerX" id="HUm-ot-MeA"/>
-                            <constraint firstItem="Qnx-PO-zMf" firstAttribute="leading" secondItem="dXZ-Hu-GhD" secondAttribute="leading" constant="99" id="LOu-dW-bo0"/>
                             <constraint firstItem="gCr-lb-1Y7" firstAttribute="top" secondItem="K5B-RL-oyU" secondAttribute="top" constant="144" id="PLG-r3-y5n"/>
                             <constraint firstItem="k3S-fx-yX9" firstAttribute="leading" secondItem="K5B-RL-oyU" secondAttribute="leading" id="PwS-jo-3FZ"/>
                             <constraint firstItem="W5z-e3-dYB" firstAttribute="top" secondItem="dXZ-Hu-GhD" secondAttribute="top" constant="32" id="QYk-k0-IyH"/>
-                            <constraint firstItem="dXZ-Hu-GhD" firstAttribute="trailing" secondItem="Qnx-PO-zMf" secondAttribute="trailing" constant="98" id="ewb-Lt-4fF"/>
                             <constraint firstItem="gCr-lb-1Y7" firstAttribute="centerX" secondItem="K5B-RL-oyU" secondAttribute="centerX" id="ezx-5q-wzf"/>
                             <constraint firstItem="Qnx-PO-zMf" firstAttribute="top" secondItem="ZfT-WH-wuk" secondAttribute="bottom" constant="48" id="iWu-qF-p64"/>
+                            <constraint firstItem="dXZ-Hu-GhD" firstAttribute="trailing" secondItem="Qnx-PO-zMf" secondAttribute="trailing" priority="750" constant="85" id="kNP-ol-tla"/>
+                            <constraint firstItem="Qnx-PO-zMf" firstAttribute="leading" secondItem="dXZ-Hu-GhD" secondAttribute="leading" priority="750" constant="85" id="kzN-qG-53S"/>
+                            <constraint firstItem="Qnx-PO-zMf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dXZ-Hu-GhD" secondAttribute="leading" constant="10" id="wxd-TB-VYY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s5r-5o-7Hn"/>

@@ -43,6 +43,8 @@
 "restart_button" = "restart_button_en";
 "start_button" = "start_button_en";
 //"open_album" = "open_album_en";
+"cancel_button" = "cancel_button_en";
+"confirm_button" = "confirm_button_en";
 
 "board_leave" = "board_leave_en";
 "memories_rewards" = "memories_rewards_en";
@@ -78,3 +80,6 @@
 "tutorial_leaveBoard" = "tutorial_leaveBoard_en";
 "tutorial_conservative" = "tutorial_conservative_en";
 "tutorial_costume" = "tutorial_costume_en";
+
+"Ver Tutorial" = "View Tutorial";
+"Sair do Capítulo" = "Leave the Chapter";
