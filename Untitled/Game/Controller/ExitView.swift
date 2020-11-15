@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class ExitView: UIView {
+    
     public var delegate: UIViewController? {
         didSet {
             self.setConstraints()
@@ -28,19 +29,23 @@ class ExitView: UIView {
     public var exitButton: UIButton = {
         let btn = UIButton()
         let language = UserDefaultsStruct.Language.preferLanguage
-        let img = UIImage(named: "confirm_button".localized(language))
         
-        btn.setImage(img, for: .normal)
+        btn.setBackgroundImage(UIImage(named: "highlightedButton_short"), for: .normal)
+        btn.setTitle("Confirmar".localized(language), for: .normal)
+        btn.titleLabel?.font = UIFont(name:"Alegreya-Bold",size: 25)
+        btn.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         
         return btn
     }()
     public var cancelButton: UIButton = {
         let btn = UIButton()
         let language = UserDefaultsStruct.Language.preferLanguage
-        let img = UIImage(named: "cancel_button".localized(language))
         
-        btn.setImage(img, for: .normal)
-        
+        btn.setBackgroundImage(UIImage(named: "backgroundButton_short"), for: .normal)
+        btn.setTitle("Cancelar".localized(language), for: .normal)
+        btn.titleLabel?.font = UIFont(name:"Alegreya-Bold",size: 25)
+        btn.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+       
         return btn
     }()
     public var messageImage: UIImageView = {
