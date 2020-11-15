@@ -54,18 +54,8 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
                                      left: cellWidth * 2,
                                      bottom: 0,
                                      right: 0)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         
-        let selectedLevel = SelectedLevel.value
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
-            self.scrollToChapter(chapter: selectedLevel)
-        }
-        
-        RunLoop.current.add(timer, forMode: .common)
+        scrollToSelectedChapter()
     }
     
     @IBAction func backToChaptersMenu(_ sender: UIStoryboardSegue) {
@@ -168,6 +158,17 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    fileprivate func setEnterButton() {
+        //Start button for unlocked levels
+        if pageIndex + 1 > userLevel {
+            enterButton.isHidden = true
+            enterButtonLine.backgroundColor = AppColor.darkBorder.value
+        } else {
+            enterButton.isHidden = false
+            enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPageIndex = floor(scrollView.contentOffset.x/view.frame.width)
         let direction = scrollView.panGestureRecognizer.translation(in: scrollView.superview).x
@@ -185,22 +186,29 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
             setNumberColor()
         }
         
-        //Start button for unlocked levels
-        if pageIndex + 1 > userLevel {
-            enterButton.isHidden = true
-            enterButtonLine.backgroundColor = AppColor.darkBorder.value
-        } else {
-            enterButton.isHidden = false
-            enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
-        }
+        setEnterButton()
     }
     
-    func scrollToChapter(chapter: Int) {
-        let page = chapter - 1
-        let x: CGFloat = CGFloat(page) * view.frame.width
-        let y: CGFloat = 0
+    func scrollToSelectedChapter() {
+        let selectedLevel = SelectedLevel.value
         
-        scrollView.setContentOffset(CGPoint(x: x, y: y), animated: true)
+        guard selectedLevel >= pageIndex + 1 else {
+            setEnterButton()
+            setNumberColor()
+            return
+        }
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
+            let page = selectedLevel - 1
+            let x: CGFloat = CGFloat(page) * self.view.frame.width
+            let y: CGFloat = 0
+            
+            self.scrollView.setContentOffset(CGPoint(x: x, y: y), animated: true)
+            self.setEnterButton()
+            self.setNumberColor()
+        }
+        
+        RunLoop.current.add(timer, forMode: .common)
     }
     
 }
@@ -269,6 +277,14 @@ extension ChapterMenuViewController: UICollectionViewDelegateFlowLayout, UIColle
             } else {
                 cell.number.textColor = AppColor.intermediateDarkText.value
             }
+        }
+        
+        guard userLevel < numChapters else { return }
+        
+        for row in userLevel..<numChapters {
+            let indexPath = IndexPath(row: row, section: 0)
+            guard let cell = chapterNumCollection.cellForItem(at: indexPath) as? ChapterNumCell else { return }
+            cell.number.textColor = AppColor.intermediateDarkText.value
         }
     }
 }
