@@ -41,32 +41,45 @@ class Level {
             }
         }
     }
+    
 
     func createInitialCards(filename: String) -> Set<Card> {
         var set: Set<Card> = []
         
         guard let levelData = LevelData.loadFrom(file: filename) else { return set }
         
-        let photoRow = levelData.photoPosition["row"]!
-        let photoColumn = levelData.photoPosition["column"]!
+        let photoPosition = (column: levelData.photoPosition["column"]!, row: levelData.photoPosition["row"]!)
         
-        let characterRow = levelData.characterPosition["row"]!
-        let characterColumn = levelData.characterPosition["column"]!
+        let characterPosition = (column: levelData.characterPosition["column"]!, row: levelData.characterPosition["row"]!)
         
-        let photo = Card(column: photoColumn, row: photoRow, cardType: .photo, value: 0)
-        cards[photoColumn, photoRow] = photo
+        let conservatorPosition = (column: levelData.conservatorPosition["column"]!, row: levelData.conservatorPosition["row"]!)
         
-        let character = Card(column: characterColumn, row: characterRow, cardType: CardType(rawValue: 1)!, value: 0)
-        cards[characterColumn,characterRow] = character
-
+        let fantasyPosition = (column: levelData.fantasyPosition["column"]!, row: levelData.fantasyPosition["row"]!)
+        
+        let photo = Card(column: photoPosition.column, row: photoPosition.row, cardType: .photo, value: 0)
+        cards[photoPosition.column, photoPosition.row] = photo
         set.insert(photo)
+        
+        let character = Card(column: characterPosition.column, row: characterPosition.row, cardType: .character, value: 0)
+        cards[characterPosition.column,characterPosition.row] = character
         set.insert(character)
         
+        if levelData.hasConservator == true{
+            let conservator = Card(column: conservatorPosition.column, row: conservatorPosition.row, cardType: .conservator, value: 0)
+            cards[conservatorPosition.column,conservatorPosition.row] = conservator
+            set.insert(conservator)
+        }
+        
+        if levelData.hasFantasy == true{
+            let fantasy = Card(column: fantasyPosition.column, row: fantasyPosition.row, cardType: .fantasy, value: levelData.fantasyValue)
+            cards[fantasyPosition.column,fantasyPosition.row] = fantasy
+            set.insert(fantasy)
+        }
 
         for row in 0..<numRows {
             for column in 0..<numColumns {
                 if tiles[column, row] != nil {
-                    if (row != photoRow || column != photoColumn) && (row != characterRow || column != characterColumn) {
+                    if cards[column,row] == nil{
                         let cardType = CardType.random(filename: filename)
                         let cardValue = Card.setCardValue(filename: filename, cardType: cardType)
                         
@@ -75,6 +88,7 @@ class Level {
 
                         set.insert(card)
                     }
+                    
                 }
             }
         }

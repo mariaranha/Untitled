@@ -31,6 +31,9 @@ class GameScene: SKScene {
     var canExit = false
     var gotRewar1 = false
     var gotRewar2 = false
+    var gotFantasy = false
+    
+    var fantasyValue: Int = 0
     
     var round: Int = 0
     
@@ -232,14 +235,32 @@ class GameScene: SKScene {
     }
     
     func updateProgressValues(card: Card){
+        var value: Int
         if card.cardType == .block || card.cardType == .tacticalPolice{
             gameViewController.energyProgress.updateValue(value: card.value, type: .city)
             guard let energyLayout = energyLayoutHandler else { return }
             energyLayout(gameViewController.energyProgress.value)
-        }else if card.cardType == .photoRoll || card.cardType == .riotPolice{
+        }else if card.cardType == .photoRoll {
             gameViewController.lifeProgress.updateValue(value: card.value, type: .character)
             guard let lifeLayout = lifeLayoutHandler else { return }
             lifeLayout(gameViewController.lifeProgress.value)
+        }else if card.cardType == .riotPolice{
+            if gotFantasy == true && fantasyValue > 0{
+                value = card.value + fantasyValue
+                fantasyValue = value
+                if value < 0 {
+                    gameViewController.boardFantasy.image = .none
+                    gameViewController.lifeProgress.updateValue(value: value, type: .character)
+                    guard let lifeLayout = lifeLayoutHandler else { return }
+                    lifeLayout(gameViewController.lifeProgress.value)
+                }else{
+                    gameViewController.boardFantasy.image = UIImage(named: "board_status_fantasy_\(value)")
+                }
+            }else{
+                gameViewController.lifeProgress.updateValue(value: card.value, type: .character)
+                guard let lifeLayout = lifeLayoutHandler else { return }
+                lifeLayout(gameViewController.lifeProgress.value)
+            }
         }
     }
     
@@ -367,6 +388,13 @@ class GameScene: SKScene {
                 }else{
                     print("Complete a energia X para coletar a segunda recompensa")
                 }
+            }else if toCard.cardType == .fantasy{
+                gameViewController.boardFantasy.image = UIImage(named: "board_status_fantasy")
+                gotFantasy = true
+                fantasyValue = toCard.value
+                handler(moveCard)
+                round += 1
+                setConservator(characterCard: toCard)
             }else{
                 handler(moveCard)
                 round += 1
@@ -383,53 +411,95 @@ class GameScene: SKScene {
     }
     
     func setConservator(characterCard: Card){
-        if round % 3 == 0 && gameViewController.currentLevel == 2 /*trocar para capitulo 2*/{
-            let newPositionConservator = conservatorNewPosition(characterCard: characterCard)
+        guard let levelData = LevelData.loadFrom(file: "Level_\(gameViewController.currentLevel)") else { return }
+        if round % levelData.roundConservator == 0 && levelData.hasConservator == true {
             let removeCard = SKAction.removeFromParent()
             removeCard.timingMode = .easeOut
 
-            
             if let conservatorPosition = getConservatorPosition(){
-                level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)?.sprite!.run(removeCard)
+                let newPositionConservator = conservatorNewPosition(currentPosition: conservatorPosition)
                 
                 var cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
                 while cardNew.cardType == .photoRoll || cardNew.cardType == .block{
                     cardNew = level.createNewCard(column: conservatorPosition.column, row: conservatorPosition.row, filename: "Level_\(gameViewController.currentLevel)")
                 }
+
+                let moveCard = MoveCard(cardA: level.card(atColumn: conservatorPosition.column, row: conservatorPosition.row)!, cardB: level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)!, newCard: cardNew)
+                if let handler = moveHandler{
+                    handler(moveCard)
+                }
                 
-                level.setCard(newCard: cardNew)
-                setSprite(cardNew)
+            }else{
+                let positionConservator = conservatorPosition(characterPosition: characterCard)
+                let conservatorCard = Card(column: positionConservator.column, row: positionConservator.row, cardType: .conservator, value: 0)
+                
+                level.card(atColumn: positionConservator.column, row: positionConservator.row)?.sprite!.run(removeCard)
+                level.setCard(newCard: conservatorCard)
+                setSprite(conservatorCard)
             }
-            
-            let conservatorCard = Card(column: newPositionConservator.column, row: newPositionConservator.row, cardType: .conservator, value: 0)
-            
-            level.card(atColumn: newPositionConservator.column, row: newPositionConservator.row)?.sprite!.run(removeCard)
-            level.setCard(newCard: conservatorCard)
-            setSprite(conservatorCard)
             
         }
     }
     
-    func conservatorNewPosition(characterCard: Card) -> (column: Int, row: Int){
+    func conservatorPosition(characterPosition: Card) -> (column: Int, row: Int){
+        var positionConservator = (column: 0, row: 0)
+        let elementsColumn: [Int] = [0,4]
+        var enemyCards: [Card] = []
+        var lifeCards: [Card] = []
+        var randomCard: Card
+        
+        if characterPosition.column == 2{
+            positionConservator.column = elementsColumn.randomElement()!
+        } else if characterPosition.column < 2{
+            positionConservator.column = characterPosition.column + 2
+        } else {
+            positionConservator.column = characterPosition.column - 2
+        }
+        
+        let cards = [level.card(atColumn: positionConservator.column, row: 0),
+                     level.card(atColumn: positionConservator.column, row: 1),
+                     level.card(atColumn: positionConservator.column, row: 2),
+                     level.card(atColumn: positionConservator.column, row: 3),
+                     level.card(atColumn: positionConservator.column, row: 4)]
+        
+        for card in cards {
+            if (card!.cardType == .block || card!.cardType == .photoRoll) && card!.row != characterPosition.row{
+                lifeCards.append(card!)
+            }else if (card!.cardType == .tacticalPolice || card!.cardType == .riotPolice) && card!.row != characterPosition.row{
+                enemyCards.append(card!)
+            }
+        }
+        
+        if lifeCards.count != 0{
+            randomCard = lifeCards.randomElement()!
+            positionConservator.row = randomCard.row
+        }else{
+            randomCard = enemyCards.randomElement()!
+            positionConservator.column = randomCard.column
+        }
+        
+        return positionConservator
+    }
+    
+    func conservatorNewPosition(currentPosition: (column: Int, row: Int)) -> (column: Int, row: Int){
         var enemyCards: [Card] = []
         var lifeCards: [Card] = []
         var cards: [Card] = []
         var positionConservator = (column: 0, row: 0)
         var randomCard: Card
         
-        if let cardUp = level.card(atColumn: characterCard.column, row: characterCard.row + 1){
+        if let cardUp = level.card(atColumn: currentPosition.column, row: currentPosition.row + 1){
             cards.append(cardUp)
         }
-        if let cardDown = level.card(atColumn: characterCard.column, row: characterCard.row - 1){
+        if let cardDown = level.card(atColumn: currentPosition.column, row: currentPosition.row - 1){
             cards.append(cardDown)
         }
-        if let cardRight = level.card(atColumn: characterCard.column + 1, row: characterCard.row){
+        if let cardRight = level.card(atColumn: currentPosition.column + 1, row: currentPosition.row){
             cards.append(cardRight)
         }
-        if let cardLeft = level.card(atColumn: characterCard.column - 1, row: characterCard.row){
+        if let cardLeft = level.card(atColumn: currentPosition.column - 1, row: currentPosition.row){
             cards.append(cardLeft)
         }
-        print(cards)
         
         for card in cards {
             if card.cardType == .block || card.cardType == .photoRoll{
