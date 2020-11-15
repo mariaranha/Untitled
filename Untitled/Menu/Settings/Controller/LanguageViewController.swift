@@ -20,6 +20,14 @@ class LanguageViewController: UIViewController {
         super.viewWillAppear(true)
         language = UserDefaultsStruct.Language.preferLanguage
         languageLabel.text = "idioma".localized(language)
+        
+        if language == Languages.english.rawValue{
+            englishButton.isSelected = true
+            englishButton.setBackgroundImage(UIImage(named: "highlightedButton_long"), for: .selected)
+        } else{
+            portugueseButton.isSelected = true
+            portugueseButton.setBackgroundImage(UIImage(named: "highlightedButton_long"), for: .selected)
+        }
     }
     
     override func viewDidLoad() {
