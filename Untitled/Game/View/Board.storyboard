@@ -114,7 +114,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_background" translatesAutoresizingMaskIntoConstraints="NO" id="jTS-cf-1vI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_album" translatesAutoresizingMaskIntoConstraints="NO" id="OKm-h7-dMN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board_album" translatesAutoresizingMaskIntoConstraints="NO" id="OKm-h7-dMN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDm-Hk-fp1">
@@ -535,7 +535,7 @@
         <image name="board_album" width="414" height="895.5"/>
         <image name="board_background" width="414" height="895.5"/>
         <image name="board_city_photo" width="63.5" height="64.5"/>
-        <image name="board_empty_reward" width="52" height="52.5"/>
+        <image name="board_empty_reward" width="47" height="48"/>
         <image name="board_energy" width="267.5" height="59"/>
         <image name="board_life" width="109" height="110"/>
         <image name="board_progress" width="208" height="52"/>
