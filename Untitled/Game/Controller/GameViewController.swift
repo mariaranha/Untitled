@@ -134,6 +134,8 @@ class GameViewController: UIViewController {
     func setInitialLifeLayout() {
         totalLifeLabel.textColor = AppColor.lightText.value
         currentLifeLabel.textColor = AppColor.lightText.value
+        totalLifeLabel.font = UIFont(name: "Lalezar", size: 38)
+        currentLifeLabel.font = UIFont(name: "Lalezar", size: 38)
         
         if lifeProgress.value < 10 {
             totalLifeLabel.text = "0\(String(lifeProgress.value))"
