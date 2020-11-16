@@ -156,40 +156,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCq-Sw-hti">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1U-jW-iZV">
-                                        <rect key="frame" x="32" y="301.5" width="350" height="249"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoLabelReward" translatesAutoresizingMaskIntoConstraints="NO" id="nwg-BI-gIq">
-                                                <rect key="frame" x="0.0" y="191" width="350" height="58"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="58" id="Wtw-JX-z4I"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="photoReward" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-x7-KEp">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="175" id="zpO-74-VL0"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <viewLayoutGuide key="safeArea" id="4YH-6t-rHM"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockedDetail" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-pB-bwf">
+                                        <rect key="frame" x="27" y="215.5" width="360" height="421"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="IkS-x7-KEp" secondAttribute="trailing" id="1xh-IO-U7Y"/>
-                                            <constraint firstItem="nwg-BI-gIq" firstAttribute="leading" secondItem="IkS-x7-KEp" secondAttribute="leading" id="81r-rI-K5E"/>
-                                            <constraint firstItem="nwg-BI-gIq" firstAttribute="top" secondItem="IkS-x7-KEp" secondAttribute="bottom" constant="16" id="JK7-BI-IIC"/>
-                                            <constraint firstItem="IkS-x7-KEp" firstAttribute="top" secondItem="x1U-jW-iZV" secondAttribute="top" id="Qdl-zW-pNs"/>
-                                            <constraint firstItem="nwg-BI-gIq" firstAttribute="trailing" secondItem="IkS-x7-KEp" secondAttribute="trailing" id="YyW-xV-djX"/>
-                                            <constraint firstAttribute="bottom" secondItem="nwg-BI-gIq" secondAttribute="bottom" id="hZm-7b-erE"/>
-                                            <constraint firstItem="IkS-x7-KEp" firstAttribute="leading" secondItem="x1U-jW-iZV" secondAttribute="leading" id="voE-sG-cj0"/>
+                                            <constraint firstAttribute="height" constant="421" id="uKW-uo-PDS"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="x1U-jW-iZV" secondAttribute="trailing" constant="32" id="HAa-WR-4Jc"/>
-                                    <constraint firstItem="x1U-jW-iZV" firstAttribute="leading" secondItem="TCq-Sw-hti" secondAttribute="leading" constant="32" id="dDD-iT-zgp"/>
-                                    <constraint firstItem="x1U-jW-iZV" firstAttribute="centerY" secondItem="TCq-Sw-hti" secondAttribute="centerY" id="kMv-wk-lSL"/>
+                                    <constraint firstItem="Fr0-pB-bwf" firstAttribute="leading" secondItem="TCq-Sw-hti" secondAttribute="leading" constant="27" id="4s7-lS-8fO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fr0-pB-bwf" secondAttribute="trailing" constant="27" id="IDK-s7-GLi"/>
+                                    <constraint firstItem="Fr0-pB-bwf" firstAttribute="centerY" secondItem="TCq-Sw-hti" secondAttribute="centerY" id="c8q-2Z-eH3"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="4GG-AV-054">
@@ -269,9 +247,8 @@
                         <outlet property="leadingPageConstraint" destination="dGC-UF-cNG" id="W1A-Jc-wdq"/>
                         <outlet property="nextPageButton" destination="BWn-2W-47U" id="V8b-c7-ALO"/>
                         <outlet property="pageStack" destination="4GG-AV-054" id="SBV-eT-Qec"/>
-                        <outlet property="photoDetail" destination="IkS-x7-KEp" id="E16-GK-4pi"/>
+                        <outlet property="photoDetail" destination="Fr0-pB-bwf" id="dYs-Df-tMS"/>
                         <outlet property="photoDetailBackground" destination="TCq-Sw-hti" id="Y83-DD-5Zc"/>
-                        <outlet property="photoDetailDescription" destination="nwg-BI-gIq" id="ZUo-nu-sOR"/>
                         <outlet property="previousPageButton" destination="dw8-HB-4hc" id="fs4-KL-PC4"/>
                         <outlet property="trailingButtonConstraint" destination="A9e-rx-oym" id="gLz-2s-3KS"/>
                         <outlet property="trailingPageConstraint" destination="A2C-iv-inc" id="uwp-M2-hvs"/>
@@ -304,9 +281,8 @@
         <image name="closeButton" width="59" height="60.5"/>
         <image name="closedAlbum" width="368.5" height="521.5"/>
         <image name="initialStory" width="47.5" height="48.5"/>
+        <image name="lockedDetail" width="360.5" height="421"/>
         <image name="nextArrow" width="13" height="19.5"/>
-        <image name="photoLabelReward" width="276" height="47"/>
-        <image name="photoReward" width="270" height="136"/>
         <image name="rewards_background" width="414" height="896"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

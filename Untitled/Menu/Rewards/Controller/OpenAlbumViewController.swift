@@ -27,7 +27,6 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     @IBOutlet weak var leadingButtonConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var photoDetailBackground: UIView!
-    @IBOutlet weak var photoDetailDescription: UIImageView!
     @IBOutlet weak var photoDetail: UIImageView!
     
     enum AlbumPageType {
@@ -43,6 +42,7 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     var unlockedRewards: [Int] = []
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         getUnlockedRewards()
@@ -92,6 +92,8 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
                 unlockedRewards.append(index)
             }
         }
+        
+        print(unlockedRewards)
     }
     
     func setPageConstraints() {
@@ -187,11 +189,9 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     
     func setPhotoDetailLayout() {
         if unlockedRewards.contains(photoTapped) {
-            photoDetail.image = UIImage(named: "unlockedPhoto_0\(photoTapped)")
-            photoDetailDescription.image = UIImage(named: "unlockedLabel_0\(photoTapped)")
+            photoDetail.image = UIImage(named: "unlockedDetail_0\(photoTapped)")
         } else {
-            photoDetail.image = UIImage(named: "lockedPhoto")
-            photoDetailDescription.image = UIImage(named: "lockedLabel")
+            photoDetail.image = UIImage(named: "lockedDetail")
         }
     }
     
