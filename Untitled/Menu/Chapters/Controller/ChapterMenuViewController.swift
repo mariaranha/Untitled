@@ -104,6 +104,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         chapter.chapterTitle.textColor = .black
         chapter.chapterSubtitle.textColor = AppColor.lightText.value
         chapter.chapterBackground.image = UIImage(named: "blocked_background")
+        chapter.photoImageView.image = UIImage(named: "empty_photo")
         chapter.chapterTitle.text = "bloqueado".localized(language)
         chapter.chapterSubtitle.text = "história do capítulo não disponível".localized(language)
         
@@ -114,6 +115,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         chapter.chapterTitle.textColor = AppColor.highlightText.value
         chapter.chapterSubtitle.textColor = AppColor.lightText.value
         chapter.chapterBackground.image = UIImage(named: "chapter\(chapterNumber)_background")
+        chapter.photoImageView.image = UIImage(named: "chapter\(chapterNumber)_photo")
     }
     
     fileprivate func setChaptersLabels(_ chapterNumber: Int, _ chapter: ChapterView) {

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "card_dementors.png",
+      "filename" : "card_conservative@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "card_dementors@2x.png",
+      "filename" : "card_conservative@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "card_dementors@3x.png",
+      "filename" : "card_conservative@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "board_progress.png",
+      "filename" : "barra-energiacidade 1 (1).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "board_progress@2x.png",
+      "filename" : "barra-energiacidade 1 (2).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "board_progress@3x.png",
+      "filename" : "barra-energiacidade 1 (3).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
