@@ -23,7 +23,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var photoReward: UIImageView!
     @IBOutlet weak var firstReward: UIImageView!
     @IBOutlet weak var secondReward: UIImageView!
-    @IBOutlet weak var costumePhoto: UIImageView!
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var boardHeight: NSLayoutConstraint!
     @IBOutlet weak var boardWidth: NSLayoutConstraint!
@@ -37,7 +36,7 @@ class GameViewController: UIViewController {
     var tileWidth: CGFloat = 0.0
     var tileHeight: CGFloat = 0.0
     
-    let cardAspectRatio: CGFloat = 1.38
+    let cardAspectRatio: CGFloat = 1.254
     
     var energyProgress: Life = Life(type: .city)
     var lifeProgress: Life  =  Life(type: .character)
@@ -88,7 +87,7 @@ class GameViewController: UIViewController {
         setInitialLifeLayout()
         setInitialEnergyLayout()
         setInitialRewardsLayout()
-        costumePhoto.image = UIImage(named: "")
+        boardFantasy.image = UIImage(named: "")
         
         // Create and configure the scene
         view.layoutSubviews()
@@ -190,6 +189,7 @@ class GameViewController: UIViewController {
         //PHOTO
         if gotPhoto {
             photoReward.image = UIImage(named: "board_collected_reward_\(currentLevel)_1")
+            albumImage.image = UIImage(named: "board_album_highlighted")
         } else {
             photoReward.image = UIImage(named: "board_empty_reward")
         }

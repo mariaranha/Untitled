@@ -9,7 +9,7 @@
   
   "randomPercentage": [0.25, 0.25, 0.2, 0.30],
   
-  "energyPhoto": 15,
+  "energyPhoto": 20,
   
   "exitPosition": [{"row" : 0, "column": 1}, {"row" : 0, "column": 2}, {"row" : 0, "column": 3}],
   
@@ -33,13 +33,13 @@
 
   "cardTypes": [2, 3, 5, 6],
   
-  "energyReward": 15,
+  "energyReward": 20,
   
   "roundConservator": 3,
   
   "conservatorPosition": {"row" : 4, "column": 0},
   
-  "hasConservator": true,
+  "hasConservator": false,
   
   "fantasyValue": 5,
   
@@ -47,6 +47,6 @@
   
   "fantasyPosition": {"row" : 2, "column": 2},
   
-  "hasFantasy": true
+  "hasFantasy": false
   
 }

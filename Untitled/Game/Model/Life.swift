@@ -51,8 +51,8 @@ class Life {
                 self.value = 10
             }
         } else if type == .city {
-            if self.value > 15 {
-                self.value = 15
+            if self.value > 20 {
+                self.value = 20
             }
         }
     }
