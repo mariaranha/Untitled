@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "confirm_button.png",
+      "filename" : "Group735.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "confirm_button-1.png",
+      "filename" : "Group735(1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "confirm_button-2.png",
+      "filename" : "Group735(2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
