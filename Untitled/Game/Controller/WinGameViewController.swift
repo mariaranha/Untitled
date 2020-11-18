@@ -22,14 +22,19 @@ class WinGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLayout()
+    }
+    
+    func setLayout() {
         let language = UserDefaultsStruct.Language.preferLanguage
-        titleLabel.text = "capítulo finalizado".localized(language)
-        subtitleLabel.text = "#1 - uma história de carnaval".localized(language)
+        let selectedChapter = SelectedLevel.level
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "winBackground")!)
+        titleLabel.text = "capítulo finalizado".localized(language)
         photoImageView.image = UIImage(named: "empty_photo")
+        
+        subtitleLabel.text = "#1 - uma história de carnaval".localized(language)
         narrativeImageView.image = UIImage(named: "chapter1_win".localized(language))
-
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {

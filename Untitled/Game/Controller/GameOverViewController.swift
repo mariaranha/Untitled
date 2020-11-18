@@ -22,17 +22,33 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let language = UserDefaultsStruct.Language.preferLanguage
-        titleLabel.text = "memória perdida".localized(language)
+        setLayout()
+    }
+    
+    func setLayout() {
         titleLabel.font = UIFont(name: "Lalezar-Regular", size: 40)
-        subtitleLabel.text = "1. uma história de carnaval".localized(language)
         subtitleLabel.font = UIFont(name: "Lalezar-Regular", size: 20)
-        
-        restartButton.setImage(UIImage(named: "restart_button".localized(language)), for: .normal)
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "gameOverBackground")!)
         photoImageView.image = UIImage(named: "gameOver_photo")
-        narrativeImageView.image = UIImage(named: "chapter1_gameOver".localized(language))
+        
+        let selectedChapter = SelectedLevel.level
+        let language = UserDefaultsStruct.Language.preferLanguage
+        
+        narrativeImageView.image = UIImage(named: "chapter\(selectedChapter)_gameOver".localized(language))
+        titleLabel.text = "memória perdida".localized(language)
+        restartButton.setImage(UIImage(named: "restart_button".localized(language)), for: .normal)
+        
+        switch selectedChapter {
+        case 1:
+            subtitleLabel.text = "1. uma história de carnaval".localized(language)
+        case 2:
+            subtitleLabel.text = "2. o bloco em movimento".localized(language)
+        case 3:
+            subtitleLabel.text = "3. saia de casa, venha pra rua".localized(language)
+        default:
+            break
+        }
     }
     
 

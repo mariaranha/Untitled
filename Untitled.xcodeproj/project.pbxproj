@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4B593225656BEC0022D7B5 /* SelectedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B593125656BEC0022D7B5 /* SelectedLevel.swift */; };
 		0B54C65A255AC26C004E16C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B54C65C255AC26C004E16C7 /* Localizable.strings */; };
 		0B8BEE2825559070005ED2AD /* Alegreya-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE252555906F005ED2AD /* Alegreya-Medium.ttf */; };
 		0B8BEE2925559070005ED2AD /* Alegreya-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */; };
@@ -90,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B4B593125656BEC0022D7B5 /* SelectedLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLevel.swift; sourceTree = "<group>"; };
 		0B54C651255AC1C8004E16C7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		0B54C65B255AC26C004E16C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B54C660255AC270004E16C7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -189,6 +191,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B4B593025656BCD0022D7B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B4B593125656BEC0022D7B5 /* SelectedLevel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0B8E74932537441600B45F0C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +283,7 @@
 		0B8E74AD253CACA100B45F0C /* Chapters */ = {
 			isa = PBXGroup;
 			children = (
+				0B4B593025656BCD0022D7B5 /* Model */,
 				0B8E74A9253AB27900B45F0C /* View */,
 				0B8E74AA253AB28200B45F0C /* Controller */,
 			);
@@ -682,6 +693,7 @@
 				0B8E74AC253CA00100B45F0C /* UserDefaultsStruct.swift in Sources */,
 				0BE1E5B8252F502900DD36C6 /* Array2D.swift in Sources */,
 				9C2E685B253B8C520048139A /* NarrativeViewController.swift in Sources */,
+				0B4B593225656BEC0022D7B5 /* SelectedLevel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

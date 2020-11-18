@@ -74,8 +74,8 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chapterNarrative" {
             let viewController = segue.destination as! NarrativeViewController
-            SelectedLevel.value = self.pageIndex + 1
-            viewController.chapter = SelectedLevel.value
+            SelectedLevel.level = self.pageIndex + 1
+            viewController.chapter = SelectedLevel.level
         }
     }
     
@@ -192,7 +192,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollToSelectedChapter() {
-        let selectedLevel = SelectedLevel.value
+        let selectedLevel = SelectedLevel.level
         
         guard selectedLevel >= pageIndex + 1 else {
             setEnterButton()

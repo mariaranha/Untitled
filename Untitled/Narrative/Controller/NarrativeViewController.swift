@@ -27,29 +27,6 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     
     let language = UserDefaultsStruct.Language.preferLanguage
     
-    //MARK: Init
-    init?(chapterNumber: Int, coder: NSCoder) {
-        self.chapter = chapterNumber
-        
-        //Change number of pages here
-        switch chapter {
-        case 1:
-            numPages = 6
-        case 2:
-            numPages = 6
-        case 3:
-            numPages = 6
-        default:
-            numPages = 0
-        }
-
-        super.init(coder: coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     // MARK: View Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +39,14 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         case 1:
             numPages = 6
         case 2:
-            numPages = 6
+            numPages = 5
         case 3:
             numPages = 6
         default:
             numPages = 0
         }
+        
+        numPages = SelectedLevel.numNarrativePages
         
         //setup view
         let language = UserDefaultsStruct.Language.preferLanguage
@@ -137,7 +116,7 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GameViewController {
-            vc.currentLevel = SelectedLevel.value
+            vc.currentLevel = SelectedLevel.level
             
 //            self.view.alpha = 0.0
             vc.dismissNarrative = {
