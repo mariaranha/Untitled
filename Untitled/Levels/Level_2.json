@@ -7,7 +7,7 @@
   
   "photoPosition": {"row" : 4, "column": 4},
   
-  "randomPercentage": [0.25, 0.25, 0.2, 0.30],
+  "randomPercentage": [0.3, 0.1, 0.30, 0.30],
   
   "energyPhoto": 20,
   
