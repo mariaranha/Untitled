@@ -6,23 +6,53 @@
   
 */
 
-"deslize para ler" = "deslize para ler";
+//MARK: CHAPTER 1
 "capítulo um" = "capítulo um";
 "uma história de carnaval" = "uma história de carnaval";
+
+"chapter1_page1" = "chapter1_page1";
+"chapter1_page2" = "chapter1_page2";
+"chapter1_page3" = "chapter1_page3";
+"chapter1_page4" = "chapter1_page4";
+"chapter1_page5" = "chapter1_page5";
+"chapter1_page6" = "chapter1_page6";
+
+"chapter1_win" = "chapter1_win";
+"chapter1_gameOver" = "chapter1_gameOver";
+
+//MARK: CHAPTER 2
 "capítulo dois" = "capítulo dois";
 "o bloco em movimento" = "o bloco em movimento";
+
+"chapter2_page1" = "chapter2_page1";
+"chapter2_page2" = "chapter2_page2";
+"chapter2_page3" = "chapter2_page3";
+"chapter2_page4" = "chapter2_page4";
+"chapter2_page5" = "chapter2_page5";
+
+"chapter2_win" = "chapter2_win";
+"chapter2_gameOver" = "chapter2_gameOver";
+
+//MARK: CHAPTER 3
 "capítulo três" = "capítulo três";
-"capítulo três subtitulo" = "capítulo três subtitulo";
-"capítulo quatro" = "capítulo quatro";
-"capítulo quatro subtitulo" = "capítulo quatro subtitulo";
-"capítulo cinco" = "capítulo cinco";
-"capítulo cinco subtitulo" = "capítulo cinco subtitulo";
+"saia de casa, venha pra rua" = "saia de casa, venha pra rua";
+
+"chapter3_page1" = "chapter3_page1";
+"chapter3_page2" = "chapter3_page2";
+"chapter3_page3" = "chapter3_page3";
+"chapter3_page4" = "chapter3_page4";
+"chapter3_page5" = "chapter3_page5";
+"chapter3_page6" = "chapter3_page6";
+
+"chapter3_win" = "chapter3_win";
+"chapter3_gameOver" = "chapter3_gameOver";
+
+//MARK: GENERAL
+"deslize para ler" = "deslize para ler";
 "bloqueado" = "bloqueado";
 "história do capítulo não disponível" = "história do capítulo não disponível";
 "capítulo finalizado" = "capítulo finalizado";
-"#1 - uma história de carnaval" = "#1 - uma história de carnaval";
 "memória perdida" = "memória perdida";
-"1. uma história de carnaval" = "1. uma história de carnaval";
 "ajustes" = "ajustes";
 "Idioma" = "Idioma";
 "idioma" = "idioma";
@@ -31,43 +61,27 @@
 "versão 1.0.1" = "versão 1.0.1";
 "Cancelar" = "Cancelar";
 "Confirmar" = "Confirmar";
-
 "Entrar" = "Entrar";
 "Continuar" = "Continuar";
 "Abrir Álbum" = "Abrir Álbum";
 "Relembrar" = "Relembrar";
 "continue_button" = "continue_button";
-//"enter_button" = "enter_button";
-//"remember_button" = "remember_button";
 "restart_button" = "restart_button";
 "start_button" = "start_button";
-//"open_album" = "open_album";
 "cancel_button" = "cancel_button";
 "confirm_button" = "confirm_button";
-
 "board_leave" = "board_leave";
 "memories_rewards" = "memories_rewards";
-
-"intro_page1" = "intro_page1";
-"intro_page2" = "intro_page2";
-"initialScreen_logo" = "initialScreen_logo";
-"chapter1_page1" = "chapter1_page1";
-"chapter1_page2" = "chapter1_page2";
-"chapter1_page3" = "chapter1_page3";
-"chapter1_page4" = "chapter1_page4";
-"chapter1_page5" = "chapter1_page5";
-"chapter1_page6" = "chapter1_page6";
-"chapter2_page1" = "chapter2_page1";
-"chapter2_page2" = "chapter2_page2";
-"chapter2_page3" = "chapter2_page3";
-"chapter2_page4" = "chapter2_page4";
-"chapter2_page5" = "chapter2_page5";
-"chapter1_win" = "chapter1_win";
-"chapter1_gameOver" = "chapter1_gameOver";
 
 "alertRestart_text"= "alertRestart_text";
 "credits_text" = "credits_text";
 
+//INTRO
+"intro_page1" = "intro_page1";
+"intro_page2" = "intro_page2";
+"initialScreen_logo" = "initialScreen_logo";
+
+//TUTORIAL
 "clique para continuar" = "clique para continuar";
 "tutorial_life" = "tutorial_life";
 "tutorial_life_cards" = "tutorial_life_cards";

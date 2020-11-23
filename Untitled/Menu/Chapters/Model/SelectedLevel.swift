@@ -10,19 +10,7 @@ import Foundation
 struct SelectedLevel {
     static var level = UserDefaultsStruct.UserLevel.level
     static var numNarrativePages: Int = 0
-    
-    func setLevelValues() {
-        let level = SelectedLevel.level
-        
-        switch level {
-        case 1:
-            SelectedLevel.numNarrativePages = 6
-        case 2:
-            SelectedLevel.numNarrativePages = 5
-        case 3:
-            SelectedLevel.numNarrativePages = 6
-        default:
-            break
-        }
-    }
+    static var chapterTitle: String = ""
+    static var chapterSubtitle: String = ""
+    static let numChapters: Int = 3
 }

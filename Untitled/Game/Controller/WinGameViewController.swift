@@ -28,19 +28,22 @@ class WinGameViewController: UIViewController {
     func setLayout() {
         let language = UserDefaultsStruct.Language.preferLanguage
         let selectedChapter = SelectedLevel.level
+        let chapterSubtitle = SelectedLevel.chapterSubtitle
         
         view.backgroundColor = UIColor(patternImage: UIImage(named: "winBackground")!)
         titleLabel.text = "capítulo finalizado".localized(language)
-        photoImageView.image = UIImage(named: "empty_photo")
+        photoImageView.image = UIImage(named: "win_photo_\(selectedChapter)")
+        narrativeImageView.image = UIImage(named: "chapter\(selectedChapter)_win".localized(language))
+        subtitleLabel.text = "\(selectedChapter). \(chapterSubtitle)"
         
-        subtitleLabel.text = "#1 - uma história de carnaval".localized(language)
-        narrativeImageView.image = UIImage(named: "chapter1_win".localized(language))
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         //update user defaults
         self.dismiss(animated: true, completion: nil)
         self.dismissFunc?()
+        
+        SelectedLevel.level += 1
     }
     
 
