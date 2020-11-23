@@ -18,7 +18,7 @@
 "chapter1_page6" = "chapter1_page6_en";
 
 "chapter1_win" = "chapter1_win_en";
-"chapter1_gameOver" = "chapter1_gameOver_en";
+"chapter_gameOver" = "chapter_gameOver_en";
 
 //MARK: CHAPTER 2
 "capítulo dois" = "chapter two";

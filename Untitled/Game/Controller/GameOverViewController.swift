@@ -34,7 +34,7 @@ class GameOverViewController: UIViewController {
         subtitleLabel.font = UIFont(name: "Lalezar-Regular", size: 20)
         view.backgroundColor = UIColor(patternImage: UIImage(named: "gameOverBackground")!)
         photoImageView.image = UIImage(named: "gameOver_photo")
-        narrativeImageView.image = UIImage(named: "chapter\(selectedChapter)_gameOver".localized(language))
+        narrativeImageView.image = UIImage(named: "chapter_gameOver".localized(language))
         titleLabel.text = "memória perdida".localized(language)
         restartButton.setImage(UIImage(named: "restart_button".localized(language)), for: .normal)
         subtitleLabel.text = "\(selectedChapter). \(chapterSubtitle)"
