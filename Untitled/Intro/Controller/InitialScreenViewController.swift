@@ -24,7 +24,7 @@ class InitialScreenViewController: UIViewController {
         
         setLanguage()
         let language = UserDefaultsStruct.Language.preferLanguage
-        startButton.setTitle("Entrar".localized(language), for: .normal)
+        startButton.setTitle("Iniciar".localized(language), for: .normal)
         logo.image = UIImage(named: "initialScreen_logo".localized(language))
     }
     

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo-maracatu-marrom1.png",
+      "filename" : "diario52.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo-maracatu-marrom1(1).png",
+      "filename" : "diario52(1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo-maracatu-marrom1(2).png",
+      "filename" : "diario52(2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
