@@ -97,68 +97,79 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         
     }
     
+    func disablePreviousButton() {
+        previousPageButton.setImage(UIImage(named: "backArrowDisabled"), for: .normal)
+        previousPageButton.isUserInteractionEnabled = false
+        
+        nextPageButton.setImage(UIImage(named: "nextArrow"), for: .normal)
+        nextPageButton.isUserInteractionEnabled = true
+    }
+    
+    func disableNextButton() {
+        previousPageButton.setImage(UIImage(named: "backArrow"), for: .normal)
+        previousPageButton.isUserInteractionEnabled = true
+        
+        nextPageButton.setImage(UIImage(named: "nextArrowDisabled"), for: .normal)
+        nextPageButton.isUserInteractionEnabled = false
+    }
+    
+    func enableButtons() {
+        previousPageButton.setImage(UIImage(named: "backArrow"), for: .normal)
+        nextPageButton.setImage(UIImage(named: "nextArrow"), for: .normal)
+        
+        previousPageButton.isUserInteractionEnabled = true
+        nextPageButton.isUserInteractionEnabled = true
+    }
+    
     func setPageButtons() {
         if photoDetailBackground.isHidden {
             if currentPage == 1 {
-                previousPageButton.setImage(UIImage(named: "backArrowDisabled"), for: .normal)
-                previousPageButton.isUserInteractionEnabled = false
-                
-                nextPageButton.setImage(UIImage(named: "nextArrow"), for: .normal)
-                nextPageButton.isUserInteractionEnabled = true
+                disablePreviousButton()
             } else if currentPage == totalPages {
-                previousPageButton.setImage(UIImage(named: "backArrow"), for: .normal)
-                previousPageButton.isUserInteractionEnabled = true
-                
-                nextPageButton.setImage(UIImage(named: "nextArrowDisabled"), for: .normal)
-                nextPageButton.isUserInteractionEnabled = false
+                disableNextButton()
             } else {
-                previousPageButton.setImage(UIImage(named: "backArrow"), for: .normal)
-                nextPageButton.setImage(UIImage(named: "nextArrow"), for: .normal)
-                
-                previousPageButton.isUserInteractionEnabled = true
-                nextPageButton.isUserInteractionEnabled = true
+                enableButtons()
             }
         } else {
             if photoTapped == 1 {
-                previousPageButton.setImage(UIImage(named: "backArrowDisabled"), for: .normal)
-                previousPageButton.isUserInteractionEnabled = false
-                
-                nextPageButton.setImage(UIImage(named: "nextArrow"), for: .normal)
-                nextPageButton.isUserInteractionEnabled = true
+                disablePreviousButton()
             } else if photoTapped == totalPages * 2 {
-                previousPageButton.setImage(UIImage(named: "backArrow"), for: .normal)
-                previousPageButton.isUserInteractionEnabled = true
-                
-                nextPageButton.setImage(UIImage(named: "nextArrowDisabled"), for: .normal)
-                nextPageButton.isUserInteractionEnabled = false
+                disableNextButton()
             } else {
-                previousPageButton.setImage(UIImage(named: "backArrow"), for: .normal)
-                nextPageButton.setImage(UIImage(named: "nextArrow"), for: .normal)
-                
-                previousPageButton.isUserInteractionEnabled = true
-                nextPageButton.isUserInteractionEnabled = true
+                enableButtons()
             }
         }
-        
     }
     
     func setPageLayout() {
         switch pageType {
         case .left:
             albumPage.albumPage.image = UIImage(named: "leftOpenPage")
+            
             albumPage.topPhotoWidth.constant = 174
             albumPage.topPhotoLeadingConstraint.constant = 15
             albumPage.topPhotoTrailingConstraint.constant = 185
             albumPage.topPhotoTopConstraint.constant = 50
-            albumPage.bottomPhotoButton.isHidden = false
+            
+            albumPage.bottomPhotoWidth.constant = 179
+            albumPage.bottomPhotoLeadingConstraint.constant = 195
+            albumPage.bottomPhotoTrailingConstraint.constant = 0
+            albumPage.bottomPhotoBottomConstraint.constant = 80
+            
             backgroundImage.image = UIImage(named: "rewards_background")
         case .right:
             albumPage.albumPage.image = UIImage(named: "rightOpenPage")
-            albumPage.topPhotoWidth.constant = 192
-            albumPage.topPhotoLeadingConstraint.constant = 157
-            albumPage.topPhotoTrailingConstraint.constant = 25
-            albumPage.topPhotoTopConstraint.constant = 75
-            albumPage.bottomPhotoButton.isHidden = true
+            
+            albumPage.topPhotoWidth.constant = 174
+            albumPage.topPhotoLeadingConstraint.constant = 185
+            albumPage.topPhotoTrailingConstraint.constant = 15
+            albumPage.topPhotoTopConstraint.constant = 50
+            
+            albumPage.bottomPhotoWidth.constant = 179
+            albumPage.bottomPhotoLeadingConstraint.constant = 0
+            albumPage.bottomPhotoTrailingConstraint.constant = 195
+            albumPage.bottomPhotoBottomConstraint.constant = 80
+            
             backgroundImage.image = UIImage(named: "rewards_background_2")
         }
         
@@ -167,7 +178,6 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         
         topPagePhoto = currentPage * 2 - 1
         bottomPagePhoto = currentPage * 2
-        
         
         if unlockedRewards.contains(topPagePhoto) {
             albumPage.topPhotoButton.setImage(UIImage(named: "unlockedPhoto_0\(topPagePhoto)"), for: .normal)
@@ -185,6 +195,8 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         } else {
             if pageType == .left{
                 albumPage.bottomPhotoButton.setImage(UIImage(named: "emptyReward2"), for: .normal)
+            } else {
+                albumPage.bottomPhotoButton.setImage(UIImage(named: "emptyReward4"), for: .normal)
             }
         }
         
