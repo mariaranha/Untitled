@@ -117,7 +117,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     }
     
     fileprivate func setLockedChapters(_ chapter: ChapterView) {
-        chapter.chapterTitle.textColor = .black
+        chapter.chapterTitle.textColor = AppColor.lightText.value
         chapter.chapterSubtitle.textColor = AppColor.lightText.value
         chapter.chapterBackground.image = UIImage(named: "blocked_background")
         chapter.photoImageView.image = UIImage(named: "empty_photo")
