@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 452.png",
+      "filename" : "botao-continuar1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 452 (1).png",
+      "filename" : "botao-continuar1(1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 452 (2).png",
+      "filename" : "botao-continuar1(2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

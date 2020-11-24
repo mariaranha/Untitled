@@ -20,7 +20,7 @@ class WinRewardsView: UIView {
         let view = UIView()
         
         view.backgroundColor = .black
-        view.alpha = 0.5
+        view.alpha = 0.8
         
         return view
     }()
@@ -64,6 +64,7 @@ class WinRewardsView: UIView {
         stackH.axis = .horizontal
         stackV.axis = .vertical
         stackV.alignment = .center
+        stackV.spacing = 16
         
         self.memoriesImage.addSubview(stackH)
         
