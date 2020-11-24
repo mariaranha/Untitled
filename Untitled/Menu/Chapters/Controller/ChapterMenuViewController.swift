@@ -40,6 +40,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         //Set view
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chapters_background1")!)
         enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
+        
         enterButton.setTitle("Entrar".localized(language), for: .normal)
         enterButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         
@@ -177,12 +178,17 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     }
     
     fileprivate func setEnterButton() {
+        
         //Start button for unlocked levels
-        if pageIndex + 1 > userLevel {
-            enterButton.isHidden = true
+        if pageIndex + 1 > 1 {
+            enterButton.isHidden = false
+            enterButton.isUserInteractionEnabled = false
+            enterButton.setTitle("Em Breve".localized(language), for: .normal)
             enterButtonLine.backgroundColor = AppColor.darkBorder.value
         } else {
             enterButton.isHidden = false
+            enterButton.isUserInteractionEnabled = true
+            enterButton.setTitle("Entrar".localized(language), for: .normal)
             enterButtonLine.backgroundColor = AppColor.intermediateBorder.value
         }
     }
