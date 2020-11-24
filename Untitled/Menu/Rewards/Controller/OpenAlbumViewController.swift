@@ -203,8 +203,10 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
     }
     
     func setPhotoDetailLayout() {
+        let language = UserDefaultsStruct.Language.preferLanguage
+        
         if unlockedRewards.contains(photoTapped) {
-            photoDetail.image = UIImage(named: "unlockedDetail_0\(photoTapped)")
+            photoDetail.image = UIImage(named: "unlockedDetail_0\(photoTapped)".localized(language))
         } else {
             photoDetail.image = UIImage(named: "lockedDetail")
         }
@@ -225,6 +227,7 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         
         photoDetailBackground.isHidden = false
         setPhotoDetailLayout()
+        setPageButtons()
     }
     
     func nextPage() {
