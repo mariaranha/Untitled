@@ -10,7 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenAlbumView" customModule="Untitled" customModuleProvider="target">
             <connections>
                 <outlet property="albumPage" destination="pSd-vp-i0Z" id="VNf-5l-aKj"/>
+                <outlet property="bottomPhotoBottomConstraint" destination="dRE-gr-YXT" id="czn-DW-Lpy"/>
                 <outlet property="bottomPhotoButton" destination="Imz-V3-0Pc" id="UPn-Rm-ZHY"/>
+                <outlet property="bottomPhotoLeadingConstraint" destination="tp0-eU-BwN" id="zpO-zN-SUi"/>
+                <outlet property="bottomPhotoTrailingConstraint" destination="iwq-eV-lRq" id="0ap-P1-xLs"/>
+                <outlet property="bottomPhotoWidth" destination="5EY-Rt-AkF" id="zRs-2a-zMm"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="sBn-Nn-RHd"/>
                 <outlet property="topPhotoButton" destination="2nr-Lk-VgE" id="PVZ-Sq-3VL"/>
                 <outlet property="topPhotoLeadingConstraint" destination="hKy-zB-dy6" id="x9O-ka-aQ4"/>

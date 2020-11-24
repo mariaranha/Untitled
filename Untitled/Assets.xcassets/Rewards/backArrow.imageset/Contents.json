@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "backArrow.png",
+      "filename" : "botao-voltar-2 1 (3).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "backArrow@2x.png",
+      "filename" : "botao-voltar-2 1 (4).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "backArrow@3x.png",
+      "filename" : "botao-voltar-2 1 (5).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
