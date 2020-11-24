@@ -18,7 +18,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var enterButtonLine: UIImageView!
     
     // MARK: Class Variables
-    var numChapters: Int = 3
+    var numChapters: Int!
     var chapters: [ChapterView] = []
     let numCellPerPage: CGFloat = 5.0
     var pageIndex: Int = 0
@@ -32,6 +32,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         
         userLevel = UserDefaultsStruct.UserLevel.level
         language = UserDefaultsStruct.Language.preferLanguage
+        numChapters = SelectedLevel.numChapters
         
         scrollView.delegate = self
         chapterNumCollection.delegate = self
@@ -59,24 +60,39 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
         scrollToSelectedChapter()
     }
     
+    //MARK: SET LEVEL VARIABLES
+    func setLevelValues(level: Int, language: String) {
+        switch level {
+        case 1:
+            SelectedLevel.numNarrativePages = 6
+            SelectedLevel.chapterTitle = "capítulo um".localized(language)
+            SelectedLevel.chapterSubtitle = "uma história de carnaval".localized(language)
+        case 2:
+            SelectedLevel.numNarrativePages = 5
+            SelectedLevel.chapterTitle = "capítulo dois".localized(language)
+            SelectedLevel.chapterSubtitle = "bloco em movimento".localized(language)
+        case 3:
+            SelectedLevel.numNarrativePages = 6
+            SelectedLevel.chapterTitle = "capítulo três".localized(language)
+            SelectedLevel.chapterSubtitle = "saia de casa, venha pra rua".localized(language)
+        default:
+            break
+        }
+    }
+    
     @IBAction func backToChaptersMenu(_ sender: UIStoryboardSegue) {
     }
     
     @IBAction func startPressed(_ sender: Any) {
-//        let viewController = UIStoryboard(name: "Narrative", bundle: nil).instantiateViewController(identifier: "chapterNarrative", creator: { coder in
-//            NarrativeViewController(chapterNumber: self.pageIndex + 1, coder: coder)
-//            })
-//        viewController.modalTransitionStyle = .crossDissolve
-//        viewController.modalPresentationStyle = .fullScreen
-//
-//        present(viewController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chapterNarrative" {
             let viewController = segue.destination as! NarrativeViewController
-            SelectedLevel.value = self.pageIndex + 1
-            viewController.chapter = SelectedLevel.value
+            SelectedLevel.level = self.pageIndex + 1
+            setLevelValues(level: SelectedLevel.level,
+                           language: UserDefaultsStruct.Language.preferLanguage)
+            viewController.chapter = SelectedLevel.level
         }
     }
     
@@ -130,7 +146,7 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
             chapter.chapterSubtitle.text = "o bloco em movimento".localized(language)
         case 3:
             chapter.chapterTitle.text = "capítulo três".localized(language)
-            chapter.chapterSubtitle.text = "capítulo três subtitulo".localized(language)
+            chapter.chapterSubtitle.text = "saia de casa, venha pra rua".localized(language)
         case 4:
             chapter.chapterTitle.text = "capítulo quatro".localized(language)
             chapter.chapterSubtitle.text = "capítulo quatro subtitulo".localized(language)
@@ -198,7 +214,11 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollToSelectedChapter() {
-        let selectedLevel = SelectedLevel.value
+        var selectedLevel = SelectedLevel.level
+        
+        if selectedLevel > numChapters {
+            selectedLevel -= 1
+        }
         
         guard selectedLevel >= pageIndex + 1 else {
             setEnterButton()

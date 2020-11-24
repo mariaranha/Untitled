@@ -317,7 +317,6 @@ class GameScene: SKScene {
                     gotReward(gotReward1: gotRewar1, gotReward2: gotRewar2)
                     //Update user level
                     UserDefaultsStruct.UserLevel.level = gameViewController.currentLevel + 1
-                    SelectedLevel.value = UserDefaultsStruct.UserLevel.level
                     
                     print("Venceu")
                     let view = WinRewardsView()

@@ -25,8 +25,8 @@ class BoardSettingsViewController: UIViewController {
         exitChapterButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         
         language = UserDefaultsStruct.Language.preferLanguage
-        titleLabel.text = "capítulo um".localized(language)
-        subtitleLabel.text = "uma história de carnaval".localized(language)
+        titleLabel.text = SelectedLevel.chapterTitle
+        subtitleLabel.text = SelectedLevel.chapterSubtitle
         tutorialButton.setTitle("Ver Tutorial".localized(language), for: .normal)
         exitChapterButton.setTitle("Sair do Capítulo".localized(language), for: .normal)
         
@@ -59,7 +59,7 @@ class BoardSettingsViewController: UIViewController {
     
     @IBAction func tutorialButtonTapped(_ sender: Any) {
         
-        let userLevel = UserDefaultsStruct.UserLevel.level
+        let userLevel = SelectedLevel.level
         
         switch userLevel {
         case 1:
