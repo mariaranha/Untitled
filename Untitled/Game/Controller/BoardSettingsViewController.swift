@@ -39,6 +39,8 @@ class BoardSettingsViewController: UIViewController {
         view.alpha = 0.0
         self.view.addSubview(view)
         view.dismiss = {
+            MusicPlayer.shared.stopBackgroundMusic()
+            MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "maracatu-menu-capitulos")
             self.performSegue(withIdentifier: "settingsToChaptersMenu", sender: self)
         }
         view.cancel = {

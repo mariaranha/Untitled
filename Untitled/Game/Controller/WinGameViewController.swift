@@ -43,6 +43,9 @@ class WinGameViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         self.dismissFunc?()
         
+        MusicPlayer.shared.stopBackgroundMusic()
+        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "maracatu-menu-capitulos")
+        
         SelectedLevel.level += 1
     }
     

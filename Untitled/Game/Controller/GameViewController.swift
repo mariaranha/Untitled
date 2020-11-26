@@ -83,6 +83,10 @@ class GameViewController: UIViewController {
         
         level = Level(filename: "Level_\(currentLevel)")
         
+        //Configure background music
+        MusicPlayer.shared.stopBackgroundMusic()
+        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "maracatu-tabuleiro")
+        
         // Configure View
         setInitialLifeLayout()
         setInitialEnergyLayout()
@@ -130,6 +134,7 @@ class GameViewController: UIViewController {
         }
         
     }
+    
     
     func setInitialLifeLayout() {
         totalLifeLabel.textColor = AppColor.lightText.value

@@ -58,6 +58,12 @@ class ChapterMenuViewController: UIViewController, UIScrollViewDelegate {
                                      right: 0)
         
         scrollToSelectedChapter()
+        
+    }
+    
+    override func viewDidLoad() {
+        MusicPlayer.shared.stopBackgroundMusic()
+        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "maracatu-menu-capitulos")
     }
     
     //MARK: SET LEVEL VARIABLES

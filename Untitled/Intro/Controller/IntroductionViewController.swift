@@ -28,10 +28,12 @@ class IntroductionViewController: UIViewController, UIScrollViewDelegate {
     // MARK: View Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         scrollView.delegate = self
         scrollView.contentInsetAdjustmentBehavior = .never
     
+        MusicPlayer.shared.stopBackgroundMusic()
+        
         view.backgroundColor = AppColor.intermediateBackground.value
         narrativeOrigin = narrativeView.frame.origin
         

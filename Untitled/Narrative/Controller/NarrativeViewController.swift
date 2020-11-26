@@ -34,6 +34,8 @@ class NarrativeViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         scrollView.contentInsetAdjustmentBehavior = .never
         
+        MusicPlayer.shared.audioPlayer?.pause()
+        
         //Change number of pages here without init
         switch chapter {
         case 1:

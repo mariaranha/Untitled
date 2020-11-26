@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class InitialScreenViewController: UIViewController {
     
@@ -26,6 +27,8 @@ class InitialScreenViewController: UIViewController {
         let language = UserDefaultsStruct.Language.preferLanguage
         startButton.setTitle("Iniciar".localized(language), for: .normal)
         logo.image = UIImage(named: "initialScreen_logo".localized(language))
+        
+        MusicPlayer.shared.startBackgroundMusic(backgroundMusicFileName: "maracatu-tela-inicial")
     }
     
     @IBAction func startPressed(_ sender: Any) {
@@ -60,6 +63,7 @@ class InitialScreenViewController: UIViewController {
             UserDefaultsStruct.Language.preferLanguage = language
         }
     }
+    
 }
 
 extension String {

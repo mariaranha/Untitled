@@ -23,6 +23,11 @@ class CloseAlbumViewController: UIViewController {
         openButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         let language = UserDefaultsStruct.Language.preferLanguage
         openButton.setTitle("Abrir Álbum".localized(language), for: .normal)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        MusicPlayer.shared.audioPlayer?.play()
     }
     
     @IBAction func backToCloseAlbum(_ sender: UIStoryboardSegue) {

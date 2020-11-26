@@ -59,6 +59,7 @@ class OpenAlbumViewController: UIViewController, PhotoDetail {
         setPageButtons()
         setPageConstraints()
         setPageLayout()
+        
     }
     
     func getUnlockedRewards() {

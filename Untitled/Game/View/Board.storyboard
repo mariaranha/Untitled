@@ -104,7 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGK-0W-Rfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="cGC-bD-dgw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1998.5507246376812" y="-305.35714285714283"/>
+            <point key="canvasLocation" x="-1088.4057971014493" y="-305.35714285714283"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="EZO-AQ-h2h">
@@ -129,7 +129,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="board_settings"/>
                                         <connections>
-                                            <segue destination="32H-XU-ElO" kind="show" id="Zci-Nx-gjZ"/>
+                                            <segue destination="QoG-yp-tco" kind="presentation" customClass="FadeSegue" customModule="Untitled" customModuleProvider="target" modalPresentationStyle="fullScreen" id="f61-7k-bzm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -423,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJH-E0-4ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-943" y="-305"/>
+            <point key="canvasLocation" x="-33.333333333333336" y="-305.35714285714283"/>
         </scene>
         <!--GameOver-->
         <scene sceneID="Wfj-HA-mK7">
@@ -520,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Frq-86-Phn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="-325"/>
+            <point key="canvasLocation" x="1128.985507246377" y="-325.44642857142856"/>
         </scene>
         <!--ChapterMenu-->
         <scene sceneID="ulA-jA-OkJ">
@@ -528,7 +528,24 @@
                 <viewControllerPlaceholder storyboardName="ChapterMenu" id="Eic-Tt-d8n" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2g2-51-91G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1123" y="-274"/>
+            <point key="canvasLocation" x="2032.608695652174" y="-274.55357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mUW-3e-iab">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="QoG-yp-tco" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lPm-So-ga9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="32H-XU-ElO" kind="relationship" relationship="rootViewController" id="yjz-ck-TvG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Py7-Bu-SKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1998.5507246376812" y="-305.35714285714283"/>
         </scene>
     </scenes>
     <resources>

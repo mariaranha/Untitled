@@ -60,6 +60,10 @@
 		9C707A0D255C136B00EB82A7 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C707A0C255C136B00EB82A7 /* LanguageViewController.swift */; };
 		9C707A15255C30EA00EB82A7 /* Alegreya-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C707A14255C30B600EB82A7 /* Alegreya-Bold.ttf */; };
 		9C762D85253D22CF00F71BEC /* NarrativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C762D84253D22CF00F71BEC /* NarrativeView.swift */; };
+		9C99729B256E8A07005C4436 /* maracatu-tela-inicial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C99729A256E8A07005C4436 /* maracatu-tela-inicial.mp3 */; };
+		9C9972A3256E8B83005C4436 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9972A2256E8B83005C4436 /* MusicPlayer.swift */; };
+		9C9972AE256E8EAB005C4436 /* maracatu-menu-capitulos.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C9972AD256E8EAB005C4436 /* maracatu-menu-capitulos.mp3 */; };
+		9C9972B6256E8F74005C4436 /* maracatu-tabuleiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C9972B5256E8F74005C4436 /* maracatu-tabuleiro.mp3 */; };
 		9CA59E2E252E07D700DCD349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E2D252E07D700DCD349 /* AppDelegate.swift */; };
 		9CA59E32252E07D700DCD349 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9CA59E31252E07D700DCD349 /* Actions.sks */; };
 		9CA59E34252E07D700DCD349 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA59E33252E07D700DCD349 /* GameScene.swift */; };
@@ -147,6 +151,10 @@
 		9C707A0C255C136B00EB82A7 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		9C707A14255C30B600EB82A7 /* Alegreya-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alegreya-Bold.ttf"; sourceTree = "<group>"; };
 		9C762D84253D22CF00F71BEC /* NarrativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeView.swift; sourceTree = "<group>"; };
+		9C99729A256E8A07005C4436 /* maracatu-tela-inicial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "maracatu-tela-inicial.mp3"; path = "../../../../wetransfer-824969/maracatu-tela-inicial.mp3"; sourceTree = "<group>"; };
+		9C9972A2256E8B83005C4436 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		9C9972AD256E8EAB005C4436 /* maracatu-menu-capitulos.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "maracatu-menu-capitulos.mp3"; path = "../../../../wetransfer-824969/maracatu-menu-capitulos.mp3"; sourceTree = "<group>"; };
+		9C9972B5256E8F74005C4436 /* maracatu-tabuleiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "maracatu-tabuleiro.mp3"; path = "../../../../wetransfer-824969/maracatu-tabuleiro.mp3"; sourceTree = "<group>"; };
 		9CA59E2A252E07D700DCD349 /* Untitled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Untitled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA59E2D252E07D700DCD349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA59E31252E07D700DCD349 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -248,6 +256,7 @@
 		0B8E74A7253AB1E200B45F0C /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
+				9C997299256E89DA005C4436 /* Sounds */,
 				0B54C65C255AC26C004E16C7 /* Localizable.strings */,
 				0B9DB31A25373355006B601D /* DesignSystem.swift */,
 				9C3166DC25518D6000C6E466 /* Lalezar-Regular.ttf */,
@@ -256,6 +265,7 @@
 				9C707A14255C30B600EB82A7 /* Alegreya-Bold.ttf */,
 				0B8BEE2625559070005ED2AD /* Alegreya-Regular.ttf */,
 				0BE1E5B7252F502900DD36C6 /* Array2D.swift */,
+				9C9972A2256E8B83005C4436 /* MusicPlayer.swift */,
 			);
 			path = Auxiliary;
 			sourceTree = "<group>";
@@ -411,6 +421,16 @@
 				9C2E685A253B8C520048139A /* NarrativeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C997299256E89DA005C4436 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9C9972B5256E8F74005C4436 /* maracatu-tabuleiro.mp3 */,
+				9C9972AD256E8EAB005C4436 /* maracatu-menu-capitulos.mp3 */,
+				9C99729A256E8A07005C4436 /* maracatu-tela-inicial.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		9CA59E21252E07D700DCD349 = {
@@ -610,6 +630,8 @@
 			files = (
 				9C49FCA7253B7D1C0049F415 /* NarrativeTitleView.xib in Resources */,
 				0D79B626255CF351007FF13F /* Level_3.json in Resources */,
+				9C99729B256E8A07005C4436 /* maracatu-tela-inicial.mp3 in Resources */,
+				9C9972AE256E8EAB005C4436 /* maracatu-menu-capitulos.mp3 in Resources */,
 				0B9DB3172530AE31006B601D /* Launch Screen.storyboard in Resources */,
 				0B8BEE2825559070005ED2AD /* Alegreya-Medium.ttf in Resources */,
 				0BE1E5BE252F5A6700DD36C6 /* Level_1.json in Resources */,
@@ -621,6 +643,7 @@
 				0B8E749D2537548C00B45F0C /* ChapterView.xib in Resources */,
 				0BB2F5BD2541CDF90042E6F2 /* Rewards.storyboard in Resources */,
 				0B8E74952537444300B45F0C /* ChapterMenu.storyboard in Resources */,
+				9C9972B6256E8F74005C4436 /* maracatu-tabuleiro.mp3 in Resources */,
 				0B54C65A255AC26C004E16C7 /* Localizable.strings in Resources */,
 				0D79B621255CF102007FF13F /* Level_2.json in Resources */,
 				9C49FCA5253B7CAE0049F415 /* NarrativeView.xib in Resources */,
@@ -691,6 +714,7 @@
 				2A45E12A255A3F0900D6AABF /* ExitView.swift in Sources */,
 				9C0918F925432AA000CF1F8D /* IntroductionViewController.swift in Sources */,
 				0B8E74AC253CA00100B45F0C /* UserDefaultsStruct.swift in Sources */,
+				9C9972A3256E8B83005C4436 /* MusicPlayer.swift in Sources */,
 				0BE1E5B8252F502900DD36C6 /* Array2D.swift in Sources */,
 				9C2E685B253B8C520048139A /* NarrativeViewController.swift in Sources */,
 				0B4B593225656BEC0022D7B5 /* SelectedLevel.swift in Sources */,
@@ -881,7 +905,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = untitled.maracatu;
+				PRODUCT_BUNDLE_IDENTIFIER = untitleda.maracatu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -900,7 +924,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = untitled.maracatu;
+				PRODUCT_BUNDLE_IDENTIFIER = untitleda.maracatu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
