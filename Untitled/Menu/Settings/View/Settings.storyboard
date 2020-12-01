@@ -32,6 +32,21 @@
             </objects>
             <point key="canvasLocation" x="-1433" y="-109"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9Oa-gt-bh5">
+            <objects>
+                <viewController id="1RA-eG-LkD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7QW-Lb-FSa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kAc-88-73H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQ5-jb-urf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-629" y="-802"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="RmK-63-riB">
             <objects>
@@ -86,7 +101,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0Xh-i6-qLs">
-                                <rect key="frame" x="30.5" y="286" width="353.5" height="123"/>
+                                <rect key="frame" x="30.5" y="314" width="353.5" height="196.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKf-Yf-nrn">
                                         <rect key="frame" x="0.0" y="0.0" width="353.5" height="49.5"/>
@@ -96,8 +111,15 @@
                                             <segue destination="AKh-3N-d5D" kind="show" id="H27-9e-Aal"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTi-bZ-R3P">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9y-dv-Kil">
                                         <rect key="frame" x="0.0" y="73.5" width="353.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
+                                        <state key="normal" title="Áudio" backgroundImage="backgroundButton_long">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTi-bZ-R3P">
+                                        <rect key="frame" x="0.0" y="147" width="353.5" height="49.5"/>
                                         <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                         <state key="normal" title="Créditos do Jogo" backgroundImage="backgroundButton_long"/>
                                         <connections>
@@ -107,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-hC-qIv">
-                                <rect key="frame" x="30.5" y="465" width="353.5" height="49.5"/>
+                                <rect key="frame" x="30.5" y="566.5" width="353.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="Alegreya-Bold" family="Alegreya" pointSize="25"/>
                                 <state key="normal" title="Zerar História" backgroundImage="backgroundButton_long"/>
                                 <connections>
@@ -126,16 +148,20 @@
                             <constraint firstItem="XHO-jX-jeG" firstAttribute="bottom" secondItem="Zjd-BU-qRp" secondAttribute="bottom" id="By8-IO-Q0N"/>
                             <constraint firstItem="XHO-jX-jeG" firstAttribute="leading" secondItem="Zjd-BU-qRp" secondAttribute="leading" id="E2s-eN-pfn"/>
                             <constraint firstItem="Zpb-hC-qIv" firstAttribute="top" secondItem="0Xh-i6-qLs" secondAttribute="bottom" constant="56" id="V0h-TO-TXL"/>
-                            <constraint firstItem="0Xh-i6-qLs" firstAttribute="top" secondItem="rFc-Qx-VBM" secondAttribute="bottom" constant="70" id="fuN-FM-T9i"/>
+                            <constraint firstItem="0Xh-i6-qLs" firstAttribute="top" secondItem="rFc-Qx-VBM" secondAttribute="bottom" priority="100" constant="70" id="buI-Iq-JTA"/>
+                            <constraint firstItem="Pq8-GH-z5b" firstAttribute="top" secondItem="Zpb-hC-qIv" secondAttribute="bottom" priority="250" constant="198" id="cMq-PX-v0k"/>
+                            <constraint firstItem="0Xh-i6-qLs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rFc-Qx-VBM" secondAttribute="bottom" constant="18" id="fuN-FM-T9i"/>
                             <constraint firstAttribute="top" secondItem="XHO-jX-jeG" secondAttribute="top" id="gb1-Mr-ufb"/>
                             <constraint firstItem="rFc-Qx-VBM" firstAttribute="top" secondItem="njD-OO-YHB" secondAttribute="top" constant="90" id="hGt-qh-nra"/>
                             <constraint firstItem="0Xh-i6-qLs" firstAttribute="centerX" secondItem="Zjd-BU-qRp" secondAttribute="centerX" id="my0-iA-6MC"/>
                             <constraint firstItem="vkU-WV-7pE" firstAttribute="leading" secondItem="njD-OO-YHB" secondAttribute="leading" constant="32" id="w2b-8m-Wp1"/>
                             <constraint firstItem="vkU-WV-7pE" firstAttribute="top" secondItem="njD-OO-YHB" secondAttribute="top" constant="32" id="wEF-A2-uxQ"/>
+                            <constraint firstItem="Pq8-GH-z5b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Zpb-hC-qIv" secondAttribute="bottom" constant="10" id="xxo-pX-XwZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g7M-b3-4Qb"/>
                     <connections>
+                        <outlet property="audioButton" destination="P9y-dv-Kil" id="Pfc-la-g5p"/>
                         <outlet property="creditsButton" destination="FTi-bZ-R3P" id="gg0-eZ-WyQ"/>
                         <outlet property="languageButton" destination="uKf-Yf-nrn" id="mSV-6D-gXf"/>
                         <outlet property="restartGameButton" destination="Zpb-hC-qIv" id="5d1-jb-7x8"/>

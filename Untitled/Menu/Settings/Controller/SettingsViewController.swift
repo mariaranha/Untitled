@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var restartGameButton: UIButton!
     @IBOutlet weak var creditsButton: UIButton!
     @IBOutlet weak var languageButton: UIButton!
+    @IBOutlet weak var audioButton: UIButton!
     
     var language: String!
     
@@ -26,6 +27,7 @@ class SettingsViewController: UIViewController {
         languageButton.setTitle("Idioma".localized(language), for: .normal)
         creditsButton.setTitle("Créditos do Jogo".localized(language), for: .normal)
         restartGameButton.setTitle("Zerar História".localized(language), for: .normal)
+        audioButton.setTitle("Áudio".localized(language), for: .normal)
         versionLabel.text = "versão 1.0.1".localized(language)
     }
     
@@ -39,6 +41,7 @@ class SettingsViewController: UIViewController {
         languageButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         restartGameButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
         creditsButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
+        audioButton.setTitleColor(AppColor.intermediateLightText.value, for: .normal)
     }
     
     @IBAction func backToSettings(segue:UIStoryboardSegue) { }
